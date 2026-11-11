@@ -15,8 +15,35 @@
 .auth-action:disabled{opacity:.55;cursor:wait}
 @media(max-width:690px){.auth-status{display:none}.auth-action{font-size:11px;padding:7px 9px}.header-progress{display:none}.top-end{gap:8px}}
 @media(max-width:370px){.auth-action{padding:7px 6px}}
+
+/* v2.1: consistent account access, clear hierarchy, and contextual review */
+.side-auth-card{background:#f4f8fd;border:1px solid #e0e9f5;border-radius:12px;padding:12px 11px;display:grid;gap:9px}
+.side-auth-label,.home-storage{display:flex;align-items:center;gap:7px;color:#56718e;font-size:11px;font-weight:730;line-height:1.5;min-width:0}
+.side-auth-label span:last-child,.home-storage span:last-child{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.status-dot{width:7px;height:7px;display:inline-block;flex-shrink:0;border-radius:50%;background:#89a7c8}
+.side-auth-user{color:#7186a0;font-size:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.side-auth-btn{width:100%;min-height:40px;font-size:12px;background:#315f9f;color:white;border-color:#315f9f}
+.side-auth-btn:hover,.side-auth-btn:focus-visible{background:#234d83;color:white;border-color:#234d83}
+.side-foot-stats{margin-top:11px;display:flex;justify-content:space-between;gap:6px;font-size:11px}
+.home-tool-row{display:flex;gap:10px;justify-content:space-between;align-items:center;margin-top:-14px;margin-bottom:26px}
+.auth-retry{appearance:none;border:0;background:none;color:#315f9f;text-decoration:underline;text-underline-offset:3px;font-size:11px;font-weight:780;cursor:pointer;text-align:left;padding:5px 0}
+.review-panel{padding:21px 22px;background:#fff;border:1px solid #e3eaf3;border-radius:13px;margin:5px 0 31px}
+.review-title-row{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.review-title-row h2{margin:3px 0 0;color:#192f4a;font-size:17px;line-height:1.5;letter-spacing:-.5px}
+.review-title-row h2 span{color:#315f9f;font-variant-numeric:tabular-nums;margin-left:.35em}
+.review-collapse{min-height:40px;flex-shrink:0;border:1px solid #dce6f0;background:#fff;color:#315f9f;border-radius:8px;font-size:11px;font-weight:760;padding:8px 11px}
+.review-empty{font-size:12px;color:#8798aa;margin-top:9px}
+.review-list{display:grid;gap:7px;margin-top:15px}
+.review-item{min-height:52px;display:flex;align-items:center;gap:12px;justify-content:space-between;width:100%;text-align:left;padding:10px 12px;background:#f7f9fd;color:#263c57;border:1px solid #e7edf5;border-radius:9px;font:inherit;cursor:pointer}
+.review-item strong{display:block;font-size:12px;line-height:1.5;font-weight:750}
+.review-item small{display:block;font-size:11px;color:#758aa3;margin-top:2px}
+.review-item span:last-child{font-size:16px;color:#7998bb}
+.review-item:hover,.review-item:focus-visible{background:#edf4fd;border-color:#aec5e4}
+.review-collapse:disabled{color:#7d95aa;cursor:default;background:#f7f9fc}
+@media(max-width:480px){.review-panel{padding:16px 15px}.review-title-row h2{font-size:15px}.review-collapse{font-size:11px}.study-cta{margin-bottom:25px}}
+@media print{.home-tool-row,.review-panel{display:none!important}}
 </style></head><body><div class="frame">
-<header class="topbar"><button class="brand" type="button" data-home aria-label="홈으로">SQLD<span class="brand-dot">.</span> NOTE</button><div class="top-end"><div class="auth-area"><span class="auth-status" id="auth-status" aria-live="polite">이 기기에 저장</span><button id="auth-action" class="auth-action" type="button">Google 로그인</button></div><span class="header-progress progress-done">0 / 15</span><button class="menu-btn" type="button" data-menu aria-label="목차 열기"><span class="menu-icon" aria-hidden="true"></span></button></div></header>
+<header class="topbar"><button class="brand" type="button" data-home aria-label="홈으로">SQLD<span class="brand-dot">.</span> NOTE</button><div class="top-end"><div class="auth-area"><span class="auth-status" id="auth-status" data-auth-status aria-live="polite">이 기기에 저장</span><button id="auth-action" data-auth-action class="auth-action" type="button">Google 로그인</button></div><span class="header-progress progress-done">0 / 15</span><button class="menu-btn" type="button" data-menu aria-label="목차 열기"><span class="menu-icon" aria-hidden="true"></span></button></div></header>
 <aside class="sidebar" aria-label="학습 목차"><div class="side-head"><button type="button" class="side-brand" data-home>SQLD<i>.</i> NOTE</button><div class="side-subtitle">15개 핵심 개념 · 실전형 학습</div></div><div class="side-progress"><div class="side-progress-label"><span>학습 완료</span><span class="progress-done">0 / 15</span></div><div class="progress-track"><div class="progress-fill"></div></div></div><div class="side-scroll"><div class="drawer-intro">CHAPTERS / 우선순위 순</div><a class="nav-item" href="#c01" data-item="1" data-search="join과 결과 행 수 sql 기본"><span class="nav-order">01</span><span class="nav-text">JOIN과 결과 행 수</span><span class="nav-done" aria-label="완료 여부">○</span></a>
 <a class="nav-item" href="#c02" data-item="2" data-search="null과 3값 논리 sql 기본"><span class="nav-order">02</span><span class="nav-text">NULL과 3값 논리</span><span class="nav-done" aria-label="완료 여부">○</span></a>
 <a class="nav-item" href="#c03" data-item="3" data-search="group by와 having sql 기본"><span class="nav-order">03</span><span class="nav-text">GROUP BY와 HAVING</span><span class="nav-done" aria-label="완료 여부">○</span></a>
@@ -31,8 +58,8 @@
 <a class="nav-item" href="#c12" data-item="12" data-search="계층형 질의 sql 활용"><span class="nav-order">12</span><span class="nav-text">계층형 질의</span><span class="nav-done" aria-label="완료 여부">○</span></a>
 <a class="nav-item" href="#c13" data-item="13" data-search="null 처리·일반 함수 sql 기본"><span class="nav-order">13</span><span class="nav-text">NULL 처리·일반 함수</span><span class="nav-done" aria-label="완료 여부">○</span></a>
 <a class="nav-item" href="#c14" data-item="14" data-search="top-n과 정렬 sql 활용"><span class="nav-order">14</span><span class="nav-text">TOP-N과 정렬</span><span class="nav-done" aria-label="완료 여부">○</span></a>
-<a class="nav-item" href="#c15" data-item="15" data-search="3단계 스키마·데이터 독립성 데이터 모델링"><span class="nav-order">15</span><span class="nav-text">3단계 스키마·데이터 독립성</span><span class="nav-done" aria-label="완료 여부">○</span></a></div><div class="side-foot"><div>확인 문제 정답 <strong class="progress-quiz">0 / 30</strong></div><button class="side-btn" type="button" data-reset>학습 기록 초기화</button></div></aside>
-<main class="main"><div class="workspace"><section class="home" id="home"><div class="home-intro"><div class="overline">SQLD 2026 · S-LEVEL STUDY GUIDE</div><h1>핵심 개념 15개,<br>한 장씩 확실하게.</h1><p class="home-lead">무작정 암기하지 않고 <b>원리 → SQL 예제 → 함정 → 확인 문제</b> 순서로 학습해요. 필요한 내용에만 집중하도록 구성했습니다.</p></div><div class="home-overview"><strong>나의 학습 진도</strong><small class="progress-done">0 / 15</small></div><div class="progress-track"><div class="progress-fill"></div></div><div class="home-progress-line"><span>학습 완료 개념</span><span>정답 <strong class="progress-quiz">0 / 30</strong></span></div><div class="study-cta"><button type="button" class="primary-btn" data-continue>이어 공부하기 →</button><span class="study-caption">15개 개념 · 확인 문제 30문항</span></div><div class="list-heading"><h2>전체 개념</h2><small>중요도순</small></div><label for="search" style="position:absolute;clip:rect(0,0,0,0)">개념 검색</label><input class="search-box" id="search" type="search" placeholder="어떤 개념을 찾으세요? 예: JOIN, NULL, 정규화" autocomplete="off"><div class="topic-list"><a class="topic-row" href="#c01" data-topic="join과 결과 행 수 sql 기본 join은 조건에 일치하는 행의 조합을 만든다. 같은 키가 중복되면 결과 행 수도 곱해진다." data-topic-id="1"><span class="topic-index">01</span><span class="topic-body"><strong>JOIN과 결과 행 수</strong><small>SQL 기본 <span class="tiny-dot">·</span> 권장 학습 25분</small></span><span class="topic-status" aria-label="학습 상태">학습 전</span><span class="topic-arrow" aria-hidden="true">›</span></a><a class="topic-row" href="#c02" data-topic="null과 3값 논리 sql 기본 null은 값이 없거나 알려지지 않았다는 뜻이다. 비교 결과는 true/false 외에 unknown이 될 수 있다." data-topic-id="2"><span class="topic-index">02</span><span class="topic-body"><strong>NULL과 3값 논리</strong><small>SQL 기본 <span class="tiny-dot">·</span> 권장 학습 23분</small></span><span class="topic-status" aria-label="학습 상태">학습 전</span><span class="topic-arrow" aria-hidden="true">›</span></a><a class="topic-row" href="#c03" data-topic="group by와 having sql 기본 where로 개별 행을 거른 뒤 group by로 묶고, having으로 만들어진 그룹을 거른다." data-topic-id="3"><span class="topic-index">03</span><span class="topic-body"><strong>GROUP BY와 HAVING</strong><small>SQL 기본 <span class="tiny-dot">·</span> 권장 학습 22분</small></span><span class="topic-status" aria-label="학습 상태">학습 전</span><span class="topic-arrow" aria-hidden="true">›</span></a><a class="topic-row" href="#c04" data-topic="윈도우 함수 sql 활용 윈도우 함수는 행을 하나로 축약하지 않고, 각 행에 그룹 내 순위·집계·이전 행 등의 값을 추가한다." data-topic-id="4"><span class="topic-index">04</span><span class="topic-body"><strong>윈도우 함수</strong><small>SQL 활용 <span class="tiny-dot">·</span> 권장 학습 28분</small></span><span class="topic-status" aria-label="학습 상태">학습 전</span><span class="topic-arrow" aria-hidden="true">›</span></a><a class="topic-row" href="#c05" data-topic="서브쿼리와 exists sql 활용 서브쿼리는 다른 sql 안에서 값을 돌려주거나 존재 여부를 판정한다. 반환 행 수와 연산자 조건이 핵심이다." data-topic-id="5"><span class="topic-index">05</span><span class="topic-body"><strong>서브쿼리와 EXISTS</strong><small>SQL 활용 <span class="tiny-dot">·</span> 권장 학습 24분</small></span><span class="topic-status" aria-label="학습 상태">학습 전</span><span class="topic-arrow" aria-hidden="true">›</span></a><a class="topic-row" href="#c06" data-topic="sql 논리적 처리 순서 sql 기본 sql은 작성 순서와 논리적 평가 순서가 다르다. 어떤 단계에서 행이 사라지는지 추적하면 복합문제가 풀린다." data-topic-id="6"><span class="topic-index">06</span><span class="topic-body"><strong>SQL 논리적 처리 순서</strong><small>SQL 기본 <span class="tiny-dot">·</span> 권장 학습 19분</small></span><span class="topic-status" aria-label="학습 상태">학습 전</span><span class="topic-arrow" aria-hidden="true">›</span></a><a class="topic-row" href="#c07" data-topic="dml · tcl · 트랜잭션 관리 구문 dml은 데이터를 바꾸고, tcl은 그 변경을 확정하거나 되돌린다. oracle ddl은 암묵적 commit을 동반한다." data-topic-id="7"><span class="topic-index">07</span><span class="topic-body"><strong>DML · TCL · 트랜잭션</strong><small>관리 구문 <span class="tiny-dot">·</span> 권장 학습 23분</small></span><span class="topic-status" aria-label="학습 상태">학습 전</span><span class="topic-arrow" aria-hidden="true">›</span></a><a class="topic-row" href="#c08" data-topic="erd · 관계 · 차수 데이터 모델링 관계는 엔터티 간 업무 규칙을 표현한다. 1:n인지뿐 아니라 관계가 필수인지 선택인지까지 읽어야 한다." data-topic-id="8"><span class="topic-index">08</span><span class="topic-body"><strong>ERD · 관계 · 차수</strong><small>데이터 모델링 <span class="tiny-dot">·</span> 권장 학습 18분</small></span><span class="topic-status" aria-label="학습 상태">학습 전</span><span class="topic-arrow" aria-hidden="true">›</span></a><a class="topic-row" href="#c09" data-topic="식별자 · pk/fk 관계 데이터 모델링 식별관계는 부모의 식별자가 자식의 기본키를 구성한다. 비식별관계는 외래키가 자식 pk에 들어가지 않는다." data-topic-id="9"><span class="topic-index">09</span><span class="topic-body"><strong>식별자 · PK/FK 관계</strong><small>데이터 모델링 <span class="tiny-dot">·</span> 권장 학습 18분</small></span><span class="topic-status" aria-label="학습 상태">학습 전</span><span class="topic-arrow" aria-hidden="true">›</span></a><a class="topic-row" href="#c10" data-topic="정규화와 함수 종속 데이터 모델링 정규화는 중복과 이상 현상을 줄이기 위한 테이블 구조 개선이다. 어떤 속성이 어떤 키에 종속되는지 찾는다." data-topic-id="10"><span class="topic-index">10</span><span class="topic-body"><strong>정규화와 함수 종속</strong><small>데이터 모델링 <span class="tiny-dot">·</span> 권장 학습 24분</small></span><span class="topic-status" aria-label="학습 상태">학습 전</span><span class="topic-arrow" aria-hidden="true">›</span></a><a class="topic-row" href="#c11" data-topic="rollup · cube · grouping sql 활용 rollup은 계층적인 소계, cube는 지정한 그룹 열의 가능한 조합별 집계를 생성한다." data-topic-id="11"><span class="topic-index">11</span><span class="topic-body"><strong>ROLLUP · CUBE · GROUPING</strong><small>SQL 활용 <span class="tiny-dot">·</span> 권장 학습 23분</small></span><span class="topic-status" aria-label="학습 상태">학습 전</span><span class="topic-arrow" aria-hidden="true">›</span></a><a class="topic-row" href="#c12" data-topic="계층형 질의 sql 활용 oracle 계층형 질의는 루트(start with)를 정하고, 부모와 자식의 연결 조건(connect by prior)을 따라 내려간다." data-topic-id="12"><span class="topic-index">12</span><span class="topic-body"><strong>계층형 질의</strong><small>SQL 활용 <span class="tiny-dot">·</span> 권장 학습 20분</small></span><span class="topic-status" aria-label="학습 상태">학습 전</span><span class="topic-arrow" aria-hidden="true">›</span></a><a class="topic-row" href="#c13" data-topic="null 처리·일반 함수 sql 기본 함수는 입력값을 어떤 규칙으로 변환하는지 정확히 계산해야 한다. 특히 null 대체 함수들은 인자 수와 선택 방식이 다르다." data-topic-id="13"><span class="topic-index">13</span><span class="topic-body"><strong>NULL 처리·일반 함수</strong><small>SQL 기본 <span class="tiny-dot">·</span> 권장 학습 20분</small></span><span class="topic-status" aria-label="학습 상태">학습 전</span><span class="topic-arrow" aria-hidden="true">›</span></a><a class="topic-row" href="#c14" data-topic="top-n과 정렬 sql 활용 상위 n건은 반드시 어떤 순서로 상위인지 먼저 정해야 한다. oracle rownum과 fetch의 적용 위치가 다르다." data-topic-id="14"><span class="topic-index">14</span><span class="topic-body"><strong>TOP-N과 정렬</strong><small>SQL 활용 <span class="tiny-dot">·</span> 권장 학습 19분</small></span><span class="topic-status" aria-label="학습 상태">학습 전</span><span class="topic-arrow" aria-hidden="true">›</span></a><a class="topic-row" href="#c15" data-topic="3단계 스키마·데이터 독립성 데이터 모델링 외부 스키마는 사용자별 관점, 개념 스키마는 db 전체 논리 구조, 내부 스키마는 물리 저장 구조다." data-topic-id="15"><span class="topic-index">15</span><span class="topic-body"><strong>3단계 스키마·데이터 독립성</strong><small>데이터 모델링 <span class="tiny-dot">·</span> 권장 학습 18분</small></span><span class="topic-status" aria-label="학습 상태">학습 전</span><span class="topic-arrow" aria-hidden="true">›</span></a><div class="empty-state" id="no-results" hidden>검색한 개념이 없습니다.</div></div><p class="home-foot">※ 공식 기출문제 원문이 아닌 학습용 재구성 예제와 자체 확인 문제입니다. SQL 문법은 명시한 DBMS를 기준으로 해석하세요. 로그인 전에는 이 브라우저에 저장되며, Google 로그인 후에는 기기 간 동기화됩니다.</p></section>
+<a class="nav-item" href="#c15" data-item="15" data-search="3단계 스키마·데이터 독립성 데이터 모델링"><span class="nav-order">15</span><span class="nav-text">3단계 스키마·데이터 독립성</span><span class="nav-done" aria-label="완료 여부">○</span></a></div><div class="side-foot"><div class="side-auth-card"><div class="side-auth-label"><span class="status-dot" aria-hidden="true"></span><span data-auth-status aria-live="polite">이 기기에 저장</span></div><div class="side-auth-user" data-auth-user hidden></div><button class="auth-action side-auth-btn" data-auth-action type="button">Google 계정으로 저장</button><button type="button" class="auth-retry" data-sync-retry hidden>↻ 동기화 다시 시도</button></div><div class="side-foot-stats">확인 문제 정답 <strong class="progress-quiz">0 / 30</strong></div><button class="side-btn" type="button" data-reset>학습 기록 초기화</button></div></aside>
+<main class="main"><div class="workspace"><section class="home" id="home"><div class="home-intro"><div class="overline">SQLD 2026 · S-LEVEL STUDY GUIDE</div><h1>핵심 개념 15개,<br>한 장씩 확실하게.</h1><p class="home-lead">무작정 암기하지 않고 <b>원리 → SQL 예제 → 함정 → 확인 문제</b> 순서로 학습해요. 필요한 내용에만 집중하도록 구성했습니다.</p></div><div class="home-overview"><strong>나의 학습 진도</strong><small class="progress-done">0 / 15</small></div><div class="progress-track"><div class="progress-fill"></div></div><div class="home-progress-line"><span>학습 완료 개념</span><span>정답 <strong class="progress-quiz">0 / 30</strong></span></div><div class="study-cta"><button type="button" class="primary-btn" data-continue>이어 공부하기 →</button><span class="study-caption" id="resume-target">마지막 학습 위치에서 이어서</span></div><div class="home-tool-row"><div class="home-storage"><span class="status-dot" aria-hidden="true"></span><span data-auth-status aria-live="polite">이 기기에 저장</span></div><button type="button" class="auth-retry" data-sync-retry hidden>↻ 다시 시도</button></div><section class="review-panel" id="review-panel" aria-labelledby="review-title"><div class="review-title-row"><div><span class="small-label">QUICK REVIEW</span><h2 id="review-title">오답 다시 보기 <span id="wrong-count">0</span></h2></div><button class="review-collapse" type="button" data-review-toggle aria-controls="review-list" aria-expanded="false">목록 보기 ↓</button></div><p class="review-empty" id="review-empty">아직 복습할 오답이 없어요. 먼저 확인 문제를 풀어 보세요.</p><div class="review-list" id="review-list" hidden></div></section><div class="list-heading"><h2>전체 개념</h2><small>중요도순</small></div><label for="search" style="position:absolute;clip:rect(0,0,0,0)">개념 검색</label><input class="search-box" id="search" type="search" placeholder="어떤 개념을 찾으세요? 예: JOIN, NULL, 정규화" autocomplete="off"><div class="topic-list"><a class="topic-row" href="#c01" data-topic="join과 결과 행 수 sql 기본 join은 조건에 일치하는 행의 조합을 만든다. 같은 키가 중복되면 결과 행 수도 곱해진다." data-topic-id="1"><span class="topic-index">01</span><span class="topic-body"><strong>JOIN과 결과 행 수</strong><small>SQL 기본 <span class="tiny-dot">·</span> 권장 학습 25분</small></span><span class="topic-status" aria-label="학습 상태">학습 전</span><span class="topic-arrow" aria-hidden="true">›</span></a><a class="topic-row" href="#c02" data-topic="null과 3값 논리 sql 기본 null은 값이 없거나 알려지지 않았다는 뜻이다. 비교 결과는 true/false 외에 unknown이 될 수 있다." data-topic-id="2"><span class="topic-index">02</span><span class="topic-body"><strong>NULL과 3값 논리</strong><small>SQL 기본 <span class="tiny-dot">·</span> 권장 학습 23분</small></span><span class="topic-status" aria-label="학습 상태">학습 전</span><span class="topic-arrow" aria-hidden="true">›</span></a><a class="topic-row" href="#c03" data-topic="group by와 having sql 기본 where로 개별 행을 거른 뒤 group by로 묶고, having으로 만들어진 그룹을 거른다." data-topic-id="3"><span class="topic-index">03</span><span class="topic-body"><strong>GROUP BY와 HAVING</strong><small>SQL 기본 <span class="tiny-dot">·</span> 권장 학습 22분</small></span><span class="topic-status" aria-label="학습 상태">학습 전</span><span class="topic-arrow" aria-hidden="true">›</span></a><a class="topic-row" href="#c04" data-topic="윈도우 함수 sql 활용 윈도우 함수는 행을 하나로 축약하지 않고, 각 행에 그룹 내 순위·집계·이전 행 등의 값을 추가한다." data-topic-id="4"><span class="topic-index">04</span><span class="topic-body"><strong>윈도우 함수</strong><small>SQL 활용 <span class="tiny-dot">·</span> 권장 학습 28분</small></span><span class="topic-status" aria-label="학습 상태">학습 전</span><span class="topic-arrow" aria-hidden="true">›</span></a><a class="topic-row" href="#c05" data-topic="서브쿼리와 exists sql 활용 서브쿼리는 다른 sql 안에서 값을 돌려주거나 존재 여부를 판정한다. 반환 행 수와 연산자 조건이 핵심이다." data-topic-id="5"><span class="topic-index">05</span><span class="topic-body"><strong>서브쿼리와 EXISTS</strong><small>SQL 활용 <span class="tiny-dot">·</span> 권장 학습 24분</small></span><span class="topic-status" aria-label="학습 상태">학습 전</span><span class="topic-arrow" aria-hidden="true">›</span></a><a class="topic-row" href="#c06" data-topic="sql 논리적 처리 순서 sql 기본 sql은 작성 순서와 논리적 평가 순서가 다르다. 어떤 단계에서 행이 사라지는지 추적하면 복합문제가 풀린다." data-topic-id="6"><span class="topic-index">06</span><span class="topic-body"><strong>SQL 논리적 처리 순서</strong><small>SQL 기본 <span class="tiny-dot">·</span> 권장 학습 19분</small></span><span class="topic-status" aria-label="학습 상태">학습 전</span><span class="topic-arrow" aria-hidden="true">›</span></a><a class="topic-row" href="#c07" data-topic="dml · tcl · 트랜잭션 관리 구문 dml은 데이터를 바꾸고, tcl은 그 변경을 확정하거나 되돌린다. oracle ddl은 암묵적 commit을 동반한다." data-topic-id="7"><span class="topic-index">07</span><span class="topic-body"><strong>DML · TCL · 트랜잭션</strong><small>관리 구문 <span class="tiny-dot">·</span> 권장 학습 23분</small></span><span class="topic-status" aria-label="학습 상태">학습 전</span><span class="topic-arrow" aria-hidden="true">›</span></a><a class="topic-row" href="#c08" data-topic="erd · 관계 · 차수 데이터 모델링 관계는 엔터티 간 업무 규칙을 표현한다. 1:n인지뿐 아니라 관계가 필수인지 선택인지까지 읽어야 한다." data-topic-id="8"><span class="topic-index">08</span><span class="topic-body"><strong>ERD · 관계 · 차수</strong><small>데이터 모델링 <span class="tiny-dot">·</span> 권장 학습 18분</small></span><span class="topic-status" aria-label="학습 상태">학습 전</span><span class="topic-arrow" aria-hidden="true">›</span></a><a class="topic-row" href="#c09" data-topic="식별자 · pk/fk 관계 데이터 모델링 식별관계는 부모의 식별자가 자식의 기본키를 구성한다. 비식별관계는 외래키가 자식 pk에 들어가지 않는다." data-topic-id="9"><span class="topic-index">09</span><span class="topic-body"><strong>식별자 · PK/FK 관계</strong><small>데이터 모델링 <span class="tiny-dot">·</span> 권장 학습 18분</small></span><span class="topic-status" aria-label="학습 상태">학습 전</span><span class="topic-arrow" aria-hidden="true">›</span></a><a class="topic-row" href="#c10" data-topic="정규화와 함수 종속 데이터 모델링 정규화는 중복과 이상 현상을 줄이기 위한 테이블 구조 개선이다. 어떤 속성이 어떤 키에 종속되는지 찾는다." data-topic-id="10"><span class="topic-index">10</span><span class="topic-body"><strong>정규화와 함수 종속</strong><small>데이터 모델링 <span class="tiny-dot">·</span> 권장 학습 24분</small></span><span class="topic-status" aria-label="학습 상태">학습 전</span><span class="topic-arrow" aria-hidden="true">›</span></a><a class="topic-row" href="#c11" data-topic="rollup · cube · grouping sql 활용 rollup은 계층적인 소계, cube는 지정한 그룹 열의 가능한 조합별 집계를 생성한다." data-topic-id="11"><span class="topic-index">11</span><span class="topic-body"><strong>ROLLUP · CUBE · GROUPING</strong><small>SQL 활용 <span class="tiny-dot">·</span> 권장 학습 23분</small></span><span class="topic-status" aria-label="학습 상태">학습 전</span><span class="topic-arrow" aria-hidden="true">›</span></a><a class="topic-row" href="#c12" data-topic="계층형 질의 sql 활용 oracle 계층형 질의는 루트(start with)를 정하고, 부모와 자식의 연결 조건(connect by prior)을 따라 내려간다." data-topic-id="12"><span class="topic-index">12</span><span class="topic-body"><strong>계층형 질의</strong><small>SQL 활용 <span class="tiny-dot">·</span> 권장 학습 20분</small></span><span class="topic-status" aria-label="학습 상태">학습 전</span><span class="topic-arrow" aria-hidden="true">›</span></a><a class="topic-row" href="#c13" data-topic="null 처리·일반 함수 sql 기본 함수는 입력값을 어떤 규칙으로 변환하는지 정확히 계산해야 한다. 특히 null 대체 함수들은 인자 수와 선택 방식이 다르다." data-topic-id="13"><span class="topic-index">13</span><span class="topic-body"><strong>NULL 처리·일반 함수</strong><small>SQL 기본 <span class="tiny-dot">·</span> 권장 학습 20분</small></span><span class="topic-status" aria-label="학습 상태">학습 전</span><span class="topic-arrow" aria-hidden="true">›</span></a><a class="topic-row" href="#c14" data-topic="top-n과 정렬 sql 활용 상위 n건은 반드시 어떤 순서로 상위인지 먼저 정해야 한다. oracle rownum과 fetch의 적용 위치가 다르다." data-topic-id="14"><span class="topic-index">14</span><span class="topic-body"><strong>TOP-N과 정렬</strong><small>SQL 활용 <span class="tiny-dot">·</span> 권장 학습 19분</small></span><span class="topic-status" aria-label="학습 상태">학습 전</span><span class="topic-arrow" aria-hidden="true">›</span></a><a class="topic-row" href="#c15" data-topic="3단계 스키마·데이터 독립성 데이터 모델링 외부 스키마는 사용자별 관점, 개념 스키마는 db 전체 논리 구조, 내부 스키마는 물리 저장 구조다." data-topic-id="15"><span class="topic-index">15</span><span class="topic-body"><strong>3단계 스키마·데이터 독립성</strong><small>데이터 모델링 <span class="tiny-dot">·</span> 권장 학습 18분</small></span><span class="topic-status" aria-label="학습 상태">학습 전</span><span class="topic-arrow" aria-hidden="true">›</span></a><div class="empty-state" id="no-results" hidden>검색한 개념이 없습니다.</div></div><p class="home-foot">※ 공식 기출문제 원문이 아닌 학습용 재구성 예제와 자체 확인 문제입니다. SQL 문법은 명시한 DBMS를 기준으로 해석하세요. 로그인 전에는 이 브라우저에 저장되며, Google 로그인 후에는 기기 간 동기화됩니다.</p></section>
 <article class="lesson" id="c01" data-lesson="1" hidden><div class="lesson-breadcrumb"><button class="crumb-link" type="button" data-home>전체 목차</button><span aria-hidden="true">/</span><span>개념 01</span></div>
 <header class="lesson-heading"><div class="eyebrow-row"><span class="rank-chip">S등급</span><span>SQL 기본</span><span class="eyebrow-dot">·</span><span>권장 학습 25분</span></div><h1>JOIN과 결과 행 수</h1></header>
 <nav class="stage-tabs" aria-label="학습 단계" data-stage-tabs><button type="button" class="stage-tab active" data-stage-btn="0"><span>01</span> 핵심</button><button type="button" class="stage-tab" data-stage-btn="1"><span>02</span> 예제</button><button type="button" class="stage-tab" data-stage-btn="2"><span>03</span> 함정</button><button type="button" class="stage-tab" data-stage-btn="3"><span>04</span> 문제</button></nav><section class="stage" data-stage="0"><div class="section-kicker">01 / CORE CONCEPT</div><h2>먼저, 이 원리를 이해해요.</h2><p class="section-desc">세 가지 기준을 알면 해당 유형의 문제에서 판단할 근거가 생겨요.</p><div class="key-sentence"><span class="small-label">핵심 한 문장</span><strong>JOIN은 조건에 일치하는 행의 조합을 만든다. 같은 키가 중복되면 결과 행 수도 곱해진다.</strong></div><ol class="principle-list"><li><span class="bullet-num">01</span><p>키가 같은 A의 m개 행과 B의 n개 행은 보통 m×n개 조합을 만든다.</p></li><li><span class="bullet-num">02</span><p>LEFT JOIN은 왼쪽에서 일치하지 않은 행을 NULL 확장하여 보존한다.</p></li><li><span class="bullet-num">03</span><p>외부 조인 후 WHERE가 오른쪽 열을 거르면 NULL 확장 행까지 사라질 수 있다.</p></li></ol><div class="context-line"><strong>시험에서 중요한 이유</strong><p>결과를 추론하는 문제의 출발점이다. INNER/LEFT의 차이와 ON/WHERE 위치를 동시에 묻기 쉽다.</p></div></section><section class="stage" data-stage="1" hidden><div class="section-kicker">02 / WORKED EXAMPLE</div><h2>표로 따라가며 확인해요.</h2><p class="section-desc">아래 데이터가 주어졌다고 가정한다. 표의 각 행을 따라가며 SQL이 어떤 결과를 만드는지 확인한다.</p><div class="example-flow"><span class="flow-on">입력 데이터</span><span aria-hidden="true">→</span><span>SQL 실행</span><span aria-hidden="true">→</span><span>결과 확인</span></div><div class="minor-heading"><span class="step-number">1</span><h3>입력 데이터</h3></div><div class="table-group"><div class="data-wrap"><div class="data-caption">A (왼쪽)</div><div class="table-scroll" tabindex="0"><table class="data-table"><thead><tr><th>id</th></tr></thead><tbody><tr><td>1</td></tr><tr><td>2</td></tr><tr><td>2</td></tr></tbody></table></div></div><div class="data-wrap"><div class="data-caption">B (오른쪽)</div><div class="table-scroll" tabindex="0"><table class="data-table"><thead><tr><th>id</th><th>tag</th></tr></thead><tbody><tr><td>2</td><td>X</td></tr><tr><td>2</td><td>Y</td></tr><tr><td>3</td><td>Z</td></tr></tbody></table></div></div></div><div class="minor-heading"><span class="step-number">2</span><h3>SQL 실행</h3></div><div class="code-card"><div class="code-top"><span>SQL EXAMPLE</span><button type="button" class="copy-btn" data-copy-code>코드 복사</button></div><pre><code>SELECT A.id, B.tag
@@ -145,7 +172,7 @@ const PREFIX='sqld_s_master_2026_v1_'; // migrate and share prior progress
 function read(k,def){try{const x=localStorage.getItem(PREFIX+k);return x===null?def:JSON.parse(x)}catch(_){return def}}
 function save(k,v){try{localStorage.setItem(PREFIX+k,JSON.stringify(v))}catch(_){} if(!cloudApplying)document.dispatchEvent(new CustomEvent('sqld:localchange'));}
 let cloudApplying=false;
-let done=new Set(read('done',[])), answers=read('answers',{}), current=0,step=0, quizIndex={}, lastFocus=null;
+let done=new Set(read('done',[])), answers=read('answers',{}), current=0,step=0, quizIndex={}, lastFocus=null, lastChapter=Number(read('lastChapter',1))||1;
 const $=s=>document.querySelector(s), $$=s=>Array.from(document.querySelectorAll(s));
 const lessons=$$('.lesson');
 function updateProgress(){let n=done.size, correct=Object.values(answers).filter(a=>a.isCorrect).length;
@@ -153,13 +180,14 @@ function updateProgress(){let n=done.size, correct=Object.values(answers).filter
   $$('.topic-row').forEach(x=>{let is=done.has(Number(x.dataset.topicId));let st=x.querySelector('.topic-status');st.textContent=is?'완료':'학습 전';st.classList.toggle('is-done',is)});
   $$('.nav-item').forEach(x=>{let y=x.querySelector('.nav-done'),is=done.has(Number(x.dataset.item));y.textContent=is?'✓':'○';y.classList.toggle('done',is)});
   $$('.complete-btn').forEach(x=>{let is=done.has(Number(x.dataset.toggleComplete));x.textContent=is?'✓ 학습 완료':'학습 완료 표시';x.classList.toggle('done',is)});
+  renderReview();updateResume();
 }
 function home(){history.replaceState(null,'','#home');renderRoute()}
 function navigate(id){location.hash=id?'#c'+String(id).padStart(2,'0'):'#home';if(location.hash==='#home')renderRoute()}
 function renderRoute(){const match=/^#c(\d{1,2})/.exec(location.hash), id=match?Number(match[1]):0;current=id>=1&&id<=15?id:0;step=0;
   $('#home').hidden=current!==0;lessons.forEach(x=>x.hidden=Number(x.dataset.lesson)!==current);
   $$('.nav-item').forEach(x=>{let active=Number(x.dataset.item)===current;x.classList.toggle('active',active);if(active)x.setAttribute('aria-current','page');else x.removeAttribute('aria-current')});
-  closeDrawer();if(current){showStep(0,false)}document.title=current?(lessons[current-1].querySelector('h1').textContent+' · SQLD NOTE'):'SQLD 핵심 개념 15개 · 모바일 마스터 노트';
+  closeDrawer();if(current){if(lastChapter!==current){lastChapter=current;save('lastChapter',current)}showStep(0,false)}document.title=current?(lessons[current-1].querySelector('h1').textContent+' · SQLD NOTE'):'SQLD 핵심 개념 15개 · 모바일 마스터 노트';
   window.scrollTo({top:0,behavior:'instant'});
 }
 function showStep(n,shouldScroll=true){const el=lessons[current-1];if(!el)return;step=Math.max(0,Math.min(3,n));
@@ -192,13 +220,27 @@ function openDrawer(){lastFocus=document.activeElement;$('#drawer').hidden=false
 function closeDrawer(){let wasOpen=!$('#drawer').hidden;$('#drawer').hidden=true;$('#drawer-shade').hidden=true;$('#drawer').setAttribute('aria-hidden','true');document.body.style.overflow='';if(wasOpen&&lastFocus&&lastFocus.focus)lastFocus.focus()}
 function resetStudy(){if(!confirm('완료 표시와 30문항의 채점 기록을 모두 초기화할까요?'))return;done.clear();Object.keys(answers).forEach(id=>retry(id));answers={};save('done',[]);save('answers',{});updateProgress()}
 
+
+function updateResume(){const el=document.getElementById('resume-target');if(!el)return;const target=lastChapter>=1&&lastChapter<=15&&!done.has(lastChapter)?lastChapter:(Array.from({length:15},(_,i)=>i+1).find(i=>!done.has(i))||1);const label=lessons[target-1]?.querySelector('h1')?.textContent||'첫 개념';el.textContent=String(target).padStart(2,'0')+' · '+label;}
+function renderReview(){const list=document.getElementById('review-list');if(!list)return;const wrong=Object.entries(answers).filter(([id,v])=>v&&v.isCorrect===false&&document.getElementById(id)).sort((a,b)=>a[0].localeCompare(b[0]));
+ document.getElementById('wrong-count').textContent=wrong.length;
+ document.getElementById('review-empty').hidden=wrong.length>0;
+ const toggle=document.querySelector('[data-review-toggle]'); toggle.disabled=wrong.length===0;toggle.textContent=wrong.length===0?'복습 완료 ✓':(list.hidden?'목록 보기 ↓':'목록 접기 ↑');
+ list.replaceChildren();for(const [id] of wrong){const q=document.getElementById(id),c=q.closest('.lesson'),chapter=c.querySelector('h1')?.textContent||'핵심 개념';const b=document.createElement('button');b.type='button';b.className='review-item';b.dataset.reviewQuestion=id;
+ const txt=document.createElement('span'),title=document.createElement('strong'),desc=document.createElement('small'),arr=document.createElement('span');title.textContent=q.querySelector('.question-stem')?.textContent||'복습 문제';desc.textContent=chapter+' · 확인 문제 '+(Number(q.dataset.qIndex)+1);arr.textContent='›';txt.append(title,desc);b.append(txt,arr);list.append(b);}
+ if(!wrong.length){list.hidden=true;toggle.setAttribute('aria-expanded','false')}
+}
+function toggleReview(){const list=document.getElementById('review-list');list.hidden=!list.hidden;const b=document.querySelector('[data-review-toggle]');b.setAttribute('aria-expanded',String(!list.hidden));b.textContent=list.hidden?'목록 보기 ↓':'목록 접기 ↑';}
+function openReview(id){const q=document.getElementById(id);if(!q)return;const chapter=Number(q.closest('.lesson')?.dataset.lesson);if(!chapter)return;const hash='#c'+String(chapter).padStart(2,'0');if(location.hash!==hash){history.pushState(null,'',hash);renderRoute()}else if(current!==chapter)renderRoute();showStep(3,false);showQuestion(lessons[chapter-1],Number(q.dataset.qIndex));window.scrollTo({top:0,behavior:'instant'});}
+
 // Bridge for the optional cloud module. The original offline notes keep working alone.
 window.sqldStateBridge={
-  getState(){return {done:[...done],answers:JSON.parse(JSON.stringify(answers))}},
+  getState(){return {done:[...done],answers:JSON.parse(JSON.stringify(answers)),lastChapter}},
   applyState(state){
     if(!state||!Array.isArray(state.done)||!state.answers||typeof state.answers!=='object'||Array.isArray(state.answers))return;
     cloudApplying=true;
     done=new Set(state.done.filter(x=>Number.isInteger(x)&&x>=1&&x<=15));
+    lastChapter=Number.isInteger(state.lastChapter)&&state.lastChapter>=1&&state.lastChapter<=15?state.lastChapter:1;try{localStorage.setItem(PREFIX+'lastChapter',JSON.stringify(lastChapter))}catch(_){}
     answers=Object.fromEntries(Object.entries(state.answers).filter(([k,v])=>/^q\d{2}_[12]$/.test(k)&&v&&Number.isInteger(v.selected)&&typeof v.isCorrect==='boolean'));
     try{localStorage.setItem(PREFIX+'done',JSON.stringify([...done]));localStorage.setItem(PREFIX+'answers',JSON.stringify(answers))}catch(_){}
     $$('.quiz-question').forEach(q=>{
@@ -213,11 +255,12 @@ window.sqldStateBridge={
   }
 };
 window.addEventListener('hashchange',renderRoute);
-document.addEventListener('click',e=>{let t=e.target.closest('[data-stage-btn],[data-prev-step],[data-next-step],[data-switch-question],[data-grade],[data-retry],[data-toggle-complete],[data-copy-code],[data-home],[data-continue],[data-menu],[data-close-menu],[data-reset]');if(!t)return;
+document.addEventListener('click',e=>{let t=e.target.closest('[data-stage-btn],[data-prev-step],[data-next-step],[data-switch-question],[data-grade],[data-retry],[data-toggle-complete],[data-copy-code],[data-home],[data-continue],[data-menu],[data-close-menu],[data-reset],[data-review-toggle],[data-review-question]');if(!t)return;
  if(t.hasAttribute('data-stage-btn'))showStep(Number(t.dataset.stageBtn));else if(t.hasAttribute('data-prev-step'))advance(-1);else if(t.hasAttribute('data-next-step'))advance(1);
  else if(t.hasAttribute('data-switch-question')){showQuestion(t.closest('.lesson'),Number(t.dataset.switchQuestion))}else if(t.hasAttribute('data-grade'))grade(t.dataset.grade);
  else if(t.hasAttribute('data-retry'))retry(t.dataset.retry);else if(t.hasAttribute('data-toggle-complete'))toggleDone(Number(t.dataset.toggleComplete));
- else if(t.hasAttribute('data-copy-code'))copyCode(t);else if(t.hasAttribute('data-home'))home();else if(t.hasAttribute('data-continue'))navigate(Array.from({length:15},(_,i)=>i+1).find(i=>!done.has(i))||1);
+ else if(t.hasAttribute('data-copy-code'))copyCode(t);else if(t.hasAttribute('data-home'))home();else if(t.hasAttribute('data-continue'))navigate(lastChapter>=1&&lastChapter<=15&&!done.has(lastChapter)?lastChapter:(Array.from({length:15},(_,i)=>i+1).find(i=>!done.has(i))||1));
+ else if(t.hasAttribute('data-review-toggle'))toggleReview();else if(t.hasAttribute('data-review-question'))openReview(t.dataset.reviewQuestion);
  else if(t.hasAttribute('data-menu'))openDrawer();else if(t.hasAttribute('data-close-menu'))closeDrawer();else if(t.hasAttribute('data-reset'))resetStudy();
 });
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDrawer()});$('#drawer-shade').addEventListener('click',closeDrawer);
@@ -225,113 +268,96 @@ $('#search').addEventListener('input',e=>filterTopics(e.target.value));
 Object.entries(answers).forEach(([id,a])=>{let q=document.getElementById(id);if(q)paintAnswer(q,a)});
 updateProgress();renderRoute();
 })();</script><script type="module">
-/* SQLD NOTE – minimal Supabase sign-in + one-row-per-user progress sync. */
-const status = document.getElementById('auth-status');
-const button = document.getElementById('auth-action');
-const bridge = window.sqldStateBridge;
-const EMPTY = { done: [], answers: {} };
-let client;
-let userId = null;
-let syncing = false;
-let cloudReady = false;
-let pending = false;
-let timer = null;
-let refreshToken = 0;
-const setStatus = (label, danger = false) => { status.textContent = label; status.title = label; status.style.color = danger ? '#b34146' : ''; };
-const hasProgress = s => Array.isArray(s.done) && (s.done.length > 0 || Object.keys(s.answers || {}).length > 0);
-function scheduleSave() {
-  if (!userId || syncing || !cloudReady) return;
-  pending = true;
-  setStatus('저장 중…');
-  clearTimeout(timer);
-  timer = setTimeout(() => saveCloud(), 650);
+/* SQLD NOTE v2.1: Supabase Auth + one-row-per-user cloud progress (DEVLOG). */
+const actions=[...document.querySelectorAll('[data-auth-action]')];
+const statuses=[...document.querySelectorAll('[data-auth-status]')];
+const retries=[...document.querySelectorAll('[data-sync-retry]')];
+const userLabels=[...document.querySelectorAll('[data-auth-user]')];
+const bridge=window.sqldStateBridge;
+const EMPTY={done:[],answers:{},lastChapter:1};
+let client=null,userId=null,cloudReady=false,loading=false,pending=false,saving=false,timer=null,retryCount=0,epoch=0,hadCloudUser=false;
+function setStatus(message,kind='normal'){
+ for(const el of statuses){el.textContent=message;el.title=message;el.style.color=kind==='error'?'#b34146':kind==='success'?'#287c64':'';const dot=el.parentElement?.querySelector('.status-dot');if(dot)dot.style.background=kind==='error'?'#be615c':kind==='success'?'#287c64':'#89a7c8';}
+ for(const b of retries)b.hidden=kind!=='error';
 }
-async function saveCloud() {
-  if (!userId || syncing || !cloudReady || !pending) return;
-  const uid = userId;
-  const state = bridge.getState();
-  pending = false;
-  const { error } = await client.from('sqld_note_snapshots').upsert({ user_id: uid, state, updated_at: new Date().toISOString() }, { onConflict: 'user_id' });
-  if (error) { pending = true; setStatus('저장 실패 · 재시도 예정', true); console.warn('SQLD sync failed:', error.message); }
-  else if (!pending && uid === userId) setStatus('클라우드에 저장됨');
+function setButtons(label,disabled=false){for(const b of actions){b.textContent=label;b.disabled=disabled}}
+function setUserLabel(email){for(const el of userLabels){el.hidden=!email;el.textContent=email||''}}
+const hasProgress=s=>Array.isArray(s.done)&&(s.done.length>0||Object.keys(s.answers||{}).length>0);
+function scheduleSave(){if(!userId||loading||!cloudReady)return;pending=true;setStatus('저장 중…');clearTimeout(timer);timer=setTimeout(saveCloud,650)}
+async function saveCloud(){
+ if(!userId||loading||!cloudReady||!pending||saving||!client)return;
+ const uid=userId,version=epoch,state=bridge.getState();saving=true;pending=false;clearTimeout(timer);
+ try{
+  const {error}=await client.from('sqld_note_snapshots').upsert({user_id:uid,state,updated_at:new Date().toISOString()},{onConflict:'user_id'});
+  if(version!==epoch||uid!==userId)return;
+  if(error)throw error;
+  retryCount=0;
+  if(pending){setStatus('저장 중…');timer=setTimeout(saveCloud,450)}
+  else setStatus('클라우드에 저장됨','success');
+ }catch(error){
+  if(version!==epoch||uid!==userId)return;
+  pending=true;retryCount++;
+  setStatus(navigator.onLine?'저장 실패 · 재시도 중':'오프라인 · 다시 시도','error');
+  console.warn('SQLD cloud save:',error?.message||error);
+  if(navigator.onLine)timer=setTimeout(saveCloud,Math.min(30000,Math.pow(2,Math.min(retryCount,4))*2000));
+ }finally{saving=false;if(version===epoch&&uid===userId&&pending&&!timer&&navigator.onLine)timer=setTimeout(saveCloud,550)}
 }
-async function loadCloud(uid) {
-  const token = ++refreshToken;
-  clearTimeout(timer);
-  pending = false;
-  syncing = true;
-  cloudReady = false;
-  setStatus('학습 기록 불러오는 중…');
-  const { data, error } = await client.from('sqld_note_snapshots').select('state').eq('user_id', uid).maybeSingle();
-  if (token !== refreshToken || uid !== userId) { syncing = false; return; }
-  if (error) { syncing = false; setStatus('불러오기 실패 · 다시 로그인해 주세요', true); console.warn(error.message); return; }
-  if (data && data.state && Array.isArray(data.state.done) && data.state.answers) {
-    bridge.applyState(data.state);
-    setStatus('클라우드에 저장됨');
-  } else {
-    const local = bridge.getState();
-    // Initial import is explicitly opted into; protects data from shared-device confusion.
-    const useLocal = hasProgress(local) && window.confirm('이 기기의 기존 학습 기록을 Google 계정으로 가져올까요?');
-    bridge.applyState(useLocal ? local : EMPTY);
-    pending = true;
+async function loadCloud(uid){
+ const version=++epoch;clearTimeout(timer);timer=null;pending=false;loading=true;cloudReady=false;
+ setStatus('학습 기록 불러오는 중…');setButtons('불러오는 중…',true);
+ try{
+  const {data,error}=await client.from('sqld_note_snapshots').select('state').eq('user_id',uid).maybeSingle();
+  if(version!==epoch||uid!==userId)return;
+  if(error)throw error;
+  if(data?.state&&Array.isArray(data.state.done)&&data.state.answers){bridge.applyState(data.state);setStatus('클라우드에 저장됨','success')}
+  else{
+    const local=bridge.getState();
+    const useLocal=hasProgress(local)&&window.confirm('이 기기의 기존 학습 기록을 Google 계정으로 가져올까요?\n취소하면 계정에 빈 학습 기록이 만들어집니다.');
+    bridge.applyState(useLocal?local:EMPTY);pending=true;
   }
-  syncing = false;
-  cloudReady = true;
-  if (pending) await saveCloud();
+  cloudReady=true;retryCount=0;
+ }catch(error){if(version===epoch&&uid===userId){setStatus('불러오기 실패 · 다시 시도','error');console.warn('SQLD cloud load:',error?.message||error)}}
+ finally{if(version===epoch&&uid===userId){loading=false;setButtons('로그아웃');if(pending&&cloudReady)void saveCloud()}}
 }
-async function setUser(user) {
-  if (user?.id === userId) return;
-  userId = user?.id ?? null;
-  button.disabled = false;
-  if (userId) {
-    button.textContent = '로그아웃';
-    button.title = user.email ? `${user.email} · 로그아웃` : '로그아웃';
-    await loadCloud(userId);
-  } else {
-    clearTimeout(timer);pending = false; cloudReady = false; ++refreshToken;
-    button.textContent = 'Google 로그인';
-    button.title = 'Google 로그인';
-    setStatus('이 기기에 저장');
-    // Do not display a different account's data after logout.
-    if (hadCloudUser) bridge.applyState(EMPTY);
-  }
-  hadCloudUser = !!userId;
+async function setUser(user){
+ if(user?.id===userId)return;
+ ++epoch;clearTimeout(timer);timer=null;pending=false;cloudReady=false;loading=false;
+ userId=user?.id??null;setUserLabel(user?.email||'');
+ if(userId){setButtons('로그아웃');hadCloudUser=true;await loadCloud(userId)}
+ else{setButtons('Google 로그인');setStatus('이 기기에 저장');if(hadCloudUser)bridge.applyState(EMPTY);hadCloudUser=false}
 }
-let hadCloudUser = false;
-button.addEventListener('click', async () => {
-  if (!client) { setStatus('로그인 모듈 연결 실패', true); return; }
-  if (userId) {
-    button.disabled = true;
-    if (pending) await saveCloud();
-    if (pending) { button.disabled = false; setStatus('저장 실패 · 로그아웃 전 재시도', true); return; }
-    const { error } = await client.auth.signOut();
-    button.disabled = false;
-    if (error) setStatus('로그아웃 실패', true);
-  } else {
-    if (location.protocol === 'file:') { alert('Google 로그인은 배포된 https 웹 주소에서 사용하세요. 로컬 파일 학습은 그대로 가능합니다.');return; }
-    button.disabled = true;
-    setStatus('Google 로그인 연결 중…');
-    const redirectTo = location.origin + location.pathname;
-    const { error } = await client.auth.signInWithOAuth({ provider: 'google', options: { redirectTo } });
-    if (error) { button.disabled = false; setStatus('로그인 실패 · 설정 확인', true); console.warn(error.message); }
-  }
+for(const button of actions)button.addEventListener('click',async()=>{
+ if(!client){setStatus('로그인 모듈 연결 실패','error');return}
+ if(userId){
+  setButtons('로그아웃 중…',true);
+  if(pending)await saveCloud();
+  if(pending){setButtons('로그아웃');setStatus('저장 실패 · 먼저 다시 시도','error');return}
+  const {error}=await client.auth.signOut();if(error){setButtons('로그아웃');setStatus('로그아웃 실패','error')}
+ }else{
+  if(location.protocol==='file:'){alert('Google 로그인은 배포된 https 웹사이트에서 사용하세요.');return}
+  setButtons('Google로 이동 중…',true);setStatus('Google 로그인 연결 중…');
+  const {error}=await client.auth.signInWithOAuth({provider:'google',options:{redirectTo:location.origin+location.pathname}});
+  if(error){setButtons('Google 로그인');setStatus('로그인 실패 · Google OAuth 설정 확인','error');console.warn('SQLD login:',error.message)}
+ }
 });
-document.addEventListener('sqld:localchange', scheduleSave);
-window.addEventListener('online', () => { if (pending && userId) saveCloud(); });
-document.addEventListener('visibilitychange', () => { if (!document.hidden && userId && pending) saveCloud(); });
-try {
-  // Pinned dependency; no build step or other framework is required.
-  const { createClient } = await import('https://esm.sh/@supabase/supabase-js@2.119.0?bundle');
-  client = createClient('https://ebbufqscomopzhljksxx.supabase.co', 'sb_publishable_ikgeMiDYz-d6urm26pvKtg_FQdfXpfp', {
-    auth: { storageKey: 'sqld-note-auth-v1', autoRefreshToken: true, persistSession: true, detectSessionInUrl: true }
-  });
-  client.auth.onAuthStateChange((_event, session) => { setTimeout(() => setUser(session?.user ?? null), 0); });
-  const { data: { session }, error } = await client.auth.getSession();
-  if (error) setStatus('인증 상태 확인 실패', true);
-  else await setUser(session?.user ?? null);
-} catch (error) {
-  setStatus('온라인 기능 연결 실패 · 기기 저장 사용', true);
-  console.warn('SQLD cloud module unavailable:', error);
-}
-
+for(const button of retries)button.addEventListener('click',()=>{
+ if(!client){setStatus('로그인 모듈 연결 실패','error');return}
+ if(!userId)return;
+ if(!cloudReady){void loadCloud(userId);return}
+ pending=true;retryCount=0;clearTimeout(timer);timer=null;void saveCloud();
+});
+document.addEventListener('sqld:localchange',scheduleSave);
+window.addEventListener('online',()=>{if(userId&&pending){clearTimeout(timer);timer=null;void saveCloud()}});
+document.addEventListener('visibilitychange',()=>{if(!document.hidden&&userId&&pending){clearTimeout(timer);timer=null;void saveCloud()}});
+setButtons('Google 로그인');setStatus('이 기기에 저장');
+try{
+ const {createClient}=await import('https://esm.sh/@supabase/supabase-js@2.119.0?bundle');
+ client=createClient('https://ebbufqscomopzhljksxx.supabase.co','sb_publishable_ikgeMiDYz-d6urm26pvKtg_FQdfXpfp',{
+  auth:{storageKey:'sqld-note-auth-v1',autoRefreshToken:true,persistSession:true,detectSessionInUrl:true}
+ });
+ client.auth.onAuthStateChange((_event,session)=>{setTimeout(()=>setUser(session?.user??null),0)});
+ const {data:{session},error}=await client.auth.getSession();
+ if(error)setStatus('인증 상태 확인 실패','error');
+ else await setUser(session?.user??null);
+}catch(error){setStatus('온라인 기능 연결 실패 · 기기 저장 사용','error');console.warn('SQLD Auth module:',error)}
 </script></body></html>
