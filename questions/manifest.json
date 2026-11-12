@@ -1,0 +1,15 @@
+{
+  "version": "2026-11-11-v3",
+  "updated_at": "2026-11-11",
+  "count": 131,
+  "manual_count": 71,
+  "sql_verified_count": 60,
+  "source_policy": "자체 제작 문제: 공개 복원 원문·해설을 재배포하지 않음. 복원 기출 아님.",
+  "subjects": [
+    "데이터 모델링",
+    "SQL 기본 및 활용"
+  ],
+  "files": [
+    "questions/bank.json"
+  ]
+}

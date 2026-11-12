@@ -1,0 +1,107 @@
+[
+  {
+    "chapter": 1,
+    "title": "JOIN과 결과 행 수",
+    "why": "JOIN은 두 테이블의 조건에 맞는 행 조합을 만든다. A의 키 2가 두 행이고 B의 키 2가 세 행이라면 2×3개의 결과가 만들어진다. LEFT JOIN에서 매칭되지 않은 왼쪽 행은 오른쪽 열이 NULL인 형태로 남는다.",
+    "reading_order": "키 중복 수 확인 → 조인 방식 확인 → ON 매칭 결과 작성 → WHERE 조건으로 최종 제거",
+    "pitfall": "LEFT JOIN 뒤 WHERE B.col=값을 적용하면 NULL 확장 행이 탈락할 수 있으므로 ON과 WHERE를 분리해서 읽는다."
+  },
+  {
+    "chapter": 2,
+    "title": "NULL과 3값 논리",
+    "why": "NULL은 0이나 빈 문자열처럼 확정된 숫자·문자가 아니다. NULL과 일반 비교 연산의 결과는 대체로 UNKNOWN이 되며, WHERE는 TRUE만 통과시킨다. 따라서 NOT IN 목록에 NULL이 포함될 때 결과가 사라지는 현상을 단계적으로 계산해야 한다.",
+    "reading_order": "비교 대상에 NULL 존재? → 각각 TRUE/FALSE/UNKNOWN 평가 → AND/OR 조합 → WHERE 통과 판정",
+    "pitfall": "NOT EXISTS와 NOT IN은 NULL 관련 동작이 다를 수 있으며, 빈 집합일 때의 예외도 따로 고려한다."
+  },
+  {
+    "chapter": 3,
+    "title": "GROUP BY와 HAVING",
+    "why": "WHERE는 그룹을 만들기 전 개별 행을 제거한다. GROUP BY 후에는 그룹별 COUNT, SUM 등이 계산되고 HAVING이 그룹을 거른다. COUNT(*)와 COUNT(col)은 NULL에서 달라지므로 원본에서 어떤 행이 제외되었는지 먼저 표에 체크한다.",
+    "reading_order": "FROM → WHERE → GROUP BY → 집계 → HAVING → SELECT → ORDER BY",
+    "pitfall": "그룹의 행 수 COUNT(*)와 값이 있는 열의 개수 COUNT(col)는 별개이며, SUM은 값이 없으면 NULL일 수 있다."
+  },
+  {
+    "chapter": 4,
+    "title": "윈도우 함수",
+    "why": "GROUP BY는 결과를 그룹 단위 행으로 축약하지만 윈도우 함수는 원본 각 행에 계산된 값을 붙인다. 동점일 때 RANK와 DENSE_RANK는 다르고 ROW_NUMBER는 각 행에 고유 순번을 준다. 누적 합계는 ROWS와 RANGE 프레임 차이도 확인해야 한다.",
+    "reading_order": "PARTITION BY 범위 분할 → ORDER BY 정렬 → 동점 처리 → 프레임 범위 → 행별 결과",
+    "pitfall": "Oracle 누적 집계에서 기본 RANGE 프레임은 동점의 누적값을 함께 묶을 수 있어 ROWS와 결과가 달라진다."
+  },
+  {
+    "chapter": 5,
+    "title": "서브쿼리와 EXISTS",
+    "why": "스칼라 서브쿼리는 단일값 비교에 쓰이므로 여러 행을 반환하면 오류가 날 수 있다. IN은 집합 포함 여부를, EXISTS는 행 존재 여부를 검사한다. 상관 서브쿼리는 바깥 행의 값을 참조하므로 각 외부 행을 기준으로 참·거짓을 설명할 수 있어야 한다.",
+    "reading_order": "서브쿼리 반환 형태 확인 → 비교 연산자 확인 → 외부 행과 상관 조건 연결 → NULL/중복 검토",
+    "pitfall": "스칼라 비교에 여러 행이 나오면 단일값 조건을 만족하지 않는다. EXISTS는 선택 목록 값보다 존재 여부가 핵심이다."
+  },
+  {
+    "chapter": 6,
+    "title": "SQL 논리적 처리 순서",
+    "why": "SQL 작성 순서와 논리적 처리 순서는 다르다. FROM/JOIN으로 원본 행을 구성한 후 WHERE로 거르고, GROUP BY/HAVING을 거쳐 SELECT와 ORDER BY를 적용한다. 단계 사이에 어떤 행이 사라졌는지 작은 표로 직접 표시하면 복합 SQL의 출력 행 수를 찾기 쉽다.",
+    "reading_order": "FROM/JOIN → WHERE → GROUP BY → HAVING → SELECT → DISTINCT → ORDER BY → 행 제한",
+    "pitfall": "SELECT에서 만든 별칭은 같은 SELECT의 WHERE에서 보통 바로 사용할 수 없다. ORDER BY에서는 사용 가능한 DBMS가 많다."
+  },
+  {
+    "chapter": 7,
+    "title": "DML · TCL · 트랜잭션",
+    "why": "INSERT/UPDATE/DELETE는 데이터 변경, COMMIT은 확정, ROLLBACK은 취소다. SAVEPOINT는 트랜잭션 안의 중간 복귀 지점이다. Oracle에서는 DDL에 암묵적 COMMIT이 관련되므로 다른 DBMS의 트랜잭션 DDL 동작과 혼동하면 안 된다.",
+    "reading_order": "최초 값 기록 → 명령마다 변경 상태 표기 → SAVEPOINT 위치 기록 → ROLLBACK 뒤 남은 값 확정",
+    "pitfall": "Oracle의 TRUNCATE·CREATE 등은 일반적인 DML처럼 임의로 ROLLBACK할 수 있다고 가정하지 않는다."
+  },
+  {
+    "chapter": 8,
+    "title": "ERD · 관계 · 차수",
+    "why": "관계의 최대 참여 수(1 또는 N)와 최소 참여 수(0 또는 1)를 구별해야 한다. 고객 1명에 주문 0~N건이라면 고객 쪽 참여는 선택적이지만 주문은 고객을 필수로 요구할 수 있다. ERD를 읽을 때는 두 방향을 각각 문장으로 바꿔 보면 안전하다.",
+    "reading_order": "두 엔터티 식별 → 업무 규칙 문장화 → 최소 참여 0/1 확인 → 최대 참여 1/N 확인",
+    "pitfall": "1:N이라고 해서 N쪽이 반드시 하나 이상 존재하는 것은 아니다. 최소 수와 최대 수는 독립적인 정보다."
+  },
+  {
+    "chapter": 9,
+    "title": "식별자 · PK/FK 관계",
+    "why": "후보키는 유일성과 최소성을 충족한다. PK는 선택된 후보키이고 FK는 다른 테이블의 키를 참조해 관계를 표현한다. 식별관계는 부모 키가 자식 PK 일부를 구성하고, 비식별관계에서는 FK가 자식 PK 밖에 있다. FK의 NULL 허용과 식별관계 여부를 혼동하면 안 된다.",
+    "reading_order": "PK 확인 → FK 확인 → FK가 자식 PK의 구성요소인지 확인 → 관계 표기 판정",
+    "pitfall": "비식별관계여도 FK는 NOT NULL일 수 있고 식별관계여도 실제 설계 제약을 확인해야 한다."
+  },
+  {
+    "chapter": 10,
+    "title": "정규화와 함수 종속",
+    "why": "1NF는 원자값, 2NF는 부분 종속 제거, 3NF는 비주요 속성의 이행 종속 제거라는 단계로 접근한다. 먼저 후보키와 함수 종속을 쓰고, 그 종속 관계 때문에 한 데이터가 여러 번 반복되는지 확인해야 분해 이유를 설명할 수 있다.",
+    "reading_order": "후보키 표시 → 함수 종속 화살표 작성 → 부분/이행 종속 찾기 → 분해 후 조인 복원 가능성 확인",
+    "pitfall": "정규화 자체가 모든 쿼리의 성능 개선을 의미하지 않으며, 설계 품질과 조회 비용은 구분해야 한다."
+  },
+  {
+    "chapter": 11,
+    "title": "ROLLUP · CUBE · GROUPING",
+    "why": "ROLLUP(A,B)는 (A,B), (A), () 순으로 계층적 집계를 생성한다. CUBE(A,B)는 거기에 (B) 수준이 추가된다. GROUPING 함수는 원본 데이터가 NULL인 경우와 집계가 만든 NULL 자리를 구별한다. 실제 결과 행 수는 각 집계 수준의 그룹 수를 더해야 한다.",
+    "reading_order": "GROUP BY 대상 열 확인 → 집계 수준 나열 → 각 수준별 그룹 개수 계산 → GROUPING으로 NULL 유형 확인",
+    "pitfall": "ROLLUP은 모든 부분집합을 만들지 않는다. 두 열의 CUBE 집계 수준 수는 4가지다."
+  },
+  {
+    "chapter": 12,
+    "title": "계층형 질의",
+    "why": "Oracle START WITH는 시작 행을 정하고 CONNECT BY는 자식 확장 규칙을 작성한다. PRIOR가 붙은 열이 이전 단계(부모) 행에서 평가된다는 것을 기준으로 방향을 판별한다. LEVEL은 루트가 1이며 ORDER SIBLINGS BY는 계층을 무너뜨리지 않고 형제끼리 정렬한다.",
+    "reading_order": "START WITH 루트 표시 → PRIOR 조건의 좌우 방향 판정 → 트리 가지 추적 → LEVEL 기록",
+    "pitfall": "CONNECT BY PRIOR id=parent_id와 CONNECT BY id=PRIOR parent_id는 탐색 방향이 반대가 될 수 있다."
+  },
+  {
+    "chapter": 13,
+    "title": "NULL 처리·일반 함수",
+    "why": "NVL은 두 인자 중 NULL 대체값을 선택하고 NVL2는 첫 인자가 NULL인지에 따라 둘 중 하나를 반환한다. COALESCE는 왼쪽부터 첫 NULL이 아닌 값을, NULLIF는 두 값이 같으면 NULL을 준다. 함수마다 인자 위치와 반환값 자료형 규칙도 주의해야 한다.",
+    "reading_order": "함수 인자 수 확인 → 첫 인자 NULL 여부 → 반환 대상 선택 → 필요하면 자료형 변환 확인",
+    "pitfall": "NVL2(NULL, 1, 2)는 2이고 COALESCE(NULL,0,7)은 0이다. 0은 NULL이 아니다."
+  },
+  {
+    "chapter": 14,
+    "title": "TOP-N과 정렬",
+    "why": "상위 N을 구하려면 먼저 정렬 기준을 명시해야 한다. Oracle ROWNUM을 정렬과 같은 SELECT에서 결합하면 원치 않는 행을 뽑을 수 있어 정렬된 인라인 뷰나 FETCH 문법을 사용한다. 점수 동점 시 WITH TIES와 고유 키 정렬의 효과도 구분해야 한다.",
+    "reading_order": "ORDER BY 정렬 조건 → 동점 유무 → FETCH/ROWNUM 적용 위치 → 출력 행 수",
+    "pitfall": "LIMIT/FETCH만 쓰면 결과 순서는 미보장이다. WITH TIES는 N보다 많은 행을 반환할 수 있다."
+  },
+  {
+    "chapter": 15,
+    "title": "3단계 스키마·데이터 독립성",
+    "why": "외부 스키마는 사용자별 관점, 개념 스키마는 전체 논리 구조, 내부 스키마는 물리 저장 구조다. 내부 인덱스나 파일 배치를 바꿔도 개념 스키마에 영향이 없다면 물리적 데이터 독립성에 해당한다. 개념 스키마 변경에 대해 외부 뷰를 유지하는 것은 논리적 독립성이다.",
+    "reading_order": "변경 대상이 사용자 뷰/논리 모델/물리 구조 중 무엇인지 분류 → 영향을 받지 않아야 할 위쪽 단계 찾기",
+    "pitfall": "인덱스 재배치와 엔터티·열 구조 변경은 서로 다른 계층의 변경이므로 독립성 유형이 다르다."
+  }
+]

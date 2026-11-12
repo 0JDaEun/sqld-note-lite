@@ -1,0 +1,418 @@
+[
+  {
+    "id": "case",
+    "chapter": "SQL 기본 및 활용",
+    "title": "CASE와 조건 분기",
+    "intro": "CASE는 행마다 조건을 평가해 하나의 값을 만든다. WHERE에서 걸러내는 것과 달리, CASE는 행을 유지한 상태에서 반환값을 바꿀 수 있다.",
+    "steps": [
+      "각 행의 조건을 위에서 아래로 평가한다.",
+      "먼저 TRUE가 된 WHEN의 THEN을 반환한다.",
+      "일치하는 조건이 없다면 ELSE를 사용한다. ELSE도 없으면 NULL이다."
+    ],
+    "tables": [
+      {
+        "name": "SCORE",
+        "columns": [
+          "id",
+          "score"
+        ],
+        "rows": [
+          [
+            1,
+            85
+          ],
+          [
+            2,
+            58
+          ],
+          [
+            3,
+            60
+          ]
+        ]
+      }
+    ],
+    "sql": "SELECT id, CASE WHEN score >= 60 THEN 'PASS' ELSE 'FAIL' END AS result FROM SCORE ORDER BY id;",
+    "output": {
+      "columns": [
+        "id",
+        "result"
+      ],
+      "rows": [
+        [
+          1,
+          "PASS"
+        ],
+        [
+          2,
+          "FAIL"
+        ],
+        [
+          3,
+          "PASS"
+        ]
+      ]
+    },
+    "trap": "CASE의 결과는 행 개수가 아니라 출력값을 바꾼다. WHERE 조건과 역할을 구분한다."
+  },
+  {
+    "id": "set",
+    "chapter": "SQL 활용",
+    "title": "집합 연산자: UNION·INTERSECT·차집합",
+    "intro": "집합 연산자는 두 SELECT 결과를 위아래로 결합한다. 두 결과의 컬럼 개수와 대응 자료형이 맞아야 하며, 중복 제거 방식이 결과 행 수를 결정한다.",
+    "steps": [
+      "각 SELECT가 독립적으로 반환하는 값을 나열한다.",
+      "UNION이면 중복된 행을 한 번만 남긴다.",
+      "UNION ALL은 중복을 보존하고, INTERSECT는 양쪽 공통값만 남긴다."
+    ],
+    "tables": [
+      {
+        "name": "A",
+        "columns": [
+          "v"
+        ],
+        "rows": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ]
+        ]
+      },
+      {
+        "name": "B",
+        "columns": [
+          "v"
+        ],
+        "rows": [
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ]
+      }
+    ],
+    "sql": "SELECT v FROM A UNION SELECT v FROM B ORDER BY v;",
+    "output": {
+      "columns": [
+        "v"
+      ],
+      "rows": [
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ]
+      ]
+    },
+    "trap": "UNION ALL이면 5행, UNION이면 3행이다. DBMS별 차집합 키워드는 EXCEPT 또는 MINUS다."
+  },
+  {
+    "id": "pivot",
+    "chapter": "SQL 활용",
+    "title": "PIVOT·UNPIVOT: 행과 열 전환",
+    "intro": "PIVOT은 행의 범주값을 열로 펼치면서 집계하고, UNPIVOT은 열을 행으로 바꾼다. 집계 단위가 예상과 다를 때 데이터가 여러 행으로 나뉘므로 그룹 기준을 확인한다.",
+    "steps": [
+      "원본에서 행 구분 열과 열로 펼칠 범주 열을 나눈다.",
+      "범주값 A/B에 해당하는 열을 만든다.",
+      "각 구분별 집계값을 새 열에 채운다."
+    ],
+    "tables": [
+      {
+        "name": "SALES",
+        "columns": [
+          "team",
+          "kind",
+          "amount"
+        ],
+        "rows": [
+          [
+            "T1",
+            "A",
+            10
+          ],
+          [
+            "T1",
+            "B",
+            20
+          ],
+          [
+            "T2",
+            "A",
+            5
+          ]
+        ]
+      }
+    ],
+    "sql": "SELECT team, SUM(CASE WHEN kind='A' THEN amount END) AS a, SUM(CASE WHEN kind='B' THEN amount END) AS b FROM SALES GROUP BY team ORDER BY team; -- PIVOT을 조건부 집계로 표현",
+    "output": {
+      "columns": [
+        "team",
+        "a",
+        "b"
+      ],
+      "rows": [
+        [
+          "T1",
+          10,
+          20
+        ],
+        [
+          "T2",
+          5,
+          null
+        ]
+      ]
+    },
+    "trap": "Oracle PIVOT 문법과 조건부 집계는 표현은 달라도 여기서 같은 교차표를 만드는 방식으로 이해할 수 있다."
+  },
+  {
+    "id": "regex",
+    "chapter": "SQL 활용",
+    "title": "정규표현식: 문자 패턴 찾기",
+    "intro": "정규표현식은 문자의 시작·끝·반복 여부를 패턴으로 정의한다. ^는 시작, $는 끝, +는 1회 이상 반복, [0-9]는 숫자 하나에 대응한다.",
+    "steps": [
+      "찾고 싶은 문자의 위치 조건(^/$)을 먼저 확인한다.",
+      "범위([0-9], [A-Z])와 반복(+/*/?)을 분리해 읽는다.",
+      "각 값이 패턴 전체와 일치하는지 또는 일부만 일치해도 되는지 함수 정의를 확인한다."
+    ],
+    "tables": [
+      {
+        "name": "CODE",
+        "columns": [
+          "code"
+        ],
+        "rows": [
+          [
+            "A12"
+          ],
+          [
+            "B2"
+          ],
+          [
+            "A"
+          ],
+          [
+            "A990"
+          ]
+        ]
+      }
+    ],
+    "sql": "SELECT code FROM CODE WHERE REGEXP_LIKE(code, '^A[0-9]+$') ORDER BY code; -- Oracle 예시",
+    "output": {
+      "columns": [
+        "code"
+      ],
+      "rows": [
+        [
+          "A12"
+        ],
+        [
+          "A990"
+        ]
+      ]
+    },
+    "trap": "^A[0-9]+$는 A로 시작하고 이후 숫자가 하나 이상 있어야 한다. 단순히 A가 포함된 것과 다르다."
+  },
+  {
+    "id": "string",
+    "chapter": "SQL 기본",
+    "title": "문자·숫자 함수와 NULL 처리",
+    "intro": "문자 함수는 입력 문자열을 잘라내거나 대소문자를 변경하고, 숫자 함수는 반올림·올림·내림 등을 수행한다. 함수 인자 순서와 시작 위치는 DBMS별 문법을 구분한다.",
+    "steps": [
+      "SUBSTR는 시작 위치와 길이를 분리해 읽는다.",
+      "NULL을 다른 값으로 대체할 때 COALESCE는 첫 NULL이 아닌 값을 선택한다.",
+      "숫자 자리수에 따른 ROUND와 TRUNC의 동작을 비교한다."
+    ],
+    "tables": [
+      {
+        "name": "INPUT",
+        "columns": [
+          "text",
+          "n"
+        ],
+        "rows": [
+          [
+            "DATABASE",
+            12.56
+          ]
+        ]
+      }
+    ],
+    "sql": "SELECT SUBSTR(text,1,4) AS part, ROUND(n,1) AS rounded FROM INPUT; -- Oracle·호환 예시",
+    "output": {
+      "columns": [
+        "part",
+        "rounded"
+      ],
+      "rows": [
+        [
+          "DATA",
+          12.6
+        ]
+      ]
+    },
+    "trap": "SUBSTR(...,1,4)에서 1은 시작 위치이고 4는 길이다. 음수 위치나 소수점 처리에 대한 DBMS 차이도 확인한다."
+  },
+  {
+    "id": "datetime",
+    "chapter": "SQL 기본",
+    "title": "날짜 함수·형 변환",
+    "intro": "날짜는 텍스트와 달리 날짜·시간 자료형의 비교 및 연산 규칙을 따른다. 함수의 형식 지정자와 암묵적 변환을 구분하고, 날짜 범위 조건은 경계값까지 검토해야 한다.",
+    "steps": [
+      "입력 컬럼이 문자열인지 날짜형인지 확인한다.",
+      "필요하면 명시적 변환(TO_DATE 등)으로 비교 형태를 맞춘다.",
+      "날짜 시간 값을 포함한다면 종료 날짜 <= 조건보다 다음 날 미만 조건을 고려한다."
+    ],
+    "tables": [
+      {
+        "name": "EVENT",
+        "columns": [
+          "id",
+          "occurred_at"
+        ],
+        "rows": [
+          [
+            1,
+            "2026-11-01 13:00:00"
+          ],
+          [
+            2,
+            "2026-11-02 00:00:00"
+          ]
+        ]
+      }
+    ],
+    "sql": "SELECT id FROM EVENT WHERE occurred_at >= TIMESTAMP '2026-11-01 00:00:00' AND occurred_at < TIMESTAMP '2026-11-02 00:00:00';",
+    "output": {
+      "columns": [
+        "id"
+      ],
+      "rows": [
+        [
+          1
+        ]
+      ]
+    },
+    "trap": "종료 날짜의 00:00:00만 포함하는 조건은 해당 일의 나머지 시간을 놓칠 수 있다."
+  },
+  {
+    "id": "ddl",
+    "chapter": "관리 구문",
+    "title": "DDL·DCL과 트랜잭션",
+    "intro": "DDL은 구조 정의(CREATE·ALTER·DROP·TRUNCATE), DML은 데이터 변경, TCL은 트랜잭션 제어, DCL은 권한 제어(GRANT·REVOKE)로 구분한다. DBMS별 DDL 커밋 동작은 다르다.",
+    "steps": [
+      "변경 대상이 구조인지 데이터인지 판정한다.",
+      "트랜잭션 중 SAVEPOINT/COMMIT/ROLLBACK 위치를 기록한다.",
+      "Oracle에서 DDL의 암묵적 COMMIT 효과를 검토한다."
+    ],
+    "tables": [
+      {
+        "name": "ACCOUNT (초기)",
+        "columns": [
+          "id",
+          "balance"
+        ],
+        "rows": [
+          [
+            1,
+            100
+          ]
+        ]
+      }
+    ],
+    "sql": "UPDATE ACCOUNT SET balance=120 WHERE id=1; SAVEPOINT s1; UPDATE ACCOUNT SET balance=80 WHERE id=1; ROLLBACK TO s1; COMMIT;",
+    "output": {
+      "columns": [
+        "id",
+        "balance (최종)"
+      ],
+      "rows": [
+        [
+          1,
+          120
+        ]
+      ]
+    },
+    "trap": "SAVEPOINT s1 이후 변경만 되돌리므로 최종 값은 120이다. Oracle DDL과 일반적인 DML 트랜잭션을 동일하게 가정하지 않는다."
+  },
+  {
+    "id": "groupings",
+    "chapter": "SQL 활용",
+    "title": "GROUPING SETS·소계 레벨",
+    "intro": "ROLLUP과 CUBE는 정해진 집계 수준의 약식 표현이고, GROUPING SETS는 원하는 집계 조합을 직접 열거할 수 있다. NULL이 원본 NULL인지 소계 표시인지 구별하는 GROUPING 함수도 함께 이해하자.",
+    "steps": [
+      "집계 수준을 먼저 괄호 단위로 적는다.",
+      "각 수준에서 고유 그룹 수를 계산한다.",
+      "중복되는 행값처럼 보여도 집계 수준이 다른 결과를 구분한다."
+    ],
+    "tables": [
+      {
+        "name": "SALES",
+        "columns": [
+          "region",
+          "kind",
+          "amount"
+        ],
+        "rows": [
+          [
+            "A",
+            "X",
+            10
+          ],
+          [
+            "A",
+            "Y",
+            20
+          ],
+          [
+            "B",
+            "X",
+            30
+          ]
+        ]
+      }
+    ],
+    "sql": "SELECT region, kind, SUM(amount) FROM SALES GROUP BY GROUPING SETS ((region),(kind));",
+    "output": {
+      "columns": [
+        "region",
+        "kind",
+        "sum"
+      ],
+      "rows": [
+        [
+          "A",
+          null,
+          30
+        ],
+        [
+          "B",
+          null,
+          30
+        ],
+        [
+          null,
+          "X",
+          40
+        ],
+        [
+          null,
+          "Y",
+          20
+        ]
+      ]
+    },
+    "trap": "(region,kind) 조합별 집계는 요청하지 않았다. 결과 정렬은 ORDER BY가 없으면 보장되지 않는다."
+  }
+]

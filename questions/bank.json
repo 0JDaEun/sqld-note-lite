@@ -1,0 +1,5781 @@
+[
+  {
+    "id": "qv3_0001",
+    "subject": "데이터 모델링",
+    "topic": "model_entity",
+    "topic_label": "엔터티·속성",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL 중심",
+    "stem": "엔터티를 정의할 때 가장 적절한 기준은?",
+    "choices": [
+      "반드시 화면 하나와 1:1로 대응한다",
+      "업무에서 관리할 독립적인 대상이며 속성과 인스턴스가 존재한다",
+      "항상 물리적으로 존재하는 사물이어야 한다",
+      "하나의 인스턴스만 존재해야 한다"
+    ],
+    "answer": 1,
+    "explanation": "엔터티는 업무상 관리 대상이고 식별 가능한 인스턴스가 있어야 한다. 반드시 실물 객체일 필요는 없으며 추상적 업무 사건도 엔터티가 된다.",
+    "option_explanations": [],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [],
+    "verified": true
+  },
+  {
+    "id": "qv3_0002",
+    "subject": "데이터 모델링",
+    "topic": "model_entity",
+    "topic_label": "엔터티·속성",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL 중심",
+    "stem": "주문 상세의 수량, 단가 중 일반적으로 속성에 해당하는 것은?",
+    "choices": [
+      "수량은 관계, 단가는 엔터티다",
+      "수량은 식별자만 될 수 있다",
+      "수량과 단가 모두 속성이다",
+      "둘 다 엔터티다"
+    ],
+    "answer": 2,
+    "explanation": "수량과 단가는 주문상세 인스턴스가 가지는 특성값이므로 속성이다. 엔터티는 주문상세 같은 관리 대상이다.",
+    "option_explanations": [],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [],
+    "verified": true
+  },
+  {
+    "id": "qv3_0003",
+    "subject": "데이터 모델링",
+    "topic": "model_entity",
+    "topic_label": "엔터티·속성",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL 중심",
+    "stem": "회원 한 명을 나타내는 특정 데이터 행은 무엇인가?",
+    "choices": [
+      "외부 스키마",
+      "엔터티 유형",
+      "관계 차수",
+      "엔터티 인스턴스"
+    ],
+    "answer": 3,
+    "explanation": "회원 엔터티에서 회원 번호가 특정한 하나의 실제 데이터 행은 인스턴스다. 엔터티 유형은 전체 집합을 의미한다.",
+    "option_explanations": [],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [],
+    "verified": true
+  },
+  {
+    "id": "qv3_0004",
+    "subject": "데이터 모델링",
+    "topic": "model_entity",
+    "topic_label": "엔터티·속성",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL 중심",
+    "stem": "파생 속성에 해당하는 대표적인 예는?",
+    "choices": [
+      "수량과 단가로 계산한 주문 금액",
+      "출생일 원본 값",
+      "회원 고유 번호",
+      "상품명 입력값"
+    ],
+    "answer": 0,
+    "explanation": "파생 속성은 다른 속성으로부터 계산되어 얻는다. 주문 금액은 수량 × 단가라는 계산 결과다.",
+    "option_explanations": [],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [],
+    "verified": true
+  },
+  {
+    "id": "qv3_0005",
+    "subject": "데이터 모델링",
+    "topic": "model_relation",
+    "topic_label": "ERD·관계",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL 중심",
+    "stem": "고객이 주문을 0건 이상 할 수 있다면 고객의 주문 참여는?",
+    "choices": [
+      "필수적이며 정확히 하나",
+      "선택적이며 최대 다수 가능",
+      "필수적이며 최대 하나",
+      "선택적이며 반드시 하나"
+    ],
+    "answer": 1,
+    "explanation": "0건도 가능하면 최소 참여 수가 0인 선택 관계다. 주문을 여러 건 생성할 수 있으므로 최대 참여 수는 다수다.",
+    "option_explanations": [],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [],
+    "verified": true
+  },
+  {
+    "id": "qv3_0006",
+    "subject": "데이터 모델링",
+    "topic": "model_relation",
+    "topic_label": "ERD·관계",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL 중심",
+    "stem": "N:M 관계를 관계형 테이블로 구현하는 일반적인 방법은?",
+    "choices": [
+      "두 테이블을 무조건 하나로 합친다",
+      "양쪽에 임의의 중복 컬럼만 추가한다",
+      "두 엔터티 사이에 연결 엔터티를 만든다",
+      "한쪽 PK를 삭제한다"
+    ],
+    "answer": 2,
+    "explanation": "다대다 관계는 두 쪽의 외래키를 가진 연결(교차) 엔터티로 분해하는 것이 일반적이다.",
+    "option_explanations": [],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [],
+    "verified": true
+  },
+  {
+    "id": "qv3_0007",
+    "subject": "데이터 모델링",
+    "topic": "model_relation",
+    "topic_label": "ERD·관계",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL 중심",
+    "stem": "고객과 주문의 1:N 관계에서 N 쪽은?",
+    "choices": [
+      "구분할 수 없다",
+      "고객",
+      "항상 동일하다",
+      "주문"
+    ],
+    "answer": 3,
+    "explanation": "고객 1명은 주문 여러 건을 가질 수 있지만, 보통 개별 주문은 한 고객에 속한다. 그래서 주문이 N 쪽이다.",
+    "option_explanations": [],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [],
+    "verified": true
+  },
+  {
+    "id": "qv3_0008",
+    "subject": "데이터 모델링",
+    "topic": "model_relation",
+    "topic_label": "ERD·관계",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL 중심",
+    "stem": "관계의 선택성(optional)을 나타내는 정보는?",
+    "choices": [
+      "최소 참여 수가 0인지 1인지",
+      "인덱스 페이지 크기",
+      "컬럼의 물리적 저장 순서",
+      "현재 데이터 행 개수"
+    ],
+    "answer": 0,
+    "explanation": "선택성은 관계에 반드시 참여해야 하는지 나타내는 최소 수(0 또는 1)와 관련된다.",
+    "option_explanations": [],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [],
+    "verified": true
+  },
+  {
+    "id": "qv3_0009",
+    "subject": "데이터 모델링",
+    "topic": "model_key",
+    "topic_label": "식별자·키",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL 중심",
+    "stem": "다음 중 후보키에 반드시 필요한 속성은?",
+    "choices": [
+      "가변성과 중복성",
+      "유일성과 최소성",
+      "NULL 허용과 중복성",
+      "인덱스 존재와 오름차순 정렬"
+    ],
+    "answer": 1,
+    "explanation": "후보키는 각 행을 고유 식별하고 유일성을 유지하는 데 불필요한 속성을 포함하지 않아야 한다.",
+    "option_explanations": [],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [],
+    "verified": true
+  },
+  {
+    "id": "qv3_0010",
+    "subject": "데이터 모델링",
+    "topic": "model_key",
+    "topic_label": "식별자·키",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL 중심",
+    "stem": "기본키로 선택되지 않은 후보키는?",
+    "choices": [
+      "복합키만 가능",
+      "파생키",
+      "대체키",
+      "외래키"
+    ],
+    "answer": 2,
+    "explanation": "모든 후보키 중 선택된 하나가 기본키, 선택되지 않은 나머지 후보키는 대체키다.",
+    "option_explanations": [],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [],
+    "verified": true
+  },
+  {
+    "id": "qv3_0011",
+    "subject": "데이터 모델링",
+    "topic": "model_key",
+    "topic_label": "식별자·키",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL 중심",
+    "stem": "식별 관계를 가장 잘 설명한 것은?",
+    "choices": [
+      "외래키는 PK 밖에만 존재한다",
+      "자식의 FK가 반드시 NULL이다",
+      "부모 엔터티가 두 개 이상이다",
+      "부모의 식별자가 자식 기본키의 일부로 포함된다"
+    ],
+    "answer": 3,
+    "explanation": "식별 관계는 부모 식별자 값이 자식 기본키를 구성한다. FK가 자식 PK 밖에 있으면 비식별 관계다.",
+    "option_explanations": [],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [],
+    "verified": true
+  },
+  {
+    "id": "qv3_0012",
+    "subject": "데이터 모델링",
+    "topic": "model_key",
+    "topic_label": "식별자·키",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL 중심",
+    "stem": "비식별 관계에서 FK의 위치는?",
+    "choices": [
+      "자식 테이블의 PK에 포함되지 않는다",
+      "항상 고유 제약이 된다",
+      "반드시 자식 PK 전체가 된다",
+      "참조 무결성 검사를 할 수 없다"
+    ],
+    "answer": 0,
+    "explanation": "비식별 관계도 FK를 사용하지만 그 FK는 자식 PK를 구성하지 않는다. NULL 가능 여부는 별도 업무 규칙이다.",
+    "option_explanations": [],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [],
+    "verified": true
+  },
+  {
+    "id": "qv3_0013",
+    "subject": "데이터 모델링",
+    "topic": "model_normal",
+    "topic_label": "정규화",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL 중심",
+    "stem": "1NF 위반 사례로 가장 적절한 것은?",
+    "choices": [
+      "하나의 열에 전화번호 한 개 저장",
+      "하나의 열에 여러 전화번호를 쉼표로 저장",
+      "PK를 숫자형으로 저장",
+      "테이블에 FK가 존재"
+    ],
+    "answer": 1,
+    "explanation": "1NF는 속성값의 원자성을 요구한다. 한 칸에 반복 전화번호 목록을 넣으면 원자값을 벗어날 수 있다.",
+    "option_explanations": [],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [],
+    "verified": true
+  },
+  {
+    "id": "qv3_0014",
+    "subject": "데이터 모델링",
+    "topic": "model_normal",
+    "topic_label": "정규화",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL 중심",
+    "stem": "복합 후보키 (주문번호, 상품번호)에서 주문날짜가 주문번호에만 종속된다면?",
+    "choices": [
+      "4NF 위반만 가능",
+      "정규화와 관련 없음",
+      "부분 함수 종속이므로 2NF 검토 대상",
+      "이행적 종속만 발생"
+    ],
+    "answer": 2,
+    "explanation": "복합키의 일부인 주문번호만으로 주문날짜가 결정되므로 부분 함수 종속이다. 2NF는 이런 비주요 속성의 부분 종속을 제거한다.",
+    "option_explanations": [],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [],
+    "verified": true
+  },
+  {
+    "id": "qv3_0015",
+    "subject": "데이터 모델링",
+    "topic": "model_normal",
+    "topic_label": "정규화",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL 중심",
+    "stem": "직원번호→부서번호→부서이름에서 부서이름의 의존성을 개선하려면?",
+    "choices": [
+      "부서번호를 중복해 더 저장",
+      "모든 열을 하나의 PK로 합침",
+      "직원번호를 NULL로 설정",
+      "부서 테이블을 분리하여 이행적 종속 제거"
+    ],
+    "answer": 3,
+    "explanation": "직원번호가 부서번호를 결정하고, 부서번호가 부서이름을 결정한다. 부서 정보를 분리하면 이행적 종속으로 인한 갱신 이상을 줄일 수 있다.",
+    "option_explanations": [],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [],
+    "verified": true
+  },
+  {
+    "id": "qv3_0016",
+    "subject": "데이터 모델링",
+    "topic": "model_normal",
+    "topic_label": "정규화",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL 중심",
+    "stem": "정규화를 적용하는 대표적인 이유는?",
+    "choices": [
+      "중복 및 삽입·삭제·갱신 이상을 줄이기 위해",
+      "조인을 100% 제거하기 위해",
+      "모든 쿼리가 항상 빨라지도록",
+      "테이블을 반드시 하나로 만들기 위해"
+    ],
+    "answer": 0,
+    "explanation": "정규화는 데이터 중복과 이상 현상을 완화한다. 조인이 증가할 수 있어 성능 최적화와는 별도의 판단이 필요하다.",
+    "option_explanations": [],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [],
+    "verified": true
+  },
+  {
+    "id": "qv3_0017",
+    "subject": "데이터 모델링",
+    "topic": "model_normal",
+    "topic_label": "정규화",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL 중심",
+    "stem": "반정규화의 목적에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "무조건 데이터 품질을 높인다",
+      "특정 조회 성능 개선을 위해 의도적 중복을 허용할 수 있다",
+      "모든 무결성 검사를 없앤다",
+      "정규화 이전 단계만 가리킨다"
+    ],
+    "answer": 1,
+    "explanation": "반정규화는 검증된 조회 성능 요구에 대응해 중복을 도입하는 설계다. 대신 일관성 관리 비용이 커질 수 있다.",
+    "option_explanations": [],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [],
+    "verified": true
+  },
+  {
+    "id": "qv3_0018",
+    "subject": "데이터 모델링",
+    "topic": "model_schema",
+    "topic_label": "3단계 스키마",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL 중심",
+    "stem": "외부 스키마가 표현하는 것은?",
+    "choices": [
+      "전체 DBMS 설치 경로",
+      "오직 인덱스 구조",
+      "사용자·응용 프로그램별 데이터 관점",
+      "물리 파일 배치"
+    ],
+    "answer": 2,
+    "explanation": "외부 스키마는 사용자별 요구에 맞는 데이터 관점이며, 개념 스키마는 전체 논리 구조다.",
+    "option_explanations": [],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [],
+    "verified": true
+  },
+  {
+    "id": "qv3_0019",
+    "subject": "데이터 모델링",
+    "topic": "model_schema",
+    "topic_label": "3단계 스키마",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL 중심",
+    "stem": "논리적 데이터 독립성의 대표 사례는?",
+    "choices": [
+      "SELECT를 작성하지 않아도 된다",
+      "디스크를 교체해도 파일을 옮기지 않는다",
+      "인덱스 변경만 가능하다",
+      "개념 스키마 변경에도 외부 뷰를 유지할 수 있다"
+    ],
+    "answer": 3,
+    "explanation": "논리적 독립성은 개념 스키마가 달라져도 외부 스키마와 응용 프로그램 영향을 줄이는 능력이다.",
+    "option_explanations": [],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [],
+    "verified": true
+  },
+  {
+    "id": "qv3_0020",
+    "subject": "데이터 모델링",
+    "topic": "model_schema",
+    "topic_label": "3단계 스키마",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL 중심",
+    "stem": "물리적 데이터 독립성에 해당하는 사례는?",
+    "choices": [
+      "인덱스를 새로 만들어도 논리 테이블 구조는 유지된다",
+      "외부 뷰의 열 이름을 변경한다",
+      "업무 규칙을 변경해 엔터티를 추가한다",
+      "관계 차수를 재설계한다"
+    ],
+    "answer": 0,
+    "explanation": "물리적 독립성은 저장 구조 또는 인덱스 변경이 개념적 논리 구조에 영향을 주지 않도록 한다.",
+    "option_explanations": [],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [],
+    "verified": true
+  },
+  {
+    "id": "qv3_0021",
+    "subject": "데이터 모델링",
+    "topic": "model_schema",
+    "topic_label": "3단계 스키마",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL 중심",
+    "stem": "3단계 스키마에서 데이터베이스 전체의 통합 논리 구조는?",
+    "choices": [
+      "외부 스키마",
+      "개념 스키마",
+      "내부 스키마",
+      "파일 시스템"
+    ],
+    "answer": 1,
+    "explanation": "개념 스키마는 전체 데이터베이스의 논리적 구조를 정의한다. 내부 스키마는 물리 저장 방식이다.",
+    "option_explanations": [],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [],
+    "verified": true
+  },
+  {
+    "id": "qv3_0022",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_join",
+    "topic_label": "JOIN",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL 중심",
+    "stem": "INNER JOIN에서 키가 일치하는 A 행이 3개, B 행이 2개이면 해당 키의 결과 행 수는?",
+    "choices": [
+      "3행",
+      "5행",
+      "6행",
+      "2행"
+    ],
+    "answer": 2,
+    "explanation": "조인 결과는 두 테이블에서 일치하는 행의 모든 조합으로 구성된다. 3×2=6행이다.",
+    "option_explanations": [],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [],
+    "verified": true
+  },
+  {
+    "id": "qv3_0023",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_join",
+    "topic_label": "JOIN",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL 중심",
+    "stem": "LEFT JOIN 이후 WHERE B.status = 1을 적용하면 무슨 일이 일어날 수 있는가?",
+    "choices": [
+      "NULL이 TRUE로 변경된다",
+      "왼쪽 행은 조건과 무관하게 모두 보존된다",
+      "항상 CROSS JOIN으로 변경된다",
+      "매칭 없는 왼쪽 행이 제거될 수 있다"
+    ],
+    "answer": 3,
+    "explanation": "LEFT JOIN으로 생성된 NULL 확장 행에서 B.status=1은 UNKNOWN이 되므로 WHERE에서 제거된다.",
+    "option_explanations": [],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [],
+    "verified": true
+  },
+  {
+    "id": "qv3_0024",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_join",
+    "topic_label": "JOIN",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL 중심",
+    "stem": "FULL OUTER JOIN의 일반적인 설명은?",
+    "choices": [
+      "양쪽의 미매칭 행까지 포함한다",
+      "오른쪽 미매칭 행만 남긴다",
+      "왼쪽 미매칭 행만 남긴다",
+      "일치하는 행만 남긴다"
+    ],
+    "answer": 0,
+    "explanation": "FULL OUTER JOIN은 양쪽의 일치 행과 매칭되지 않는 양쪽 행을 모두 보존한다.",
+    "option_explanations": [],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [],
+    "verified": true
+  },
+  {
+    "id": "qv3_0025",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_join",
+    "topic_label": "JOIN",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL 중심",
+    "stem": "CROSS JOIN의 기본 동작은?",
+    "choices": [
+      "PK 기준 자동 매칭",
+      "양쪽 행의 데카르트 곱 생성",
+      "중복을 무조건 제거",
+      "일치하지 않는 행만 반환"
+    ],
+    "answer": 1,
+    "explanation": "CROSS JOIN은 별도 매칭 조건 없이 모든 행 조합을 생성한다. A 2행, B 4행이라면 8행이 된다.",
+    "option_explanations": [],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [],
+    "verified": true
+  },
+  {
+    "id": "qv3_0026",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_null",
+    "topic_label": "NULL·3값 논리",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL 중심",
+    "stem": "NULL = NULL의 SQL 3값 논리 평가 결과는?",
+    "choices": [
+      "FALSE",
+      "0이라는 정수",
+      "UNKNOWN",
+      "TRUE"
+    ],
+    "answer": 2,
+    "explanation": "NULL은 알 수 없는 값이므로 일반 비교 결과가 UNKNOWN이다. NULL 여부는 IS NULL을 사용한다.",
+    "option_explanations": [],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [],
+    "verified": true
+  },
+  {
+    "id": "qv3_0027",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_null",
+    "topic_label": "NULL·3값 논리",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL 중심",
+    "stem": "WHERE 컬럼 <> 10에서 컬럼 값이 NULL이면?",
+    "choices": [
+      "자동으로 0으로 변환된다",
+      "TRUE로 처리되어 포함된다",
+      "FALSE지만 출력된다",
+      "UNKNOWN이 되어 행이 제외된다"
+    ],
+    "answer": 3,
+    "explanation": "NULL <> 10은 UNKNOWN이며 WHERE는 TRUE인 행만 통과시킨다.",
+    "option_explanations": [],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [],
+    "verified": true
+  },
+  {
+    "id": "qv3_0028",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_null",
+    "topic_label": "NULL·3값 논리",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL 중심",
+    "stem": "NOT IN 목록에 NULL이 포함되면 주의해야 하는 이유는?",
+    "choices": [
+      "TRUE가 되지 않는 비교가 발생할 수 있다",
+      "자동으로 NOT EXISTS와 동일하다",
+      "항상 NULL 자체만 제거된다",
+      "NULL은 반드시 0으로 바뀐다"
+    ],
+    "answer": 0,
+    "explanation": "일반 값과 NULL의 비교가 UNKNOWN이 되어 NOT IN 조건 전체가 TRUE가 아닐 수 있다. 빈 집합 등의 경계 사례는 별도다.",
+    "option_explanations": [],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [],
+    "verified": true
+  },
+  {
+    "id": "qv3_0029",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_null",
+    "topic_label": "NULL·3값 논리",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL 중심",
+    "stem": "IS NOT NULL 조건이 TRUE인 값은?",
+    "choices": [
+      "NULL",
+      "0",
+      "미정의 값",
+      "NULL과 0 둘 다"
+    ],
+    "answer": 1,
+    "explanation": "0은 실제 숫자 값이므로 NULL이 아니다. IS NOT NULL은 값이 존재하는지를 검사한다.",
+    "option_explanations": [],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [],
+    "verified": true
+  },
+  {
+    "id": "qv3_0030",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_group",
+    "topic_label": "GROUP BY·집계",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL 중심",
+    "stem": "COUNT(*)와 COUNT(컬럼)의 핵심 차이는?",
+    "choices": [
+      "둘 다 항상 동일하다",
+      "COUNT(컬럼)은 중복을 자동 제거한다",
+      "COUNT(컬럼)은 NULL을 제외한다",
+      "COUNT(*)는 NULL이 있는 행을 모두 제외한다"
+    ],
+    "answer": 2,
+    "explanation": "COUNT(*)는 조건에 해당하는 모든 행을 세며 COUNT(컬럼)은 해당 컬럼의 NULL이 아닌 값만 센다.",
+    "option_explanations": [],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [],
+    "verified": true
+  },
+  {
+    "id": "qv3_0031",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_group",
+    "topic_label": "GROUP BY·집계",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL 중심",
+    "stem": "WHERE와 HAVING의 적용 단계는?",
+    "choices": [
+      "WHERE는 집계 결과만 검사",
+      "HAVING 후에 WHERE",
+      "둘 다 SELECT 이후",
+      "WHERE는 그룹 생성 전, HAVING은 그룹 생성 후"
+    ],
+    "answer": 3,
+    "explanation": "WHERE는 개별 행을 먼저 거르고 HAVING은 그룹화된 결과에 조건을 적용한다.",
+    "option_explanations": [],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [],
+    "verified": true
+  },
+  {
+    "id": "qv3_0032",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_group",
+    "topic_label": "GROUP BY·집계",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL 중심",
+    "stem": "COUNT(DISTINCT dept)의 의미는?",
+    "choices": [
+      "NULL 제외 서로 다른 dept 값의 수",
+      "NULL 행만 세는 수",
+      "모든 행 수",
+      "중복을 포함한 dept 값의 수"
+    ],
+    "answer": 0,
+    "explanation": "COUNT(DISTINCT col)은 NULL이 아닌 서로 다른 값의 개수를 센다.",
+    "option_explanations": [],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [],
+    "verified": true
+  },
+  {
+    "id": "qv3_0033",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_group",
+    "topic_label": "GROUP BY·집계",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL 중심",
+    "stem": "SUM(col)과 COUNT(col)의 공통 NULL 처리 특징은?",
+    "choices": [
+      "NULL을 모두 0으로 치환한다",
+      "NULL인 입력은 집계 대상에서 제외된다",
+      "집계 함수는 NULL을 만나면 무조건 오류다",
+      "NULL 행을 별도 그룹으로 만든다"
+    ],
+    "answer": 1,
+    "explanation": "COUNT(col)과 SUM(col)은 NULL 값을 집계 계산에서 제외한다. 단 빈 입력·모든 값 NULL에서는 SUM은 NULL, COUNT는 0이다.",
+    "option_explanations": [],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [],
+    "verified": true
+  },
+  {
+    "id": "qv3_0034",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_subquery",
+    "topic_label": "서브쿼리",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL 중심",
+    "stem": "EXISTS 서브쿼리가 판단하는 핵심은?",
+    "choices": [
+      "첫 행의 첫 열만 숫자 비교",
+      "항상 정렬된 순서",
+      "서브쿼리 결과 행의 존재 여부",
+      "SELECT 목록의 합계"
+    ],
+    "answer": 2,
+    "explanation": "EXISTS는 서브쿼리가 한 행 이상 반환하는지를 검사한다. SELECT 목록 자체의 값은 존재 판정의 핵심이 아니다.",
+    "option_explanations": [],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [],
+    "verified": true
+  },
+  {
+    "id": "qv3_0035",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_subquery",
+    "topic_label": "서브쿼리",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL 중심",
+    "stem": "스칼라 서브쿼리의 일반적인 반환 요구는?",
+    "choices": [
+      "정렬된 전체 테이블",
+      "반드시 두 행",
+      "무조건 여러 열",
+      "한 행 한 열의 값"
+    ],
+    "answer": 3,
+    "explanation": "스칼라 위치에 사용되는 서브쿼리는 하나의 값으로 평가되어야 한다. 여러 행 반환 시 오류가 날 수 있다.",
+    "option_explanations": [],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [],
+    "verified": true
+  },
+  {
+    "id": "qv3_0036",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_subquery",
+    "topic_label": "서브쿼리",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL 중심",
+    "stem": "상관 서브쿼리의 핵심 특징은?",
+    "choices": [
+      "바깥쪽 쿼리의 컬럼을 참조한다",
+      "반드시 JOIN보다 빠르다",
+      "바깥쪽 쿼리와 데이터를 교환할 수 없다",
+      "항상 결과가 0행이다"
+    ],
+    "answer": 0,
+    "explanation": "상관 서브쿼리는 외부 행의 값을 조건에 사용한다. DBMS는 실행을 최적화할 수 있으므로 실제 반복 실행 방식은 단순화하면 안 된다.",
+    "option_explanations": [],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [],
+    "verified": true
+  },
+  {
+    "id": "qv3_0037",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_subquery",
+    "topic_label": "서브쿼리",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL 중심",
+    "stem": "ANY와 ALL 비교 중 x > ALL(서브쿼리)의 의미는?",
+    "choices": [
+      "하나의 값보다만 크면 된다",
+      "서브쿼리의 모든 반환값보다 커야 한다",
+      "가장 작은 값보다만 크면 된다",
+      "모든 값과 같아야 한다"
+    ],
+    "answer": 1,
+    "explanation": "> ALL은 비교 집합의 모든 값에 대해 조건이 참이어야 한다. NULL과 빈 집합일 때는 3값 논리를 별도 고려한다.",
+    "option_explanations": [],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [],
+    "verified": true
+  },
+  {
+    "id": "qv3_0038",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_order",
+    "topic_label": "정렬·TOP-N",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL 중심",
+    "stem": "ORDER BY 없이 LIMIT 또는 FETCH를 사용하면?",
+    "choices": [
+      "삽입 순서가 언제나 유지",
+      "항상 전체 행을 반환",
+      "어떤 행이 선택될지 안정적으로 보장하지 못한다",
+      "기본키 순서로 항상 반환"
+    ],
+    "answer": 2,
+    "explanation": "정렬을 명시하지 않으면 행 순서를 보장할 수 없다. 페이징은 고유한 정렬 키를 포함하는 편이 안전하다.",
+    "option_explanations": [],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [],
+    "verified": true
+  },
+  {
+    "id": "qv3_0039",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_order",
+    "topic_label": "정렬·TOP-N",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL 중심",
+    "stem": "ORDER BY score DESC에서 동점 행의 안정적 정렬을 위해 추가할 것은?",
+    "choices": [
+      "GROUP BY만 추가",
+      "LIMIT을 제거하지 않으면 불가능",
+      "WHERE score IS NULL만 추가",
+      "고유한 id 컬럼을 두 번째 정렬 키로 지정"
+    ],
+    "answer": 3,
+    "explanation": "동점이 있는 정렬 조건에 PK 등 고유 키를 추가하면 페이지 경계의 결과를 안정적으로 결정할 수 있다.",
+    "option_explanations": [],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [],
+    "verified": true
+  },
+  {
+    "id": "qv3_0040",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_order",
+    "topic_label": "정렬·TOP-N",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL 중심",
+    "stem": "FETCH FIRST 2 ROWS WITH TIES가 의미하는 것은?",
+    "choices": [
+      "2번째 행과 같은 정렬값의 추가 행도 포함한다",
+      "처음 2개의 컬럼을 반환한다",
+      "항상 정확히 2행만 반환한다",
+      "ORDER BY가 필요 없다"
+    ],
+    "answer": 0,
+    "explanation": "WITH TIES는 지정 행 수의 경계에서 같은 정렬값을 가진 행들을 함께 포함하므로 2행을 초과할 수 있다.",
+    "option_explanations": [],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [],
+    "verified": true
+  },
+  {
+    "id": "qv3_0041",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_order",
+    "topic_label": "정렬·TOP-N",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL 중심",
+    "stem": "Oracle ROWNUM의 일반적인 주의점은?",
+    "choices": [
+      "항상 ORDER BY 이후에만 부여된다",
+      "같은 SELECT의 ORDER BY보다 먼저 부여될 수 있다",
+      "ROWNUM은 문자열 함수다",
+      "ROWNUM이 1부터 시작하지 않는다"
+    ],
+    "answer": 1,
+    "explanation": "Oracle ROWNUM은 행이 선택되면서 부여되며 같은 SELECT의 ORDER BY와 조합하면 원하는 상위 N이 아닐 수 있다. 인라인 뷰 등을 사용한다.",
+    "option_explanations": [],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [],
+    "verified": true
+  },
+  {
+    "id": "qv3_0042",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_dml",
+    "topic_label": "DML·TCL·DDL·DCL",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL 중심",
+    "stem": "SAVEPOINT s1 후 변경을 하고 ROLLBACK TO s1 하면?",
+    "choices": [
+      "s1 이전 변경만 취소",
+      "즉시 자동 COMMIT",
+      "s1 이후 변경만 되돌린다",
+      "항상 전체 트랜잭션 취소"
+    ],
+    "answer": 2,
+    "explanation": "ROLLBACK TO SAVEPOINT는 지정 시점 이후의 작업을 되돌리고 그 이전 미확정 작업은 남긴다.",
+    "option_explanations": [],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [],
+    "verified": true
+  },
+  {
+    "id": "qv3_0043",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_dml",
+    "topic_label": "DML·TCL·DDL·DCL",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL 중심",
+    "stem": "COMMIT이 수행하는 작업은?",
+    "choices": [
+      "조회 결과만 정렬한다",
+      "새 테이블을 만든다",
+      "모든 테이블을 삭제한다",
+      "트랜잭션의 변경을 확정한다"
+    ],
+    "answer": 3,
+    "explanation": "COMMIT은 현재 트랜잭션에서 일어난 변경 사항을 확정하여 영구 반영한다.",
+    "option_explanations": [],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [],
+    "verified": true
+  },
+  {
+    "id": "qv3_0044",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_dml",
+    "topic_label": "DML·TCL·DDL·DCL",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL 중심",
+    "stem": "다음 중 DDL로 분류되는 구문은?",
+    "choices": [
+      "CREATE TABLE",
+      "ROLLBACK",
+      "UPDATE",
+      "GRANT"
+    ],
+    "answer": 0,
+    "explanation": "CREATE TABLE은 구조를 정의하는 DDL이다. UPDATE는 DML, ROLLBACK은 TCL, GRANT는 DCL이다.",
+    "option_explanations": [],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [],
+    "verified": true
+  },
+  {
+    "id": "qv3_0045",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_dml",
+    "topic_label": "DML·TCL·DDL·DCL",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL 중심",
+    "stem": "GRANT SELECT ON T TO U가 하는 일은?",
+    "choices": [
+      "U의 권한을 회수한다",
+      "U 사용자에게 T의 조회 권한을 부여한다",
+      "T를 삭제한다",
+      "T를 자동 백업한다"
+    ],
+    "answer": 1,
+    "explanation": "GRANT는 객체에 대한 권한을 부여하는 DCL이다. 권한 회수는 REVOKE를 사용한다.",
+    "option_explanations": [],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [],
+    "verified": true
+  },
+  {
+    "id": "qv3_0046",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_dml",
+    "topic_label": "DML·TCL·DDL·DCL",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL 중심",
+    "stem": "Oracle에서 TRUNCATE TABLE의 대표적 특징은?",
+    "choices": [
+      "항상 WHERE를 사용한다",
+      "순수 SELECT 구문이다",
+      "DDL로 취급되어 일반 ROLLBACK으로 취소하기 어렵다",
+      "행마다 트리거를 반드시 실행한다"
+    ],
+    "answer": 2,
+    "explanation": "Oracle의 TRUNCATE는 DDL이며 암묵적 COMMIT과 관련된다. 실행 후 일반적인 ROLLBACK으로 되돌릴 수 없다.",
+    "option_explanations": [],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [],
+    "verified": true
+  },
+  {
+    "id": "qv3_0047",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_window",
+    "topic_label": "윈도우 함수",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL 중심",
+    "stem": "RANK 순위가 1,1 다음으로 이어질 때 순위는?",
+    "choices": [
+      "4",
+      "2",
+      "1",
+      "3"
+    ],
+    "answer": 3,
+    "explanation": "RANK는 동점 수만큼 다음 순위를 건너뛴다. 1위 동점 2명이면 다음 순위는 3이다.",
+    "option_explanations": [],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [],
+    "verified": true
+  },
+  {
+    "id": "qv3_0048",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_window",
+    "topic_label": "윈도우 함수",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL 중심",
+    "stem": "DENSE_RANK에서 동점 1,1 다음 순위는?",
+    "choices": [
+      "2",
+      "4",
+      "3",
+      "1"
+    ],
+    "answer": 0,
+    "explanation": "DENSE_RANK는 동점 뒤 순위를 건너뛰지 않는다. 따라서 1,1 다음은 2다.",
+    "option_explanations": [],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [],
+    "verified": true
+  },
+  {
+    "id": "qv3_0049",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_window",
+    "topic_label": "윈도우 함수",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL 중심",
+    "stem": "ROW_NUMBER()의 동점 처리 특징은?",
+    "choices": [
+      "동점이면 같은 번호가 된다",
+      "동점이라도 각 행에 서로 다른 번호를 준다",
+      "동점이면 행을 제거한다",
+      "모든 행 번호가 0이다"
+    ],
+    "answer": 1,
+    "explanation": "ROW_NUMBER는 순서대로 서로 다른 번호를 할당한다. 동점의 순서를 안정적으로 정하려면 ORDER BY에 고유 키를 추가한다.",
+    "option_explanations": [],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [],
+    "verified": true
+  },
+  {
+    "id": "qv3_0050",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_window",
+    "topic_label": "윈도우 함수",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL 중심",
+    "stem": "LAG(salary) OVER(ORDER BY id)의 역할은?",
+    "choices": [
+      "전체 행 합계",
+      "salary 값 중복 제거",
+      "현재 행 기준 이전 행의 salary 조회",
+      "다음 행의 salary 조회"
+    ],
+    "answer": 2,
+    "explanation": "LAG는 윈도우 순서에서 이전 행 값을 가져온다. LEAD는 다음 행 값을 가져온다.",
+    "option_explanations": [],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [],
+    "verified": true
+  },
+  {
+    "id": "qv3_0051",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_window",
+    "topic_label": "윈도우 함수",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL 중심",
+    "stem": "PARTITION BY dept와 GROUP BY dept의 차이는?",
+    "choices": [
+      "GROUP BY는 순위만 계산한다",
+      "둘 다 항상 행을 한 개로 만든다",
+      "PARTITION BY는 WHERE를 대체한다",
+      "PARTITION BY는 원본 행 수를 유지하면서 계산한다"
+    ],
+    "answer": 3,
+    "explanation": "PARTITION BY는 윈도우 계산 범위를 분리하지만 각 원본 행을 남긴다. GROUP BY는 그룹별 행으로 집계한다.",
+    "option_explanations": [],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [],
+    "verified": true
+  },
+  {
+    "id": "qv3_0052",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_rollup",
+    "topic_label": "ROLLUP·CUBE",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL 중심",
+    "stem": "ROLLUP(region,product)에 포함되는 집계 수준은?",
+    "choices": [
+      "(region,product), (region), ()",
+      "(product)만",
+      "(region,product)만",
+      "(region), (product)만"
+    ],
+    "answer": 0,
+    "explanation": "ROLLUP은 왼쪽부터 계층적 소계를 생성하므로 전체 그룹, region 소계, 전체 총계를 포함한다.",
+    "option_explanations": [],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [],
+    "verified": true
+  },
+  {
+    "id": "qv3_0053",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_rollup",
+    "topic_label": "ROLLUP·CUBE",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL 중심",
+    "stem": "CUBE(A,B)가 생성하는 그룹 조합은?",
+    "choices": [
+      "(A,B), (A)만",
+      "(A,B), (A), (B), ()",
+      "(A,B), ()만",
+      "(A), (B)만"
+    ],
+    "answer": 1,
+    "explanation": "CUBE는 각 그룹 열을 포함하거나 제외하는 모든 조합을 집계한다. 두 열이면 2²=4가지 수준이다.",
+    "option_explanations": [],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [],
+    "verified": true
+  },
+  {
+    "id": "qv3_0054",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_rollup",
+    "topic_label": "ROLLUP·CUBE",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL 중심",
+    "stem": "GROUPING(region)=1의 해석으로 적절한 것은?",
+    "choices": [
+      "region이 반드시 원본 NULL이라는 뜻",
+      "행 수가 1이라는 뜻",
+      "그룹화로 생긴 소계·총계의 region 자리",
+      "region 값이 1이라는 뜻"
+    ],
+    "answer": 2,
+    "explanation": "GROUPING은 집계로 만들어진 NULL인지 구분한다. 1이면 해당 집계 수준에서 그 열을 집계 기준으로 사용하지 않은 자리다.",
+    "option_explanations": [],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [],
+    "verified": true
+  },
+  {
+    "id": "qv3_0055",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_rollup",
+    "topic_label": "ROLLUP·CUBE",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL 중심",
+    "stem": "GROUPING SETS ((A),(B))는 어떤 집계를 요청하는가?",
+    "choices": [
+      "집계 함수를 사용하지 않는다",
+      "반드시 (A,B) 조합만",
+      "오직 전체 총계",
+      "A별 집계와 B별 집계"
+    ],
+    "answer": 3,
+    "explanation": "GROUPING SETS는 지정한 집계 수준만 선택적으로 생성한다. ((A),(B))면 A별과 B별 집계가 계산된다.",
+    "option_explanations": [],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [],
+    "verified": true
+  },
+  {
+    "id": "qv3_0056",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_hierarchy",
+    "topic_label": "계층형 질의",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL 중심",
+    "stem": "Oracle 계층형 질의에서 START WITH가 하는 일은?",
+    "choices": [
+      "계층 탐색의 시작 노드 지정",
+      "모든 노드를 제거",
+      "형제 노드만 정렬",
+      "현재 LEVEL을 0으로 지정"
+    ],
+    "answer": 0,
+    "explanation": "START WITH는 루트 조건을 정의한다. 계층 확장은 CONNECT BY가 담당한다.",
+    "option_explanations": [],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [],
+    "verified": true
+  },
+  {
+    "id": "qv3_0057",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_hierarchy",
+    "topic_label": "계층형 질의",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL 중심",
+    "stem": "CONNECT BY PRIOR id = parent_id에서 PRIOR가 붙은 id는?",
+    "choices": [
+      "자식 행의 parent_id만",
+      "이전 계층인 부모 행의 id",
+      "항상 최상위 id",
+      "정렬 순서의 마지막 id"
+    ],
+    "answer": 1,
+    "explanation": "PRIOR id는 부모 행에서 평가되고 parent_id는 후보 자식 행에서 평가된다.",
+    "option_explanations": [],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [],
+    "verified": true
+  },
+  {
+    "id": "qv3_0058",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_hierarchy",
+    "topic_label": "계층형 질의",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL 중심",
+    "stem": "Oracle 계층형 질의 루트 노드의 LEVEL은?",
+    "choices": [
+      "-1",
+      "NULL",
+      "1",
+      "0"
+    ],
+    "answer": 2,
+    "explanation": "Oracle LEVEL 의사 컬럼은 시작 행이 1이며 하위 레벨로 갈수록 증가한다.",
+    "option_explanations": [],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [],
+    "verified": true
+  },
+  {
+    "id": "qv3_0059",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_hierarchy",
+    "topic_label": "계층형 질의",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL 중심",
+    "stem": "ORDER SIBLINGS BY의 역할은?",
+    "choices": [
+      "루트 노드를 삭제",
+      "전체 트리를 계층 무시하고 정렬",
+      "계층 조회를 중지",
+      "계층 구조를 유지하면서 같은 부모의 자식끼리 정렬"
+    ],
+    "answer": 3,
+    "explanation": "ORDER SIBLINGS BY는 계층 관계를 보존하면서 형제 노드 간의 표시 순서를 정한다.",
+    "option_explanations": [],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [],
+    "verified": true
+  },
+  {
+    "id": "qv3_0060",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_function",
+    "topic_label": "함수·CASE",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL 중심",
+    "stem": "COALESCE(NULL, 0, 7)의 결과는?",
+    "choices": [
+      "0",
+      "7",
+      "NULL",
+      "오류"
+    ],
+    "answer": 0,
+    "explanation": "COALESCE는 왼쪽부터 첫 번째 NULL이 아닌 값을 반환한다. NULL 다음의 0은 유효한 값이다.",
+    "option_explanations": [],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [],
+    "verified": true
+  },
+  {
+    "id": "qv3_0061",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_function",
+    "topic_label": "함수·CASE",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL 중심",
+    "stem": "NULLIF(3,3)의 결과는?",
+    "choices": [
+      "0",
+      "NULL",
+      "3",
+      "TRUE"
+    ],
+    "answer": 1,
+    "explanation": "NULLIF(a,b)는 두 값이 같을 때 NULL을 반환하고 다를 때 첫 인자 a를 반환한다.",
+    "option_explanations": [],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [],
+    "verified": true
+  },
+  {
+    "id": "qv3_0062",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_function",
+    "topic_label": "함수·CASE",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL 중심",
+    "stem": "Oracle NVL2(NULL, 10, 20)의 결과는?",
+    "choices": [
+      "NULL",
+      "0",
+      "20",
+      "10"
+    ],
+    "answer": 2,
+    "explanation": "NVL2(expr,a,b)는 expr이 NULL이면 b를, NULL이 아니면 a를 반환한다. 여기서는 20이다.",
+    "option_explanations": [],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [],
+    "verified": true
+  },
+  {
+    "id": "qv3_0063",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_function",
+    "topic_label": "함수·CASE",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL 중심",
+    "stem": "CASE WHEN score>=60 THEN 'PASS' ELSE 'FAIL' END에서 score=59면?",
+    "choices": [
+      "TRUE",
+      "PASS",
+      "NULL",
+      "FAIL"
+    ],
+    "answer": 3,
+    "explanation": "CASE 조건 59>=60이 FALSE이므로 ELSE 분기인 FAIL이 선택된다.",
+    "option_explanations": [],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [],
+    "verified": true
+  },
+  {
+    "id": "qv3_0064",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_function",
+    "topic_label": "함수·CASE",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL 중심",
+    "stem": "SUBSTR('DATABASE',1,4)의 결과는?",
+    "choices": [
+      "DATA",
+      "ATAB",
+      "BASE",
+      "DATAB"
+    ],
+    "answer": 0,
+    "explanation": "Oracle SQL에서 SUBSTR는 1부터 위치를 세며 1부터 4글자를 가져오므로 DATA다.",
+    "option_explanations": [],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [],
+    "verified": true
+  },
+  {
+    "id": "qv3_0065",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_set",
+    "topic_label": "집합 연산자",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL 중심",
+    "stem": "UNION과 UNION ALL의 차이는?",
+    "choices": [
+      "두 연산 모두 반드시 중복 유지",
+      "UNION은 중복을 제거하고 UNION ALL은 중복을 유지한다",
+      "UNION ALL은 항상 정렬한다",
+      "UNION은 JOIN의 다른 표기"
+    ],
+    "answer": 1,
+    "explanation": "UNION은 합집합에서 중복 제거를 수행하고 UNION ALL은 중복된 행도 유지한다.",
+    "option_explanations": [],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [],
+    "verified": true
+  },
+  {
+    "id": "qv3_0066",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_set",
+    "topic_label": "집합 연산자",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL 중심",
+    "stem": "INTERSECT가 반환하는 행은?",
+    "choices": [
+      "두 번째 결과에만 있는 행",
+      "두 결과의 모든 행",
+      "양쪽 결과에 공통으로 있는 행",
+      "첫 번째 결과만"
+    ],
+    "answer": 2,
+    "explanation": "INTERSECT는 두 결과 집합에 공통으로 존재하는 행을 반환한다.",
+    "option_explanations": [],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [],
+    "verified": true
+  },
+  {
+    "id": "qv3_0067",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_set",
+    "topic_label": "집합 연산자",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL 중심",
+    "stem": "EXCEPT 또는 MINUS의 기본 의미는?",
+    "choices": [
+      "중복 행을 두 배로 만든다",
+      "오른쪽 결과에만 있는 행",
+      "공통으로 있는 행",
+      "왼쪽 결과에만 있는 행"
+    ],
+    "answer": 3,
+    "explanation": "차집합은 왼쪽 결과 집합에는 있지만 오른쪽에는 없는 행을 구한다. 키워드는 DBMS에 따라 EXCEPT/MINUS다.",
+    "option_explanations": [],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [],
+    "verified": true
+  },
+  {
+    "id": "qv3_0068",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_pivot",
+    "topic_label": "PIVOT·정규표현식",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL 중심",
+    "stem": "PIVOT의 기본 역할은?",
+    "choices": [
+      "행의 값 범주를 열 방향으로 변환하고 집계한다",
+      "모든 관계를 제거한다",
+      "열을 무조건 삭제한다",
+      "PK를 자동 생성한다"
+    ],
+    "answer": 0,
+    "explanation": "PIVOT은 특정 구분값을 열로 펼쳐 보여준다. 반대 방향의 변환은 UNPIVOT이다.",
+    "option_explanations": [],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [],
+    "verified": true
+  },
+  {
+    "id": "qv3_0069",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_pivot",
+    "topic_label": "PIVOT·정규표현식",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL 중심",
+    "stem": "UNPIVOT의 일반적인 역할은?",
+    "choices": [
+      "행을 반드시 하나로 합친다",
+      "여러 열의 값을 행 형태로 펼친다",
+      "항상 UPDATE를 실행한다",
+      "집합 교집합을 계산한다"
+    ],
+    "answer": 1,
+    "explanation": "UNPIVOT은 열 형태로 펼쳐진 데이터를 항목명과 값의 여러 행으로 바꾸는 연산이다.",
+    "option_explanations": [],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [],
+    "verified": true
+  },
+  {
+    "id": "qv3_0070",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_pivot",
+    "topic_label": "PIVOT·정규표현식",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL 중심",
+    "stem": "정규표현식 ^A의 의미는?",
+    "choices": [
+      "A 이외 문자만",
+      "A가 0번 이상 등장",
+      "문자열 맨 앞에 A가 오는 패턴",
+      "문자열 맨 뒤가 A"
+    ],
+    "answer": 2,
+    "explanation": "^는 문자열 시작 앵커다. 따라서 ^A는 A로 시작하는 문자열에 대응한다.",
+    "option_explanations": [],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [],
+    "verified": true
+  },
+  {
+    "id": "qv3_0071",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_pivot",
+    "topic_label": "PIVOT·정규표현식",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL 중심",
+    "stem": "정규표현식 [0-9]+의 기본 의미는?",
+    "choices": [
+      "0부터 9 사이 값 한 개만",
+      "숫자 문자가 정확히 0회",
+      "숫자가 아닌 문자만",
+      "숫자 문자가 한 번 이상 연속되는 패턴"
+    ],
+    "answer": 3,
+    "explanation": "[0-9]는 숫자 한 글자를 나타내며 +는 앞 패턴이 한 번 이상 반복됨을 의미한다.",
+    "option_explanations": [],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [],
+    "verified": true
+  },
+  {
+    "id": "qv3_0072",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_null",
+    "topic_label": "NULL·3값 논리",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 결과 검증",
+    "stem": "다음 SQL의 COUNT(*) 값은? (조건: v >= 3) (데이터 세트 1)",
+    "choices": [
+      "7",
+      "6",
+      "4",
+      "5"
+    ],
+    "answer": 3,
+    "explanation": "WHERE는 v >= 3인 행만 남기고 COUNT(*)는 해당 행 수를 센다. 해당 데이터를 SQL 순서대로 계산한 결과는 5이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
+    "option_explanations": [],
+    "sql": "SELECT COUNT(*) FROM T WHERE v >= 3",
+    "input_tables": [
+      {
+        "name": "T",
+        "columns": [
+          "v"
+        ],
+        "rows": [
+          [
+            7
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ],
+          [
+            2
+          ],
+          [
+            7
+          ],
+          [
+            5
+          ],
+          [
+            1
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          5
+        ]
+      ]
+    },
+    "steps": [
+      "WHERE는 v >= 3인 행만 남기고 COUNT(*)는 해당 행 수를 센다.",
+      "주어진 입력 7행을 조건대로 처리하면 최종 결과는 5이다."
+    ],
+    "verified": true
+  },
+  {
+    "id": "qv3_0073",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_null",
+    "topic_label": "NULL·3값 논리",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 결과 검증",
+    "stem": "다음 SQL의 COUNT(v) 값은? (데이터 세트 1)",
+    "choices": [
+      "7",
+      "6",
+      "5",
+      "8"
+    ],
+    "answer": 1,
+    "explanation": "COUNT(v)는 NULL을 제외하고 v가 존재하는 행만 계산한다. 해당 데이터를 SQL 순서대로 계산한 결과는 6이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
+    "option_explanations": [],
+    "sql": "SELECT COUNT(v) FROM T",
+    "input_tables": [
+      {
+        "name": "T",
+        "columns": [
+          "v"
+        ],
+        "rows": [
+          [
+            3
+          ],
+          [
+            2
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ],
+          [
+            null
+          ],
+          [
+            4
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          6
+        ]
+      ]
+    },
+    "steps": [
+      "COUNT(v)는 NULL을 제외하고 v가 존재하는 행만 계산한다.",
+      "주어진 입력 7행을 조건대로 처리하면 최종 결과는 6이다."
+    ],
+    "verified": true
+  },
+  {
+    "id": "qv3_0074",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_group",
+    "topic_label": "GROUP BY·집계",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 결과 검증",
+    "stem": "다음 SQL의 COUNT(*) 값은? (데이터 세트 1)",
+    "choices": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": 0,
+    "explanation": "id=2 조건과 amount IS NOT NULL을 동시에 만족하는 행만 센다. 해당 데이터를 SQL 순서대로 계산한 결과는 1이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
+    "option_explanations": [],
+    "sql": "SELECT COUNT(*) FROM T WHERE id = 2 AND amount IS NOT NULL",
+    "input_tables": [
+      {
+        "name": "T",
+        "columns": [
+          "id",
+          "amount"
+        ],
+        "rows": [
+          [
+            1,
+            10
+          ],
+          [
+            1,
+            null
+          ],
+          [
+            4,
+            20
+          ],
+          [
+            1,
+            null
+          ],
+          [
+            3,
+            30
+          ],
+          [
+            2,
+            20
+          ],
+          [
+            3,
+            30
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          1
+        ]
+      ]
+    },
+    "steps": [
+      "id=2 조건과 amount IS NOT NULL을 동시에 만족하는 행만 센다.",
+      "주어진 입력 7행을 조건대로 처리하면 최종 결과는 1이다."
+    ],
+    "verified": true
+  },
+  {
+    "id": "qv3_0075",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_group",
+    "topic_label": "GROUP BY·집계",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 결과 검증",
+    "stem": "다음 GROUP BY/HAVING SQL에서 결과 그룹은 몇 행인가? (HAVING COUNT(*) >= 2) (데이터 세트 1)",
+    "choices": [
+      "3행",
+      "2행",
+      "5행",
+      "4행"
+    ],
+    "answer": 0,
+    "explanation": "GROUP BY id로 묶고 HAVING은 그룹별 행 수로 판단한다. 해당 데이터를 SQL 순서대로 계산한 결과는 3행이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
+    "option_explanations": [],
+    "sql": "SELECT id, SUM(amount) FROM T GROUP BY id HAVING COUNT(*) >= 2",
+    "input_tables": [
+      {
+        "name": "T",
+        "columns": [
+          "id",
+          "amount"
+        ],
+        "rows": [
+          [
+            3,
+            6
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            2,
+            13
+          ],
+          [
+            1,
+            17
+          ],
+          [
+            2,
+            8
+          ],
+          [
+            3,
+            15
+          ],
+          [
+            3,
+            11
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          3
+        ]
+      ]
+    },
+    "steps": [
+      "GROUP BY id로 묶고 HAVING은 그룹별 행 수로 판단한다.",
+      "주어진 입력 8행을 조건대로 처리하면 최종 결과는 3행이다."
+    ],
+    "verified": true
+  },
+  {
+    "id": "qv3_0076",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_order",
+    "topic_label": "정렬·TOP-N",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 결과 검증",
+    "stem": "중복 제거 및 정렬 후 LIMIT 2를 적용하면 몇 행이 반환되는가? (데이터 세트 1)",
+    "choices": [
+      "3행",
+      "2행",
+      "1행",
+      "4행"
+    ],
+    "answer": 1,
+    "explanation": "WHERE로 먼저 거르고 DISTINCT로 중복을 제거하며, 정렬 후 LIMIT 2를 적용한다. 해당 데이터를 SQL 순서대로 계산한 결과는 2행이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
+    "option_explanations": [],
+    "sql": "SELECT DISTINCT score FROM T WHERE score >= 1 ORDER BY score DESC LIMIT 2",
+    "input_tables": [
+      {
+        "name": "T",
+        "columns": [
+          "score"
+        ],
+        "rows": [
+          [
+            3
+          ],
+          [
+            3
+          ],
+          [
+            1
+          ],
+          [
+            0
+          ],
+          [
+            2
+          ],
+          [
+            0
+          ],
+          [
+            3
+          ],
+          [
+            3
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          2
+        ]
+      ]
+    },
+    "steps": [
+      "WHERE로 먼저 거르고 DISTINCT로 중복을 제거하며, 정렬 후 LIMIT 2를 적용한다.",
+      "주어진 입력 8행을 조건대로 처리하면 최종 결과는 2행이다."
+    ],
+    "verified": true
+  },
+  {
+    "id": "qv3_0077",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_function",
+    "topic_label": "함수·CASE",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 결과 검증",
+    "stem": "CASE 결과를 SUM한 값은? (score >= 7이면 1) (데이터 세트 1)",
+    "choices": [
+      "3",
+      "6",
+      "4",
+      "5"
+    ],
+    "answer": 2,
+    "explanation": "CASE가 각 행의 조건에 따라 1 또는 0을 반환하고 이를 모두 합산한다. 해당 데이터를 SQL 순서대로 계산한 결과는 4이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
+    "option_explanations": [],
+    "sql": "SELECT SUM(CASE WHEN score >= 7 THEN 1 ELSE 0 END) FROM T",
+    "input_tables": [
+      {
+        "name": "T",
+        "columns": [
+          "score"
+        ],
+        "rows": [
+          [
+            7
+          ],
+          [
+            3
+          ],
+          [
+            7
+          ],
+          [
+            5
+          ],
+          [
+            7
+          ],
+          [
+            6
+          ],
+          [
+            10
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          4
+        ]
+      ]
+    },
+    "steps": [
+      "CASE가 각 행의 조건에 따라 1 또는 0을 반환하고 이를 모두 합산한다.",
+      "주어진 입력 7행을 조건대로 처리하면 최종 결과는 4이다."
+    ],
+    "verified": true
+  },
+  {
+    "id": "qv3_0078",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_function",
+    "topic_label": "함수·CASE",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 결과 검증",
+    "stem": "NULL을 0으로 바꾼 후 SUM한 값은? (데이터 세트 1)",
+    "choices": [
+      "17",
+      "16",
+      "19",
+      "18"
+    ],
+    "answer": 0,
+    "explanation": "COALESCE(v,0)으로 NULL만 0으로 바꾸고 나머지 정수를 모두 합산한다. 해당 데이터를 SQL 순서대로 계산한 결과는 17이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
+    "option_explanations": [],
+    "sql": "SELECT SUM(COALESCE(v,0)) FROM T",
+    "input_tables": [
+      {
+        "name": "T",
+        "columns": [
+          "v"
+        ],
+        "rows": [
+          [
+            2
+          ],
+          [
+            4
+          ],
+          [
+            3
+          ],
+          [
+            2
+          ],
+          [
+            null
+          ],
+          [
+            5
+          ],
+          [
+            1
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          17
+        ]
+      ]
+    },
+    "steps": [
+      "COALESCE(v,0)으로 NULL만 0으로 바꾸고 나머지 정수를 모두 합산한다.",
+      "주어진 입력 7행을 조건대로 처리하면 최종 결과는 17이다."
+    ],
+    "verified": true
+  },
+  {
+    "id": "qv3_0079",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_subquery",
+    "topic_label": "서브쿼리",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 결과 검증",
+    "stem": "EXISTS 조건을 만족하는 결과 행 수는? (값 >= 5) (데이터 세트 1)",
+    "choices": [
+      "3행",
+      "4행",
+      "1행",
+      "2행"
+    ],
+    "answer": 3,
+    "explanation": "외부 행의 값과 일치하며 기준 이상인 내부 행이 존재하면 해당 외부 행을 반환한다. 해당 데이터를 SQL 순서대로 계산한 결과는 2행이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
+    "option_explanations": [],
+    "sql": "SELECT v FROM T a WHERE EXISTS(SELECT 1 FROM T b WHERE b.v = a.v AND b.v >= 5)",
+    "input_tables": [
+      {
+        "name": "T",
+        "columns": [
+          "v"
+        ],
+        "rows": [
+          [
+            2
+          ],
+          [
+            4
+          ],
+          [
+            1
+          ],
+          [
+            6
+          ],
+          [
+            4
+          ],
+          [
+            4
+          ],
+          [
+            7
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          2
+        ]
+      ]
+    },
+    "steps": [
+      "외부 행의 값과 일치하며 기준 이상인 내부 행이 존재하면 해당 외부 행을 반환한다.",
+      "주어진 입력 7행을 조건대로 처리하면 최종 결과는 2행이다."
+    ],
+    "verified": true
+  },
+  {
+    "id": "qv3_0080",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_set",
+    "topic_label": "집합 연산자",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 결과 검증",
+    "stem": "다음 UNION 결과 행 수는? (데이터 세트 1)",
+    "choices": [
+      "5행",
+      "3행",
+      "4행",
+      "6행"
+    ],
+    "answer": 2,
+    "explanation": "UNION은 두 조건을 합친 뒤 동일한 값의 중복을 제거한다. 해당 데이터를 SQL 순서대로 계산한 결과는 4행이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
+    "option_explanations": [],
+    "sql": "SELECT v FROM T WHERE v <= 2 UNION SELECT v FROM T WHERE v >= 3",
+    "input_tables": [
+      {
+        "name": "T",
+        "columns": [
+          "v"
+        ],
+        "rows": [
+          [
+            2
+          ],
+          [
+            5
+          ],
+          [
+            4
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            5
+          ],
+          [
+            5
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          4
+        ]
+      ]
+    },
+    "steps": [
+      "UNION은 두 조건을 합친 뒤 동일한 값의 중복을 제거한다.",
+      "주어진 입력 7행을 조건대로 처리하면 최종 결과는 4행이다."
+    ],
+    "verified": true
+  },
+  {
+    "id": "qv3_0081",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_subquery",
+    "topic_label": "서브쿼리",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 결과 검증",
+    "stem": "IN 서브쿼리 조건의 결과 행 수는? (기준 >= 5) (데이터 세트 1)",
+    "choices": [
+      "1행",
+      "0행",
+      "2행",
+      "3행"
+    ],
+    "answer": 0,
+    "explanation": "기준 이상의 값이 IN 집합에 들어가며 외부 쿼리는 해당 값을 가진 모든 행을 반환한다. 해당 데이터를 SQL 순서대로 계산한 결과는 1행이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
+    "option_explanations": [],
+    "sql": "SELECT v FROM T WHERE v IN (SELECT v FROM T WHERE v >= 5)",
+    "input_tables": [
+      {
+        "name": "T",
+        "columns": [
+          "v"
+        ],
+        "rows": [
+          [
+            4
+          ],
+          [
+            2
+          ],
+          [
+            5
+          ],
+          [
+            3
+          ],
+          [
+            1
+          ],
+          [
+            4
+          ],
+          [
+            2
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          1
+        ]
+      ]
+    },
+    "steps": [
+      "기준 이상의 값이 IN 집합에 들어가며 외부 쿼리는 해당 값을 가진 모든 행을 반환한다.",
+      "주어진 입력 7행을 조건대로 처리하면 최종 결과는 1행이다."
+    ],
+    "verified": true
+  },
+  {
+    "id": "qv3_0082",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_order",
+    "topic_label": "정렬·TOP-N",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 결과 검증",
+    "stem": "COUNT(DISTINCT v) 결과는? (데이터 세트 1)",
+    "choices": [
+      "6",
+      "5",
+      "4",
+      "3"
+    ],
+    "answer": 2,
+    "explanation": "중복 v 값은 한 번만 세므로 값의 종류 수가 된다. 해당 데이터를 SQL 순서대로 계산한 결과는 4이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
+    "option_explanations": [],
+    "sql": "SELECT COUNT(DISTINCT v) FROM T",
+    "input_tables": [
+      {
+        "name": "T",
+        "columns": [
+          "v"
+        ],
+        "rows": [
+          [
+            0
+          ],
+          [
+            3
+          ],
+          [
+            6
+          ],
+          [
+            6
+          ],
+          [
+            4
+          ],
+          [
+            4
+          ],
+          [
+            4
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          4
+        ]
+      ]
+    },
+    "steps": [
+      "중복 v 값은 한 번만 세므로 값의 종류 수가 된다.",
+      "주어진 입력 7행을 조건대로 처리하면 최종 결과는 4이다."
+    ],
+    "verified": true
+  },
+  {
+    "id": "qv3_0083",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_null",
+    "topic_label": "NULL·3값 논리",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 결과 검증",
+    "stem": "OR 필터를 만족하는 행 수는? (v > 4 또는 v=0) (데이터 세트 1)",
+    "choices": [
+      "5",
+      "2",
+      "4",
+      "3"
+    ],
+    "answer": 3,
+    "explanation": "OR 조건은 둘 중 하나라도 TRUE인 행을 통과시킨다. 중복 조건을 만족해도 한 행은 한 번 센다. 해당 데이터를 SQL 순서대로 계산한 결과는 3이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
+    "option_explanations": [],
+    "sql": "SELECT COUNT(*) FROM T WHERE v > 4 OR v = 0",
+    "input_tables": [
+      {
+        "name": "T",
+        "columns": [
+          "v"
+        ],
+        "rows": [
+          [
+            5
+          ],
+          [
+            4
+          ],
+          [
+            3
+          ],
+          [
+            8
+          ],
+          [
+            9
+          ],
+          [
+            3
+          ],
+          [
+            3
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          3
+        ]
+      ]
+    },
+    "steps": [
+      "OR 조건은 둘 중 하나라도 TRUE인 행을 통과시킨다. 중복 조건을 만족해도 한 행은 한 번 센다.",
+      "주어진 입력 7행을 조건대로 처리하면 최종 결과는 3이다."
+    ],
+    "verified": true
+  },
+  {
+    "id": "qv3_0084",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_null",
+    "topic_label": "NULL·3값 논리",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 결과 검증",
+    "stem": "다음 SQL의 COUNT(*) 값은? (조건: v >= 6) (데이터 세트 2)",
+    "choices": [
+      "3",
+      "2",
+      "4",
+      "1"
+    ],
+    "answer": 1,
+    "explanation": "WHERE는 v >= 6인 행만 남기고 COUNT(*)는 해당 행 수를 센다. 해당 데이터를 SQL 순서대로 계산한 결과는 2이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
+    "option_explanations": [],
+    "sql": "SELECT COUNT(*) FROM T WHERE v >= 6",
+    "input_tables": [
+      {
+        "name": "T",
+        "columns": [
+          "v"
+        ],
+        "rows": [
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            6
+          ],
+          [
+            8
+          ],
+          [
+            0
+          ],
+          [
+            4
+          ],
+          [
+            2
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          2
+        ]
+      ]
+    },
+    "steps": [
+      "WHERE는 v >= 6인 행만 남기고 COUNT(*)는 해당 행 수를 센다.",
+      "주어진 입력 7행을 조건대로 처리하면 최종 결과는 2이다."
+    ],
+    "verified": true
+  },
+  {
+    "id": "qv3_0085",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_null",
+    "topic_label": "NULL·3값 논리",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 결과 검증",
+    "stem": "다음 SQL의 COUNT(v) 값은? (데이터 세트 2)",
+    "choices": [
+      "7",
+      "5",
+      "8",
+      "6"
+    ],
+    "answer": 3,
+    "explanation": "COUNT(v)는 NULL을 제외하고 v가 존재하는 행만 계산한다. 해당 데이터를 SQL 순서대로 계산한 결과는 6이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
+    "option_explanations": [],
+    "sql": "SELECT COUNT(v) FROM T",
+    "input_tables": [
+      {
+        "name": "T",
+        "columns": [
+          "v"
+        ],
+        "rows": [
+          [
+            3
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ],
+          [
+            1
+          ],
+          [
+            null
+          ],
+          [
+            4
+          ],
+          [
+            4
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          6
+        ]
+      ]
+    },
+    "steps": [
+      "COUNT(v)는 NULL을 제외하고 v가 존재하는 행만 계산한다.",
+      "주어진 입력 7행을 조건대로 처리하면 최종 결과는 6이다."
+    ],
+    "verified": true
+  },
+  {
+    "id": "qv3_0086",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_group",
+    "topic_label": "GROUP BY·집계",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 결과 검증",
+    "stem": "다음 SQL의 COUNT(*) 값은? (데이터 세트 2)",
+    "choices": [
+      "2",
+      "3",
+      "5",
+      "4"
+    ],
+    "answer": 1,
+    "explanation": "id=2 조건과 amount IS NOT NULL을 동시에 만족하는 행만 센다. 해당 데이터를 SQL 순서대로 계산한 결과는 3이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
+    "option_explanations": [],
+    "sql": "SELECT COUNT(*) FROM T WHERE id = 2 AND amount IS NOT NULL",
+    "input_tables": [
+      {
+        "name": "T",
+        "columns": [
+          "id",
+          "amount"
+        ],
+        "rows": [
+          [
+            2,
+            null
+          ],
+          [
+            3,
+            30
+          ],
+          [
+            2,
+            10
+          ],
+          [
+            2,
+            20
+          ],
+          [
+            2,
+            30
+          ],
+          [
+            3,
+            30
+          ],
+          [
+            3,
+            20
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          3
+        ]
+      ]
+    },
+    "steps": [
+      "id=2 조건과 amount IS NOT NULL을 동시에 만족하는 행만 센다.",
+      "주어진 입력 7행을 조건대로 처리하면 최종 결과는 3이다."
+    ],
+    "verified": true
+  },
+  {
+    "id": "qv3_0087",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_group",
+    "topic_label": "GROUP BY·집계",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 결과 검증",
+    "stem": "다음 GROUP BY/HAVING SQL에서 결과 그룹은 몇 행인가? (HAVING COUNT(*) >= 4) (데이터 세트 2)",
+    "choices": [
+      "2행",
+      "3행",
+      "1행",
+      "0행"
+    ],
+    "answer": 3,
+    "explanation": "GROUP BY id로 묶고 HAVING은 그룹별 행 수로 판단한다. 해당 데이터를 SQL 순서대로 계산한 결과는 0행이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
+    "option_explanations": [],
+    "sql": "SELECT id, SUM(amount) FROM T GROUP BY id HAVING COUNT(*) >= 4",
+    "input_tables": [
+      {
+        "name": "T",
+        "columns": [
+          "id",
+          "amount"
+        ],
+        "rows": [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            11
+          ],
+          [
+            3,
+            16
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            2,
+            9
+          ],
+          [
+            1,
+            9
+          ],
+          [
+            1,
+            10
+          ],
+          [
+            3,
+            11
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          0
+        ]
+      ]
+    },
+    "steps": [
+      "GROUP BY id로 묶고 HAVING은 그룹별 행 수로 판단한다.",
+      "주어진 입력 8행을 조건대로 처리하면 최종 결과는 0행이다."
+    ],
+    "verified": true
+  },
+  {
+    "id": "qv3_0088",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_order",
+    "topic_label": "정렬·TOP-N",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 결과 검증",
+    "stem": "중복 제거 및 정렬 후 LIMIT 2를 적용하면 몇 행이 반환되는가? (데이터 세트 2)",
+    "choices": [
+      "1행",
+      "2행",
+      "3행",
+      "4행"
+    ],
+    "answer": 1,
+    "explanation": "WHERE로 먼저 거르고 DISTINCT로 중복을 제거하며, 정렬 후 LIMIT 2를 적용한다. 해당 데이터를 SQL 순서대로 계산한 결과는 2행이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
+    "option_explanations": [],
+    "sql": "SELECT DISTINCT score FROM T WHERE score >= 1 ORDER BY score DESC LIMIT 2",
+    "input_tables": [
+      {
+        "name": "T",
+        "columns": [
+          "score"
+        ],
+        "rows": [
+          [
+            4
+          ],
+          [
+            2
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [
+            4
+          ],
+          [
+            3
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          2
+        ]
+      ]
+    },
+    "steps": [
+      "WHERE로 먼저 거르고 DISTINCT로 중복을 제거하며, 정렬 후 LIMIT 2를 적용한다.",
+      "주어진 입력 8행을 조건대로 처리하면 최종 결과는 2행이다."
+    ],
+    "verified": true
+  },
+  {
+    "id": "qv3_0089",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_function",
+    "topic_label": "함수·CASE",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 결과 검증",
+    "stem": "CASE 결과를 SUM한 값은? (score >= 5이면 1) (데이터 세트 2)",
+    "choices": [
+      "2",
+      "4",
+      "3",
+      "5"
+    ],
+    "answer": 2,
+    "explanation": "CASE가 각 행의 조건에 따라 1 또는 0을 반환하고 이를 모두 합산한다. 해당 데이터를 SQL 순서대로 계산한 결과는 3이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
+    "option_explanations": [],
+    "sql": "SELECT SUM(CASE WHEN score >= 5 THEN 1 ELSE 0 END) FROM T",
+    "input_tables": [
+      {
+        "name": "T",
+        "columns": [
+          "score"
+        ],
+        "rows": [
+          [
+            2
+          ],
+          [
+            11
+          ],
+          [
+            3
+          ],
+          [
+            7
+          ],
+          [
+            12
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          3
+        ]
+      ]
+    },
+    "steps": [
+      "CASE가 각 행의 조건에 따라 1 또는 0을 반환하고 이를 모두 합산한다.",
+      "주어진 입력 7행을 조건대로 처리하면 최종 결과는 3이다."
+    ],
+    "verified": true
+  },
+  {
+    "id": "qv3_0090",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_function",
+    "topic_label": "함수·CASE",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 결과 검증",
+    "stem": "NULL을 0으로 바꾼 후 SUM한 값은? (데이터 세트 2)",
+    "choices": [
+      "13",
+      "15",
+      "14",
+      "16"
+    ],
+    "answer": 2,
+    "explanation": "COALESCE(v,0)으로 NULL만 0으로 바꾸고 나머지 정수를 모두 합산한다. 해당 데이터를 SQL 순서대로 계산한 결과는 14이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
+    "option_explanations": [],
+    "sql": "SELECT SUM(COALESCE(v,0)) FROM T",
+    "input_tables": [
+      {
+        "name": "T",
+        "columns": [
+          "v"
+        ],
+        "rows": [
+          [
+            null
+          ],
+          [
+            5
+          ],
+          [
+            1
+          ],
+          [
+            null
+          ],
+          [
+            5
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          14
+        ]
+      ]
+    },
+    "steps": [
+      "COALESCE(v,0)으로 NULL만 0으로 바꾸고 나머지 정수를 모두 합산한다.",
+      "주어진 입력 7행을 조건대로 처리하면 최종 결과는 14이다."
+    ],
+    "verified": true
+  },
+  {
+    "id": "qv3_0091",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_subquery",
+    "topic_label": "서브쿼리",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 결과 검증",
+    "stem": "EXISTS 조건을 만족하는 결과 행 수는? (값 >= 4) (데이터 세트 2)",
+    "choices": [
+      "6행",
+      "3행",
+      "4행",
+      "5행"
+    ],
+    "answer": 2,
+    "explanation": "외부 행의 값과 일치하며 기준 이상인 내부 행이 존재하면 해당 외부 행을 반환한다. 해당 데이터를 SQL 순서대로 계산한 결과는 4행이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
+    "option_explanations": [],
+    "sql": "SELECT v FROM T a WHERE EXISTS(SELECT 1 FROM T b WHERE b.v = a.v AND b.v >= 4)",
+    "input_tables": [
+      {
+        "name": "T",
+        "columns": [
+          "v"
+        ],
+        "rows": [
+          [
+            0
+          ],
+          [
+            7
+          ],
+          [
+            7
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ],
+          [
+            0
+          ],
+          [
+            1
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          4
+        ]
+      ]
+    },
+    "steps": [
+      "외부 행의 값과 일치하며 기준 이상인 내부 행이 존재하면 해당 외부 행을 반환한다.",
+      "주어진 입력 7행을 조건대로 처리하면 최종 결과는 4행이다."
+    ],
+    "verified": true
+  },
+  {
+    "id": "qv3_0092",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_set",
+    "topic_label": "집합 연산자",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 결과 검증",
+    "stem": "다음 UNION 결과 행 수는? (데이터 세트 2)",
+    "choices": [
+      "3행",
+      "6행",
+      "4행",
+      "5행"
+    ],
+    "answer": 2,
+    "explanation": "UNION은 두 조건을 합친 뒤 동일한 값의 중복을 제거한다. 해당 데이터를 SQL 순서대로 계산한 결과는 4행이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
+    "option_explanations": [],
+    "sql": "SELECT v FROM T WHERE v <= 2 UNION SELECT v FROM T WHERE v >= 3",
+    "input_tables": [
+      {
+        "name": "T",
+        "columns": [
+          "v"
+        ],
+        "rows": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            5
+          ],
+          [
+            4
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            5
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          4
+        ]
+      ]
+    },
+    "steps": [
+      "UNION은 두 조건을 합친 뒤 동일한 값의 중복을 제거한다.",
+      "주어진 입력 7행을 조건대로 처리하면 최종 결과는 4행이다."
+    ],
+    "verified": true
+  },
+  {
+    "id": "qv3_0093",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_subquery",
+    "topic_label": "서브쿼리",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 결과 검증",
+    "stem": "IN 서브쿼리 조건의 결과 행 수는? (기준 >= 3) (데이터 세트 2)",
+    "choices": [
+      "5행",
+      "6행",
+      "7행",
+      "8행"
+    ],
+    "answer": 1,
+    "explanation": "기준 이상의 값이 IN 집합에 들어가며 외부 쿼리는 해당 값을 가진 모든 행을 반환한다. 해당 데이터를 SQL 순서대로 계산한 결과는 6행이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
+    "option_explanations": [],
+    "sql": "SELECT v FROM T WHERE v IN (SELECT v FROM T WHERE v >= 3)",
+    "input_tables": [
+      {
+        "name": "T",
+        "columns": [
+          "v"
+        ],
+        "rows": [
+          [
+            4
+          ],
+          [
+            4
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            3
+          ],
+          [
+            5
+          ],
+          [
+            2
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          6
+        ]
+      ]
+    },
+    "steps": [
+      "기준 이상의 값이 IN 집합에 들어가며 외부 쿼리는 해당 값을 가진 모든 행을 반환한다.",
+      "주어진 입력 7행을 조건대로 처리하면 최종 결과는 6행이다."
+    ],
+    "verified": true
+  },
+  {
+    "id": "qv3_0094",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_order",
+    "topic_label": "정렬·TOP-N",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 결과 검증",
+    "stem": "COUNT(DISTINCT v) 결과는? (데이터 세트 2)",
+    "choices": [
+      "4",
+      "5",
+      "6",
+      "3"
+    ],
+    "answer": 0,
+    "explanation": "중복 v 값은 한 번만 세므로 값의 종류 수가 된다. 해당 데이터를 SQL 순서대로 계산한 결과는 4이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
+    "option_explanations": [],
+    "sql": "SELECT COUNT(DISTINCT v) FROM T",
+    "input_tables": [
+      {
+        "name": "T",
+        "columns": [
+          "v"
+        ],
+        "rows": [
+          [
+            4
+          ],
+          [
+            4
+          ],
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          4
+        ]
+      ]
+    },
+    "steps": [
+      "중복 v 값은 한 번만 세므로 값의 종류 수가 된다.",
+      "주어진 입력 7행을 조건대로 처리하면 최종 결과는 4이다."
+    ],
+    "verified": true
+  },
+  {
+    "id": "qv3_0095",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_null",
+    "topic_label": "NULL·3값 논리",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 결과 검증",
+    "stem": "OR 필터를 만족하는 행 수는? (v > 6 또는 v=0) (데이터 세트 2)",
+    "choices": [
+      "1",
+      "0",
+      "2",
+      "3"
+    ],
+    "answer": 0,
+    "explanation": "OR 조건은 둘 중 하나라도 TRUE인 행을 통과시킨다. 중복 조건을 만족해도 한 행은 한 번 센다. 해당 데이터를 SQL 순서대로 계산한 결과는 1이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
+    "option_explanations": [],
+    "sql": "SELECT COUNT(*) FROM T WHERE v > 6 OR v = 0",
+    "input_tables": [
+      {
+        "name": "T",
+        "columns": [
+          "v"
+        ],
+        "rows": [
+          [
+            5
+          ],
+          [
+            6
+          ],
+          [
+            9
+          ],
+          [
+            1
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            4
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          1
+        ]
+      ]
+    },
+    "steps": [
+      "OR 조건은 둘 중 하나라도 TRUE인 행을 통과시킨다. 중복 조건을 만족해도 한 행은 한 번 센다.",
+      "주어진 입력 7행을 조건대로 처리하면 최종 결과는 1이다."
+    ],
+    "verified": true
+  },
+  {
+    "id": "qv3_0096",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_null",
+    "topic_label": "NULL·3값 논리",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 결과 검증",
+    "stem": "다음 SQL의 COUNT(*) 값은? (조건: v >= 6) (데이터 세트 3)",
+    "choices": [
+      "5",
+      "4",
+      "2",
+      "3"
+    ],
+    "answer": 3,
+    "explanation": "WHERE는 v >= 6인 행만 남기고 COUNT(*)는 해당 행 수를 센다. 해당 데이터를 SQL 순서대로 계산한 결과는 3이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
+    "option_explanations": [],
+    "sql": "SELECT COUNT(*) FROM T WHERE v >= 6",
+    "input_tables": [
+      {
+        "name": "T",
+        "columns": [
+          "v"
+        ],
+        "rows": [
+          [
+            6
+          ],
+          [
+            2
+          ],
+          [
+            7
+          ],
+          [
+            0
+          ],
+          [
+            7
+          ],
+          [
+            5
+          ],
+          [
+            4
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          3
+        ]
+      ]
+    },
+    "steps": [
+      "WHERE는 v >= 6인 행만 남기고 COUNT(*)는 해당 행 수를 센다.",
+      "주어진 입력 7행을 조건대로 처리하면 최종 결과는 3이다."
+    ],
+    "verified": true
+  },
+  {
+    "id": "qv3_0097",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_null",
+    "topic_label": "NULL·3값 논리",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 결과 검증",
+    "stem": "다음 SQL의 COUNT(v) 값은? (데이터 세트 3)",
+    "choices": [
+      "6",
+      "4",
+      "5",
+      "3"
+    ],
+    "answer": 1,
+    "explanation": "COUNT(v)는 NULL을 제외하고 v가 존재하는 행만 계산한다. 해당 데이터를 SQL 순서대로 계산한 결과는 4이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
+    "option_explanations": [],
+    "sql": "SELECT COUNT(v) FROM T",
+    "input_tables": [
+      {
+        "name": "T",
+        "columns": [
+          "v"
+        ],
+        "rows": [
+          [
+            4
+          ],
+          [
+            2
+          ],
+          [
+            4
+          ],
+          [
+            4
+          ],
+          [
+            null
+          ],
+          [
+            null
+          ],
+          [
+            null
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          4
+        ]
+      ]
+    },
+    "steps": [
+      "COUNT(v)는 NULL을 제외하고 v가 존재하는 행만 계산한다.",
+      "주어진 입력 7행을 조건대로 처리하면 최종 결과는 4이다."
+    ],
+    "verified": true
+  },
+  {
+    "id": "qv3_0098",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_group",
+    "topic_label": "GROUP BY·집계",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 결과 검증",
+    "stem": "다음 SQL의 COUNT(*) 값은? (데이터 세트 3)",
+    "choices": [
+      "5",
+      "4",
+      "3",
+      "2"
+    ],
+    "answer": 2,
+    "explanation": "id=2 조건과 amount IS NOT NULL을 동시에 만족하는 행만 센다. 해당 데이터를 SQL 순서대로 계산한 결과는 3이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
+    "option_explanations": [],
+    "sql": "SELECT COUNT(*) FROM T WHERE id = 2 AND amount IS NOT NULL",
+    "input_tables": [
+      {
+        "name": "T",
+        "columns": [
+          "id",
+          "amount"
+        ],
+        "rows": [
+          [
+            4,
+            20
+          ],
+          [
+            2,
+            30
+          ],
+          [
+            2,
+            30
+          ],
+          [
+            2,
+            20
+          ],
+          [
+            4,
+            30
+          ],
+          [
+            1,
+            20
+          ],
+          [
+            4,
+            30
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          3
+        ]
+      ]
+    },
+    "steps": [
+      "id=2 조건과 amount IS NOT NULL을 동시에 만족하는 행만 센다.",
+      "주어진 입력 7행을 조건대로 처리하면 최종 결과는 3이다."
+    ],
+    "verified": true
+  },
+  {
+    "id": "qv3_0099",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_group",
+    "topic_label": "GROUP BY·집계",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 결과 검증",
+    "stem": "다음 GROUP BY/HAVING SQL에서 결과 그룹은 몇 행인가? (HAVING COUNT(*) >= 3) (데이터 세트 3)",
+    "choices": [
+      "3행",
+      "0행",
+      "2행",
+      "1행"
+    ],
+    "answer": 3,
+    "explanation": "GROUP BY id로 묶고 HAVING은 그룹별 행 수로 판단한다. 해당 데이터를 SQL 순서대로 계산한 결과는 1행이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
+    "option_explanations": [],
+    "sql": "SELECT id, SUM(amount) FROM T GROUP BY id HAVING COUNT(*) >= 3",
+    "input_tables": [
+      {
+        "name": "T",
+        "columns": [
+          "id",
+          "amount"
+        ],
+        "rows": [
+          [
+            1,
+            17
+          ],
+          [
+            1,
+            17
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            1,
+            18
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            2,
+            17
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          1
+        ]
+      ]
+    },
+    "steps": [
+      "GROUP BY id로 묶고 HAVING은 그룹별 행 수로 판단한다.",
+      "주어진 입력 8행을 조건대로 처리하면 최종 결과는 1행이다."
+    ],
+    "verified": true
+  },
+  {
+    "id": "qv3_0100",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_order",
+    "topic_label": "정렬·TOP-N",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 결과 검증",
+    "stem": "중복 제거 및 정렬 후 LIMIT 2를 적용하면 몇 행이 반환되는가? (데이터 세트 3)",
+    "choices": [
+      "1행",
+      "3행",
+      "4행",
+      "2행"
+    ],
+    "answer": 3,
+    "explanation": "WHERE로 먼저 거르고 DISTINCT로 중복을 제거하며, 정렬 후 LIMIT 2를 적용한다. 해당 데이터를 SQL 순서대로 계산한 결과는 2행이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
+    "option_explanations": [],
+    "sql": "SELECT DISTINCT score FROM T WHERE score >= 4 ORDER BY score DESC LIMIT 2",
+    "input_tables": [
+      {
+        "name": "T",
+        "columns": [
+          "score"
+        ],
+        "rows": [
+          [
+            5
+          ],
+          [
+            0
+          ],
+          [
+            5
+          ],
+          [
+            4
+          ],
+          [
+            3
+          ],
+          [
+            3
+          ],
+          [
+            0
+          ],
+          [
+            4
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          2
+        ]
+      ]
+    },
+    "steps": [
+      "WHERE로 먼저 거르고 DISTINCT로 중복을 제거하며, 정렬 후 LIMIT 2를 적용한다.",
+      "주어진 입력 8행을 조건대로 처리하면 최종 결과는 2행이다."
+    ],
+    "verified": true
+  },
+  {
+    "id": "qv3_0101",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_function",
+    "topic_label": "함수·CASE",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 결과 검증",
+    "stem": "CASE 결과를 SUM한 값은? (score >= 6이면 1) (데이터 세트 3)",
+    "choices": [
+      "5",
+      "4",
+      "7",
+      "6"
+    ],
+    "answer": 0,
+    "explanation": "CASE가 각 행의 조건에 따라 1 또는 0을 반환하고 이를 모두 합산한다. 해당 데이터를 SQL 순서대로 계산한 결과는 5이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
+    "option_explanations": [],
+    "sql": "SELECT SUM(CASE WHEN score >= 6 THEN 1 ELSE 0 END) FROM T",
+    "input_tables": [
+      {
+        "name": "T",
+        "columns": [
+          "score"
+        ],
+        "rows": [
+          [
+            1
+          ],
+          [
+            7
+          ],
+          [
+            13
+          ],
+          [
+            11
+          ],
+          [
+            10
+          ],
+          [
+            5
+          ],
+          [
+            13
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          5
+        ]
+      ]
+    },
+    "steps": [
+      "CASE가 각 행의 조건에 따라 1 또는 0을 반환하고 이를 모두 합산한다.",
+      "주어진 입력 7행을 조건대로 처리하면 최종 결과는 5이다."
+    ],
+    "verified": true
+  },
+  {
+    "id": "qv3_0102",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_function",
+    "topic_label": "함수·CASE",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 결과 검증",
+    "stem": "NULL을 0으로 바꾼 후 SUM한 값은? (데이터 세트 3)",
+    "choices": [
+      "17",
+      "15",
+      "16",
+      "14"
+    ],
+    "answer": 1,
+    "explanation": "COALESCE(v,0)으로 NULL만 0으로 바꾸고 나머지 정수를 모두 합산한다. 해당 데이터를 SQL 순서대로 계산한 결과는 15이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
+    "option_explanations": [],
+    "sql": "SELECT SUM(COALESCE(v,0)) FROM T",
+    "input_tables": [
+      {
+        "name": "T",
+        "columns": [
+          "v"
+        ],
+        "rows": [
+          [
+            1
+          ],
+          [
+            null
+          ],
+          [
+            3
+          ],
+          [
+            2
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ],
+          [
+            null
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          15
+        ]
+      ]
+    },
+    "steps": [
+      "COALESCE(v,0)으로 NULL만 0으로 바꾸고 나머지 정수를 모두 합산한다.",
+      "주어진 입력 7행을 조건대로 처리하면 최종 결과는 15이다."
+    ],
+    "verified": true
+  },
+  {
+    "id": "qv3_0103",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_subquery",
+    "topic_label": "서브쿼리",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 결과 검증",
+    "stem": "EXISTS 조건을 만족하는 결과 행 수는? (값 >= 4) (데이터 세트 3)",
+    "choices": [
+      "3행",
+      "4행",
+      "2행",
+      "5행"
+    ],
+    "answer": 0,
+    "explanation": "외부 행의 값과 일치하며 기준 이상인 내부 행이 존재하면 해당 외부 행을 반환한다. 해당 데이터를 SQL 순서대로 계산한 결과는 3행이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
+    "option_explanations": [],
+    "sql": "SELECT v FROM T a WHERE EXISTS(SELECT 1 FROM T b WHERE b.v = a.v AND b.v >= 4)",
+    "input_tables": [
+      {
+        "name": "T",
+        "columns": [
+          "v"
+        ],
+        "rows": [
+          [
+            2
+          ],
+          [
+            6
+          ],
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            4
+          ],
+          [
+            3
+          ],
+          [
+            6
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          3
+        ]
+      ]
+    },
+    "steps": [
+      "외부 행의 값과 일치하며 기준 이상인 내부 행이 존재하면 해당 외부 행을 반환한다.",
+      "주어진 입력 7행을 조건대로 처리하면 최종 결과는 3행이다."
+    ],
+    "verified": true
+  },
+  {
+    "id": "qv3_0104",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_set",
+    "topic_label": "집합 연산자",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 결과 검증",
+    "stem": "다음 UNION 결과 행 수는? (데이터 세트 3)",
+    "choices": [
+      "6행",
+      "4행",
+      "5행",
+      "3행"
+    ],
+    "answer": 1,
+    "explanation": "UNION은 두 조건을 합친 뒤 동일한 값의 중복을 제거한다. 해당 데이터를 SQL 순서대로 계산한 결과는 4행이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
+    "option_explanations": [],
+    "sql": "SELECT v FROM T WHERE v <= 2 UNION SELECT v FROM T WHERE v >= 3",
+    "input_tables": [
+      {
+        "name": "T",
+        "columns": [
+          "v"
+        ],
+        "rows": [
+          [
+            1
+          ],
+          [
+            5
+          ],
+          [
+            3
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            1
+          ],
+          [
+            3
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          4
+        ]
+      ]
+    },
+    "steps": [
+      "UNION은 두 조건을 합친 뒤 동일한 값의 중복을 제거한다.",
+      "주어진 입력 7행을 조건대로 처리하면 최종 결과는 4행이다."
+    ],
+    "verified": true
+  },
+  {
+    "id": "qv3_0105",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_subquery",
+    "topic_label": "서브쿼리",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 결과 검증",
+    "stem": "IN 서브쿼리 조건의 결과 행 수는? (기준 >= 5) (데이터 세트 3)",
+    "choices": [
+      "2행",
+      "3행",
+      "1행",
+      "4행"
+    ],
+    "answer": 0,
+    "explanation": "기준 이상의 값이 IN 집합에 들어가며 외부 쿼리는 해당 값을 가진 모든 행을 반환한다. 해당 데이터를 SQL 순서대로 계산한 결과는 2행이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
+    "option_explanations": [],
+    "sql": "SELECT v FROM T WHERE v IN (SELECT v FROM T WHERE v >= 5)",
+    "input_tables": [
+      {
+        "name": "T",
+        "columns": [
+          "v"
+        ],
+        "rows": [
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [
+            5
+          ],
+          [
+            1
+          ],
+          [
+            5
+          ],
+          [
+            4
+          ],
+          [
+            2
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          2
+        ]
+      ]
+    },
+    "steps": [
+      "기준 이상의 값이 IN 집합에 들어가며 외부 쿼리는 해당 값을 가진 모든 행을 반환한다.",
+      "주어진 입력 7행을 조건대로 처리하면 최종 결과는 2행이다."
+    ],
+    "verified": true
+  },
+  {
+    "id": "qv3_0106",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_order",
+    "topic_label": "정렬·TOP-N",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 결과 검증",
+    "stem": "COUNT(DISTINCT v) 결과는? (데이터 세트 3)",
+    "choices": [
+      "5",
+      "4",
+      "3",
+      "2"
+    ],
+    "answer": 2,
+    "explanation": "중복 v 값은 한 번만 세므로 값의 종류 수가 된다. 해당 데이터를 SQL 순서대로 계산한 결과는 3이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
+    "option_explanations": [],
+    "sql": "SELECT COUNT(DISTINCT v) FROM T",
+    "input_tables": [
+      {
+        "name": "T",
+        "columns": [
+          "v"
+        ],
+        "rows": [
+          [
+            0
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            2
+          ],
+          [
+            0
+          ],
+          [
+            3
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          3
+        ]
+      ]
+    },
+    "steps": [
+      "중복 v 값은 한 번만 세므로 값의 종류 수가 된다.",
+      "주어진 입력 7행을 조건대로 처리하면 최종 결과는 3이다."
+    ],
+    "verified": true
+  },
+  {
+    "id": "qv3_0107",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_null",
+    "topic_label": "NULL·3값 논리",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 결과 검증",
+    "stem": "OR 필터를 만족하는 행 수는? (v > 7 또는 v=0) (데이터 세트 3)",
+    "choices": [
+      "6",
+      "4",
+      "3",
+      "5"
+    ],
+    "answer": 1,
+    "explanation": "OR 조건은 둘 중 하나라도 TRUE인 행을 통과시킨다. 중복 조건을 만족해도 한 행은 한 번 센다. 해당 데이터를 SQL 순서대로 계산한 결과는 4이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
+    "option_explanations": [],
+    "sql": "SELECT COUNT(*) FROM T WHERE v > 7 OR v = 0",
+    "input_tables": [
+      {
+        "name": "T",
+        "columns": [
+          "v"
+        ],
+        "rows": [
+          [
+            7
+          ],
+          [
+            8
+          ],
+          [
+            0
+          ],
+          [
+            9
+          ],
+          [
+            3
+          ],
+          [
+            1
+          ],
+          [
+            0
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          4
+        ]
+      ]
+    },
+    "steps": [
+      "OR 조건은 둘 중 하나라도 TRUE인 행을 통과시킨다. 중복 조건을 만족해도 한 행은 한 번 센다.",
+      "주어진 입력 7행을 조건대로 처리하면 최종 결과는 4이다."
+    ],
+    "verified": true
+  },
+  {
+    "id": "qv3_0108",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_null",
+    "topic_label": "NULL·3값 논리",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 결과 검증",
+    "stem": "다음 SQL의 COUNT(*) 값은? (조건: v >= 2) (데이터 세트 4)",
+    "choices": [
+      "4",
+      "6",
+      "5",
+      "7"
+    ],
+    "answer": 2,
+    "explanation": "WHERE는 v >= 2인 행만 남기고 COUNT(*)는 해당 행 수를 센다. 해당 데이터를 SQL 순서대로 계산한 결과는 5이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
+    "option_explanations": [],
+    "sql": "SELECT COUNT(*) FROM T WHERE v >= 2",
+    "input_tables": [
+      {
+        "name": "T",
+        "columns": [
+          "v"
+        ],
+        "rows": [
+          [
+            7
+          ],
+          [
+            4
+          ],
+          [
+            0
+          ],
+          [
+            7
+          ],
+          [
+            0
+          ],
+          [
+            6
+          ],
+          [
+            4
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          5
+        ]
+      ]
+    },
+    "steps": [
+      "WHERE는 v >= 2인 행만 남기고 COUNT(*)는 해당 행 수를 센다.",
+      "주어진 입력 7행을 조건대로 처리하면 최종 결과는 5이다."
+    ],
+    "verified": true
+  },
+  {
+    "id": "qv3_0109",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_null",
+    "topic_label": "NULL·3값 논리",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 결과 검증",
+    "stem": "다음 SQL의 COUNT(v) 값은? (데이터 세트 4)",
+    "choices": [
+      "7",
+      "8",
+      "5",
+      "6"
+    ],
+    "answer": 3,
+    "explanation": "COUNT(v)는 NULL을 제외하고 v가 존재하는 행만 계산한다. 해당 데이터를 SQL 순서대로 계산한 결과는 6이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
+    "option_explanations": [],
+    "sql": "SELECT COUNT(v) FROM T",
+    "input_tables": [
+      {
+        "name": "T",
+        "columns": [
+          "v"
+        ],
+        "rows": [
+          [
+            4
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            1
+          ],
+          [
+            null
+          ],
+          [
+            3
+          ],
+          [
+            1
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          6
+        ]
+      ]
+    },
+    "steps": [
+      "COUNT(v)는 NULL을 제외하고 v가 존재하는 행만 계산한다.",
+      "주어진 입력 7행을 조건대로 처리하면 최종 결과는 6이다."
+    ],
+    "verified": true
+  },
+  {
+    "id": "qv3_0110",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_group",
+    "topic_label": "GROUP BY·집계",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 결과 검증",
+    "stem": "다음 SQL의 COUNT(*) 값은? (데이터 세트 4)",
+    "choices": [
+      "3",
+      "0",
+      "2",
+      "1"
+    ],
+    "answer": 3,
+    "explanation": "id=2 조건과 amount IS NOT NULL을 동시에 만족하는 행만 센다. 해당 데이터를 SQL 순서대로 계산한 결과는 1이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
+    "option_explanations": [],
+    "sql": "SELECT COUNT(*) FROM T WHERE id = 2 AND amount IS NOT NULL",
+    "input_tables": [
+      {
+        "name": "T",
+        "columns": [
+          "id",
+          "amount"
+        ],
+        "rows": [
+          [
+            3,
+            30
+          ],
+          [
+            3,
+            20
+          ],
+          [
+            2,
+            30
+          ],
+          [
+            1,
+            20
+          ],
+          [
+            1,
+            20
+          ],
+          [
+            3,
+            null
+          ],
+          [
+            2,
+            null
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          1
+        ]
+      ]
+    },
+    "steps": [
+      "id=2 조건과 amount IS NOT NULL을 동시에 만족하는 행만 센다.",
+      "주어진 입력 7행을 조건대로 처리하면 최종 결과는 1이다."
+    ],
+    "verified": true
+  },
+  {
+    "id": "qv3_0111",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_group",
+    "topic_label": "GROUP BY·집계",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 결과 검증",
+    "stem": "다음 GROUP BY/HAVING SQL에서 결과 그룹은 몇 행인가? (HAVING COUNT(*) >= 4) (데이터 세트 4)",
+    "choices": [
+      "0행",
+      "2행",
+      "3행",
+      "1행"
+    ],
+    "answer": 0,
+    "explanation": "GROUP BY id로 묶고 HAVING은 그룹별 행 수로 판단한다. 해당 데이터를 SQL 순서대로 계산한 결과는 0행이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
+    "option_explanations": [],
+    "sql": "SELECT id, SUM(amount) FROM T GROUP BY id HAVING COUNT(*) >= 4",
+    "input_tables": [
+      {
+        "name": "T",
+        "columns": [
+          "id",
+          "amount"
+        ],
+        "rows": [
+          [
+            1,
+            12
+          ],
+          [
+            3,
+            11
+          ],
+          [
+            1,
+            14
+          ],
+          [
+            2,
+            15
+          ],
+          [
+            2,
+            13
+          ],
+          [
+            2,
+            14
+          ],
+          [
+            3,
+            14
+          ],
+          [
+            1,
+            6
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          0
+        ]
+      ]
+    },
+    "steps": [
+      "GROUP BY id로 묶고 HAVING은 그룹별 행 수로 판단한다.",
+      "주어진 입력 8행을 조건대로 처리하면 최종 결과는 0행이다."
+    ],
+    "verified": true
+  },
+  {
+    "id": "qv3_0112",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_order",
+    "topic_label": "정렬·TOP-N",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 결과 검증",
+    "stem": "중복 제거 및 정렬 후 LIMIT 2를 적용하면 몇 행이 반환되는가? (데이터 세트 4)",
+    "choices": [
+      "4행",
+      "2행",
+      "1행",
+      "3행"
+    ],
+    "answer": 1,
+    "explanation": "WHERE로 먼저 거르고 DISTINCT로 중복을 제거하며, 정렬 후 LIMIT 2를 적용한다. 해당 데이터를 SQL 순서대로 계산한 결과는 2행이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
+    "option_explanations": [],
+    "sql": "SELECT DISTINCT score FROM T WHERE score >= 2 ORDER BY score DESC LIMIT 2",
+    "input_tables": [
+      {
+        "name": "T",
+        "columns": [
+          "score"
+        ],
+        "rows": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            1
+          ],
+          [
+            3
+          ],
+          [
+            0
+          ],
+          [
+            3
+          ],
+          [
+            2
+          ],
+          [
+            5
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          2
+        ]
+      ]
+    },
+    "steps": [
+      "WHERE로 먼저 거르고 DISTINCT로 중복을 제거하며, 정렬 후 LIMIT 2를 적용한다.",
+      "주어진 입력 8행을 조건대로 처리하면 최종 결과는 2행이다."
+    ],
+    "verified": true
+  },
+  {
+    "id": "qv3_0113",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_function",
+    "topic_label": "함수·CASE",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 결과 검증",
+    "stem": "CASE 결과를 SUM한 값은? (score >= 10이면 1) (데이터 세트 4)",
+    "choices": [
+      "3",
+      "2",
+      "1",
+      "0"
+    ],
+    "answer": 2,
+    "explanation": "CASE가 각 행의 조건에 따라 1 또는 0을 반환하고 이를 모두 합산한다. 해당 데이터를 SQL 순서대로 계산한 결과는 1이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
+    "option_explanations": [],
+    "sql": "SELECT SUM(CASE WHEN score >= 10 THEN 1 ELSE 0 END) FROM T",
+    "input_tables": [
+      {
+        "name": "T",
+        "columns": [
+          "score"
+        ],
+        "rows": [
+          [
+            6
+          ],
+          [
+            8
+          ],
+          [
+            8
+          ],
+          [
+            4
+          ],
+          [
+            11
+          ],
+          [
+            1
+          ],
+          [
+            9
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          1
+        ]
+      ]
+    },
+    "steps": [
+      "CASE가 각 행의 조건에 따라 1 또는 0을 반환하고 이를 모두 합산한다.",
+      "주어진 입력 7행을 조건대로 처리하면 최종 결과는 1이다."
+    ],
+    "verified": true
+  },
+  {
+    "id": "qv3_0114",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_function",
+    "topic_label": "함수·CASE",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 결과 검증",
+    "stem": "NULL을 0으로 바꾼 후 SUM한 값은? (데이터 세트 4)",
+    "choices": [
+      "25",
+      "26",
+      "24",
+      "23"
+    ],
+    "answer": 2,
+    "explanation": "COALESCE(v,0)으로 NULL만 0으로 바꾸고 나머지 정수를 모두 합산한다. 해당 데이터를 SQL 순서대로 계산한 결과는 24이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
+    "option_explanations": [],
+    "sql": "SELECT SUM(COALESCE(v,0)) FROM T",
+    "input_tables": [
+      {
+        "name": "T",
+        "columns": [
+          "v"
+        ],
+        "rows": [
+          [
+            4
+          ],
+          [
+            5
+          ],
+          [
+            2
+          ],
+          [
+            4
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ],
+          [
+            null
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          24
+        ]
+      ]
+    },
+    "steps": [
+      "COALESCE(v,0)으로 NULL만 0으로 바꾸고 나머지 정수를 모두 합산한다.",
+      "주어진 입력 7행을 조건대로 처리하면 최종 결과는 24이다."
+    ],
+    "verified": true
+  },
+  {
+    "id": "qv3_0115",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_subquery",
+    "topic_label": "서브쿼리",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 결과 검증",
+    "stem": "EXISTS 조건을 만족하는 결과 행 수는? (값 >= 4) (데이터 세트 4)",
+    "choices": [
+      "3행",
+      "2행",
+      "1행",
+      "0행"
+    ],
+    "answer": 2,
+    "explanation": "외부 행의 값과 일치하며 기준 이상인 내부 행이 존재하면 해당 외부 행을 반환한다. 해당 데이터를 SQL 순서대로 계산한 결과는 1행이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
+    "option_explanations": [],
+    "sql": "SELECT v FROM T a WHERE EXISTS(SELECT 1 FROM T b WHERE b.v = a.v AND b.v >= 4)",
+    "input_tables": [
+      {
+        "name": "T",
+        "columns": [
+          "v"
+        ],
+        "rows": [
+          [
+            1
+          ],
+          [
+            6
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            1
+          ],
+          [
+            0
+          ],
+          [
+            3
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          1
+        ]
+      ]
+    },
+    "steps": [
+      "외부 행의 값과 일치하며 기준 이상인 내부 행이 존재하면 해당 외부 행을 반환한다.",
+      "주어진 입력 7행을 조건대로 처리하면 최종 결과는 1행이다."
+    ],
+    "verified": true
+  },
+  {
+    "id": "qv3_0116",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_set",
+    "topic_label": "집합 연산자",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 결과 검증",
+    "stem": "다음 UNION 결과 행 수는? (데이터 세트 4)",
+    "choices": [
+      "5행",
+      "6행",
+      "4행",
+      "7행"
+    ],
+    "answer": 0,
+    "explanation": "UNION은 두 조건을 합친 뒤 동일한 값의 중복을 제거한다. 해당 데이터를 SQL 순서대로 계산한 결과는 5행이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
+    "option_explanations": [],
+    "sql": "SELECT v FROM T WHERE v <= 2 UNION SELECT v FROM T WHERE v >= 3",
+    "input_tables": [
+      {
+        "name": "T",
+        "columns": [
+          "v"
+        ],
+        "rows": [
+          [
+            1
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            5
+          ],
+          [
+            3
+          ],
+          [
+            1
+          ],
+          [
+            4
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          5
+        ]
+      ]
+    },
+    "steps": [
+      "UNION은 두 조건을 합친 뒤 동일한 값의 중복을 제거한다.",
+      "주어진 입력 7행을 조건대로 처리하면 최종 결과는 5행이다."
+    ],
+    "verified": true
+  },
+  {
+    "id": "qv3_0117",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_subquery",
+    "topic_label": "서브쿼리",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 결과 검증",
+    "stem": "IN 서브쿼리 조건의 결과 행 수는? (기준 >= 4) (데이터 세트 4)",
+    "choices": [
+      "5행",
+      "4행",
+      "2행",
+      "3행"
+    ],
+    "answer": 3,
+    "explanation": "기준 이상의 값이 IN 집합에 들어가며 외부 쿼리는 해당 값을 가진 모든 행을 반환한다. 해당 데이터를 SQL 순서대로 계산한 결과는 3행이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
+    "option_explanations": [],
+    "sql": "SELECT v FROM T WHERE v IN (SELECT v FROM T WHERE v >= 4)",
+    "input_tables": [
+      {
+        "name": "T",
+        "columns": [
+          "v"
+        ],
+        "rows": [
+          [
+            4
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          3
+        ]
+      ]
+    },
+    "steps": [
+      "기준 이상의 값이 IN 집합에 들어가며 외부 쿼리는 해당 값을 가진 모든 행을 반환한다.",
+      "주어진 입력 7행을 조건대로 처리하면 최종 결과는 3행이다."
+    ],
+    "verified": true
+  },
+  {
+    "id": "qv3_0118",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_order",
+    "topic_label": "정렬·TOP-N",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 결과 검증",
+    "stem": "COUNT(DISTINCT v) 결과는? (데이터 세트 4)",
+    "choices": [
+      "3",
+      "6",
+      "4",
+      "5"
+    ],
+    "answer": 2,
+    "explanation": "중복 v 값은 한 번만 세므로 값의 종류 수가 된다. 해당 데이터를 SQL 순서대로 계산한 결과는 4이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
+    "option_explanations": [],
+    "sql": "SELECT COUNT(DISTINCT v) FROM T",
+    "input_tables": [
+      {
+        "name": "T",
+        "columns": [
+          "v"
+        ],
+        "rows": [
+          [
+            1
+          ],
+          [
+            6
+          ],
+          [
+            6
+          ],
+          [
+            4
+          ],
+          [
+            4
+          ],
+          [
+            4
+          ],
+          [
+            3
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          4
+        ]
+      ]
+    },
+    "steps": [
+      "중복 v 값은 한 번만 세므로 값의 종류 수가 된다.",
+      "주어진 입력 7행을 조건대로 처리하면 최종 결과는 4이다."
+    ],
+    "verified": true
+  },
+  {
+    "id": "qv3_0119",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_null",
+    "topic_label": "NULL·3값 논리",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 결과 검증",
+    "stem": "OR 필터를 만족하는 행 수는? (v > 4 또는 v=0) (데이터 세트 4)",
+    "choices": [
+      "0",
+      "3",
+      "1",
+      "2"
+    ],
+    "answer": 2,
+    "explanation": "OR 조건은 둘 중 하나라도 TRUE인 행을 통과시킨다. 중복 조건을 만족해도 한 행은 한 번 센다. 해당 데이터를 SQL 순서대로 계산한 결과는 1이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
+    "option_explanations": [],
+    "sql": "SELECT COUNT(*) FROM T WHERE v > 4 OR v = 0",
+    "input_tables": [
+      {
+        "name": "T",
+        "columns": [
+          "v"
+        ],
+        "rows": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            1
+          ],
+          [
+            4
+          ],
+          [
+            3
+          ],
+          [
+            6
+          ],
+          [
+            3
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          1
+        ]
+      ]
+    },
+    "steps": [
+      "OR 조건은 둘 중 하나라도 TRUE인 행을 통과시킨다. 중복 조건을 만족해도 한 행은 한 번 센다.",
+      "주어진 입력 7행을 조건대로 처리하면 최종 결과는 1이다."
+    ],
+    "verified": true
+  },
+  {
+    "id": "qv3_0120",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_null",
+    "topic_label": "NULL·3값 논리",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 결과 검증",
+    "stem": "다음 SQL의 COUNT(*) 값은? (조건: v >= 3) (데이터 세트 5)",
+    "choices": [
+      "7",
+      "6",
+      "4",
+      "5"
+    ],
+    "answer": 3,
+    "explanation": "WHERE는 v >= 3인 행만 남기고 COUNT(*)는 해당 행 수를 센다. 해당 데이터를 SQL 순서대로 계산한 결과는 5이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
+    "option_explanations": [],
+    "sql": "SELECT COUNT(*) FROM T WHERE v >= 3",
+    "input_tables": [
+      {
+        "name": "T",
+        "columns": [
+          "v"
+        ],
+        "rows": [
+          [
+            4
+          ],
+          [
+            4
+          ],
+          [
+            0
+          ],
+          [
+            5
+          ],
+          [
+            5
+          ],
+          [
+            7
+          ],
+          [
+            0
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          5
+        ]
+      ]
+    },
+    "steps": [
+      "WHERE는 v >= 3인 행만 남기고 COUNT(*)는 해당 행 수를 센다.",
+      "주어진 입력 7행을 조건대로 처리하면 최종 결과는 5이다."
+    ],
+    "verified": true
+  },
+  {
+    "id": "qv3_0121",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_null",
+    "topic_label": "NULL·3값 논리",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 결과 검증",
+    "stem": "다음 SQL의 COUNT(v) 값은? (데이터 세트 5)",
+    "choices": [
+      "7",
+      "6",
+      "4",
+      "5"
+    ],
+    "answer": 3,
+    "explanation": "COUNT(v)는 NULL을 제외하고 v가 존재하는 행만 계산한다. 해당 데이터를 SQL 순서대로 계산한 결과는 5이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
+    "option_explanations": [],
+    "sql": "SELECT COUNT(v) FROM T",
+    "input_tables": [
+      {
+        "name": "T",
+        "columns": [
+          "v"
+        ],
+        "rows": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            null
+          ],
+          [
+            4
+          ],
+          [
+            null
+          ],
+          [
+            4
+          ],
+          [
+            1
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          5
+        ]
+      ]
+    },
+    "steps": [
+      "COUNT(v)는 NULL을 제외하고 v가 존재하는 행만 계산한다.",
+      "주어진 입력 7행을 조건대로 처리하면 최종 결과는 5이다."
+    ],
+    "verified": true
+  },
+  {
+    "id": "qv3_0122",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_group",
+    "topic_label": "GROUP BY·집계",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 결과 검증",
+    "stem": "다음 SQL의 COUNT(*) 값은? (데이터 세트 5)",
+    "choices": [
+      "2",
+      "4",
+      "3",
+      "1"
+    ],
+    "answer": 0,
+    "explanation": "id=2 조건과 amount IS NOT NULL을 동시에 만족하는 행만 센다. 해당 데이터를 SQL 순서대로 계산한 결과는 2이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
+    "option_explanations": [],
+    "sql": "SELECT COUNT(*) FROM T WHERE id = 2 AND amount IS NOT NULL",
+    "input_tables": [
+      {
+        "name": "T",
+        "columns": [
+          "id",
+          "amount"
+        ],
+        "rows": [
+          [
+            2,
+            10
+          ],
+          [
+            1,
+            null
+          ],
+          [
+            4,
+            20
+          ],
+          [
+            3,
+            20
+          ],
+          [
+            3,
+            20
+          ],
+          [
+            2,
+            20
+          ],
+          [
+            2,
+            null
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          2
+        ]
+      ]
+    },
+    "steps": [
+      "id=2 조건과 amount IS NOT NULL을 동시에 만족하는 행만 센다.",
+      "주어진 입력 7행을 조건대로 처리하면 최종 결과는 2이다."
+    ],
+    "verified": true
+  },
+  {
+    "id": "qv3_0123",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_group",
+    "topic_label": "GROUP BY·집계",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 결과 검증",
+    "stem": "다음 GROUP BY/HAVING SQL에서 결과 그룹은 몇 행인가? (HAVING COUNT(*) >= 2) (데이터 세트 5)",
+    "choices": [
+      "2행",
+      "1행",
+      "3행",
+      "4행"
+    ],
+    "answer": 0,
+    "explanation": "GROUP BY id로 묶고 HAVING은 그룹별 행 수로 판단한다. 해당 데이터를 SQL 순서대로 계산한 결과는 2행이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
+    "option_explanations": [],
+    "sql": "SELECT id, SUM(amount) FROM T GROUP BY id HAVING COUNT(*) >= 2",
+    "input_tables": [
+      {
+        "name": "T",
+        "columns": [
+          "id",
+          "amount"
+        ],
+        "rows": [
+          [
+            3,
+            9
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            1,
+            13
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            1,
+            17
+          ],
+          [
+            3,
+            10
+          ],
+          [
+            1,
+            11
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          2
+        ]
+      ]
+    },
+    "steps": [
+      "GROUP BY id로 묶고 HAVING은 그룹별 행 수로 판단한다.",
+      "주어진 입력 8행을 조건대로 처리하면 최종 결과는 2행이다."
+    ],
+    "verified": true
+  },
+  {
+    "id": "qv3_0124",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_order",
+    "topic_label": "정렬·TOP-N",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 결과 검증",
+    "stem": "중복 제거 및 정렬 후 LIMIT 2를 적용하면 몇 행이 반환되는가? (데이터 세트 5)",
+    "choices": [
+      "1행",
+      "4행",
+      "2행",
+      "3행"
+    ],
+    "answer": 2,
+    "explanation": "WHERE로 먼저 거르고 DISTINCT로 중복을 제거하며, 정렬 후 LIMIT 2를 적용한다. 해당 데이터를 SQL 순서대로 계산한 결과는 2행이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
+    "option_explanations": [],
+    "sql": "SELECT DISTINCT score FROM T WHERE score >= 1 ORDER BY score DESC LIMIT 2",
+    "input_tables": [
+      {
+        "name": "T",
+        "columns": [
+          "score"
+        ],
+        "rows": [
+          [
+            2
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            1
+          ],
+          [
+            0
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ],
+          [
+            1
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          2
+        ]
+      ]
+    },
+    "steps": [
+      "WHERE로 먼저 거르고 DISTINCT로 중복을 제거하며, 정렬 후 LIMIT 2를 적용한다.",
+      "주어진 입력 8행을 조건대로 처리하면 최종 결과는 2행이다."
+    ],
+    "verified": true
+  },
+  {
+    "id": "qv3_0125",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_function",
+    "topic_label": "함수·CASE",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 결과 검증",
+    "stem": "CASE 결과를 SUM한 값은? (score >= 5이면 1) (데이터 세트 5)",
+    "choices": [
+      "6",
+      "3",
+      "4",
+      "5"
+    ],
+    "answer": 2,
+    "explanation": "CASE가 각 행의 조건에 따라 1 또는 0을 반환하고 이를 모두 합산한다. 해당 데이터를 SQL 순서대로 계산한 결과는 4이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
+    "option_explanations": [],
+    "sql": "SELECT SUM(CASE WHEN score >= 5 THEN 1 ELSE 0 END) FROM T",
+    "input_tables": [
+      {
+        "name": "T",
+        "columns": [
+          "score"
+        ],
+        "rows": [
+          [
+            11
+          ],
+          [
+            8
+          ],
+          [
+            4
+          ],
+          [
+            8
+          ],
+          [
+            0
+          ],
+          [
+            2
+          ],
+          [
+            6
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          4
+        ]
+      ]
+    },
+    "steps": [
+      "CASE가 각 행의 조건에 따라 1 또는 0을 반환하고 이를 모두 합산한다.",
+      "주어진 입력 7행을 조건대로 처리하면 최종 결과는 4이다."
+    ],
+    "verified": true
+  },
+  {
+    "id": "qv3_0126",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_function",
+    "topic_label": "함수·CASE",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 결과 검증",
+    "stem": "NULL을 0으로 바꾼 후 SUM한 값은? (데이터 세트 5)",
+    "choices": [
+      "13",
+      "15",
+      "12",
+      "14"
+    ],
+    "answer": 0,
+    "explanation": "COALESCE(v,0)으로 NULL만 0으로 바꾸고 나머지 정수를 모두 합산한다. 해당 데이터를 SQL 순서대로 계산한 결과는 13이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
+    "option_explanations": [],
+    "sql": "SELECT SUM(COALESCE(v,0)) FROM T",
+    "input_tables": [
+      {
+        "name": "T",
+        "columns": [
+          "v"
+        ],
+        "rows": [
+          [
+            1
+          ],
+          [
+            3
+          ],
+          [
+            5
+          ],
+          [
+            3
+          ],
+          [
+            null
+          ],
+          [
+            null
+          ],
+          [
+            1
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          13
+        ]
+      ]
+    },
+    "steps": [
+      "COALESCE(v,0)으로 NULL만 0으로 바꾸고 나머지 정수를 모두 합산한다.",
+      "주어진 입력 7행을 조건대로 처리하면 최종 결과는 13이다."
+    ],
+    "verified": true
+  },
+  {
+    "id": "qv3_0127",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_subquery",
+    "topic_label": "서브쿼리",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 결과 검증",
+    "stem": "EXISTS 조건을 만족하는 결과 행 수는? (값 >= 5) (데이터 세트 5)",
+    "choices": [
+      "4행",
+      "2행",
+      "1행",
+      "3행"
+    ],
+    "answer": 1,
+    "explanation": "외부 행의 값과 일치하며 기준 이상인 내부 행이 존재하면 해당 외부 행을 반환한다. 해당 데이터를 SQL 순서대로 계산한 결과는 2행이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
+    "option_explanations": [],
+    "sql": "SELECT v FROM T a WHERE EXISTS(SELECT 1 FROM T b WHERE b.v = a.v AND b.v >= 5)",
+    "input_tables": [
+      {
+        "name": "T",
+        "columns": [
+          "v"
+        ],
+        "rows": [
+          [
+            6
+          ],
+          [
+            4
+          ],
+          [
+            0
+          ],
+          [
+            3
+          ],
+          [
+            6
+          ],
+          [
+            4
+          ],
+          [
+            3
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          2
+        ]
+      ]
+    },
+    "steps": [
+      "외부 행의 값과 일치하며 기준 이상인 내부 행이 존재하면 해당 외부 행을 반환한다.",
+      "주어진 입력 7행을 조건대로 처리하면 최종 결과는 2행이다."
+    ],
+    "verified": true
+  },
+  {
+    "id": "qv3_0128",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_set",
+    "topic_label": "집합 연산자",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 결과 검증",
+    "stem": "다음 UNION 결과 행 수는? (데이터 세트 5)",
+    "choices": [
+      "4행",
+      "3행",
+      "5행",
+      "2행"
+    ],
+    "answer": 1,
+    "explanation": "UNION은 두 조건을 합친 뒤 동일한 값의 중복을 제거한다. 해당 데이터를 SQL 순서대로 계산한 결과는 3행이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
+    "option_explanations": [],
+    "sql": "SELECT v FROM T WHERE v <= 2 UNION SELECT v FROM T WHERE v >= 3",
+    "input_tables": [
+      {
+        "name": "T",
+        "columns": [
+          "v"
+        ],
+        "rows": [
+          [
+            1
+          ],
+          [
+            4
+          ],
+          [
+            4
+          ],
+          [
+            4
+          ],
+          [
+            2
+          ],
+          [
+            4
+          ],
+          [
+            4
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          3
+        ]
+      ]
+    },
+    "steps": [
+      "UNION은 두 조건을 합친 뒤 동일한 값의 중복을 제거한다.",
+      "주어진 입력 7행을 조건대로 처리하면 최종 결과는 3행이다."
+    ],
+    "verified": true
+  },
+  {
+    "id": "qv3_0129",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_subquery",
+    "topic_label": "서브쿼리",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 결과 검증",
+    "stem": "IN 서브쿼리 조건의 결과 행 수는? (기준 >= 2) (데이터 세트 5)",
+    "choices": [
+      "8행",
+      "6행",
+      "7행",
+      "5행"
+    ],
+    "answer": 1,
+    "explanation": "기준 이상의 값이 IN 집합에 들어가며 외부 쿼리는 해당 값을 가진 모든 행을 반환한다. 해당 데이터를 SQL 순서대로 계산한 결과는 6행이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
+    "option_explanations": [],
+    "sql": "SELECT v FROM T WHERE v IN (SELECT v FROM T WHERE v >= 2)",
+    "input_tables": [
+      {
+        "name": "T",
+        "columns": [
+          "v"
+        ],
+        "rows": [
+          [
+            3
+          ],
+          [
+            5
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ],
+          [
+            1
+          ],
+          [
+            3
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          6
+        ]
+      ]
+    },
+    "steps": [
+      "기준 이상의 값이 IN 집합에 들어가며 외부 쿼리는 해당 값을 가진 모든 행을 반환한다.",
+      "주어진 입력 7행을 조건대로 처리하면 최종 결과는 6행이다."
+    ],
+    "verified": true
+  },
+  {
+    "id": "qv3_0130",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_order",
+    "topic_label": "정렬·TOP-N",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 결과 검증",
+    "stem": "COUNT(DISTINCT v) 결과는? (데이터 세트 5)",
+    "choices": [
+      "7",
+      "4",
+      "5",
+      "6"
+    ],
+    "answer": 2,
+    "explanation": "중복 v 값은 한 번만 세므로 값의 종류 수가 된다. 해당 데이터를 SQL 순서대로 계산한 결과는 5이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
+    "option_explanations": [],
+    "sql": "SELECT COUNT(DISTINCT v) FROM T",
+    "input_tables": [
+      {
+        "name": "T",
+        "columns": [
+          "v"
+        ],
+        "rows": [
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            4
+          ],
+          [
+            0
+          ],
+          [
+            3
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          5
+        ]
+      ]
+    },
+    "steps": [
+      "중복 v 값은 한 번만 세므로 값의 종류 수가 된다.",
+      "주어진 입력 7행을 조건대로 처리하면 최종 결과는 5이다."
+    ],
+    "verified": true
+  },
+  {
+    "id": "qv3_0131",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_null",
+    "topic_label": "NULL·3값 논리",
+    "difficulty": "중",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 결과 검증",
+    "stem": "OR 필터를 만족하는 행 수는? (v > 3 또는 v=0) (데이터 세트 5)",
+    "choices": [
+      "5",
+      "7",
+      "6",
+      "4"
+    ],
+    "answer": 0,
+    "explanation": "OR 조건은 둘 중 하나라도 TRUE인 행을 통과시킨다. 중복 조건을 만족해도 한 행은 한 번 센다. 해당 데이터를 SQL 순서대로 계산한 결과는 5이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
+    "option_explanations": [],
+    "sql": "SELECT COUNT(*) FROM T WHERE v > 3 OR v = 0",
+    "input_tables": [
+      {
+        "name": "T",
+        "columns": [
+          "v"
+        ],
+        "rows": [
+          [
+            7
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            7
+          ],
+          [
+            5
+          ],
+          [
+            1
+          ],
+          [
+            9
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          5
+        ]
+      ]
+    },
+    "steps": [
+      "OR 조건은 둘 중 하나라도 TRUE인 행을 통과시킨다. 중복 조건을 만족해도 한 행은 한 번 센다.",
+      "주어진 입력 7행을 조건대로 처리하면 최종 결과는 5이다."
+    ],
+    "verified": true
+  }
+]
