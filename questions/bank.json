@@ -4,7 +4,7 @@
     "subject": "데이터 모델링",
     "topic": "model_entity",
     "topic_label": "엔터티·속성",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "엔터티를 정의할 때 가장 적절한 기준은?",
@@ -21,14 +21,19 @@
     "input_tables": [],
     "result_table": null,
     "steps": [],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      8
+    ],
+    "verification_method": "concept_reviewed",
+    "question_type": "개념 판단"
   },
   {
     "id": "qv3_0002",
     "subject": "데이터 모델링",
     "topic": "model_entity",
     "topic_label": "엔터티·속성",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "주문 상세의 수량, 단가 중 일반적으로 속성에 해당하는 것은?",
@@ -45,14 +50,19 @@
     "input_tables": [],
     "result_table": null,
     "steps": [],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      8
+    ],
+    "verification_method": "concept_reviewed",
+    "question_type": "개념 판단"
   },
   {
     "id": "qv3_0003",
     "subject": "데이터 모델링",
     "topic": "model_entity",
     "topic_label": "엔터티·속성",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "회원 한 명을 나타내는 특정 데이터 행은 무엇인가?",
@@ -69,14 +79,19 @@
     "input_tables": [],
     "result_table": null,
     "steps": [],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      8
+    ],
+    "verification_method": "concept_reviewed",
+    "question_type": "개념 판단"
   },
   {
     "id": "qv3_0004",
     "subject": "데이터 모델링",
     "topic": "model_entity",
     "topic_label": "엔터티·속성",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "파생 속성에 해당하는 대표적인 예는?",
@@ -93,14 +108,19 @@
     "input_tables": [],
     "result_table": null,
     "steps": [],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      8
+    ],
+    "verification_method": "concept_reviewed",
+    "question_type": "개념 판단"
   },
   {
     "id": "qv3_0005",
     "subject": "데이터 모델링",
     "topic": "model_relation",
     "topic_label": "ERD·관계",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "고객이 주문을 0건 이상 할 수 있다면 고객의 주문 참여는?",
@@ -117,14 +137,19 @@
     "input_tables": [],
     "result_table": null,
     "steps": [],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      8
+    ],
+    "verification_method": "concept_reviewed",
+    "question_type": "개념 판단"
   },
   {
     "id": "qv3_0006",
     "subject": "데이터 모델링",
     "topic": "model_relation",
     "topic_label": "ERD·관계",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "N:M 관계를 관계형 테이블로 구현하는 일반적인 방법은?",
@@ -141,14 +166,19 @@
     "input_tables": [],
     "result_table": null,
     "steps": [],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      8
+    ],
+    "verification_method": "concept_reviewed",
+    "question_type": "개념 판단"
   },
   {
     "id": "qv3_0007",
     "subject": "데이터 모델링",
     "topic": "model_relation",
     "topic_label": "ERD·관계",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "고객과 주문의 1:N 관계에서 N 쪽은?",
@@ -165,14 +195,19 @@
     "input_tables": [],
     "result_table": null,
     "steps": [],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      8
+    ],
+    "verification_method": "concept_reviewed",
+    "question_type": "개념 판단"
   },
   {
     "id": "qv3_0008",
     "subject": "데이터 모델링",
     "topic": "model_relation",
     "topic_label": "ERD·관계",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "관계의 선택성(optional)을 나타내는 정보는?",
@@ -189,14 +224,19 @@
     "input_tables": [],
     "result_table": null,
     "steps": [],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      8
+    ],
+    "verification_method": "concept_reviewed",
+    "question_type": "개념 판단"
   },
   {
     "id": "qv3_0009",
     "subject": "데이터 모델링",
     "topic": "model_key",
     "topic_label": "식별자·키",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "다음 중 후보키에 반드시 필요한 속성은?",
@@ -213,14 +253,19 @@
     "input_tables": [],
     "result_table": null,
     "steps": [],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      9
+    ],
+    "verification_method": "concept_reviewed",
+    "question_type": "개념 판단"
   },
   {
     "id": "qv3_0010",
     "subject": "데이터 모델링",
     "topic": "model_key",
     "topic_label": "식별자·키",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "기본키로 선택되지 않은 후보키는?",
@@ -237,14 +282,19 @@
     "input_tables": [],
     "result_table": null,
     "steps": [],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      9
+    ],
+    "verification_method": "concept_reviewed",
+    "question_type": "개념 판단"
   },
   {
     "id": "qv3_0011",
     "subject": "데이터 모델링",
     "topic": "model_key",
     "topic_label": "식별자·키",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "식별 관계를 가장 잘 설명한 것은?",
@@ -261,14 +311,19 @@
     "input_tables": [],
     "result_table": null,
     "steps": [],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      9
+    ],
+    "verification_method": "concept_reviewed",
+    "question_type": "개념 판단"
   },
   {
     "id": "qv3_0012",
     "subject": "데이터 모델링",
     "topic": "model_key",
     "topic_label": "식별자·키",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "비식별 관계에서 FK의 위치는?",
@@ -285,14 +340,19 @@
     "input_tables": [],
     "result_table": null,
     "steps": [],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      9
+    ],
+    "verification_method": "concept_reviewed",
+    "question_type": "개념 판단"
   },
   {
     "id": "qv3_0013",
     "subject": "데이터 모델링",
     "topic": "model_normal",
     "topic_label": "정규화",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "1NF 위반 사례로 가장 적절한 것은?",
@@ -309,14 +369,19 @@
     "input_tables": [],
     "result_table": null,
     "steps": [],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      10
+    ],
+    "verification_method": "concept_reviewed",
+    "question_type": "개념 판단"
   },
   {
     "id": "qv3_0014",
     "subject": "데이터 모델링",
     "topic": "model_normal",
     "topic_label": "정규화",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "복합 후보키 (주문번호, 상품번호)에서 주문날짜가 주문번호에만 종속된다면?",
@@ -328,19 +393,33 @@
     ],
     "answer": 2,
     "explanation": "복합키의 일부인 주문번호만으로 주문날짜가 결정되므로 부분 함수 종속이다. 2NF는 이런 비주요 속성의 부분 종속을 제거한다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "3NF 개선 사례와 달리, 후보키의 부분 종속이 핵심이다.",
+      "정규화와 직접 관련 있는 종속 관계다.",
+      "주문날짜가 복합키 일부인 주문번호에만 달려 있으므로 부분 종속이다.",
+      "이행 종속은 비주요 속성을 거치는 종속을 말한다."
+    ],
     "sql": "",
     "input_tables": [],
     "result_table": null,
-    "steps": [],
-    "verified": true
+    "steps": [
+      "복합키 전체가 필요한 속성과 일부 키에만 종속된 속성을 분리한다.",
+      "주문날짜는 주문번호만으로 결정되므로 주문번호+상품번호 전체에 완전 종속되지 않는다.",
+      "부분 종속이 있다면 2NF를 위한 분해를 검토한다."
+    ],
+    "verified": true,
+    "linked_chapters": [
+      10
+    ],
+    "verification_method": "concept_reviewed",
+    "question_type": "개념 판단"
   },
   {
     "id": "qv3_0015",
     "subject": "데이터 모델링",
     "topic": "model_normal",
     "topic_label": "정규화",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "직원번호→부서번호→부서이름에서 부서이름의 의존성을 개선하려면?",
@@ -352,19 +431,33 @@
     ],
     "answer": 3,
     "explanation": "직원번호가 부서번호를 결정하고, 부서번호가 부서이름을 결정한다. 부서 정보를 분리하면 이행적 종속으로 인한 갱신 이상을 줄일 수 있다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "중복을 늘리면 부서명 변경 이상이 더 커진다.",
+      "모든 열을 키에 넣어도 이행적 종속을 해결하지 못한다.",
+      "NULL로 만드는 것은 종속성을 제거하는 설계가 아니다.",
+      "부서 정보를 별도로 분리해 부서번호로 참조하면 중복을 줄일 수 있다."
+    ],
     "sql": "",
     "input_tables": [],
     "result_table": null,
-    "steps": [],
-    "verified": true
+    "steps": [
+      "직원번호가 부서번호를 결정하고 부서번호가 부서이름을 결정한다.",
+      "부서이름이 직원번호에 이행적으로 종속되어 반복 저장될 수 있다.",
+      "부서(부서번호, 부서이름)를 분리해 변경 이상을 줄인다."
+    ],
+    "verified": true,
+    "linked_chapters": [
+      10
+    ],
+    "verification_method": "concept_reviewed",
+    "question_type": "개념 판단"
   },
   {
     "id": "qv3_0016",
     "subject": "데이터 모델링",
     "topic": "model_normal",
     "topic_label": "정규화",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "정규화를 적용하는 대표적인 이유는?",
@@ -381,14 +474,19 @@
     "input_tables": [],
     "result_table": null,
     "steps": [],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      10
+    ],
+    "verification_method": "concept_reviewed",
+    "question_type": "개념 판단"
   },
   {
     "id": "qv3_0017",
     "subject": "데이터 모델링",
     "topic": "model_normal",
     "topic_label": "정규화",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "반정규화의 목적에 대한 설명으로 옳은 것은?",
@@ -405,14 +503,19 @@
     "input_tables": [],
     "result_table": null,
     "steps": [],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      10
+    ],
+    "verification_method": "concept_reviewed",
+    "question_type": "개념 판단"
   },
   {
     "id": "qv3_0018",
     "subject": "데이터 모델링",
     "topic": "model_schema",
     "topic_label": "3단계 스키마",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "외부 스키마가 표현하는 것은?",
@@ -429,14 +532,19 @@
     "input_tables": [],
     "result_table": null,
     "steps": [],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      15
+    ],
+    "verification_method": "concept_reviewed",
+    "question_type": "개념 판단"
   },
   {
     "id": "qv3_0019",
     "subject": "데이터 모델링",
     "topic": "model_schema",
     "topic_label": "3단계 스키마",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "논리적 데이터 독립성의 대표 사례는?",
@@ -453,14 +561,19 @@
     "input_tables": [],
     "result_table": null,
     "steps": [],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      15
+    ],
+    "verification_method": "concept_reviewed",
+    "question_type": "개념 판단"
   },
   {
     "id": "qv3_0020",
     "subject": "데이터 모델링",
     "topic": "model_schema",
     "topic_label": "3단계 스키마",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "물리적 데이터 독립성에 해당하는 사례는?",
@@ -477,14 +590,19 @@
     "input_tables": [],
     "result_table": null,
     "steps": [],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      15
+    ],
+    "verification_method": "concept_reviewed",
+    "question_type": "개념 판단"
   },
   {
     "id": "qv3_0021",
     "subject": "데이터 모델링",
     "topic": "model_schema",
     "topic_label": "3단계 스키마",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "3단계 스키마에서 데이터베이스 전체의 통합 논리 구조는?",
@@ -501,14 +619,19 @@
     "input_tables": [],
     "result_table": null,
     "steps": [],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      15
+    ],
+    "verification_method": "concept_reviewed",
+    "question_type": "개념 판단"
   },
   {
     "id": "qv3_0022",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_join",
     "topic_label": "JOIN",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "INNER JOIN에서 키가 일치하는 A 행이 3개, B 행이 2개이면 해당 키의 결과 행 수는?",
@@ -525,14 +648,20 @@
     "input_tables": [],
     "result_table": null,
     "steps": [],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      1,
+      6
+    ],
+    "verification_method": "concept_reviewed",
+    "question_type": "개념 판단"
   },
   {
     "id": "qv3_0023",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_join",
     "topic_label": "JOIN",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "LEFT JOIN 이후 WHERE B.status = 1을 적용하면 무슨 일이 일어날 수 있는가?",
@@ -544,19 +673,34 @@
     ],
     "answer": 3,
     "explanation": "LEFT JOIN으로 생성된 NULL 확장 행에서 B.status=1은 UNKNOWN이 되므로 WHERE에서 제거된다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "NULL 비교는 TRUE가 아니라 UNKNOWN이다.",
+      "WHERE에서 오른쪽 열 조건을 검사하면 NULL 확장 행도 제거될 수 있다.",
+      "LEFT JOIN이 조건 때문에 CROSS JOIN으로 자동 변경되지는 않는다.",
+      "매칭되지 않은 오른쪽 B.status는 NULL이 되어 WHERE B.status=1을 통과하지 못한다."
+    ],
     "sql": "",
     "input_tables": [],
     "result_table": null,
-    "steps": [],
-    "verified": true
+    "steps": [
+      "LEFT JOIN 수행 후 매칭이 없는 행의 B.status는 NULL이다.",
+      "WHERE B.status=1은 NULL에 대해 UNKNOWN이다.",
+      "WHERE는 TRUE만 남기므로 해당 미매칭 행이 제거된다."
+    ],
+    "verified": true,
+    "linked_chapters": [
+      1,
+      6
+    ],
+    "verification_method": "concept_reviewed",
+    "question_type": "개념 판단"
   },
   {
     "id": "qv3_0024",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_join",
     "topic_label": "JOIN",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "FULL OUTER JOIN의 일반적인 설명은?",
@@ -573,14 +717,20 @@
     "input_tables": [],
     "result_table": null,
     "steps": [],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      1,
+      6
+    ],
+    "verification_method": "concept_reviewed",
+    "question_type": "개념 판단"
   },
   {
     "id": "qv3_0025",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_join",
     "topic_label": "JOIN",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "CROSS JOIN의 기본 동작은?",
@@ -597,14 +747,20 @@
     "input_tables": [],
     "result_table": null,
     "steps": [],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      1,
+      6
+    ],
+    "verification_method": "concept_reviewed",
+    "question_type": "개념 판단"
   },
   {
     "id": "qv3_0026",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_null",
     "topic_label": "NULL·3값 논리",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "NULL = NULL의 SQL 3값 논리 평가 결과는?",
@@ -621,14 +777,19 @@
     "input_tables": [],
     "result_table": null,
     "steps": [],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      2
+    ],
+    "verification_method": "concept_reviewed",
+    "question_type": "개념 판단"
   },
   {
     "id": "qv3_0027",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_null",
     "topic_label": "NULL·3값 논리",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "WHERE 컬럼 <> 10에서 컬럼 값이 NULL이면?",
@@ -645,14 +806,19 @@
     "input_tables": [],
     "result_table": null,
     "steps": [],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      2
+    ],
+    "verification_method": "concept_reviewed",
+    "question_type": "개념 판단"
   },
   {
     "id": "qv3_0028",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_null",
     "topic_label": "NULL·3값 논리",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "NOT IN 목록에 NULL이 포함되면 주의해야 하는 이유는?",
@@ -664,19 +830,33 @@
     ],
     "answer": 0,
     "explanation": "일반 값과 NULL의 비교가 UNKNOWN이 되어 NOT IN 조건 전체가 TRUE가 아닐 수 있다. 빈 집합 등의 경계 사례는 별도다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "제외 목록의 NULL과 비교하면 UNKNOWN이 생겨 TRUE인 행이 없어질 수 있다.",
+      "NOT EXISTS와 NOT IN의 NULL 처리는 일반적으로 같지 않다.",
+      "NULL을 제외 목록에서 자동으로 무시하는 것이 아니다.",
+      "SQL에서 NULL을 자동으로 0으로 치환하지 않는다."
+    ],
     "sql": "",
     "input_tables": [],
     "result_table": null,
-    "steps": [],
-    "verified": true
+    "steps": [
+      "NOT IN은 목록의 각 값에 대해 같지 않음을 검사하는 조건으로 이해한다.",
+      "비교 대상에 NULL이 있으면 <> NULL은 UNKNOWN이다.",
+      "TRUE가 확정되지 않아 행이 필터링될 수 있다."
+    ],
+    "verified": true,
+    "linked_chapters": [
+      2
+    ],
+    "verification_method": "concept_reviewed",
+    "question_type": "개념 판단"
   },
   {
     "id": "qv3_0029",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_null",
     "topic_label": "NULL·3값 논리",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "IS NOT NULL 조건이 TRUE인 값은?",
@@ -693,14 +873,19 @@
     "input_tables": [],
     "result_table": null,
     "steps": [],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      2
+    ],
+    "verification_method": "concept_reviewed",
+    "question_type": "개념 판단"
   },
   {
     "id": "qv3_0030",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_group",
     "topic_label": "GROUP BY·집계",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "COUNT(*)와 COUNT(컬럼)의 핵심 차이는?",
@@ -712,19 +897,33 @@
     ],
     "answer": 2,
     "explanation": "COUNT(*)는 조건에 해당하는 모든 행을 세며 COUNT(컬럼)은 해당 컬럼의 NULL이 아닌 값만 센다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "NULL이 있는 행에서는 두 집계의 개수가 달라질 수 있다.",
+      "COUNT(col)은 DISTINCT가 없으면 중복값도 센다.",
+      "COUNT(col)은 해당 열이 NULL인 행을 제외해 센다.",
+      "COUNT(*)는 행 전체를 세므로 다른 열이 NULL이어도 그 행은 포함된다."
+    ],
     "sql": "",
     "input_tables": [],
     "result_table": null,
-    "steps": [],
-    "verified": true
+    "steps": [
+      "NULL을 포함한 원본 행 개수를 세는지 확인한다.",
+      "COUNT(*)는 모든 행, COUNT(col)은 col이 NULL이 아닌 행을 센다."
+    ],
+    "verified": true,
+    "linked_chapters": [
+      3,
+      6
+    ],
+    "verification_method": "concept_reviewed",
+    "question_type": "개념 판단"
   },
   {
     "id": "qv3_0031",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_group",
     "topic_label": "GROUP BY·집계",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "WHERE와 HAVING의 적용 단계는?",
@@ -736,19 +935,34 @@
     ],
     "answer": 3,
     "explanation": "WHERE는 개별 행을 먼저 거르고 HAVING은 그룹화된 결과에 조건을 적용한다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "WHERE는 그룹 생성 전에 원본 행을 거른다.",
+      "HAVING은 GROUP BY 이후 그룹을 대상으로 판단한다.",
+      "WHERE는 논리적으로 SELECT보다 먼저 적용된다.",
+      "WHERE는 행을, HAVING은 그룹을 필터링한다."
+    ],
     "sql": "",
     "input_tables": [],
     "result_table": null,
-    "steps": [],
-    "verified": true
+    "steps": [
+      "FROM 이후 WHERE로 행을 먼저 필터링한다.",
+      "GROUP BY로 남은 행을 묶는다.",
+      "HAVING으로 그룹별 집계 조건을 검사한다."
+    ],
+    "verified": true,
+    "linked_chapters": [
+      3,
+      6
+    ],
+    "verification_method": "concept_reviewed",
+    "question_type": "개념 판단"
   },
   {
     "id": "qv3_0032",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_group",
     "topic_label": "GROUP BY·집계",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "COUNT(DISTINCT dept)의 의미는?",
@@ -765,14 +979,20 @@
     "input_tables": [],
     "result_table": null,
     "steps": [],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      3,
+      6
+    ],
+    "verification_method": "concept_reviewed",
+    "question_type": "개념 판단"
   },
   {
     "id": "qv3_0033",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_group",
     "topic_label": "GROUP BY·집계",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "SUM(col)과 COUNT(col)의 공통 NULL 처리 특징은?",
@@ -789,14 +1009,20 @@
     "input_tables": [],
     "result_table": null,
     "steps": [],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      3,
+      6
+    ],
+    "verification_method": "concept_reviewed",
+    "question_type": "개념 판단"
   },
   {
     "id": "qv3_0034",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_subquery",
     "topic_label": "서브쿼리",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "EXISTS 서브쿼리가 판단하는 핵심은?",
@@ -813,14 +1039,19 @@
     "input_tables": [],
     "result_table": null,
     "steps": [],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      5
+    ],
+    "verification_method": "concept_reviewed",
+    "question_type": "개념 판단"
   },
   {
     "id": "qv3_0035",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_subquery",
     "topic_label": "서브쿼리",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "스칼라 서브쿼리의 일반적인 반환 요구는?",
@@ -837,14 +1068,19 @@
     "input_tables": [],
     "result_table": null,
     "steps": [],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      5
+    ],
+    "verification_method": "concept_reviewed",
+    "question_type": "개념 판단"
   },
   {
     "id": "qv3_0036",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_subquery",
     "topic_label": "서브쿼리",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "상관 서브쿼리의 핵심 특징은?",
@@ -861,14 +1097,19 @@
     "input_tables": [],
     "result_table": null,
     "steps": [],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      5
+    ],
+    "verification_method": "concept_reviewed",
+    "question_type": "개념 판단"
   },
   {
     "id": "qv3_0037",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_subquery",
     "topic_label": "서브쿼리",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "ANY와 ALL 비교 중 x > ALL(서브쿼리)의 의미는?",
@@ -880,19 +1121,32 @@
     ],
     "answer": 1,
     "explanation": "> ALL은 비교 집합의 모든 값에 대해 조건이 참이어야 한다. NULL과 빈 집합일 때는 3값 논리를 별도 고려한다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "이것은 SOME/ANY 쪽의 의미에 가깝다.",
+      "ALL은 서브쿼리에서 반환한 모든 값과 비교하는 조건이다.",
+      "가장 작은 값보다 크기만 해서는 다른 큰 값보다 크다는 보장이 없다.",
+      "ALL은 같음을 요구하지 않는다."
+    ],
     "sql": "",
     "input_tables": [],
     "result_table": null,
-    "steps": [],
-    "verified": true
+    "steps": [
+      "ANY는 한 개 이상 조건을 만족하면 TRUE가 될 수 있다.",
+      "ALL은 모든 반환값에 대해 비교 조건이 TRUE여야 한다."
+    ],
+    "verified": true,
+    "linked_chapters": [
+      5
+    ],
+    "verification_method": "concept_reviewed",
+    "question_type": "개념 판단"
   },
   {
     "id": "qv3_0038",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_order",
     "topic_label": "정렬·TOP-N",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "ORDER BY 없이 LIMIT 또는 FETCH를 사용하면?",
@@ -909,14 +1163,20 @@
     "input_tables": [],
     "result_table": null,
     "steps": [],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      6,
+      14
+    ],
+    "verification_method": "concept_reviewed",
+    "question_type": "개념 판단"
   },
   {
     "id": "qv3_0039",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_order",
     "topic_label": "정렬·TOP-N",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "ORDER BY score DESC에서 동점 행의 안정적 정렬을 위해 추가할 것은?",
@@ -928,19 +1188,34 @@
     ],
     "answer": 3,
     "explanation": "동점이 있는 정렬 조건에 PK 등 고유 키를 추가하면 페이지 경계의 결과를 안정적으로 결정할 수 있다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "GROUP BY는 그룹을 만들며 동점의 행 순서를 결정하지 않는다.",
+      "LIMIT 사용 여부와 관계없이 고유한 정렬 키를 추가할 수 있다.",
+      "NULL만 검사해도 동점의 상대적 순서는 결정되지 않는다.",
+      "score가 같은 행을 id로 추가 정렬하면 정렬 키 조합이 유일해져 안정적이다."
+    ],
     "sql": "",
     "input_tables": [],
     "result_table": null,
-    "steps": [],
-    "verified": true
+    "steps": [
+      "ORDER BY score DESC만 있으면 동점은 순서가 정해지지 않는다.",
+      "PK 같은 고유한 id를 다음 정렬 키로 추가한다.",
+      "LIMIT/OFFSET 페이지 간 중복과 누락을 줄인다."
+    ],
+    "verified": true,
+    "linked_chapters": [
+      6,
+      14
+    ],
+    "verification_method": "concept_reviewed",
+    "question_type": "개념 판단"
   },
   {
     "id": "qv3_0040",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_order",
     "topic_label": "정렬·TOP-N",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "FETCH FIRST 2 ROWS WITH TIES가 의미하는 것은?",
@@ -952,19 +1227,34 @@
     ],
     "answer": 0,
     "explanation": "WITH TIES는 지정 행 수의 경계에서 같은 정렬값을 가진 행들을 함께 포함하므로 2행을 초과할 수 있다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "두 번째 행의 정렬값과 동점인 행을 더 반환할 수 있다.",
+      "행의 개수를 제한하는 구문이며 열의 개수를 제한하지 않는다.",
+      "동점이 있으면 결과가 2행보다 많아질 수 있다.",
+      "동점 판정에는 ORDER BY 정렬 기준이 필요하다."
+    ],
     "sql": "",
     "input_tables": [],
     "result_table": null,
-    "steps": [],
-    "verified": true
+    "steps": [
+      "정렬 기준으로 모든 행을 정렬한다.",
+      "2번째 행과 동일한 정렬값인 다른 행들도 확인한다.",
+      "WITH TIES는 해당 동점 행까지 모두 반환한다."
+    ],
+    "verified": true,
+    "linked_chapters": [
+      6,
+      14
+    ],
+    "verification_method": "concept_reviewed",
+    "question_type": "개념 판단"
   },
   {
     "id": "qv3_0041",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_order",
     "topic_label": "정렬·TOP-N",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "Oracle ROWNUM의 일반적인 주의점은?",
@@ -976,19 +1266,33 @@
     ],
     "answer": 1,
     "explanation": "Oracle ROWNUM은 행이 선택되면서 부여되며 같은 SELECT의 ORDER BY와 조합하면 원하는 상위 N이 아닐 수 있다. 인라인 뷰 등을 사용한다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "ROWNUM 제한이 같은 SELECT의 ORDER BY 정렬보다 먼저 적용될 수 있다.",
+      "정렬을 먼저 하려면 인라인 뷰 등으로 순서를 명확히 구성할 수 있다.",
+      "ROWNUM은 행 번호 의사열이지 문자열 함수가 아니다.",
+      "Oracle의 ROWNUM은 1부터 할당된다."
+    ],
     "sql": "",
     "input_tables": [],
     "result_table": null,
-    "steps": [],
-    "verified": true
+    "steps": [
+      "같은 SELECT에서 ROWNUM 번호가 붙는 시점과 ORDER BY를 구분한다.",
+      "정렬 결과에서 상위 N행을 고르려면 정렬된 인라인 뷰나 FETCH를 고려한다."
+    ],
+    "verified": true,
+    "linked_chapters": [
+      6,
+      14
+    ],
+    "verification_method": "concept_reviewed",
+    "question_type": "개념 판단"
   },
   {
     "id": "qv3_0042",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_dml",
     "topic_label": "DML·TCL·DDL·DCL",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "SAVEPOINT s1 후 변경을 하고 ROLLBACK TO s1 하면?",
@@ -1005,14 +1309,19 @@
     "input_tables": [],
     "result_table": null,
     "steps": [],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      7
+    ],
+    "verification_method": "concept_reviewed",
+    "question_type": "개념 판단"
   },
   {
     "id": "qv3_0043",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_dml",
     "topic_label": "DML·TCL·DDL·DCL",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "COMMIT이 수행하는 작업은?",
@@ -1029,14 +1338,19 @@
     "input_tables": [],
     "result_table": null,
     "steps": [],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      7
+    ],
+    "verification_method": "concept_reviewed",
+    "question_type": "개념 판단"
   },
   {
     "id": "qv3_0044",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_dml",
     "topic_label": "DML·TCL·DDL·DCL",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "다음 중 DDL로 분류되는 구문은?",
@@ -1053,14 +1367,19 @@
     "input_tables": [],
     "result_table": null,
     "steps": [],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      7
+    ],
+    "verification_method": "concept_reviewed",
+    "question_type": "개념 판단"
   },
   {
     "id": "qv3_0045",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_dml",
     "topic_label": "DML·TCL·DDL·DCL",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "GRANT SELECT ON T TO U가 하는 일은?",
@@ -1077,14 +1396,19 @@
     "input_tables": [],
     "result_table": null,
     "steps": [],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      7
+    ],
+    "verification_method": "concept_reviewed",
+    "question_type": "개념 판단"
   },
   {
     "id": "qv3_0046",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_dml",
     "topic_label": "DML·TCL·DDL·DCL",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "Oracle에서 TRUNCATE TABLE의 대표적 특징은?",
@@ -1101,14 +1425,19 @@
     "input_tables": [],
     "result_table": null,
     "steps": [],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      7
+    ],
+    "verification_method": "concept_reviewed",
+    "question_type": "개념 판단"
   },
   {
     "id": "qv3_0047",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_window",
     "topic_label": "윈도우 함수",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "RANK 순위가 1,1 다음으로 이어질 때 순위는?",
@@ -1120,19 +1449,33 @@
     ],
     "answer": 3,
     "explanation": "RANK는 동점 수만큼 다음 순위를 건너뛴다. 1위 동점 2명이면 다음 순위는 3이다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "공동 1위가 두 행이면 다음 등수는 3이다.",
+      "이는 DENSE_RANK의 동작과 같다.",
+      "다음 서로 다른 점수에 같은 1위를 다시 주지 않는다.",
+      "RANK는 동점자가 차지한 자리 수만큼 다음 등수를 건너뛴다."
+    ],
     "sql": "",
     "input_tables": [],
     "result_table": null,
-    "steps": [],
-    "verified": true
+    "steps": [
+      "점수를 내림차순 정렬한다.",
+      "1위 동점이 2행이므로 두 자리를 차지한다.",
+      "다음 순위는 2가 아니라 3이다."
+    ],
+    "verified": true,
+    "linked_chapters": [
+      4
+    ],
+    "verification_method": "concept_reviewed",
+    "question_type": "개념 판단"
   },
   {
     "id": "qv3_0048",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_window",
     "topic_label": "윈도우 함수",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "DENSE_RANK에서 동점 1,1 다음 순위는?",
@@ -1144,19 +1487,32 @@
     ],
     "answer": 0,
     "explanation": "DENSE_RANK는 동점 뒤 순위를 건너뛰지 않는다. 따라서 1,1 다음은 2다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "DENSE_RANK는 동점 이후에도 등수를 연속으로 매긴다.",
+      "동점 1위 뒤는 2위다.",
+      "건너뛰는 RANK와 구별해야 한다.",
+      "다음 서로 다른 점수에 1위를 반복하지 않는다."
+    ],
     "sql": "",
     "input_tables": [],
     "result_table": null,
-    "steps": [],
-    "verified": true
+    "steps": [
+      "서로 다른 점수의 등수만 연속으로 센다.",
+      "1,1 다음은 2가 된다."
+    ],
+    "verified": true,
+    "linked_chapters": [
+      4
+    ],
+    "verification_method": "concept_reviewed",
+    "question_type": "개념 판단"
   },
   {
     "id": "qv3_0049",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_window",
     "topic_label": "윈도우 함수",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "ROW_NUMBER()의 동점 처리 특징은?",
@@ -1173,14 +1529,19 @@
     "input_tables": [],
     "result_table": null,
     "steps": [],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      4
+    ],
+    "verification_method": "concept_reviewed",
+    "question_type": "개념 판단"
   },
   {
     "id": "qv3_0050",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_window",
     "topic_label": "윈도우 함수",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "LAG(salary) OVER(ORDER BY id)의 역할은?",
@@ -1197,14 +1558,19 @@
     "input_tables": [],
     "result_table": null,
     "steps": [],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      4
+    ],
+    "verification_method": "concept_reviewed",
+    "question_type": "개념 판단"
   },
   {
     "id": "qv3_0051",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_window",
     "topic_label": "윈도우 함수",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "PARTITION BY dept와 GROUP BY dept의 차이는?",
@@ -1216,19 +1582,32 @@
     ],
     "answer": 3,
     "explanation": "PARTITION BY는 윈도우 계산 범위를 분리하지만 각 원본 행을 남긴다. GROUP BY는 그룹별 행으로 집계한다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "GROUP BY는 순위에만 쓰는 것이 아니라 집계 그룹을 만든다.",
+      "PARTITION BY와 GROUP BY의 행 개수 동작이 서로 다르다.",
+      "PARTITION BY는 윈도우 계산 범위를 나누는 것이며 WHERE가 아니다.",
+      "윈도우의 PARTITION BY는 원본 행을 유지한 채 그룹 안에서 계산한다."
+    ],
     "sql": "",
     "input_tables": [],
     "result_table": null,
-    "steps": [],
-    "verified": true
+    "steps": [
+      "GROUP BY는 그룹별 결과 행으로 축약할 수 있다.",
+      "OVER(PARTITION BY ...) 윈도우 계산은 각 원본 행에 값을 부여하므로 행을 유지한다."
+    ],
+    "verified": true,
+    "linked_chapters": [
+      4
+    ],
+    "verification_method": "concept_reviewed",
+    "question_type": "개념 판단"
   },
   {
     "id": "qv3_0052",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_rollup",
     "topic_label": "ROLLUP·CUBE",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "ROLLUP(region,product)에 포함되는 집계 수준은?",
@@ -1240,19 +1619,33 @@
     ],
     "answer": 0,
     "explanation": "ROLLUP은 왼쪽부터 계층적 소계를 생성하므로 전체 그룹, region 소계, 전체 총계를 포함한다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "ROLLUP(A,B)은 상세(A,B), A 소계, 전체 총계로 구성된다.",
+      "B만 집계하는 것은 ROLLUP(A,B)의 집계 수준에 포함되지 않는다.",
+      "상세 집계 외에 소계와 총계가 포함된다.",
+      "A 소계와 전체 총계 외에 상세(A,B) 집계도 포함된다."
+    ],
     "sql": "",
     "input_tables": [],
     "result_table": null,
-    "steps": [],
-    "verified": true
+    "steps": [
+      "ROLLUP(A,B)의 가장 상세한 그룹은 (A,B)다.",
+      "다음은 A 소계, 마지막은 전체 총계다.",
+      "(B) 단독 소계는 CUBE와 다르게 포함되지 않는다."
+    ],
+    "verified": true,
+    "linked_chapters": [
+      11
+    ],
+    "verification_method": "concept_reviewed",
+    "question_type": "개념 판단"
   },
   {
     "id": "qv3_0053",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_rollup",
     "topic_label": "ROLLUP·CUBE",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "CUBE(A,B)가 생성하는 그룹 조합은?",
@@ -1269,14 +1662,19 @@
     "input_tables": [],
     "result_table": null,
     "steps": [],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      11
+    ],
+    "verification_method": "concept_reviewed",
+    "question_type": "개념 판단"
   },
   {
     "id": "qv3_0054",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_rollup",
     "topic_label": "ROLLUP·CUBE",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "GROUPING(region)=1의 해석으로 적절한 것은?",
@@ -1293,14 +1691,19 @@
     "input_tables": [],
     "result_table": null,
     "steps": [],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      11
+    ],
+    "verification_method": "concept_reviewed",
+    "question_type": "개념 판단"
   },
   {
     "id": "qv3_0055",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_rollup",
     "topic_label": "ROLLUP·CUBE",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "GROUPING SETS ((A),(B))는 어떤 집계를 요청하는가?",
@@ -1317,14 +1720,19 @@
     "input_tables": [],
     "result_table": null,
     "steps": [],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      11
+    ],
+    "verification_method": "concept_reviewed",
+    "question_type": "개념 판단"
   },
   {
     "id": "qv3_0056",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_hierarchy",
     "topic_label": "계층형 질의",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "Oracle 계층형 질의에서 START WITH가 하는 일은?",
@@ -1341,14 +1749,19 @@
     "input_tables": [],
     "result_table": null,
     "steps": [],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      12
+    ],
+    "verification_method": "concept_reviewed",
+    "question_type": "개념 판단"
   },
   {
     "id": "qv3_0057",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_hierarchy",
     "topic_label": "계층형 질의",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "CONNECT BY PRIOR id = parent_id에서 PRIOR가 붙은 id는?",
@@ -1360,19 +1773,32 @@
     ],
     "answer": 1,
     "explanation": "PRIOR id는 부모 행에서 평가되고 parent_id는 후보 자식 행에서 평가된다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "PRIOR는 바로 자식의 parent_id를 뜻하지 않는다.",
+      "부모 id와 자식 parent_id가 연결되는 관계를 뜻한다.",
+      "PRIOR는 모든 경우 최상위 루트만을 나타내지 않는다.",
+      "PRIOR는 계층 연결 조건에서 부모·자식 중 어느 편인지를 지정하는 문법이다."
+    ],
     "sql": "",
     "input_tables": [],
     "result_table": null,
-    "steps": [],
-    "verified": true
+    "steps": [
+      "PRIOR가 붙은 열이 부모 쪽인지 자식 쪽인지 확인한다.",
+      "PRIOR id = parent_id에서는 부모 id와 자식 parent_id를 비교한다."
+    ],
+    "verified": true,
+    "linked_chapters": [
+      12
+    ],
+    "verification_method": "concept_reviewed",
+    "question_type": "개념 판단"
   },
   {
     "id": "qv3_0058",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_hierarchy",
     "topic_label": "계층형 질의",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "Oracle 계층형 질의 루트 노드의 LEVEL은?",
@@ -1389,14 +1815,19 @@
     "input_tables": [],
     "result_table": null,
     "steps": [],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      12
+    ],
+    "verification_method": "concept_reviewed",
+    "question_type": "개념 판단"
   },
   {
     "id": "qv3_0059",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_hierarchy",
     "topic_label": "계층형 질의",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "ORDER SIBLINGS BY의 역할은?",
@@ -1413,14 +1844,19 @@
     "input_tables": [],
     "result_table": null,
     "steps": [],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      12
+    ],
+    "verification_method": "concept_reviewed",
+    "question_type": "개념 판단"
   },
   {
     "id": "qv3_0060",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_function",
     "topic_label": "함수·CASE",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "COALESCE(NULL, 0, 7)의 결과는?",
@@ -1437,14 +1873,19 @@
     "input_tables": [],
     "result_table": null,
     "steps": [],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      13
+    ],
+    "verification_method": "concept_reviewed",
+    "question_type": "개념 판단"
   },
   {
     "id": "qv3_0061",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_function",
     "topic_label": "함수·CASE",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "NULLIF(3,3)의 결과는?",
@@ -1461,14 +1902,19 @@
     "input_tables": [],
     "result_table": null,
     "steps": [],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      13
+    ],
+    "verification_method": "concept_reviewed",
+    "question_type": "개념 판단"
   },
   {
     "id": "qv3_0062",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_function",
     "topic_label": "함수·CASE",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "Oracle NVL2(NULL, 10, 20)의 결과는?",
@@ -1485,14 +1931,19 @@
     "input_tables": [],
     "result_table": null,
     "steps": [],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      13
+    ],
+    "verification_method": "concept_reviewed",
+    "question_type": "개념 판단"
   },
   {
     "id": "qv3_0063",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_function",
     "topic_label": "함수·CASE",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "CASE WHEN score>=60 THEN 'PASS' ELSE 'FAIL' END에서 score=59면?",
@@ -1509,14 +1960,19 @@
     "input_tables": [],
     "result_table": null,
     "steps": [],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      13
+    ],
+    "verification_method": "concept_reviewed",
+    "question_type": "개념 판단"
   },
   {
     "id": "qv3_0064",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_function",
     "topic_label": "함수·CASE",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "SUBSTR('DATABASE',1,4)의 결과는?",
@@ -1533,14 +1989,19 @@
     "input_tables": [],
     "result_table": null,
     "steps": [],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      13
+    ],
+    "verification_method": "concept_reviewed",
+    "question_type": "개념 판단"
   },
   {
     "id": "qv3_0065",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_set",
     "topic_label": "집합 연산자",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "UNION과 UNION ALL의 차이는?",
@@ -1552,19 +2013,31 @@
     ],
     "answer": 1,
     "explanation": "UNION은 합집합에서 중복 제거를 수행하고 UNION ALL은 중복된 행도 유지한다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "UNION은 기본적으로 중복을 제거한다.",
+      "UNION은 중복 제거, UNION ALL은 중복 유지가 기본이다.",
+      "UNION ALL은 정렬을 보장하는 구문이 아니다.",
+      "UNION은 집합 연산자로 JOIN과 역할이 다르다."
+    ],
     "sql": "",
     "input_tables": [],
     "result_table": null,
-    "steps": [],
-    "verified": true
+    "steps": [
+      "UNION과 UNION ALL에 공통으로 입력된 두 집합을 생각한다.",
+      "UNION은 중복 행을 제거한다.",
+      "UNION ALL은 중복을 보존한다."
+    ],
+    "verified": true,
+    "linked_chapters": [],
+    "verification_method": "concept_reviewed",
+    "question_type": "개념 판단"
   },
   {
     "id": "qv3_0066",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_set",
     "topic_label": "집합 연산자",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "INTERSECT가 반환하는 행은?",
@@ -1581,14 +2054,17 @@
     "input_tables": [],
     "result_table": null,
     "steps": [],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [],
+    "verification_method": "concept_reviewed",
+    "question_type": "개념 판단"
   },
   {
     "id": "qv3_0067",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_set",
     "topic_label": "집합 연산자",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "EXCEPT 또는 MINUS의 기본 의미는?",
@@ -1605,14 +2081,17 @@
     "input_tables": [],
     "result_table": null,
     "steps": [],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [],
+    "verification_method": "concept_reviewed",
+    "question_type": "개념 판단"
   },
   {
     "id": "qv3_0068",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_pivot",
     "topic_label": "PIVOT·정규표현식",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "PIVOT의 기본 역할은?",
@@ -1624,19 +2103,30 @@
     ],
     "answer": 0,
     "explanation": "PIVOT은 특정 구분값을 열로 펼쳐 보여준다. 반대 방향의 변환은 UNPIVOT이다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "PIVOT은 행 범주의 값을 열 방향으로 집계하여 배치한다.",
+      "관계 자체를 제거하는 명령이 아니다.",
+      "열을 무조건 삭제하는 동작이 아니다.",
+      "기본키를 자동 생성하지 않는다."
+    ],
     "sql": "",
     "input_tables": [],
     "result_table": null,
-    "steps": [],
-    "verified": true
+    "steps": [
+      "원본에서 분류값이 행으로 반복되는 열을 확인한다.",
+      "PIVOT은 그 분류를 출력 열로 바꾸며 지정한 집계를 계산한다."
+    ],
+    "verified": true,
+    "linked_chapters": [],
+    "verification_method": "concept_reviewed",
+    "question_type": "개념 판단"
   },
   {
     "id": "qv3_0069",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_pivot",
     "topic_label": "PIVOT·정규표현식",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "UNPIVOT의 일반적인 역할은?",
@@ -1653,14 +2143,17 @@
     "input_tables": [],
     "result_table": null,
     "steps": [],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [],
+    "verification_method": "concept_reviewed",
+    "question_type": "개념 판단"
   },
   {
     "id": "qv3_0070",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_pivot",
     "topic_label": "PIVOT·정규표현식",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "정규표현식 ^A의 의미는?",
@@ -1672,19 +2165,30 @@
     ],
     "answer": 2,
     "explanation": "^는 문자열 시작 앵커다. 따라서 ^A는 A로 시작하는 문자열에 대응한다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "^A는 문자열 첫 위치의 A와 매칭된다.",
+      "문자 A의 반복 횟수를 뜻하는 표현이 아니다.",
+      "^는 문자열 시작을 의미하는 앵커다.",
+      "문자열 끝은 보통 $ 앵커로 표현한다."
+    ],
     "sql": "",
     "input_tables": [],
     "result_table": null,
-    "steps": [],
-    "verified": true
+    "steps": [
+      "^는 문자열 시작 위치를 의미한다.",
+      "^A는 문자열이 A로 시작할 때 매칭된다."
+    ],
+    "verified": true,
+    "linked_chapters": [],
+    "verification_method": "concept_reviewed",
+    "question_type": "개념 판단"
   },
   {
     "id": "qv3_0071",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_pivot",
     "topic_label": "PIVOT·정규표현식",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "정규표현식 [0-9]+의 기본 의미는?",
@@ -1701,14 +2205,17 @@
     "input_tables": [],
     "result_table": null,
     "steps": [],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [],
+    "verification_method": "concept_reviewed",
+    "question_type": "개념 판단"
   },
   {
     "id": "qv3_0072",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_null",
     "topic_label": "NULL·3값 논리",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "다음 SQL의 COUNT(*) 값은? (조건: v >= 3) (데이터 세트 1)",
@@ -1767,14 +2274,29 @@
       "WHERE는 v >= 3인 행만 남기고 COUNT(*)는 해당 행 수를 센다.",
       "주어진 입력 7행을 조건대로 처리하면 최종 결과는 5이다."
     ],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      2
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "COUNT(*)"
+      ],
+      "rows": [
+        [
+          5
+        ]
+      ]
+    }
   },
   {
     "id": "qv3_0073",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_null",
     "topic_label": "NULL·3값 논리",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "다음 SQL의 COUNT(v) 값은? (데이터 세트 1)",
@@ -1833,14 +2355,29 @@
       "COUNT(v)는 NULL을 제외하고 v가 존재하는 행만 계산한다.",
       "주어진 입력 7행을 조건대로 처리하면 최종 결과는 6이다."
     ],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      2
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "COUNT(v)"
+      ],
+      "rows": [
+        [
+          6
+        ]
+      ]
+    }
   },
   {
     "id": "qv3_0074",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_group",
     "topic_label": "GROUP BY·집계",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "다음 SQL의 COUNT(*) 값은? (데이터 세트 1)",
@@ -1907,14 +2444,30 @@
       "id=2 조건과 amount IS NOT NULL을 동시에 만족하는 행만 센다.",
       "주어진 입력 7행을 조건대로 처리하면 최종 결과는 1이다."
     ],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      3,
+      6
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "COUNT(*)"
+      ],
+      "rows": [
+        [
+          1
+        ]
+      ]
+    }
   },
   {
     "id": "qv3_0075",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_group",
     "topic_label": "GROUP BY·집계",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "다음 GROUP BY/HAVING SQL에서 결과 그룹은 몇 행인가? (HAVING COUNT(*) >= 2) (데이터 세트 1)",
@@ -1985,14 +2538,40 @@
       "GROUP BY id로 묶고 HAVING은 그룹별 행 수로 판단한다.",
       "주어진 입력 8행을 조건대로 처리하면 최종 결과는 3행이다."
     ],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      3,
+      6
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "id",
+        "SUM(amount)"
+      ],
+      "rows": [
+        [
+          1,
+          24
+        ],
+        [
+          2,
+          21
+        ],
+        [
+          3,
+          40
+        ]
+      ]
+    }
   },
   {
     "id": "qv3_0076",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_order",
     "topic_label": "정렬·TOP-N",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "중복 제거 및 정렬 후 LIMIT 2를 적용하면 몇 행이 반환되는가? (데이터 세트 1)",
@@ -2054,14 +2633,33 @@
       "WHERE로 먼저 거르고 DISTINCT로 중복을 제거하며, 정렬 후 LIMIT 2를 적용한다.",
       "주어진 입력 8행을 조건대로 처리하면 최종 결과는 2행이다."
     ],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      6,
+      14
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "score"
+      ],
+      "rows": [
+        [
+          3
+        ],
+        [
+          2
+        ]
+      ]
+    }
   },
   {
     "id": "qv3_0077",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_function",
     "topic_label": "함수·CASE",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "CASE 결과를 SUM한 값은? (score >= 7이면 1) (데이터 세트 1)",
@@ -2120,14 +2718,29 @@
       "CASE가 각 행의 조건에 따라 1 또는 0을 반환하고 이를 모두 합산한다.",
       "주어진 입력 7행을 조건대로 처리하면 최종 결과는 4이다."
     ],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      13
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "SUM(CASE WHEN score >= 7 THEN 1 ELSE 0 END)"
+      ],
+      "rows": [
+        [
+          4
+        ]
+      ]
+    }
   },
   {
     "id": "qv3_0078",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_function",
     "topic_label": "함수·CASE",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "NULL을 0으로 바꾼 후 SUM한 값은? (데이터 세트 1)",
@@ -2186,14 +2799,29 @@
       "COALESCE(v,0)으로 NULL만 0으로 바꾸고 나머지 정수를 모두 합산한다.",
       "주어진 입력 7행을 조건대로 처리하면 최종 결과는 17이다."
     ],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      13
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "SUM(COALESCE(v,0))"
+      ],
+      "rows": [
+        [
+          17
+        ]
+      ]
+    }
   },
   {
     "id": "qv3_0079",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_subquery",
     "topic_label": "서브쿼리",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "EXISTS 조건을 만족하는 결과 행 수는? (값 >= 5) (데이터 세트 1)",
@@ -2252,14 +2880,32 @@
       "외부 행의 값과 일치하며 기준 이상인 내부 행이 존재하면 해당 외부 행을 반환한다.",
       "주어진 입력 7행을 조건대로 처리하면 최종 결과는 2행이다."
     ],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      5
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "v"
+      ],
+      "rows": [
+        [
+          6
+        ],
+        [
+          7
+        ]
+      ]
+    }
   },
   {
     "id": "qv3_0080",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_set",
     "topic_label": "집합 연산자",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "다음 UNION 결과 행 수는? (데이터 세트 1)",
@@ -2318,14 +2964,36 @@
       "UNION은 두 조건을 합친 뒤 동일한 값의 중복을 제거한다.",
       "주어진 입력 7행을 조건대로 처리하면 최종 결과는 4행이다."
     ],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [],
+    "verification_method": "sql_executed",
+    "question_type": "SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "v"
+      ],
+      "rows": [
+        [
+          0
+        ],
+        [
+          2
+        ],
+        [
+          4
+        ],
+        [
+          5
+        ]
+      ]
+    }
   },
   {
     "id": "qv3_0081",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_subquery",
     "topic_label": "서브쿼리",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "IN 서브쿼리 조건의 결과 행 수는? (기준 >= 5) (데이터 세트 1)",
@@ -2384,14 +3052,29 @@
       "기준 이상의 값이 IN 집합에 들어가며 외부 쿼리는 해당 값을 가진 모든 행을 반환한다.",
       "주어진 입력 7행을 조건대로 처리하면 최종 결과는 1행이다."
     ],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      5
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "v"
+      ],
+      "rows": [
+        [
+          5
+        ]
+      ]
+    }
   },
   {
     "id": "qv3_0082",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_order",
     "topic_label": "정렬·TOP-N",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "COUNT(DISTINCT v) 결과는? (데이터 세트 1)",
@@ -2450,14 +3133,30 @@
       "중복 v 값은 한 번만 세므로 값의 종류 수가 된다.",
       "주어진 입력 7행을 조건대로 처리하면 최종 결과는 4이다."
     ],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      6,
+      14
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "COUNT(DISTINCT v)"
+      ],
+      "rows": [
+        [
+          4
+        ]
+      ]
+    }
   },
   {
     "id": "qv3_0083",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_null",
     "topic_label": "NULL·3값 논리",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "OR 필터를 만족하는 행 수는? (v > 4 또는 v=0) (데이터 세트 1)",
@@ -2516,14 +3215,29 @@
       "OR 조건은 둘 중 하나라도 TRUE인 행을 통과시킨다. 중복 조건을 만족해도 한 행은 한 번 센다.",
       "주어진 입력 7행을 조건대로 처리하면 최종 결과는 3이다."
     ],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      2
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "COUNT(*)"
+      ],
+      "rows": [
+        [
+          3
+        ]
+      ]
+    }
   },
   {
     "id": "qv3_0084",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_null",
     "topic_label": "NULL·3값 논리",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "다음 SQL의 COUNT(*) 값은? (조건: v >= 6) (데이터 세트 2)",
@@ -2582,14 +3296,29 @@
       "WHERE는 v >= 6인 행만 남기고 COUNT(*)는 해당 행 수를 센다.",
       "주어진 입력 7행을 조건대로 처리하면 최종 결과는 2이다."
     ],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      2
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "COUNT(*)"
+      ],
+      "rows": [
+        [
+          2
+        ]
+      ]
+    }
   },
   {
     "id": "qv3_0085",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_null",
     "topic_label": "NULL·3값 논리",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "다음 SQL의 COUNT(v) 값은? (데이터 세트 2)",
@@ -2648,14 +3377,29 @@
       "COUNT(v)는 NULL을 제외하고 v가 존재하는 행만 계산한다.",
       "주어진 입력 7행을 조건대로 처리하면 최종 결과는 6이다."
     ],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      2
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "COUNT(v)"
+      ],
+      "rows": [
+        [
+          6
+        ]
+      ]
+    }
   },
   {
     "id": "qv3_0086",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_group",
     "topic_label": "GROUP BY·집계",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "다음 SQL의 COUNT(*) 값은? (데이터 세트 2)",
@@ -2722,14 +3466,30 @@
       "id=2 조건과 amount IS NOT NULL을 동시에 만족하는 행만 센다.",
       "주어진 입력 7행을 조건대로 처리하면 최종 결과는 3이다."
     ],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      3,
+      6
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "COUNT(*)"
+      ],
+      "rows": [
+        [
+          3
+        ]
+      ]
+    }
   },
   {
     "id": "qv3_0087",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_group",
     "topic_label": "GROUP BY·집계",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "다음 GROUP BY/HAVING SQL에서 결과 그룹은 몇 행인가? (HAVING COUNT(*) >= 4) (데이터 세트 2)",
@@ -2800,14 +3560,27 @@
       "GROUP BY id로 묶고 HAVING은 그룹별 행 수로 판단한다.",
       "주어진 입력 8행을 조건대로 처리하면 최종 결과는 0행이다."
     ],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      3,
+      6
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "id",
+        "SUM(amount)"
+      ],
+      "rows": []
+    }
   },
   {
     "id": "qv3_0088",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_order",
     "topic_label": "정렬·TOP-N",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "중복 제거 및 정렬 후 LIMIT 2를 적용하면 몇 행이 반환되는가? (데이터 세트 2)",
@@ -2869,14 +3642,33 @@
       "WHERE로 먼저 거르고 DISTINCT로 중복을 제거하며, 정렬 후 LIMIT 2를 적용한다.",
       "주어진 입력 8행을 조건대로 처리하면 최종 결과는 2행이다."
     ],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      6,
+      14
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "score"
+      ],
+      "rows": [
+        [
+          4
+        ],
+        [
+          3
+        ]
+      ]
+    }
   },
   {
     "id": "qv3_0089",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_function",
     "topic_label": "함수·CASE",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "CASE 결과를 SUM한 값은? (score >= 5이면 1) (데이터 세트 2)",
@@ -2935,14 +3727,29 @@
       "CASE가 각 행의 조건에 따라 1 또는 0을 반환하고 이를 모두 합산한다.",
       "주어진 입력 7행을 조건대로 처리하면 최종 결과는 3이다."
     ],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      13
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "SUM(CASE WHEN score >= 5 THEN 1 ELSE 0 END)"
+      ],
+      "rows": [
+        [
+          3
+        ]
+      ]
+    }
   },
   {
     "id": "qv3_0090",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_function",
     "topic_label": "함수·CASE",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "NULL을 0으로 바꾼 후 SUM한 값은? (데이터 세트 2)",
@@ -3001,14 +3808,29 @@
       "COALESCE(v,0)으로 NULL만 0으로 바꾸고 나머지 정수를 모두 합산한다.",
       "주어진 입력 7행을 조건대로 처리하면 최종 결과는 14이다."
     ],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      13
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "SUM(COALESCE(v,0))"
+      ],
+      "rows": [
+        [
+          14
+        ]
+      ]
+    }
   },
   {
     "id": "qv3_0091",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_subquery",
     "topic_label": "서브쿼리",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "EXISTS 조건을 만족하는 결과 행 수는? (값 >= 4) (데이터 세트 2)",
@@ -3067,14 +3889,38 @@
       "외부 행의 값과 일치하며 기준 이상인 내부 행이 존재하면 해당 외부 행을 반환한다.",
       "주어진 입력 7행을 조건대로 처리하면 최종 결과는 4행이다."
     ],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      5
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "v"
+      ],
+      "rows": [
+        [
+          7
+        ],
+        [
+          7
+        ],
+        [
+          4
+        ],
+        [
+          5
+        ]
+      ]
+    }
   },
   {
     "id": "qv3_0092",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_set",
     "topic_label": "집합 연산자",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "다음 UNION 결과 행 수는? (데이터 세트 2)",
@@ -3133,14 +3979,36 @@
       "UNION은 두 조건을 합친 뒤 동일한 값의 중복을 제거한다.",
       "주어진 입력 7행을 조건대로 처리하면 최종 결과는 4행이다."
     ],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [],
+    "verification_method": "sql_executed",
+    "question_type": "SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "v"
+      ],
+      "rows": [
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          4
+        ],
+        [
+          5
+        ]
+      ]
+    }
   },
   {
     "id": "qv3_0093",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_subquery",
     "topic_label": "서브쿼리",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "IN 서브쿼리 조건의 결과 행 수는? (기준 >= 3) (데이터 세트 2)",
@@ -3199,14 +4067,44 @@
       "기준 이상의 값이 IN 집합에 들어가며 외부 쿼리는 해당 값을 가진 모든 행을 반환한다.",
       "주어진 입력 7행을 조건대로 처리하면 최종 결과는 6행이다."
     ],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      5
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "v"
+      ],
+      "rows": [
+        [
+          4
+        ],
+        [
+          4
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ],
+        [
+          3
+        ],
+        [
+          5
+        ]
+      ]
+    }
   },
   {
     "id": "qv3_0094",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_order",
     "topic_label": "정렬·TOP-N",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "COUNT(DISTINCT v) 결과는? (데이터 세트 2)",
@@ -3265,14 +4163,30 @@
       "중복 v 값은 한 번만 세므로 값의 종류 수가 된다.",
       "주어진 입력 7행을 조건대로 처리하면 최종 결과는 4이다."
     ],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      6,
+      14
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "COUNT(DISTINCT v)"
+      ],
+      "rows": [
+        [
+          4
+        ]
+      ]
+    }
   },
   {
     "id": "qv3_0095",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_null",
     "topic_label": "NULL·3값 논리",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "OR 필터를 만족하는 행 수는? (v > 6 또는 v=0) (데이터 세트 2)",
@@ -3331,14 +4245,29 @@
       "OR 조건은 둘 중 하나라도 TRUE인 행을 통과시킨다. 중복 조건을 만족해도 한 행은 한 번 센다.",
       "주어진 입력 7행을 조건대로 처리하면 최종 결과는 1이다."
     ],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      2
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "COUNT(*)"
+      ],
+      "rows": [
+        [
+          1
+        ]
+      ]
+    }
   },
   {
     "id": "qv3_0096",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_null",
     "topic_label": "NULL·3값 논리",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "다음 SQL의 COUNT(*) 값은? (조건: v >= 6) (데이터 세트 3)",
@@ -3397,14 +4326,29 @@
       "WHERE는 v >= 6인 행만 남기고 COUNT(*)는 해당 행 수를 센다.",
       "주어진 입력 7행을 조건대로 처리하면 최종 결과는 3이다."
     ],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      2
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "COUNT(*)"
+      ],
+      "rows": [
+        [
+          3
+        ]
+      ]
+    }
   },
   {
     "id": "qv3_0097",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_null",
     "topic_label": "NULL·3값 논리",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "다음 SQL의 COUNT(v) 값은? (데이터 세트 3)",
@@ -3463,14 +4407,29 @@
       "COUNT(v)는 NULL을 제외하고 v가 존재하는 행만 계산한다.",
       "주어진 입력 7행을 조건대로 처리하면 최종 결과는 4이다."
     ],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      2
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "COUNT(v)"
+      ],
+      "rows": [
+        [
+          4
+        ]
+      ]
+    }
   },
   {
     "id": "qv3_0098",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_group",
     "topic_label": "GROUP BY·집계",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "다음 SQL의 COUNT(*) 값은? (데이터 세트 3)",
@@ -3537,14 +4496,30 @@
       "id=2 조건과 amount IS NOT NULL을 동시에 만족하는 행만 센다.",
       "주어진 입력 7행을 조건대로 처리하면 최종 결과는 3이다."
     ],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      3,
+      6
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "COUNT(*)"
+      ],
+      "rows": [
+        [
+          3
+        ]
+      ]
+    }
   },
   {
     "id": "qv3_0099",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_group",
     "topic_label": "GROUP BY·집계",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "다음 GROUP BY/HAVING SQL에서 결과 그룹은 몇 행인가? (HAVING COUNT(*) >= 3) (데이터 세트 3)",
@@ -3615,14 +4590,32 @@
       "GROUP BY id로 묶고 HAVING은 그룹별 행 수로 판단한다.",
       "주어진 입력 8행을 조건대로 처리하면 최종 결과는 1행이다."
     ],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      3,
+      6
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "id",
+        "SUM(amount)"
+      ],
+      "rows": [
+        [
+          1,
+          66
+        ]
+      ]
+    }
   },
   {
     "id": "qv3_0100",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_order",
     "topic_label": "정렬·TOP-N",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "중복 제거 및 정렬 후 LIMIT 2를 적용하면 몇 행이 반환되는가? (데이터 세트 3)",
@@ -3684,14 +4677,33 @@
       "WHERE로 먼저 거르고 DISTINCT로 중복을 제거하며, 정렬 후 LIMIT 2를 적용한다.",
       "주어진 입력 8행을 조건대로 처리하면 최종 결과는 2행이다."
     ],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      6,
+      14
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "score"
+      ],
+      "rows": [
+        [
+          5
+        ],
+        [
+          4
+        ]
+      ]
+    }
   },
   {
     "id": "qv3_0101",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_function",
     "topic_label": "함수·CASE",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "CASE 결과를 SUM한 값은? (score >= 6이면 1) (데이터 세트 3)",
@@ -3750,14 +4762,29 @@
       "CASE가 각 행의 조건에 따라 1 또는 0을 반환하고 이를 모두 합산한다.",
       "주어진 입력 7행을 조건대로 처리하면 최종 결과는 5이다."
     ],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      13
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "SUM(CASE WHEN score >= 6 THEN 1 ELSE 0 END)"
+      ],
+      "rows": [
+        [
+          5
+        ]
+      ]
+    }
   },
   {
     "id": "qv3_0102",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_function",
     "topic_label": "함수·CASE",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "NULL을 0으로 바꾼 후 SUM한 값은? (데이터 세트 3)",
@@ -3816,14 +4843,29 @@
       "COALESCE(v,0)으로 NULL만 0으로 바꾸고 나머지 정수를 모두 합산한다.",
       "주어진 입력 7행을 조건대로 처리하면 최종 결과는 15이다."
     ],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      13
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "SUM(COALESCE(v,0))"
+      ],
+      "rows": [
+        [
+          15
+        ]
+      ]
+    }
   },
   {
     "id": "qv3_0103",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_subquery",
     "topic_label": "서브쿼리",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "EXISTS 조건을 만족하는 결과 행 수는? (값 >= 4) (데이터 세트 3)",
@@ -3882,14 +4924,35 @@
       "외부 행의 값과 일치하며 기준 이상인 내부 행이 존재하면 해당 외부 행을 반환한다.",
       "주어진 입력 7행을 조건대로 처리하면 최종 결과는 3행이다."
     ],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      5
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "v"
+      ],
+      "rows": [
+        [
+          6
+        ],
+        [
+          4
+        ],
+        [
+          6
+        ]
+      ]
+    }
   },
   {
     "id": "qv3_0104",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_set",
     "topic_label": "집합 연산자",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "다음 UNION 결과 행 수는? (데이터 세트 3)",
@@ -3948,14 +5011,36 @@
       "UNION은 두 조건을 합친 뒤 동일한 값의 중복을 제거한다.",
       "주어진 입력 7행을 조건대로 처리하면 최종 결과는 4행이다."
     ],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [],
+    "verification_method": "sql_executed",
+    "question_type": "SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "v"
+      ],
+      "rows": [
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          5
+        ]
+      ]
+    }
   },
   {
     "id": "qv3_0105",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_subquery",
     "topic_label": "서브쿼리",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "IN 서브쿼리 조건의 결과 행 수는? (기준 >= 5) (데이터 세트 3)",
@@ -4014,14 +5099,32 @@
       "기준 이상의 값이 IN 집합에 들어가며 외부 쿼리는 해당 값을 가진 모든 행을 반환한다.",
       "주어진 입력 7행을 조건대로 처리하면 최종 결과는 2행이다."
     ],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      5
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "v"
+      ],
+      "rows": [
+        [
+          5
+        ],
+        [
+          5
+        ]
+      ]
+    }
   },
   {
     "id": "qv3_0106",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_order",
     "topic_label": "정렬·TOP-N",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "COUNT(DISTINCT v) 결과는? (데이터 세트 3)",
@@ -4080,14 +5183,30 @@
       "중복 v 값은 한 번만 세므로 값의 종류 수가 된다.",
       "주어진 입력 7행을 조건대로 처리하면 최종 결과는 3이다."
     ],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      6,
+      14
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "COUNT(DISTINCT v)"
+      ],
+      "rows": [
+        [
+          3
+        ]
+      ]
+    }
   },
   {
     "id": "qv3_0107",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_null",
     "topic_label": "NULL·3값 논리",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "OR 필터를 만족하는 행 수는? (v > 7 또는 v=0) (데이터 세트 3)",
@@ -4146,14 +5265,29 @@
       "OR 조건은 둘 중 하나라도 TRUE인 행을 통과시킨다. 중복 조건을 만족해도 한 행은 한 번 센다.",
       "주어진 입력 7행을 조건대로 처리하면 최종 결과는 4이다."
     ],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      2
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "COUNT(*)"
+      ],
+      "rows": [
+        [
+          4
+        ]
+      ]
+    }
   },
   {
     "id": "qv3_0108",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_null",
     "topic_label": "NULL·3값 논리",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "다음 SQL의 COUNT(*) 값은? (조건: v >= 2) (데이터 세트 4)",
@@ -4212,14 +5346,29 @@
       "WHERE는 v >= 2인 행만 남기고 COUNT(*)는 해당 행 수를 센다.",
       "주어진 입력 7행을 조건대로 처리하면 최종 결과는 5이다."
     ],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      2
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "COUNT(*)"
+      ],
+      "rows": [
+        [
+          5
+        ]
+      ]
+    }
   },
   {
     "id": "qv3_0109",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_null",
     "topic_label": "NULL·3값 논리",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "다음 SQL의 COUNT(v) 값은? (데이터 세트 4)",
@@ -4278,14 +5427,29 @@
       "COUNT(v)는 NULL을 제외하고 v가 존재하는 행만 계산한다.",
       "주어진 입력 7행을 조건대로 처리하면 최종 결과는 6이다."
     ],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      2
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "COUNT(v)"
+      ],
+      "rows": [
+        [
+          6
+        ]
+      ]
+    }
   },
   {
     "id": "qv3_0110",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_group",
     "topic_label": "GROUP BY·집계",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "다음 SQL의 COUNT(*) 값은? (데이터 세트 4)",
@@ -4352,14 +5516,30 @@
       "id=2 조건과 amount IS NOT NULL을 동시에 만족하는 행만 센다.",
       "주어진 입력 7행을 조건대로 처리하면 최종 결과는 1이다."
     ],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      3,
+      6
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "COUNT(*)"
+      ],
+      "rows": [
+        [
+          1
+        ]
+      ]
+    }
   },
   {
     "id": "qv3_0111",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_group",
     "topic_label": "GROUP BY·집계",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "다음 GROUP BY/HAVING SQL에서 결과 그룹은 몇 행인가? (HAVING COUNT(*) >= 4) (데이터 세트 4)",
@@ -4430,14 +5610,27 @@
       "GROUP BY id로 묶고 HAVING은 그룹별 행 수로 판단한다.",
       "주어진 입력 8행을 조건대로 처리하면 최종 결과는 0행이다."
     ],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      3,
+      6
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "id",
+        "SUM(amount)"
+      ],
+      "rows": []
+    }
   },
   {
     "id": "qv3_0112",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_order",
     "topic_label": "정렬·TOP-N",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "중복 제거 및 정렬 후 LIMIT 2를 적용하면 몇 행이 반환되는가? (데이터 세트 4)",
@@ -4499,14 +5692,33 @@
       "WHERE로 먼저 거르고 DISTINCT로 중복을 제거하며, 정렬 후 LIMIT 2를 적용한다.",
       "주어진 입력 8행을 조건대로 처리하면 최종 결과는 2행이다."
     ],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      6,
+      14
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "score"
+      ],
+      "rows": [
+        [
+          5
+        ],
+        [
+          3
+        ]
+      ]
+    }
   },
   {
     "id": "qv3_0113",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_function",
     "topic_label": "함수·CASE",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "CASE 결과를 SUM한 값은? (score >= 10이면 1) (데이터 세트 4)",
@@ -4565,14 +5777,29 @@
       "CASE가 각 행의 조건에 따라 1 또는 0을 반환하고 이를 모두 합산한다.",
       "주어진 입력 7행을 조건대로 처리하면 최종 결과는 1이다."
     ],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      13
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "SUM(CASE WHEN score >= 10 THEN 1 ELSE 0 END)"
+      ],
+      "rows": [
+        [
+          1
+        ]
+      ]
+    }
   },
   {
     "id": "qv3_0114",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_function",
     "topic_label": "함수·CASE",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "NULL을 0으로 바꾼 후 SUM한 값은? (데이터 세트 4)",
@@ -4631,14 +5858,29 @@
       "COALESCE(v,0)으로 NULL만 0으로 바꾸고 나머지 정수를 모두 합산한다.",
       "주어진 입력 7행을 조건대로 처리하면 최종 결과는 24이다."
     ],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      13
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "SUM(COALESCE(v,0))"
+      ],
+      "rows": [
+        [
+          24
+        ]
+      ]
+    }
   },
   {
     "id": "qv3_0115",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_subquery",
     "topic_label": "서브쿼리",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "EXISTS 조건을 만족하는 결과 행 수는? (값 >= 4) (데이터 세트 4)",
@@ -4697,14 +5939,29 @@
       "외부 행의 값과 일치하며 기준 이상인 내부 행이 존재하면 해당 외부 행을 반환한다.",
       "주어진 입력 7행을 조건대로 처리하면 최종 결과는 1행이다."
     ],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      5
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "v"
+      ],
+      "rows": [
+        [
+          6
+        ]
+      ]
+    }
   },
   {
     "id": "qv3_0116",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_set",
     "topic_label": "집합 연산자",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "다음 UNION 결과 행 수는? (데이터 세트 4)",
@@ -4763,14 +6020,39 @@
       "UNION은 두 조건을 합친 뒤 동일한 값의 중복을 제거한다.",
       "주어진 입력 7행을 조건대로 처리하면 최종 결과는 5행이다."
     ],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [],
+    "verification_method": "sql_executed",
+    "question_type": "SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "v"
+      ],
+      "rows": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ],
+        [
+          5
+        ]
+      ]
+    }
   },
   {
     "id": "qv3_0117",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_subquery",
     "topic_label": "서브쿼리",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "IN 서브쿼리 조건의 결과 행 수는? (기준 >= 4) (데이터 세트 4)",
@@ -4829,14 +6111,35 @@
       "기준 이상의 값이 IN 집합에 들어가며 외부 쿼리는 해당 값을 가진 모든 행을 반환한다.",
       "주어진 입력 7행을 조건대로 처리하면 최종 결과는 3행이다."
     ],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      5
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "v"
+      ],
+      "rows": [
+        [
+          4
+        ],
+        [
+          4
+        ],
+        [
+          5
+        ]
+      ]
+    }
   },
   {
     "id": "qv3_0118",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_order",
     "topic_label": "정렬·TOP-N",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "COUNT(DISTINCT v) 결과는? (데이터 세트 4)",
@@ -4895,14 +6198,30 @@
       "중복 v 값은 한 번만 세므로 값의 종류 수가 된다.",
       "주어진 입력 7행을 조건대로 처리하면 최종 결과는 4이다."
     ],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      6,
+      14
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "COUNT(DISTINCT v)"
+      ],
+      "rows": [
+        [
+          4
+        ]
+      ]
+    }
   },
   {
     "id": "qv3_0119",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_null",
     "topic_label": "NULL·3값 논리",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "OR 필터를 만족하는 행 수는? (v > 4 또는 v=0) (데이터 세트 4)",
@@ -4961,14 +6280,29 @@
       "OR 조건은 둘 중 하나라도 TRUE인 행을 통과시킨다. 중복 조건을 만족해도 한 행은 한 번 센다.",
       "주어진 입력 7행을 조건대로 처리하면 최종 결과는 1이다."
     ],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      2
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "COUNT(*)"
+      ],
+      "rows": [
+        [
+          1
+        ]
+      ]
+    }
   },
   {
     "id": "qv3_0120",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_null",
     "topic_label": "NULL·3값 논리",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "다음 SQL의 COUNT(*) 값은? (조건: v >= 3) (데이터 세트 5)",
@@ -5027,14 +6361,29 @@
       "WHERE는 v >= 3인 행만 남기고 COUNT(*)는 해당 행 수를 센다.",
       "주어진 입력 7행을 조건대로 처리하면 최종 결과는 5이다."
     ],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      2
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "COUNT(*)"
+      ],
+      "rows": [
+        [
+          5
+        ]
+      ]
+    }
   },
   {
     "id": "qv3_0121",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_null",
     "topic_label": "NULL·3값 논리",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "다음 SQL의 COUNT(v) 값은? (데이터 세트 5)",
@@ -5093,14 +6442,29 @@
       "COUNT(v)는 NULL을 제외하고 v가 존재하는 행만 계산한다.",
       "주어진 입력 7행을 조건대로 처리하면 최종 결과는 5이다."
     ],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      2
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "COUNT(v)"
+      ],
+      "rows": [
+        [
+          5
+        ]
+      ]
+    }
   },
   {
     "id": "qv3_0122",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_group",
     "topic_label": "GROUP BY·집계",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "다음 SQL의 COUNT(*) 값은? (데이터 세트 5)",
@@ -5167,14 +6531,30 @@
       "id=2 조건과 amount IS NOT NULL을 동시에 만족하는 행만 센다.",
       "주어진 입력 7행을 조건대로 처리하면 최종 결과는 2이다."
     ],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      3,
+      6
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "COUNT(*)"
+      ],
+      "rows": [
+        [
+          2
+        ]
+      ]
+    }
   },
   {
     "id": "qv3_0123",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_group",
     "topic_label": "GROUP BY·집계",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "다음 GROUP BY/HAVING SQL에서 결과 그룹은 몇 행인가? (HAVING COUNT(*) >= 2) (데이터 세트 5)",
@@ -5245,14 +6625,36 @@
       "GROUP BY id로 묶고 HAVING은 그룹별 행 수로 판단한다.",
       "주어진 입력 8행을 조건대로 처리하면 최종 결과는 2행이다."
     ],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      3,
+      6
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "id",
+        "SUM(amount)"
+      ],
+      "rows": [
+        [
+          1,
+          53
+        ],
+        [
+          3,
+          28
+        ]
+      ]
+    }
   },
   {
     "id": "qv3_0124",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_order",
     "topic_label": "정렬·TOP-N",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "중복 제거 및 정렬 후 LIMIT 2를 적용하면 몇 행이 반환되는가? (데이터 세트 5)",
@@ -5314,14 +6716,33 @@
       "WHERE로 먼저 거르고 DISTINCT로 중복을 제거하며, 정렬 후 LIMIT 2를 적용한다.",
       "주어진 입력 8행을 조건대로 처리하면 최종 결과는 2행이다."
     ],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      6,
+      14
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "score"
+      ],
+      "rows": [
+        [
+          3
+        ],
+        [
+          2
+        ]
+      ]
+    }
   },
   {
     "id": "qv3_0125",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_function",
     "topic_label": "함수·CASE",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "CASE 결과를 SUM한 값은? (score >= 5이면 1) (데이터 세트 5)",
@@ -5380,14 +6801,29 @@
       "CASE가 각 행의 조건에 따라 1 또는 0을 반환하고 이를 모두 합산한다.",
       "주어진 입력 7행을 조건대로 처리하면 최종 결과는 4이다."
     ],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      13
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "SUM(CASE WHEN score >= 5 THEN 1 ELSE 0 END)"
+      ],
+      "rows": [
+        [
+          4
+        ]
+      ]
+    }
   },
   {
     "id": "qv3_0126",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_function",
     "topic_label": "함수·CASE",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "NULL을 0으로 바꾼 후 SUM한 값은? (데이터 세트 5)",
@@ -5446,14 +6882,29 @@
       "COALESCE(v,0)으로 NULL만 0으로 바꾸고 나머지 정수를 모두 합산한다.",
       "주어진 입력 7행을 조건대로 처리하면 최종 결과는 13이다."
     ],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      13
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "SUM(COALESCE(v,0))"
+      ],
+      "rows": [
+        [
+          13
+        ]
+      ]
+    }
   },
   {
     "id": "qv3_0127",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_subquery",
     "topic_label": "서브쿼리",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "EXISTS 조건을 만족하는 결과 행 수는? (값 >= 5) (데이터 세트 5)",
@@ -5512,14 +6963,32 @@
       "외부 행의 값과 일치하며 기준 이상인 내부 행이 존재하면 해당 외부 행을 반환한다.",
       "주어진 입력 7행을 조건대로 처리하면 최종 결과는 2행이다."
     ],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      5
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "v"
+      ],
+      "rows": [
+        [
+          6
+        ],
+        [
+          6
+        ]
+      ]
+    }
   },
   {
     "id": "qv3_0128",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_set",
     "topic_label": "집합 연산자",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "다음 UNION 결과 행 수는? (데이터 세트 5)",
@@ -5578,14 +7047,33 @@
       "UNION은 두 조건을 합친 뒤 동일한 값의 중복을 제거한다.",
       "주어진 입력 7행을 조건대로 처리하면 최종 결과는 3행이다."
     ],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [],
+    "verification_method": "sql_executed",
+    "question_type": "SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "v"
+      ],
+      "rows": [
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          4
+        ]
+      ]
+    }
   },
   {
     "id": "qv3_0129",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_subquery",
     "topic_label": "서브쿼리",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "IN 서브쿼리 조건의 결과 행 수는? (기준 >= 2) (데이터 세트 5)",
@@ -5644,14 +7132,44 @@
       "기준 이상의 값이 IN 집합에 들어가며 외부 쿼리는 해당 값을 가진 모든 행을 반환한다.",
       "주어진 입력 7행을 조건대로 처리하면 최종 결과는 6행이다."
     ],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      5
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "v"
+      ],
+      "rows": [
+        [
+          3
+        ],
+        [
+          5
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ],
+        [
+          5
+        ],
+        [
+          3
+        ]
+      ]
+    }
   },
   {
     "id": "qv3_0130",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_order",
     "topic_label": "정렬·TOP-N",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "COUNT(DISTINCT v) 결과는? (데이터 세트 5)",
@@ -5710,14 +7228,30 @@
       "중복 v 값은 한 번만 세므로 값의 종류 수가 된다.",
       "주어진 입력 7행을 조건대로 처리하면 최종 결과는 5이다."
     ],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      6,
+      14
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "COUNT(DISTINCT v)"
+      ],
+      "rows": [
+        [
+          5
+        ]
+      ]
+    }
   },
   {
     "id": "qv3_0131",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_null",
     "topic_label": "NULL·3값 논리",
-    "difficulty": "중",
+    "difficulty": "미분류",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "OR 필터를 만족하는 행 수는? (v > 3 또는 v=0) (데이터 세트 5)",
@@ -5776,6 +7310,1422 @@
       "OR 조건은 둘 중 하나라도 TRUE인 행을 통과시킨다. 중복 조건을 만족해도 한 행은 한 번 센다.",
       "주어진 입력 7행을 조건대로 처리하면 최종 결과는 5이다."
     ],
-    "verified": true
+    "verified": true,
+    "linked_chapters": [
+      2
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "COUNT(*)"
+      ],
+      "rows": [
+        [
+          5
+        ]
+      ]
+    }
+  },
+  {
+    "id": "qv3_0132",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_join",
+    "topic_label": "JOIN · 중복 행",
+    "difficulty": "미분류",
+    "source_type": "자체 제작",
+    "dbms": "SQLite 확인 · 표준 SQL 중심",
+    "stem": "LEFT JOIN에서 중복 키를 고려했을 때 결과는 몇 행인가?",
+    "choices": [
+      "5행",
+      "4행",
+      "6행",
+      "7행"
+    ],
+    "answer": 0,
+    "explanation": "해당 SQL을 입력 데이터에 적용하여 반환되는 실제 행 수를 계산한다. 최종 행 수는 1+4=5행이다.",
+    "option_explanations": [],
+    "sql": "SELECT A.id, B.tag FROM A LEFT JOIN B ON A.id=B.id ORDER BY A.id, B.tag;",
+    "input_tables": [
+      {
+        "name": "A",
+        "columns": [
+          "id"
+        ],
+        "rows": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ]
+        ]
+      },
+      {
+        "name": "B",
+        "columns": [
+          "id",
+          "tag"
+        ],
+        "rows": [
+          [
+            2,
+            "X"
+          ],
+          [
+            2,
+            "Y"
+          ],
+          [
+            3,
+            "Z"
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "정답 계산"
+      ],
+      "rows": [
+        [
+          5
+        ]
+      ]
+    },
+    "execution_output": {
+      "columns": [
+        "id",
+        "tag"
+      ],
+      "rows": [
+        [
+          1,
+          null
+        ],
+        [
+          2,
+          "X"
+        ],
+        [
+          2,
+          "X"
+        ],
+        [
+          2,
+          "Y"
+        ],
+        [
+          2,
+          "Y"
+        ]
+      ]
+    },
+    "steps": [
+      "A.id=1은 매칭되지 않아 1행이 NULL 확장된다.",
+      "A.id=2는 A에 2행, B에 2행이므로 2×2=4행이다.",
+      "최종 행 수는 1+4=5행이다."
+    ],
+    "verified": true,
+    "linked_chapters": [
+      1,
+      6
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "SQL 결과 추론"
+  },
+  {
+    "id": "qv3_0133",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_join",
+    "topic_label": "JOIN · ON/WHERE",
+    "difficulty": "미분류",
+    "source_type": "자체 제작",
+    "dbms": "SQLite 확인 · 표준 SQL 중심",
+    "stem": "LEFT JOIN 후 WHERE B.tag = 'X'를 적용하면 몇 행인가?",
+    "choices": [
+      "1행",
+      "3행",
+      "4행",
+      "2행"
+    ],
+    "answer": 3,
+    "explanation": "해당 SQL을 입력 데이터에 적용하여 반환되는 실제 행 수를 계산한다. A.id=2가 2행이고 각각 X 한 행과 매칭되어 2행 남는다.",
+    "option_explanations": [],
+    "sql": "SELECT A.id,B.tag FROM A LEFT JOIN B ON A.id=B.id WHERE B.tag='X' ORDER BY A.id;",
+    "input_tables": [
+      {
+        "name": "A",
+        "columns": [
+          "id"
+        ],
+        "rows": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ]
+        ]
+      },
+      {
+        "name": "B",
+        "columns": [
+          "id",
+          "tag"
+        ],
+        "rows": [
+          [
+            2,
+            "X"
+          ],
+          [
+            2,
+            "Y"
+          ],
+          [
+            3,
+            "Z"
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "정답 계산"
+      ],
+      "rows": [
+        [
+          2
+        ]
+      ]
+    },
+    "execution_output": {
+      "columns": [
+        "id",
+        "tag"
+      ],
+      "rows": [
+        [
+          2,
+          "X"
+        ],
+        [
+          2,
+          "X"
+        ]
+      ]
+    },
+    "steps": [
+      "LEFT JOIN 자체로 A.id=1의 NULL 확장행 1개와 A.id=2의 매칭 4행이 생긴다.",
+      "WHERE B.tag='X'는 NULL 확장행과 Y 매칭행을 제거한다.",
+      "A.id=2가 2행이고 각각 X 한 행과 매칭되어 2행 남는다."
+    ],
+    "verified": true,
+    "linked_chapters": [
+      1,
+      6
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "SQL 결과 추론"
+  },
+  {
+    "id": "qv3_0134",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_join",
+    "topic_label": "JOIN · ON/WHERE",
+    "difficulty": "미분류",
+    "source_type": "자체 제작",
+    "dbms": "SQLite 확인 · 표준 SQL 중심",
+    "stem": "LEFT JOIN의 ON에 B.tag = 'X' 조건을 넣으면 몇 행인가?",
+    "choices": [
+      "4행",
+      "5행",
+      "3행",
+      "2행"
+    ],
+    "answer": 2,
+    "explanation": "해당 SQL을 입력 데이터에 적용하여 반환되는 실제 행 수를 계산한다. A.id=2 두 행은 X와 각각 매칭되어 2행, 합계 3행이다.",
+    "option_explanations": [],
+    "sql": "SELECT A.id,B.tag FROM A LEFT JOIN B ON A.id=B.id AND B.tag='X' ORDER BY A.id;",
+    "input_tables": [
+      {
+        "name": "A",
+        "columns": [
+          "id"
+        ],
+        "rows": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ]
+        ]
+      },
+      {
+        "name": "B",
+        "columns": [
+          "id",
+          "tag"
+        ],
+        "rows": [
+          [
+            2,
+            "X"
+          ],
+          [
+            2,
+            "Y"
+          ],
+          [
+            3,
+            "Z"
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "정답 계산"
+      ],
+      "rows": [
+        [
+          3
+        ]
+      ]
+    },
+    "execution_output": {
+      "columns": [
+        "id",
+        "tag"
+      ],
+      "rows": [
+        [
+          1,
+          null
+        ],
+        [
+          2,
+          "X"
+        ],
+        [
+          2,
+          "X"
+        ]
+      ]
+    },
+    "steps": [
+      "ON 조건에 의해 B.tag='X'만 매칭한다.",
+      "A.id=1은 여전히 NULL 확장되어 1행이 남는다.",
+      "A.id=2 두 행은 X와 각각 매칭되어 2행, 합계 3행이다."
+    ],
+    "verified": true,
+    "linked_chapters": [
+      1,
+      6
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "SQL 결과 추론"
+  },
+  {
+    "id": "qv3_0135",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_join",
+    "topic_label": "JOIN · 곱셈",
+    "difficulty": "미분류",
+    "source_type": "자체 제작",
+    "dbms": "SQLite 확인 · 표준 SQL 중심",
+    "stem": "동일한 키가 A에 2행, B에 3행 있을 때 INNER JOIN 결과 행은?",
+    "choices": [
+      "8행",
+      "6행",
+      "5행",
+      "7행"
+    ],
+    "answer": 1,
+    "explanation": "해당 SQL을 입력 데이터에 적용하여 반환되는 실제 행 수를 계산한다. 동일 키가 일치하는 모든 조합을 만들므로 2×3=6행이다.",
+    "option_explanations": [],
+    "sql": "SELECT A.a,B.b FROM A INNER JOIN B ON A.id=B.id ORDER BY A.a,B.b;",
+    "input_tables": [
+      {
+        "name": "A",
+        "columns": [
+          "id",
+          "a"
+        ],
+        "rows": [
+          [
+            1,
+            "A"
+          ],
+          [
+            1,
+            "B"
+          ]
+        ]
+      },
+      {
+        "name": "B",
+        "columns": [
+          "id",
+          "b"
+        ],
+        "rows": [
+          [
+            1,
+            "X"
+          ],
+          [
+            1,
+            "Y"
+          ],
+          [
+            1,
+            "Z"
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "정답 계산"
+      ],
+      "rows": [
+        [
+          6
+        ]
+      ]
+    },
+    "execution_output": {
+      "columns": [
+        "a",
+        "b"
+      ],
+      "rows": [
+        [
+          "A",
+          "X"
+        ],
+        [
+          "A",
+          "Y"
+        ],
+        [
+          "A",
+          "Z"
+        ],
+        [
+          "B",
+          "X"
+        ],
+        [
+          "B",
+          "Y"
+        ],
+        [
+          "B",
+          "Z"
+        ]
+      ]
+    },
+    "steps": [
+      "A.id=1에 대해 A가 2행, B가 3행 존재한다.",
+      "동일 키가 일치하는 모든 조합을 만들므로 2×3=6행이다."
+    ],
+    "verified": true,
+    "linked_chapters": [
+      1,
+      6
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "SQL 결과 추론"
+  },
+  {
+    "id": "qv3_0136",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_join",
+    "topic_label": "JOIN · CROSS",
+    "difficulty": "미분류",
+    "source_type": "자체 제작",
+    "dbms": "SQLite 확인 · 표준 SQL 중심",
+    "stem": "A가 2행이고 B가 3행일 때 CROSS JOIN 결과 행은?",
+    "choices": [
+      "6행",
+      "5행",
+      "7행",
+      "8행"
+    ],
+    "answer": 0,
+    "explanation": "해당 SQL을 입력 데이터에 적용하여 반환되는 실제 행 수를 계산한다. 2행 × 3행 = 6행이다.",
+    "option_explanations": [],
+    "sql": "SELECT A.id,B.tag FROM A CROSS JOIN B ORDER BY A.id,B.tag;",
+    "input_tables": [
+      {
+        "name": "A",
+        "columns": [
+          "id"
+        ],
+        "rows": [
+          [
+            1
+          ],
+          [
+            2
+          ]
+        ]
+      },
+      {
+        "name": "B",
+        "columns": [
+          "tag"
+        ],
+        "rows": [
+          [
+            "X"
+          ],
+          [
+            "Y"
+          ],
+          [
+            "Z"
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "정답 계산"
+      ],
+      "rows": [
+        [
+          6
+        ]
+      ]
+    },
+    "execution_output": {
+      "columns": [
+        "id",
+        "tag"
+      ],
+      "rows": [
+        [
+          1,
+          "X"
+        ],
+        [
+          1,
+          "Y"
+        ],
+        [
+          1,
+          "Z"
+        ],
+        [
+          2,
+          "X"
+        ],
+        [
+          2,
+          "Y"
+        ],
+        [
+          2,
+          "Z"
+        ]
+      ]
+    },
+    "steps": [
+      "CROSS JOIN은 매칭 조건 없이 가능한 모든 행 조합을 만든다.",
+      "2행 × 3행 = 6행이다."
+    ],
+    "verified": true,
+    "linked_chapters": [
+      1,
+      6
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "SQL 결과 추론"
+  },
+  {
+    "id": "qv3_0137",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_join",
+    "topic_label": "JOIN · 미매칭",
+    "difficulty": "미분류",
+    "source_type": "자체 제작",
+    "dbms": "SQLite 확인 · 표준 SQL 중심",
+    "stem": "LEFT JOIN한 뒤 B.id IS NULL 조건을 적용하면 반환되는 A 행은 몇 개인가?",
+    "choices": [
+      "1행",
+      "3행",
+      "4행",
+      "2행"
+    ],
+    "answer": 3,
+    "explanation": "해당 SQL을 입력 데이터에 적용하여 반환되는 실제 행 수를 계산한다. 조건을 통과하는 두 행만 반환된다.",
+    "option_explanations": [],
+    "sql": "SELECT A.id FROM A LEFT JOIN B ON A.id=B.id WHERE B.id IS NULL ORDER BY A.id;",
+    "input_tables": [
+      {
+        "name": "A",
+        "columns": [
+          "id"
+        ],
+        "rows": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ]
+        ]
+      },
+      {
+        "name": "B",
+        "columns": [
+          "id"
+        ],
+        "rows": [
+          [
+            2
+          ],
+          [
+            4
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "정답 계산"
+      ],
+      "rows": [
+        [
+          2
+        ]
+      ]
+    },
+    "execution_output": {
+      "columns": [
+        "id"
+      ],
+      "rows": [
+        [
+          1
+        ],
+        [
+          3
+        ]
+      ]
+    },
+    "steps": [
+      "A.id=2와 4는 B와 매칭된다.",
+      "A.id=1과 3은 매칭이 없어 B.id가 NULL이 된다.",
+      "조건을 통과하는 두 행만 반환된다."
+    ],
+    "verified": true,
+    "linked_chapters": [
+      1,
+      6
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "SQL 결과 추론"
+  },
+  {
+    "id": "qv3_0138",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_window",
+    "topic_label": "윈도우 함수 · DENSE_RANK",
+    "difficulty": "미분류",
+    "source_type": "자체 제작",
+    "dbms": "SQLite 확인 · 표준 SQL 중심",
+    "stem": "DENSE_RANK를 이용해 상위 두 개 점수 그룹을 선택하면 몇 행인가?",
+    "choices": [
+      "4행",
+      "5행",
+      "3행",
+      "2행"
+    ],
+    "answer": 2,
+    "explanation": "해당 SQL을 입력 데이터에 적용하여 반환되는 실제 행 수를 계산한다. 1위와 2위 점수 그룹을 모두 선택해 3행을 반환한다.",
+    "option_explanations": [],
+    "sql": "SELECT id FROM (SELECT id,DENSE_RANK() OVER(ORDER BY score DESC) AS r FROM SCORE) WHERE r<=2 ORDER BY id;",
+    "input_tables": [
+      {
+        "name": "SCORE",
+        "columns": [
+          "id",
+          "score"
+        ],
+        "rows": [
+          [
+            1,
+            90
+          ],
+          [
+            2,
+            90
+          ],
+          [
+            3,
+            80
+          ],
+          [
+            4,
+            70
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "정답 계산"
+      ],
+      "rows": [
+        [
+          3
+        ]
+      ]
+    },
+    "execution_output": {
+      "columns": [
+        "id"
+      ],
+      "rows": [
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ]
+      ]
+    },
+    "steps": [
+      "90점 두 행은 DENSE_RANK=1, 80점 한 행은 2다.",
+      "1위와 2위 점수 그룹을 모두 선택해 3행을 반환한다."
+    ],
+    "verified": true,
+    "linked_chapters": [
+      4
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "SQL 결과 추론"
+  },
+  {
+    "id": "qv3_0139",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_window",
+    "topic_label": "윈도우 함수 · RANK",
+    "difficulty": "미분류",
+    "source_type": "자체 제작",
+    "dbms": "SQLite 확인 · 표준 SQL 중심",
+    "stem": "RANK로 2위까지 선택했을 때 몇 행이 반환되는가?",
+    "choices": [
+      "4행",
+      "2행",
+      "1행",
+      "3행"
+    ],
+    "answer": 1,
+    "explanation": "해당 SQL을 입력 데이터에 적용하여 반환되는 실제 행 수를 계산한다. RANK<=2에 해당하는 것은 90점 두 행뿐이다.",
+    "option_explanations": [],
+    "sql": "SELECT id FROM (SELECT id,RANK() OVER(ORDER BY score DESC) AS r FROM SCORE) WHERE r<=2 ORDER BY id;",
+    "input_tables": [
+      {
+        "name": "SCORE",
+        "columns": [
+          "id",
+          "score"
+        ],
+        "rows": [
+          [
+            1,
+            90
+          ],
+          [
+            2,
+            90
+          ],
+          [
+            3,
+            80
+          ],
+          [
+            4,
+            70
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "정답 계산"
+      ],
+      "rows": [
+        [
+          2
+        ]
+      ]
+    },
+    "execution_output": {
+      "columns": [
+        "id"
+      ],
+      "rows": [
+        [
+          1
+        ],
+        [
+          2
+        ]
+      ]
+    },
+    "steps": [
+      "90점 두 행이 공동 1위라서 다음 80점은 3위가 된다.",
+      "RANK<=2에 해당하는 것은 90점 두 행뿐이다."
+    ],
+    "verified": true,
+    "linked_chapters": [
+      4
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "SQL 결과 추론"
+  },
+  {
+    "id": "qv3_0140",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_group",
+    "topic_label": "집계 · HAVING",
+    "difficulty": "미분류",
+    "source_type": "자체 제작",
+    "dbms": "SQLite 확인 · 표준 SQL 중심",
+    "stem": "부서별 COUNT(*)가 2 이상인 부서만 조회할 때 몇 그룹이 출력되는가?",
+    "choices": [
+      "2행",
+      "1행",
+      "3행",
+      "4행"
+    ],
+    "answer": 0,
+    "explanation": "해당 SQL을 입력 데이터에 적용하여 반환되는 실제 행 수를 계산한다. HAVING COUNT(*)>=2 조건으로 A·B 두 그룹만 남는다.",
+    "option_explanations": [],
+    "sql": "SELECT dept,COUNT(*) AS cnt FROM EMP GROUP BY dept HAVING COUNT(*)>=2 ORDER BY dept;",
+    "input_tables": [
+      {
+        "name": "EMP",
+        "columns": [
+          "id",
+          "dept"
+        ],
+        "rows": [
+          [
+            1,
+            "A"
+          ],
+          [
+            2,
+            "A"
+          ],
+          [
+            3,
+            "B"
+          ],
+          [
+            4,
+            "B"
+          ],
+          [
+            5,
+            "B"
+          ],
+          [
+            6,
+            "C"
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "정답 계산"
+      ],
+      "rows": [
+        [
+          2
+        ]
+      ]
+    },
+    "execution_output": {
+      "columns": [
+        "dept",
+        "cnt"
+      ],
+      "rows": [
+        [
+          "A",
+          2
+        ],
+        [
+          "B",
+          3
+        ]
+      ]
+    },
+    "steps": [
+      "A는 2행, B는 3행, C는 1행으로 그룹이 생성된다.",
+      "HAVING COUNT(*)>=2 조건으로 A·B 두 그룹만 남는다."
+    ],
+    "verified": true,
+    "linked_chapters": [
+      3,
+      6
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "SQL 결과 추론"
+  },
+  {
+    "id": "qv3_0141",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_subquery",
+    "topic_label": "서브쿼리 · EXISTS",
+    "difficulty": "미분류",
+    "source_type": "자체 제작",
+    "dbms": "SQLite 확인 · 표준 SQL 중심",
+    "stem": "부서가 D에 속하는 직원 중 존재 조건을 만족하는 직원은 몇 명인가?",
+    "choices": [
+      "2행",
+      "4행",
+      "5행",
+      "3행"
+    ],
+    "answer": 3,
+    "explanation": "해당 SQL을 입력 데이터에 적용하여 반환되는 실제 행 수를 계산한다. D 직원 3명이 반환된다.",
+    "option_explanations": [],
+    "sql": "SELECT e.id FROM EMP e WHERE EXISTS (SELECT 1 FROM EMP x WHERE x.dept=e.dept AND x.salary>90) ORDER BY e.id;",
+    "input_tables": [
+      {
+        "name": "EMP",
+        "columns": [
+          "id",
+          "dept",
+          "salary"
+        ],
+        "rows": [
+          [
+            1,
+            "D",
+            100
+          ],
+          [
+            2,
+            "D",
+            70
+          ],
+          [
+            3,
+            "E",
+            90
+          ],
+          [
+            4,
+            "D",
+            60
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "정답 계산"
+      ],
+      "rows": [
+        [
+          3
+        ]
+      ]
+    },
+    "execution_output": {
+      "columns": [
+        "id"
+      ],
+      "rows": [
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          4
+        ]
+      ]
+    },
+    "steps": [
+      "부서 D에는 salary=100인 행이 있어 모든 D 직원의 EXISTS가 TRUE다.",
+      "부서 E에는 90 초과 급여 행이 없으므로 해당 직원은 제외된다.",
+      "D 직원 3명이 반환된다."
+    ],
+    "verified": true,
+    "linked_chapters": [
+      5
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "SQL 결과 추론"
+  },
+  {
+    "id": "qv3_0142",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_order",
+    "topic_label": "정렬 · LIMIT",
+    "difficulty": "미분류",
+    "source_type": "자체 제작",
+    "dbms": "SQLite 확인 · 표준 SQL 중심",
+    "stem": "점수 내림차순, id 오름차순으로 정렬한 상위 2행의 반환 행 수는?",
+    "choices": [
+      "3행",
+      "4행",
+      "2행",
+      "1행"
+    ],
+    "answer": 2,
+    "explanation": "해당 SQL을 입력 데이터에 적용하여 반환되는 실제 행 수를 계산한다. LIMIT 2로 최종 두 행이 반환된다.",
+    "option_explanations": [],
+    "sql": "SELECT id,score FROM SCORE ORDER BY score DESC,id ASC LIMIT 2;",
+    "input_tables": [
+      {
+        "name": "SCORE",
+        "columns": [
+          "id",
+          "score"
+        ],
+        "rows": [
+          [
+            1,
+            90
+          ],
+          [
+            2,
+            95
+          ],
+          [
+            3,
+            95
+          ],
+          [
+            4,
+            80
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "정답 계산"
+      ],
+      "rows": [
+        [
+          2
+        ]
+      ]
+    },
+    "execution_output": {
+      "columns": [
+        "id",
+        "score"
+      ],
+      "rows": [
+        [
+          2,
+          95
+        ],
+        [
+          3,
+          95
+        ]
+      ]
+    },
+    "steps": [
+      "점수 95점 동점은 id=2와 3이다.",
+      "두 번째 정렬 키 id 오름차순으로 순서가 고정된다.",
+      "LIMIT 2로 최종 두 행이 반환된다."
+    ],
+    "verified": true,
+    "linked_chapters": [
+      6,
+      14
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "SQL 결과 추론"
+  },
+  {
+    "id": "qv3_0143",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_null",
+    "topic_label": "NULL · NOT EXISTS",
+    "difficulty": "미분류",
+    "source_type": "자체 제작",
+    "dbms": "SQLite 확인 · 표준 SQL 중심",
+    "stem": "U에 NULL이 포함되어도 NOT EXISTS로 매칭되지 않은 T.id를 구하면 몇 행인가?",
+    "choices": [
+      "4행",
+      "2행",
+      "1행",
+      "3행"
+    ],
+    "answer": 1,
+    "explanation": "해당 SQL을 입력 데이터에 적용하여 반환되는 실제 행 수를 계산한다. T.id=1과 3의 두 행이 남는다.",
+    "option_explanations": [],
+    "sql": "SELECT t.id FROM T t WHERE NOT EXISTS(SELECT 1 FROM U u WHERE u.id=t.id) ORDER BY t.id;",
+    "input_tables": [
+      {
+        "name": "T",
+        "columns": [
+          "id"
+        ],
+        "rows": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ]
+      },
+      {
+        "name": "U",
+        "columns": [
+          "id"
+        ],
+        "rows": [
+          [
+            2
+          ],
+          [
+            null
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "정답 계산"
+      ],
+      "rows": [
+        [
+          2
+        ]
+      ]
+    },
+    "execution_output": {
+      "columns": [
+        "id"
+      ],
+      "rows": [
+        [
+          1
+        ],
+        [
+          3
+        ]
+      ]
+    },
+    "steps": [
+      "U.id=2만 T.id=2와 일치한다.",
+      "U.id=NULL은 T.id와 = 비교하면 UNKNOWN이므로 일치 조건이 되지 않는다.",
+      "T.id=1과 3의 두 행이 남는다."
+    ],
+    "verified": true,
+    "linked_chapters": [
+      2
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "SQL 결과 추론"
+  },
+  {
+    "id": "qv3_0144",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_set",
+    "topic_label": "집합 연산 · UNION",
+    "difficulty": "미분류",
+    "source_type": "자체 제작",
+    "dbms": "SQLite 확인 · 표준 SQL 중심",
+    "stem": "중복을 제거하는 UNION의 반환 행은 몇 개인가?",
+    "choices": [
+      "3행",
+      "2행",
+      "4행",
+      "5행"
+    ],
+    "answer": 0,
+    "explanation": "해당 SQL을 입력 데이터에 적용하여 반환되는 실제 행 수를 계산한다. UNION은 중복을 제거하므로 1,2,3의 3행이 반환된다.",
+    "option_explanations": [],
+    "sql": "SELECT id FROM A UNION SELECT id FROM B ORDER BY id;",
+    "input_tables": [
+      {
+        "name": "A",
+        "columns": [
+          "id"
+        ],
+        "rows": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ]
+        ]
+      },
+      {
+        "name": "B",
+        "columns": [
+          "id"
+        ],
+        "rows": [
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "정답 계산"
+      ],
+      "rows": [
+        [
+          3
+        ]
+      ]
+    },
+    "execution_output": {
+      "columns": [
+        "id"
+      ],
+      "rows": [
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ]
+      ]
+    },
+    "steps": [
+      "A 결과와 B 결과를 합치면 1,2,2,2,3이 된다.",
+      "UNION은 중복을 제거하므로 1,2,3의 3행이 반환된다."
+    ],
+    "verified": true,
+    "linked_chapters": [],
+    "verification_method": "sql_executed",
+    "question_type": "SQL 결과 추론"
+  },
+  {
+    "id": "qv3_0145",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_join",
+    "topic_label": "JOIN · WHERE 조건",
+    "difficulty": "미분류",
+    "source_type": "자체 제작",
+    "dbms": "SQLite 확인 · 표준 SQL 중심",
+    "stem": "JOIN 후 양쪽 조건을 모두 만족하는 결과 행 수는?",
+    "choices": [
+      "1행",
+      "3행",
+      "4행",
+      "2행"
+    ],
+    "answer": 3,
+    "explanation": "해당 SQL을 입력 데이터에 적용하여 반환되는 실제 행 수를 계산한다. WHERE D.active=1을 만족하는 A 부서 직원 2명만 남는다.",
+    "option_explanations": [],
+    "sql": "SELECT E.id FROM EMP E JOIN DEPT D ON E.dept=D.dept WHERE D.active=1 ORDER BY E.id;",
+    "input_tables": [
+      {
+        "name": "EMP",
+        "columns": [
+          "id",
+          "dept"
+        ],
+        "rows": [
+          [
+            1,
+            "A"
+          ],
+          [
+            2,
+            "A"
+          ],
+          [
+            3,
+            "B"
+          ],
+          [
+            4,
+            "B"
+          ]
+        ]
+      },
+      {
+        "name": "DEPT",
+        "columns": [
+          "dept",
+          "active"
+        ],
+        "rows": [
+          [
+            "A",
+            1
+          ],
+          [
+            "B",
+            0
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "정답 계산"
+      ],
+      "rows": [
+        [
+          2
+        ]
+      ]
+    },
+    "execution_output": {
+      "columns": [
+        "id"
+      ],
+      "rows": [
+        [
+          1
+        ],
+        [
+          2
+        ]
+      ]
+    },
+    "steps": [
+      "EMP와 DEPT를 dept로 JOIN한다.",
+      "WHERE D.active=1을 만족하는 A 부서 직원 2명만 남는다."
+    ],
+    "verified": true,
+    "linked_chapters": [
+      1,
+      6
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "SQL 결과 추론"
+  },
+  {
+    "id": "qv3_0146",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_null",
+    "topic_label": "NULL · NOT IN",
+    "difficulty": "미분류",
+    "source_type": "자체 제작",
+    "dbms": "SQLite 확인 · 표준 SQL 중심",
+    "stem": "U에 NULL이 포함된 경우 NOT IN 쿼리 결과는 몇 행인가?",
+    "choices": [
+      "2행",
+      "3행",
+      "0행",
+      "1행"
+    ],
+    "answer": 2,
+    "explanation": "해당 SQL을 입력 데이터에 적용하여 반환되는 실제 행 수를 계산한다. NOT IN의 결과는 0행이다.",
+    "option_explanations": [],
+    "sql": "SELECT id FROM T WHERE id NOT IN(SELECT id FROM U) ORDER BY id;",
+    "input_tables": [
+      {
+        "name": "T",
+        "columns": [
+          "id"
+        ],
+        "rows": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ]
+      },
+      {
+        "name": "U",
+        "columns": [
+          "id"
+        ],
+        "rows": [
+          [
+            2
+          ],
+          [
+            null
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "정답 계산"
+      ],
+      "rows": [
+        [
+          0
+        ]
+      ]
+    },
+    "execution_output": {
+      "columns": [
+        "id"
+      ],
+      "rows": []
+    },
+    "steps": [
+      "T.id=2는 U의 2와 일치해 제외된다.",
+      "T.id=1과 3은 U의 NULL과 비교하며 UNKNOWN이 섞여 TRUE가 되지 않는다.",
+      "NOT IN의 결과는 0행이다."
+    ],
+    "verified": true,
+    "linked_chapters": [
+      2
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "SQL 결과 추론"
   }
 ]

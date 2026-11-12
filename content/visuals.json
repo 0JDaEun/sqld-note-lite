@@ -1,0 +1,373 @@
+[
+  {
+    "chapter": 1,
+    "kind": "equation",
+    "title": "LEFT JOIN에서 행이 늘어나는 이유",
+    "caption": "매칭되지 않는 A의 1행은 NULL을 붙여 유지하고, A.id=2 두 행은 B.id=2 두 행과 2×2개로 결합한다.",
+    "parts": [
+      {
+        "label": "미매칭 A",
+        "value": "1행",
+        "detail": "A.id = 1"
+      },
+      {
+        "label": "매칭 조합",
+        "value": "2 × 2 = 4행",
+        "detail": "A.id = 2 · B.id = 2"
+      },
+      {
+        "label": "LEFT JOIN 결과",
+        "value": "총 5행",
+        "detail": "1 + 4"
+      }
+    ]
+  },
+  {
+    "chapter": 2,
+    "kind": "table",
+    "title": "SQL 3값 논리: WHERE는 TRUE만 통과",
+    "caption": "비교에 NULL이 섞이면 UNKNOWN일 수 있다. WHERE는 FALSE와 UNKNOWN을 모두 제거한다.",
+    "columns": [
+      "조건식",
+      "결과",
+      "WHERE 통과"
+    ],
+    "rows": [
+      [
+        "1 = 1",
+        "TRUE",
+        "통과"
+      ],
+      [
+        "1 = 2",
+        "FALSE",
+        "제외"
+      ],
+      [
+        "1 = NULL",
+        "UNKNOWN",
+        "제외"
+      ],
+      [
+        "NULL IS NULL",
+        "TRUE",
+        "통과"
+      ]
+    ]
+  },
+  {
+    "chapter": 3,
+    "kind": "flow",
+    "title": "집계는 행을 거른 다음 그룹을 만든다",
+    "caption": "WHERE는 행 기준, HAVING은 그룹 기준. 이 둘의 평가 대상을 구별한다.",
+    "nodes": [
+      [
+        "FROM",
+        "원본 SALES 4행"
+      ],
+      [
+        "WHERE",
+        "조건을 만족하는 행만 남김"
+      ],
+      [
+        "GROUP BY",
+        "지역별 그룹 생성"
+      ],
+      [
+        "HAVING",
+        "그룹 단위로 제거"
+      ]
+    ]
+  },
+  {
+    "chapter": 4,
+    "kind": "table",
+    "title": "같은 점수, 서로 다른 순위",
+    "caption": "ROW_NUMBER는 동점도 서로 다른 번호다. 예시에서는 id 오름차순을 동점 정렬 기준으로 명시했다.",
+    "columns": [
+      "id",
+      "점수",
+      "RANK",
+      "DENSE_RANK",
+      "ROW_NUMBER"
+    ],
+    "rows": [
+      [
+        "A",
+        "90",
+        "1",
+        "1",
+        "1"
+      ],
+      [
+        "B",
+        "90",
+        "1",
+        "1",
+        "2"
+      ],
+      [
+        "C",
+        "80",
+        "3",
+        "2",
+        "3"
+      ]
+    ]
+  },
+  {
+    "chapter": 5,
+    "kind": "flow",
+    "title": "상관 서브쿼리는 바깥 행을 기준으로 평가",
+    "caption": "EXISTS는 결과에 행이 있는지 여부만 판정한다. SELECT 1의 1을 실제 결과값으로 비교하지 않는다.",
+    "nodes": [
+      [
+        "바깥 행",
+        "현재 EMP 직원 선택"
+      ],
+      [
+        "내부 질의",
+        "현재 직원의 부서 조건 참조"
+      ],
+      [
+        "EXISTS",
+        "행이 있으면 TRUE"
+      ],
+      [
+        "WHERE",
+        "TRUE인 바깥 행만 유지"
+      ]
+    ]
+  },
+  {
+    "chapter": 6,
+    "kind": "flow",
+    "title": "SQL 작성 순서 ≠ 논리적 평가 순서",
+    "caption": "DBMS의 실제 물리 실행 계획은 최적화될 수 있다. 아래는 결과를 이해하기 위한 논리적 순서다.",
+    "nodes": [
+      [
+        "FROM / JOIN",
+        "행의 출발점"
+      ],
+      [
+        "WHERE",
+        "행 필터"
+      ],
+      [
+        "GROUP BY / HAVING",
+        "그룹과 그룹 필터"
+      ],
+      [
+        "SELECT / DISTINCT",
+        "출력 계산과 중복 제거"
+      ],
+      [
+        "ORDER BY / 행 제한",
+        "정렬 후 개수 제한"
+      ]
+    ]
+  },
+  {
+    "chapter": 7,
+    "kind": "flow",
+    "title": "SAVEPOINT 이후 변경만 되돌리기",
+    "caption": "ROLLBACK TO s1은 저장점 이후 INSERT를 취소한다. 저장점 전에 실행한 UPDATE는 남아 COMMIT될 수 있다.",
+    "nodes": [
+      [
+        "UPDATE",
+        "id=1 잔액 변경"
+      ],
+      [
+        "SAVEPOINT s1",
+        "여기까지 저장점"
+      ],
+      [
+        "INSERT",
+        "id=2 추가"
+      ],
+      [
+        "ROLLBACK TO s1",
+        "INSERT만 취소"
+      ],
+      [
+        "COMMIT",
+        "UPDATE 확정"
+      ]
+    ]
+  },
+  {
+    "chapter": 8,
+    "kind": "split",
+    "title": "1:N과 선택·필수 참여는 다른 개념",
+    "caption": "고객은 주문이 없어도 존재할 수 있고, 주문은 반드시 하나의 고객에 속하도록 설계할 수 있다.",
+    "left": [
+      "CUSTOMER",
+      "고객 1명",
+      "주문 0건 이상 가능"
+    ],
+    "right": [
+      "ORDERS",
+      "주문 여러 건",
+      "각 주문은 고객 1명 필수"
+    ],
+    "connector": "1 → 0..N"
+  },
+  {
+    "chapter": 9,
+    "kind": "split",
+    "title": "식별관계 vs 비식별관계",
+    "caption": "부모 키가 자식의 기본키 구성에 포함되는지 확인한다. FK라는 사실만으로 식별관계는 아니다.",
+    "left": [
+      "비식별관계",
+      "ORDERS",
+      "order_id (PK) / customer_id (FK)"
+    ],
+    "right": [
+      "식별관계",
+      "ORDER_ITEM",
+      "(order_id, item_no) (PK)"
+    ],
+    "connector": "PK 포함 여부"
+  },
+  {
+    "chapter": 10,
+    "kind": "split",
+    "title": "정규화: 중복된 종속성을 분리",
+    "caption": "주문 상세에 상품명이 반복되면 상품명 변경 시 여러 행을 수정해야 한다. 상품 테이블로 분리해 이상을 줄인다.",
+    "left": [
+      "분리 전",
+      "ORDER_DETAIL",
+      "order_no · product_id · product_name · qty"
+    ],
+    "right": [
+      "분리 후",
+      "PRODUCT + ORDER_ITEM",
+      "상품명은 PRODUCT에, 수량은 ORDER_ITEM에"
+    ],
+    "connector": "→ 2NF 검토"
+  },
+  {
+    "chapter": 11,
+    "kind": "flow",
+    "title": "ROLLUP(region, product) 집계 수준",
+    "caption": "ROLLUP은 모든 부분집합이 아니라 왼쪽에서 차례로 유지한 계층적 소계만 만든다.",
+    "nodes": [
+      [
+        "(region, product)",
+        "상세 집계"
+      ],
+      [
+        "(region)",
+        "지역별 소계"
+      ],
+      [
+        "()",
+        "전체 총계"
+      ]
+    ]
+  },
+  {
+    "chapter": 12,
+    "kind": "tree",
+    "title": "START WITH 루트부터 LEVEL을 센다",
+    "caption": "CONNECT BY PRIOR id = parent_id이면 현재 부모 id와 자식 parent_id가 연결된다.",
+    "nodes": [
+      [
+        "ROOT",
+        1,
+        0
+      ],
+      [
+        "팀 A",
+        2,
+        1
+      ],
+      [
+        "직원 A-1",
+        3,
+        2
+      ],
+      [
+        "팀 B",
+        2,
+        1
+      ]
+    ]
+  },
+  {
+    "chapter": 13,
+    "kind": "table",
+    "title": "NULL 대체 함수 결과 비교",
+    "caption": "NULL 여부·인수 평가 순서를 정확히 확인한다. 표는 Oracle 함수 의미를 기준으로 한 개념 예시다.",
+    "columns": [
+      "표현식",
+      "반환"
+    ],
+    "rows": [
+      [
+        "NVL(NULL, 0)",
+        "0"
+      ],
+      [
+        "NVL2(NULL, 10, 20)",
+        "20"
+      ],
+      [
+        "COALESCE(NULL, NULL, 7)",
+        "7"
+      ],
+      [
+        "NULLIF(3,3)",
+        "NULL"
+      ]
+    ]
+  },
+  {
+    "chapter": 14,
+    "kind": "table",
+    "title": "TOP-N은 동점 처리까지 확인",
+    "caption": "정렬된 값 95, 95, 80에서 FETCH FIRST 1 ROW WITH TIES는 95 두 행을 반환한다.",
+    "columns": [
+      "name",
+      "score",
+      "처리"
+    ],
+    "rows": [
+      [
+        "A",
+        "95",
+        "1위 / 포함"
+      ],
+      [
+        "B",
+        "95",
+        "공동 1위 / 포함"
+      ],
+      [
+        "C",
+        "80",
+        "제외"
+      ]
+    ]
+  },
+  {
+    "chapter": 15,
+    "kind": "flow",
+    "title": "3단계 스키마와 독립성",
+    "caption": "내부의 물리 저장 구조 변경이 개념 스키마에 영향을 주지 않는 것이 물리적 데이터 독립성이다.",
+    "nodes": [
+      [
+        "외부 스키마",
+        "사용자별 뷰"
+      ],
+      [
+        "개념 스키마",
+        "전체 논리 구조"
+      ],
+      [
+        "내부 스키마",
+        "파일 · 인덱스"
+      ]
+    ]
+  }
+]

@@ -1,15 +1,21 @@
 {
-  "version": "2026-11-11-v3",
-  "updated_at": "2026-11-11",
-  "count": 131,
+  "version": "3.1",
+  "updated_at": "2026-11-12",
+  "count": 146,
   "manual_count": 71,
-  "sql_verified_count": 60,
-  "source_policy": "자체 제작 문제: 공개 복원 원문·해설을 재배포하지 않음. 복원 기출 아님.",
+  "sql_verified_count": 75,
+  "source_policy": "자체 제작 · 실행 검증 / 공개 복원 원문 무단 수록 금지",
   "subjects": [
     "데이터 모델링",
     "SQL 기본 및 활용"
   ],
   "files": [
     "questions/bank.json"
-  ]
+  ],
+  "total_questions": 146,
+  "question_types": {
+    "sql_executed": 75,
+    "concept_reviewed": 71
+  },
+  "difficulty_policy": "기존 일괄 중 표시를 제거; 난이도는 문항별 교정 전까지 미분류"
 }
