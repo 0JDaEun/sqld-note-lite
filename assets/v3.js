@@ -11,6 +11,7 @@ let questions=[], questionMap=new Map(), supplements=[], states={}, profile=null
 let selected=null, revealed=false, lastOutcome=null, currentQuestion=null, currentMode='mixed', currentTopic='all';
 let sessionSeen=new Set(), sessionStep=0, busy=false, lastAsked=new Map(), pending=[], flushing=false, bankFetchError='';
 let supplementId='';
+let executionTraces=[];
 let requestedQuestion=null;
 const LESSON_NAMES={1:'JOIN과 결과 행 수',2:'NULL과 3값 논리',3:'GROUP BY와 HAVING',4:'윈도우 함수',5:'서브쿼리와 EXISTS',6:'SQL 논리적 처리 순서',7:'DML·TCL·트랜잭션',8:'ERD·관계·차수',9:'식별자·PK/FK',10:'정규화와 함수 종속',11:'ROLLUP·CUBE·GROUPING',12:'계층형 질의',13:'NULL 처리·일반 함수',14:'TOP-N과 정렬',15:'3단계 스키마·데이터 독립성'};
 function topicMatches(q,filter=currentTopic){return filter==='all'||(filter.startsWith('lesson:')?(q.linked_chapters||[]).includes(Number(filter.split(':')[1])):q.topic===filter);}
@@ -34,6 +35,7 @@ const status=(id)=>states[id]?.status||'unseen';
 function counts(){const result={unseen:0,wrong:0,unknown:0,mastered:0};questions.forEach(q=>result[status(q.id)]++);return result;}
 function refreshDashboard(){let c=counts();const entries={'v3-stat-total':questions.length,'v3-stat-mastered':c.mastered,'v3-stat-wrong':c.wrong,'v3-stat-unknown':c.unknown,'v3-stat-unseen':c.unseen,'v3-stat-done':lessonDone()};
  for(const [id,v] of Object.entries(entries)){const el=document.getElementById(id);if(el)el.textContent=String(v);}
+ renderWeaknessPanel();
  for(const el of $$('[data-v3-bank-count]'))el.textContent=`${c.mastered} / ${questions.length} 정복`;
  const fill=$('#v3-mastered-bar');if(fill)fill.style.width=(questions.length?c.mastered/questions.length*100:0)+'%';
  const entryGrid=$('.v3-entry-grid');if(entryGrid)entryGrid.classList.toggle('is-concepts-done',lessonDone()===15);
@@ -77,7 +79,7 @@ function renderQuestion(obj){const root=$('#practice-app');if(!root)return;
  const q=obj.question;
  const tables=q.input_tables?.length?`<section class="v3-context"><div class="v3-mini-heading">INPUT · 입력 데이터</div><div class="v3-input-grid">${q.input_tables.map(renderTable).join('')}</div></section>`:'';
  const sql=q.sql?`<section class="v3-context"><div class="v3-mini-heading">QUERY · 실행할 SQL</div><pre class="v3-sql" tabindex="0"><code>${escapeHtml(q.sql)}</code></pre></section>`:'';
- root.innerHTML=heading+`<article class="v3-question-card"><div class="v3-question-meta"><span>${escapeHtml(q.subject)} / ${escapeHtml(q.topic_label)}</span><span>${escapeHtml(q.question_type||'학습 문제')} · 자체 제작 · ${escapeHtml(q.dbms)}</span></div><div class="v3-question-number">이번 세션 ${sessionStep}번 문제</div><h2>${escapeHtml(q.stem)}</h2>${tables}${sql}<fieldset class="v3-answers" id="v3-answer-set"><legend>하나의 정답을 선택하세요</legend>${q.choices.map((c,i)=>`<label class="v3-choice" data-choice="${i}"><input type="radio" name="v3-choice" value="${i}"><span class="v3-choice-index">${'ABCD'[i]}</span><span>${escapeHtml(c)}</span></label>`).join('')}</fieldset><div class="v3-question-actions"><button type="button" class="v3-btn-unknown" data-bank-unknown>모르겠어요</button><button type="button" class="v3-btn-primary" data-bank-submit disabled>정답 제출 <span aria-hidden="true">→</span></button></div><div class="v3-feedback" id="v3-feedback" hidden></div></article><p class="v3-source-note">본 문제은행은 복원 기출 원문이 아닌 자체 제작·검증 문제입니다. 일부 SQL은 표준 SQL 또는 Oracle 기준의 개념 문제이며 DBMS에 따라 문법이 다를 수 있어요.</p>`;
+ root.innerHTML=heading+`<article class="v3-question-card"><div class="v3-question-meta"><span>${escapeHtml(q.subject)} / ${escapeHtml(q.topic_label)}</span><span>${escapeHtml(q.question_type||'학습 문제')} · ${escapeHtml(q.difficulty||'난이도 미분류')} · 자체 제작 · ${escapeHtml(q.dbms)}</span></div><div class="v3-question-number">이번 세션 ${sessionStep}번 문제</div><h2>${escapeHtml(q.stem)}</h2>${tables}${sql}<fieldset class="v3-answers" id="v3-answer-set"><legend>하나의 정답을 선택하세요</legend>${q.choices.map((c,i)=>`<label class="v3-choice" data-choice="${i}"><input type="radio" name="v3-choice" value="${i}"><span class="v3-choice-index">${'ABCD'[i]}</span><span>${escapeHtml(c)}</span></label>`).join('')}</fieldset><div class="v3-question-actions"><button type="button" class="v3-btn-unknown" data-bank-unknown>모르겠어요</button><button type="button" class="v3-btn-primary" data-bank-submit disabled>정답 제출 <span aria-hidden="true">→</span></button></div><div class="v3-feedback" id="v3-feedback" hidden></div></article><p class="v3-source-note">본 문제은행은 복원 기출 원문이 아닌 자체 제작·검증 문제입니다. 일부 SQL은 표준 SQL 또는 Oracle 기준의 개념 문제이며 DBMS에 따라 문법이 다를 수 있어요.</p>`;
  updateStatusDisplays();
 }
 function updateStatusDisplays(){let label=profile?(pending.length?'동기화 대기 중':'Google 계정 연결됨'):'이 기기에 저장';setNotice(label);}
@@ -174,11 +176,53 @@ function supplementQuestions(id){return questions.filter(q=>{
 function relatedTopic(id){return ({case:'sql_function',set:'sql_set',pivot:'sql_pivot',regex:'sql_pivot',string:'sql_function',datetime:'sql_function',ddl:'sql_dml',groupings:'sql_rollup'})[id]||'all';}
 function addDeepdives(data){for(const x of data){const lesson=$(`#c${String(x.chapter).padStart(2,'0')}`);if(!lesson)continue;
  const stage=lesson.querySelector('[data-stage="0"]');if(stage){const div=document.createElement('aside');div.className='v3-deepnote';div.innerHTML=`<div class="v3-deep-kicker">WHY IT WORKS · 원리 해설</div><p>${escapeHtml(x.why)}</p><details><summary>문제 푸는 순서와 실수 방지 팁 <span>펼치기 ↓</span></summary><div class="v3-deep-extra"><strong>판별 순서</strong><p>${escapeHtml(x.reading_order)}</p><strong>주의할 함정</strong><p>${escapeHtml(x.pitfall)}</p></div></details>`;const list=stage.querySelector('.principle-list');if(list)list.after(div);else stage.appendChild(div);}
- const trace=lesson.querySelector('.trace-list');if(trace&&trace.children.length>1){let items=[...trace.querySelectorAll('li')];items.forEach((it,i)=>it.classList.toggle('v3-current-trace',i===0));let step=0;
- const bar=document.createElement('div');bar.className='v3-trace-tools';bar.innerHTML=`<span class="v3-mini-heading">EXECUTION · 단계별 추적</span><div><button type="button" data-trace-prev aria-label="이전 실행 단계">←</button><b data-trace-current>1 / ${items.length}</b><button type="button" data-trace-next aria-label="다음 실행 단계">→</button></div>`;
- trace.before(bar);bar.addEventListener('click',e=>{if(!e.target.closest('[data-trace-prev],[data-trace-next]'))return;step=Math.max(0,Math.min(items.length-1,step+(e.target.closest('[data-trace-next]')?1:-1)));items.forEach((item,i)=>item.classList.toggle('v3-current-trace',i===step));bar.querySelector('[data-trace-current]').textContent=`${step+1} / ${items.length}`;items[step]?.scrollIntoView({block:'nearest',behavior:'smooth'});});
- }}
+
+ }
 }
+
+/* v3.2 · Intermediate query-state viewer. Each snapshot comes from human-readable
+   trace data; conceptual snapshots are explicitly labeled, never claimed as raw SQL output. */
+function addExecutionTraces(items){
+ executionTraces=items;
+ for(const item of items){
+  const lesson=$(`#c${String(item.chapter).padStart(2,'0')}`), stage=lesson?.querySelector('[data-stage="1"]');
+  const trace=stage?.querySelector('.trace-list');if(!trace||stage.querySelector('.v32-execution'))continue;
+  const panel=document.createElement('section');panel.className='v32-execution';panel.setAttribute('aria-label','단계별 데이터 변화');
+  let step=0;
+  function render(){
+   const active=item.steps[step];
+   panel.innerHTML=`<div class="v32-exec-head"><div><span class="v3-mini-heading">STEP TRACE · 단계별 데이터 변화</span><h3>${escapeHtml(item.title)}</h3></div><span class="v32-step-counter">${step+1} / ${item.steps.length}</span></div>
+   <div class="v32-step-tabs" role="group" aria-label="SQL 계산 단계 선택">${item.steps.map((st,i)=>`<button type="button" data-exec-step="${i}" class="${step===i?'active':''}" aria-pressed="${step===i}">${String(i+1).padStart(2,'0')} ${escapeHtml(st.title)}</button>`).join('')}</div>
+   <div class="v32-step-body" aria-live="polite" aria-atomic="true"><strong>${escapeHtml(active.title)}</strong><p>${escapeHtml(active.note)}</p>${renderTable({name:active.table_label,columns:active.columns,rows:active.rows})}</div>
+   <div class="v32-step-nav"><button type="button" data-exec-prev ${step===0?'disabled':''}>← 이전 단계</button><button type="button" data-exec-next ${step===item.steps.length-1?'disabled':''}>다음 단계 →</button></div>`;
+   trace.querySelectorAll('li').forEach((li,i)=>li.classList.toggle('v3-current-trace',i===step));
+  }
+  panel.addEventListener('click',e=>{
+   const t=e.target.closest('button');if(!t)return;
+   const next=t.hasAttribute('data-exec-step')?Number(t.dataset.execStep):t.hasAttribute('data-exec-next')?step+1:t.hasAttribute('data-exec-prev')?step-1:step;
+   if(next<0||next>=item.steps.length||next===step)return;step=next;render();
+  });
+  trace.after(panel);render();
+ }
+}
+/* Topic weakness summary is calculated solely from saved answer states. */
+function mountWeaknessPanel(){
+ const host=$('.v3-entry-grid');if(!host||$('#v32-weak-topics'))return;
+ const panel=document.createElement('section');panel.id='v32-weak-topics';panel.className='v32-weak-panel';
+ panel.setAttribute('aria-label','취약 유형별 복습');host.after(panel);
+}
+function renderWeaknessPanel(){
+ const panel=$('#v32-weak-topics');if(!panel)return;
+ const grouped=new Map();for(const q of questions){
+  const key=q.topic, item=grouped.get(key)||{topic:key,label:q.topic_label,total:0,wrong:0,unknown:0,mastered:0};
+  item.total++;const state=status(q.id);if(state in item)item[state]++;grouped.set(key,item);
+ }
+ const weak=[...grouped.values()].filter(t=>t.wrong||t.unknown).sort((a,b)=>(b.wrong+b.unknown)-(a.wrong+a.unknown)||a.label.localeCompare(b.label,'ko')).slice(0,5);
+ panel.innerHTML=`<div class="v32-weak-header"><div><span class="v3-mini-heading">TARGETED REVIEW</span><h2>취약 유형 집중 복습</h2></div><span>오답·모름을 우선 정리해요</span></div>`+
+ (weak.length?`<div class="v32-weak-grid">${weak.map(t=>`<button type="button" data-bank-weak-topic="${escapeHtml(t.topic)}"><strong>${escapeHtml(t.label)}</strong><span>오답 ${t.wrong} · 모름 ${t.unknown} · 정복 ${t.mastered}/${t.total}</span><i>복습하기 →</i></button>`).join('')}</div>`:
+ `<p class="v32-weak-empty">아직 취약 유형 기록이 없어요. 문제를 풀고 오답·모름이 생기면 여기서 바로 복습할 수 있어요.</p>`);
+}
+
 /* v3.1: concrete learning visuals, contextual question-bank step and linked practice. */
 function renderVisual(v){
  let center='';
@@ -215,11 +259,11 @@ function addLessonBridges(){for(let n=1;n<=15;n++){const lesson=$(`#c${String(n)
 
 async function init(){
  try{
-  const [bankRes,suppRes,deepRes,visualRes]=await Promise.all([fetch(sourceUrl),fetch('/content/supplements.json'),fetch('/content/deepdives.json'),fetch('/content/visuals.json')]);
+  const [bankRes,suppRes,deepRes,visualRes,traceRes]=await Promise.all([fetch(sourceUrl),fetch('/content/supplements.json'),fetch('/content/deepdives.json'),fetch('/content/visuals.json'),fetch('/content/execution_traces.json')]);
   if(!bankRes.ok)throw Error('문제 파일 HTTP '+bankRes.status);
   questions=await bankRes.json();questionMap=new Map(questions.map(q=>[q.id,q]));
   if(questionMap.size!==questions.length||questions.some(q=>!q.verified||q.choices?.length!==4||!Number.isInteger(q.answer)||q.answer<0||q.answer>3))throw Error('문제 데이터 검증 오류');
-  supplements=suppRes.ok?await suppRes.json():[];if(deepRes.ok)addDeepdives(await deepRes.json());if(visualRes.ok)addLessonVisuals(await visualRes.json());addLessonBridges();
+  supplements=suppRes.ok?await suppRes.json():[];if(deepRes.ok)addDeepdives(await deepRes.json());if(visualRes.ok)addLessonVisuals(await visualRes.json());if(traceRes.ok)addExecutionTraces(await traceRes.json());addLessonBridges();mountWeaknessPanel();
   states=loadLocal();refreshDashboard();setNotice('이 기기에 저장');
   if(inBank())navQuestion();if(inSupplement())renderSupplements();
  }catch(e){bankFetchError=e.message;console.warn('Question bank fetch',e);renderLoadError();}
@@ -247,8 +291,9 @@ function onClick(e){const t=e.target.closest('button,a');if(!t)return;
  else if(t.hasAttribute('data-bank-submit'))saveAnswer(selected===currentQuestion?.answer?'mastered':'wrong');
  else if(t.hasAttribute('data-bank-unknown'))saveAnswer('unknown');
  else if(t.hasAttribute('data-bank-reload')){location.reload();}
- else if(t.hasAttribute('data-bank-related')){const chapter=linkedLesson(currentQuestion||{});if(chapter){location.hash='#c'+String(chapter).padStart(2,'0');}else{const topic=currentQuestion?.topic;location.hash=topic==='sql_set'?'#supplement/set':topic==='sql_pivot'?'#supplement/pivot':'#supplement';}}
+ else if(t.hasAttribute('data-bank-related')){const chapter=linkedLesson(currentQuestion||{});if(chapter){location.hash='#c'+String(chapter).padStart(2,'0');}else{const topic=currentQuestion?.topic;location.hash=topic==='sql_set'?'#supplement/set':topic==='sql_pivot'?'#supplement/pivot':topic==='sql_function'?'#supplement/case':'#supplement';}}
  else if(t.hasAttribute('data-bank-topic'))navigateBank('mixed',t.dataset.bankTopic);
+ else if(t.hasAttribute('data-bank-weak-topic'))navigateBank('review',t.dataset.bankWeakTopic);
  else if(t.hasAttribute('data-supp-back'))location.hash='#supplement';
  else if(t.hasAttribute('data-bank-sync-retry')){if(profile)flushPending();else setNotice('Google 로그인 후 동기화 가능');}
 }

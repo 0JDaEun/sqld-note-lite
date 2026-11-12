@@ -4,7 +4,7 @@
     "subject": "데이터 모델링",
     "topic": "model_entity",
     "topic_label": "엔터티·속성",
-    "difficulty": "미분류",
+    "difficulty": "하 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "엔터티를 정의할 때 가장 적절한 기준은?",
@@ -16,7 +16,12 @@
     ],
     "answer": 1,
     "explanation": "엔터티는 업무상 관리 대상이고 식별 가능한 인스턴스가 있어야 한다. 반드시 실물 객체일 필요는 없으며 추상적 업무 사건도 엔터티가 된다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "오답 검토 · 「반드시 화면 하나와 1:1로 대응한다」를 택하면 핵심 판단 기준과 어긋난다. 엔터티는 화면과 일대일 대응할 필요도, 반드시 물리적 사물일 필요도 없다. 식별 가능한 업무상 관리 대상인지가 기준이다.",
+      "정답 근거 · 엔터티는 화면과 일대일 대응할 필요도, 반드시 물리적 사물일 필요도 없다. 식별 가능한 업무상 관리 대상인지가 기준이다.",
+      "오답 검토 · 「항상 물리적으로 존재하는 사물이어야 한다」를 택하면 핵심 판단 기준과 어긋난다. 엔터티는 화면과 일대일 대응할 필요도, 반드시 물리적 사물일 필요도 없다. 식별 가능한 업무상 관리 대상인지가 기준이다.",
+      "오답 검토 · 「하나의 인스턴스만 존재해야 한다」를 택하면 핵심 판단 기준과 어긋난다. 엔터티는 화면과 일대일 대응할 필요도, 반드시 물리적 사물일 필요도 없다. 식별 가능한 업무상 관리 대상인지가 기준이다."
+    ],
     "sql": "",
     "input_tables": [],
     "result_table": null,
@@ -26,14 +31,15 @@
       8
     ],
     "verification_method": "concept_reviewed",
-    "question_type": "개념 판단"
+    "question_type": "개념 판단",
+    "option_note_method": "concept_rule_based"
   },
   {
     "id": "qv3_0002",
     "subject": "데이터 모델링",
     "topic": "model_entity",
     "topic_label": "엔터티·속성",
-    "difficulty": "미분류",
+    "difficulty": "하 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "주문 상세의 수량, 단가 중 일반적으로 속성에 해당하는 것은?",
@@ -45,7 +51,12 @@
     ],
     "answer": 2,
     "explanation": "수량과 단가는 주문상세 인스턴스가 가지는 특성값이므로 속성이다. 엔터티는 주문상세 같은 관리 대상이다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "오답 검토 · 「수량은 관계, 단가는 엔터티다」를 택하면 핵심 판단 기준과 어긋난다. 수량·단가는 주문상세라는 엔터티가 보유한 특성값(속성)이다. PK 여부는 이 분류를 결정하지 않는다.",
+      "오답 검토 · 「수량은 식별자만 될 수 있다」를 택하면 핵심 판단 기준과 어긋난다. 수량·단가는 주문상세라는 엔터티가 보유한 특성값(속성)이다. PK 여부는 이 분류를 결정하지 않는다.",
+      "정답 근거 · 수량·단가는 주문상세라는 엔터티가 보유한 특성값(속성)이다. PK 여부는 이 분류를 결정하지 않는다.",
+      "오답 검토 · 「둘 다 엔터티다」를 택하면 핵심 판단 기준과 어긋난다. 수량·단가는 주문상세라는 엔터티가 보유한 특성값(속성)이다. PK 여부는 이 분류를 결정하지 않는다."
+    ],
     "sql": "",
     "input_tables": [],
     "result_table": null,
@@ -55,14 +66,15 @@
       8
     ],
     "verification_method": "concept_reviewed",
-    "question_type": "개념 판단"
+    "question_type": "개념 판단",
+    "option_note_method": "concept_rule_based"
   },
   {
     "id": "qv3_0003",
     "subject": "데이터 모델링",
     "topic": "model_entity",
     "topic_label": "엔터티·속성",
-    "difficulty": "미분류",
+    "difficulty": "하 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "회원 한 명을 나타내는 특정 데이터 행은 무엇인가?",
@@ -74,7 +86,12 @@
     ],
     "answer": 3,
     "explanation": "회원 엔터티에서 회원 번호가 특정한 하나의 실제 데이터 행은 인스턴스다. 엔터티 유형은 전체 집합을 의미한다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "오답 검토 · 「외부 스키마」를 택하면 핵심 판단 기준과 어긋난다. 특정 회원 1명의 실제 데이터 행은 엔터티 인스턴스이고, 엔터티 유형은 회원이라는 집합의 정의다.",
+      "오답 검토 · 「엔터티 유형」를 택하면 핵심 판단 기준과 어긋난다. 특정 회원 1명의 실제 데이터 행은 엔터티 인스턴스이고, 엔터티 유형은 회원이라는 집합의 정의다.",
+      "오답 검토 · 「관계 차수」를 택하면 핵심 판단 기준과 어긋난다. 특정 회원 1명의 실제 데이터 행은 엔터티 인스턴스이고, 엔터티 유형은 회원이라는 집합의 정의다.",
+      "정답 근거 · 특정 회원 1명의 실제 데이터 행은 엔터티 인스턴스이고, 엔터티 유형은 회원이라는 집합의 정의다."
+    ],
     "sql": "",
     "input_tables": [],
     "result_table": null,
@@ -84,14 +101,15 @@
       8
     ],
     "verification_method": "concept_reviewed",
-    "question_type": "개념 판단"
+    "question_type": "개념 판단",
+    "option_note_method": "concept_rule_based"
   },
   {
     "id": "qv3_0004",
     "subject": "데이터 모델링",
     "topic": "model_entity",
     "topic_label": "엔터티·속성",
-    "difficulty": "미분류",
+    "difficulty": "하 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "파생 속성에 해당하는 대표적인 예는?",
@@ -103,7 +121,12 @@
     ],
     "answer": 0,
     "explanation": "파생 속성은 다른 속성으로부터 계산되어 얻는다. 주문 금액은 수량 × 단가라는 계산 결과다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "정답 근거 · 주문 금액은 원천값이 아니라 수량×단가로 계산되는 파생 속성이다.",
+      "오답 검토 · 「출생일 원본 값」를 택하면 핵심 판단 기준과 어긋난다. 주문 금액은 원천값이 아니라 수량×단가로 계산되는 파생 속성이다.",
+      "오답 검토 · 「회원 고유 번호」를 택하면 핵심 판단 기준과 어긋난다. 주문 금액은 원천값이 아니라 수량×단가로 계산되는 파생 속성이다.",
+      "오답 검토 · 「상품명 입력값」를 택하면 핵심 판단 기준과 어긋난다. 주문 금액은 원천값이 아니라 수량×단가로 계산되는 파생 속성이다."
+    ],
     "sql": "",
     "input_tables": [],
     "result_table": null,
@@ -113,14 +136,15 @@
       8
     ],
     "verification_method": "concept_reviewed",
-    "question_type": "개념 판단"
+    "question_type": "개념 판단",
+    "option_note_method": "concept_rule_based"
   },
   {
     "id": "qv3_0005",
     "subject": "데이터 모델링",
     "topic": "model_relation",
     "topic_label": "ERD·관계",
-    "difficulty": "미분류",
+    "difficulty": "하 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "고객이 주문을 0건 이상 할 수 있다면 고객의 주문 참여는?",
@@ -132,7 +156,12 @@
     ],
     "answer": 1,
     "explanation": "0건도 가능하면 최소 참여 수가 0인 선택 관계다. 주문을 여러 건 생성할 수 있으므로 최대 참여 수는 다수다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "오답 검토 · 「필수적이며 정확히 하나」를 택하면 핵심 판단 기준과 어긋난다. 최소 참여 수 0이면 선택 참여이며, 주문을 여러 건 가질 수 있으므로 최대 참여 수는 N이다.",
+      "정답 근거 · 최소 참여 수 0이면 선택 참여이며, 주문을 여러 건 가질 수 있으므로 최대 참여 수는 N이다.",
+      "오답 검토 · 「필수적이며 최대 하나」를 택하면 핵심 판단 기준과 어긋난다. 최소 참여 수 0이면 선택 참여이며, 주문을 여러 건 가질 수 있으므로 최대 참여 수는 N이다.",
+      "오답 검토 · 「선택적이며 반드시 하나」를 택하면 핵심 판단 기준과 어긋난다. 최소 참여 수 0이면 선택 참여이며, 주문을 여러 건 가질 수 있으므로 최대 참여 수는 N이다."
+    ],
     "sql": "",
     "input_tables": [],
     "result_table": null,
@@ -142,14 +171,15 @@
       8
     ],
     "verification_method": "concept_reviewed",
-    "question_type": "개념 판단"
+    "question_type": "개념 판단",
+    "option_note_method": "concept_rule_based"
   },
   {
     "id": "qv3_0006",
     "subject": "데이터 모델링",
     "topic": "model_relation",
     "topic_label": "ERD·관계",
-    "difficulty": "미분류",
+    "difficulty": "하 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "N:M 관계를 관계형 테이블로 구현하는 일반적인 방법은?",
@@ -161,7 +191,12 @@
     ],
     "answer": 2,
     "explanation": "다대다 관계는 두 쪽의 외래키를 가진 연결(교차) 엔터티로 분해하는 것이 일반적이다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "오답 검토 · 「두 테이블을 무조건 하나로 합친다」를 택하면 핵심 판단 기준과 어긋난다. N:M 구현은 연결 엔터티를 두고 각각의 FK를 관계로 연결하는 방식이 일반적이다.",
+      "오답 검토 · 「양쪽에 임의의 중복 컬럼만 추가한다」를 택하면 핵심 판단 기준과 어긋난다. N:M 구현은 연결 엔터티를 두고 각각의 FK를 관계로 연결하는 방식이 일반적이다.",
+      "정답 근거 · N:M 구현은 연결 엔터티를 두고 각각의 FK를 관계로 연결하는 방식이 일반적이다.",
+      "오답 검토 · 「한쪽 PK를 삭제한다」를 택하면 핵심 판단 기준과 어긋난다. N:M 구현은 연결 엔터티를 두고 각각의 FK를 관계로 연결하는 방식이 일반적이다."
+    ],
     "sql": "",
     "input_tables": [],
     "result_table": null,
@@ -171,14 +206,15 @@
       8
     ],
     "verification_method": "concept_reviewed",
-    "question_type": "개념 판단"
+    "question_type": "개념 판단",
+    "option_note_method": "concept_rule_based"
   },
   {
     "id": "qv3_0007",
     "subject": "데이터 모델링",
     "topic": "model_relation",
     "topic_label": "ERD·관계",
-    "difficulty": "미분류",
+    "difficulty": "하 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "고객과 주문의 1:N 관계에서 N 쪽은?",
@@ -190,7 +226,12 @@
     ],
     "answer": 3,
     "explanation": "고객 1명은 주문 여러 건을 가질 수 있지만, 보통 개별 주문은 한 고객에 속한다. 그래서 주문이 N 쪽이다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "오답 검토 · 「구분할 수 없다」를 택하면 핵심 판단 기준과 어긋난다. 한 고객에 대응하는 주문은 여러 건 가능하므로 주문이 다수(N) 쪽이다.",
+      "오답 검토 · 「고객」를 택하면 핵심 판단 기준과 어긋난다. 한 고객에 대응하는 주문은 여러 건 가능하므로 주문이 다수(N) 쪽이다.",
+      "오답 검토 · 「항상 동일하다」를 택하면 핵심 판단 기준과 어긋난다. 한 고객에 대응하는 주문은 여러 건 가능하므로 주문이 다수(N) 쪽이다.",
+      "정답 근거 · 한 고객에 대응하는 주문은 여러 건 가능하므로 주문이 다수(N) 쪽이다."
+    ],
     "sql": "",
     "input_tables": [],
     "result_table": null,
@@ -200,14 +241,15 @@
       8
     ],
     "verification_method": "concept_reviewed",
-    "question_type": "개념 판단"
+    "question_type": "개념 판단",
+    "option_note_method": "concept_rule_based"
   },
   {
     "id": "qv3_0008",
     "subject": "데이터 모델링",
     "topic": "model_relation",
     "topic_label": "ERD·관계",
-    "difficulty": "미분류",
+    "difficulty": "하 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "관계의 선택성(optional)을 나타내는 정보는?",
@@ -219,7 +261,12 @@
     ],
     "answer": 0,
     "explanation": "선택성은 관계에 반드시 참여해야 하는지 나타내는 최소 수(0 또는 1)와 관련된다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "정답 근거 · 관계의 선택성은 최소 참여 수(0 또는 1)로 판단하고 행 개수나 저장 크기와는 다르다.",
+      "오답 검토 · 「인덱스 페이지 크기」를 택하면 핵심 판단 기준과 어긋난다. 관계의 선택성은 최소 참여 수(0 또는 1)로 판단하고 행 개수나 저장 크기와는 다르다.",
+      "오답 검토 · 「컬럼의 물리적 저장 순서」를 택하면 핵심 판단 기준과 어긋난다. 관계의 선택성은 최소 참여 수(0 또는 1)로 판단하고 행 개수나 저장 크기와는 다르다.",
+      "오답 검토 · 「현재 데이터 행 개수」를 택하면 핵심 판단 기준과 어긋난다. 관계의 선택성은 최소 참여 수(0 또는 1)로 판단하고 행 개수나 저장 크기와는 다르다."
+    ],
     "sql": "",
     "input_tables": [],
     "result_table": null,
@@ -229,14 +276,15 @@
       8
     ],
     "verification_method": "concept_reviewed",
-    "question_type": "개념 판단"
+    "question_type": "개념 판단",
+    "option_note_method": "concept_rule_based"
   },
   {
     "id": "qv3_0009",
     "subject": "데이터 모델링",
     "topic": "model_key",
     "topic_label": "식별자·키",
-    "difficulty": "미분류",
+    "difficulty": "하 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "다음 중 후보키에 반드시 필요한 속성은?",
@@ -248,7 +296,12 @@
     ],
     "answer": 1,
     "explanation": "후보키는 각 행을 고유 식별하고 유일성을 유지하는 데 불필요한 속성을 포함하지 않아야 한다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "오답 검토 · 「가변성과 중복성」를 택하면 핵심 판단 기준과 어긋난다. 후보키는 유일성과 최소성을 모두 충족해야 하며, 인덱스 유무나 정렬 순서는 요건이 아니다.",
+      "정답 근거 · 후보키는 유일성과 최소성을 모두 충족해야 하며, 인덱스 유무나 정렬 순서는 요건이 아니다.",
+      "오답 검토 · 「NULL 허용과 중복성」를 택하면 핵심 판단 기준과 어긋난다. 후보키는 유일성과 최소성을 모두 충족해야 하며, 인덱스 유무나 정렬 순서는 요건이 아니다.",
+      "오답 검토 · 「인덱스 존재와 오름차순 정렬」를 택하면 핵심 판단 기준과 어긋난다. 후보키는 유일성과 최소성을 모두 충족해야 하며, 인덱스 유무나 정렬 순서는 요건이 아니다."
+    ],
     "sql": "",
     "input_tables": [],
     "result_table": null,
@@ -258,14 +311,15 @@
       9
     ],
     "verification_method": "concept_reviewed",
-    "question_type": "개념 판단"
+    "question_type": "개념 판단",
+    "option_note_method": "concept_rule_based"
   },
   {
     "id": "qv3_0010",
     "subject": "데이터 모델링",
     "topic": "model_key",
     "topic_label": "식별자·키",
-    "difficulty": "미분류",
+    "difficulty": "하 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "기본키로 선택되지 않은 후보키는?",
@@ -277,7 +331,12 @@
     ],
     "answer": 2,
     "explanation": "모든 후보키 중 선택된 하나가 기본키, 선택되지 않은 나머지 후보키는 대체키다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "오답 검토 · 「복합키만 가능」를 택하면 핵심 판단 기준과 어긋난다. 후보키 중 기본키로 선택되지 않은 나머지를 대체키라고 한다.",
+      "오답 검토 · 「파생키」를 택하면 핵심 판단 기준과 어긋난다. 후보키 중 기본키로 선택되지 않은 나머지를 대체키라고 한다.",
+      "정답 근거 · 후보키 중 기본키로 선택되지 않은 나머지를 대체키라고 한다.",
+      "오답 검토 · 「외래키」를 택하면 핵심 판단 기준과 어긋난다. 후보키 중 기본키로 선택되지 않은 나머지를 대체키라고 한다."
+    ],
     "sql": "",
     "input_tables": [],
     "result_table": null,
@@ -287,14 +346,15 @@
       9
     ],
     "verification_method": "concept_reviewed",
-    "question_type": "개념 판단"
+    "question_type": "개념 판단",
+    "option_note_method": "concept_rule_based"
   },
   {
     "id": "qv3_0011",
     "subject": "데이터 모델링",
     "topic": "model_key",
     "topic_label": "식별자·키",
-    "difficulty": "미분류",
+    "difficulty": "하 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "식별 관계를 가장 잘 설명한 것은?",
@@ -306,7 +366,12 @@
     ],
     "answer": 3,
     "explanation": "식별 관계는 부모 식별자 값이 자식 기본키를 구성한다. FK가 자식 PK 밖에 있으면 비식별 관계다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "오답 검토 · 「외래키는 PK 밖에만 존재한다」를 택하면 핵심 판단 기준과 어긋난다. 부모 식별자에서 온 FK가 자식의 기본키 일부면 식별관계다. NULL 여부나 부모 수가 정의가 아니다.",
+      "오답 검토 · 「자식의 FK가 반드시 NULL이다」를 택하면 핵심 판단 기준과 어긋난다. 부모 식별자에서 온 FK가 자식의 기본키 일부면 식별관계다. NULL 여부나 부모 수가 정의가 아니다.",
+      "오답 검토 · 「부모 엔터티가 두 개 이상이다」를 택하면 핵심 판단 기준과 어긋난다. 부모 식별자에서 온 FK가 자식의 기본키 일부면 식별관계다. NULL 여부나 부모 수가 정의가 아니다.",
+      "정답 근거 · 부모 식별자에서 온 FK가 자식의 기본키 일부면 식별관계다. NULL 여부나 부모 수가 정의가 아니다."
+    ],
     "sql": "",
     "input_tables": [],
     "result_table": null,
@@ -316,14 +381,15 @@
       9
     ],
     "verification_method": "concept_reviewed",
-    "question_type": "개념 판단"
+    "question_type": "개념 판단",
+    "option_note_method": "concept_rule_based"
   },
   {
     "id": "qv3_0012",
     "subject": "데이터 모델링",
     "topic": "model_key",
     "topic_label": "식별자·키",
-    "difficulty": "미분류",
+    "difficulty": "하 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "비식별 관계에서 FK의 위치는?",
@@ -335,7 +401,12 @@
     ],
     "answer": 0,
     "explanation": "비식별 관계도 FK를 사용하지만 그 FK는 자식 PK를 구성하지 않는다. NULL 가능 여부는 별도 업무 규칙이다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "정답 근거 · 비식별관계는 자식 FK가 자식 PK를 구성하지 않는 구조다. FK의 NULL 허용은 별도 규칙이다.",
+      "오답 검토 · 「항상 고유 제약이 된다」를 택하면 핵심 판단 기준과 어긋난다. 비식별관계는 자식 FK가 자식 PK를 구성하지 않는 구조다. FK의 NULL 허용은 별도 규칙이다.",
+      "오답 검토 · 「반드시 자식 PK 전체가 된다」를 택하면 핵심 판단 기준과 어긋난다. 비식별관계는 자식 FK가 자식 PK를 구성하지 않는 구조다. FK의 NULL 허용은 별도 규칙이다.",
+      "오답 검토 · 「참조 무결성 검사를 할 수 없다」를 택하면 핵심 판단 기준과 어긋난다. 비식별관계는 자식 FK가 자식 PK를 구성하지 않는 구조다. FK의 NULL 허용은 별도 규칙이다."
+    ],
     "sql": "",
     "input_tables": [],
     "result_table": null,
@@ -345,14 +416,15 @@
       9
     ],
     "verification_method": "concept_reviewed",
-    "question_type": "개념 판단"
+    "question_type": "개념 판단",
+    "option_note_method": "concept_rule_based"
   },
   {
     "id": "qv3_0013",
     "subject": "데이터 모델링",
     "topic": "model_normal",
     "topic_label": "정규화",
-    "difficulty": "미분류",
+    "difficulty": "하 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "1NF 위반 사례로 가장 적절한 것은?",
@@ -364,7 +436,12 @@
     ],
     "answer": 1,
     "explanation": "1NF는 속성값의 원자성을 요구한다. 한 칸에 반복 전화번호 목록을 넣으면 원자값을 벗어날 수 있다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "오답 검토 · 「하나의 열에 전화번호 한 개 저장」를 택하면 핵심 판단 기준과 어긋난다. 1NF는 컬럼의 값이 원자적인지 확인한다. 쉼표로 묶인 반복 전화번호 목록은 대표적인 위반 사례다.",
+      "정답 근거 · 1NF는 컬럼의 값이 원자적인지 확인한다. 쉼표로 묶인 반복 전화번호 목록은 대표적인 위반 사례다.",
+      "오답 검토 · 「PK를 숫자형으로 저장」를 택하면 핵심 판단 기준과 어긋난다. 1NF는 컬럼의 값이 원자적인지 확인한다. 쉼표로 묶인 반복 전화번호 목록은 대표적인 위반 사례다.",
+      "오답 검토 · 「테이블에 FK가 존재」를 택하면 핵심 판단 기준과 어긋난다. 1NF는 컬럼의 값이 원자적인지 확인한다. 쉼표로 묶인 반복 전화번호 목록은 대표적인 위반 사례다."
+    ],
     "sql": "",
     "input_tables": [],
     "result_table": null,
@@ -374,14 +451,15 @@
       10
     ],
     "verification_method": "concept_reviewed",
-    "question_type": "개념 판단"
+    "question_type": "개념 판단",
+    "option_note_method": "concept_rule_based"
   },
   {
     "id": "qv3_0014",
     "subject": "데이터 모델링",
     "topic": "model_normal",
     "topic_label": "정규화",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "복합 후보키 (주문번호, 상품번호)에서 주문날짜가 주문번호에만 종속된다면?",
@@ -412,14 +490,15 @@
       10
     ],
     "verification_method": "concept_reviewed",
-    "question_type": "개념 판단"
+    "question_type": "개념 판단",
+    "option_note_method": "hand_authored"
   },
   {
     "id": "qv3_0015",
     "subject": "데이터 모델링",
     "topic": "model_normal",
     "topic_label": "정규화",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "직원번호→부서번호→부서이름에서 부서이름의 의존성을 개선하려면?",
@@ -450,14 +529,15 @@
       10
     ],
     "verification_method": "concept_reviewed",
-    "question_type": "개념 판단"
+    "question_type": "개념 판단",
+    "option_note_method": "hand_authored"
   },
   {
     "id": "qv3_0016",
     "subject": "데이터 모델링",
     "topic": "model_normal",
     "topic_label": "정규화",
-    "difficulty": "미분류",
+    "difficulty": "하 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "정규화를 적용하는 대표적인 이유는?",
@@ -469,7 +549,12 @@
     ],
     "answer": 0,
     "explanation": "정규화는 데이터 중복과 이상 현상을 완화한다. 조인이 증가할 수 있어 성능 최적화와는 별도의 판단이 필요하다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "정답 근거 · 정규화는 중복 및 삽입·갱신·삭제 이상을 줄이기 위한 구조화이지 항상 더 빠른 쿼리나 조인 제거를 보장하지 않는다.",
+      "오답 검토 · 「조인을 100% 제거하기 위해」를 택하면 핵심 판단 기준과 어긋난다. 정규화는 중복 및 삽입·갱신·삭제 이상을 줄이기 위한 구조화이지 항상 더 빠른 쿼리나 조인 제거를 보장하지 않는다.",
+      "오답 검토 · 「모든 쿼리가 항상 빨라지도록」를 택하면 핵심 판단 기준과 어긋난다. 정규화는 중복 및 삽입·갱신·삭제 이상을 줄이기 위한 구조화이지 항상 더 빠른 쿼리나 조인 제거를 보장하지 않는다.",
+      "오답 검토 · 「테이블을 반드시 하나로 만들기 위해」를 택하면 핵심 판단 기준과 어긋난다. 정규화는 중복 및 삽입·갱신·삭제 이상을 줄이기 위한 구조화이지 항상 더 빠른 쿼리나 조인 제거를 보장하지 않는다."
+    ],
     "sql": "",
     "input_tables": [],
     "result_table": null,
@@ -479,14 +564,15 @@
       10
     ],
     "verification_method": "concept_reviewed",
-    "question_type": "개념 판단"
+    "question_type": "개념 판단",
+    "option_note_method": "concept_rule_based"
   },
   {
     "id": "qv3_0017",
     "subject": "데이터 모델링",
     "topic": "model_normal",
     "topic_label": "정규화",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "반정규화의 목적에 대한 설명으로 옳은 것은?",
@@ -498,7 +584,12 @@
     ],
     "answer": 1,
     "explanation": "반정규화는 검증된 조회 성능 요구에 대응해 중복을 도입하는 설계다. 대신 일관성 관리 비용이 커질 수 있다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "오답 검토 · 「무조건 데이터 품질을 높인다」를 택하면 핵심 판단 기준과 어긋난다. 반정규화는 성능 등을 위해 중복을 의도적으로 허용하지만 무결성 관리 비용이 생긴다.",
+      "정답 근거 · 반정규화는 성능 등을 위해 중복을 의도적으로 허용하지만 무결성 관리 비용이 생긴다.",
+      "오답 검토 · 「모든 무결성 검사를 없앤다」를 택하면 핵심 판단 기준과 어긋난다. 반정규화는 성능 등을 위해 중복을 의도적으로 허용하지만 무결성 관리 비용이 생긴다.",
+      "오답 검토 · 「정규화 이전 단계만 가리킨다」를 택하면 핵심 판단 기준과 어긋난다. 반정규화는 성능 등을 위해 중복을 의도적으로 허용하지만 무결성 관리 비용이 생긴다."
+    ],
     "sql": "",
     "input_tables": [],
     "result_table": null,
@@ -508,14 +599,15 @@
       10
     ],
     "verification_method": "concept_reviewed",
-    "question_type": "개념 판단"
+    "question_type": "개념 판단",
+    "option_note_method": "concept_rule_based"
   },
   {
     "id": "qv3_0018",
     "subject": "데이터 모델링",
     "topic": "model_schema",
     "topic_label": "3단계 스키마",
-    "difficulty": "미분류",
+    "difficulty": "하 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "외부 스키마가 표현하는 것은?",
@@ -527,7 +619,12 @@
     ],
     "answer": 2,
     "explanation": "외부 스키마는 사용자별 요구에 맞는 데이터 관점이며, 개념 스키마는 전체 논리 구조다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "오답 검토 · 「전체 DBMS 설치 경로」를 택하면 핵심 판단 기준과 어긋난다. 외부 스키마는 사용자별 관점, 개념 스키마는 전체 논리 구조, 내부 스키마는 물리 저장 구조다.",
+      "오답 검토 · 「오직 인덱스 구조」를 택하면 핵심 판단 기준과 어긋난다. 외부 스키마는 사용자별 관점, 개념 스키마는 전체 논리 구조, 내부 스키마는 물리 저장 구조다.",
+      "정답 근거 · 외부 스키마는 사용자별 관점, 개념 스키마는 전체 논리 구조, 내부 스키마는 물리 저장 구조다.",
+      "오답 검토 · 「물리 파일 배치」를 택하면 핵심 판단 기준과 어긋난다. 외부 스키마는 사용자별 관점, 개념 스키마는 전체 논리 구조, 내부 스키마는 물리 저장 구조다."
+    ],
     "sql": "",
     "input_tables": [],
     "result_table": null,
@@ -537,14 +634,15 @@
       15
     ],
     "verification_method": "concept_reviewed",
-    "question_type": "개념 판단"
+    "question_type": "개념 판단",
+    "option_note_method": "concept_rule_based"
   },
   {
     "id": "qv3_0019",
     "subject": "데이터 모델링",
     "topic": "model_schema",
     "topic_label": "3단계 스키마",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "논리적 데이터 독립성의 대표 사례는?",
@@ -556,7 +654,12 @@
     ],
     "answer": 3,
     "explanation": "논리적 독립성은 개념 스키마가 달라져도 외부 스키마와 응용 프로그램 영향을 줄이는 능력이다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "오답 검토 · 「SELECT를 작성하지 않아도 된다」를 택하면 핵심 판단 기준과 어긋난다. 논리적 데이터 독립성은 개념 스키마 변경에 대한 외부 스키마 보호를 의미한다.",
+      "오답 검토 · 「디스크를 교체해도 파일을 옮기지 않는다」를 택하면 핵심 판단 기준과 어긋난다. 논리적 데이터 독립성은 개념 스키마 변경에 대한 외부 스키마 보호를 의미한다.",
+      "오답 검토 · 「인덱스 변경만 가능하다」를 택하면 핵심 판단 기준과 어긋난다. 논리적 데이터 독립성은 개념 스키마 변경에 대한 외부 스키마 보호를 의미한다.",
+      "정답 근거 · 논리적 데이터 독립성은 개념 스키마 변경에 대한 외부 스키마 보호를 의미한다."
+    ],
     "sql": "",
     "input_tables": [],
     "result_table": null,
@@ -566,14 +669,15 @@
       15
     ],
     "verification_method": "concept_reviewed",
-    "question_type": "개념 판단"
+    "question_type": "개념 판단",
+    "option_note_method": "concept_rule_based"
   },
   {
     "id": "qv3_0020",
     "subject": "데이터 모델링",
     "topic": "model_schema",
     "topic_label": "3단계 스키마",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "물리적 데이터 독립성에 해당하는 사례는?",
@@ -585,7 +689,12 @@
     ],
     "answer": 0,
     "explanation": "물리적 독립성은 저장 구조 또는 인덱스 변경이 개념적 논리 구조에 영향을 주지 않도록 한다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "정답 근거 · 물리적 독립성은 인덱스·파일 등 내부 저장 방식이 바뀌어도 개념적 논리 구조를 유지하는 것이다.",
+      "오답 검토 · 「외부 뷰의 열 이름을 변경한다」를 택하면 핵심 판단 기준과 어긋난다. 물리적 독립성은 인덱스·파일 등 내부 저장 방식이 바뀌어도 개념적 논리 구조를 유지하는 것이다.",
+      "오답 검토 · 「업무 규칙을 변경해 엔터티를 추가한다」를 택하면 핵심 판단 기준과 어긋난다. 물리적 독립성은 인덱스·파일 등 내부 저장 방식이 바뀌어도 개념적 논리 구조를 유지하는 것이다.",
+      "오답 검토 · 「관계 차수를 재설계한다」를 택하면 핵심 판단 기준과 어긋난다. 물리적 독립성은 인덱스·파일 등 내부 저장 방식이 바뀌어도 개념적 논리 구조를 유지하는 것이다."
+    ],
     "sql": "",
     "input_tables": [],
     "result_table": null,
@@ -595,14 +704,15 @@
       15
     ],
     "verification_method": "concept_reviewed",
-    "question_type": "개념 판단"
+    "question_type": "개념 판단",
+    "option_note_method": "concept_rule_based"
   },
   {
     "id": "qv3_0021",
     "subject": "데이터 모델링",
     "topic": "model_schema",
     "topic_label": "3단계 스키마",
-    "difficulty": "미분류",
+    "difficulty": "하 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "3단계 스키마에서 데이터베이스 전체의 통합 논리 구조는?",
@@ -614,7 +724,12 @@
     ],
     "answer": 1,
     "explanation": "개념 스키마는 전체 데이터베이스의 논리적 구조를 정의한다. 내부 스키마는 물리 저장 방식이다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "오답 검토 · 「외부 스키마」를 택하면 핵심 판단 기준과 어긋난다. 개념 스키마가 전체 DB의 통합 논리 구조를 표현한다. 외부는 개별 관점, 내부는 물리 저장이다.",
+      "정답 근거 · 개념 스키마가 전체 DB의 통합 논리 구조를 표현한다. 외부는 개별 관점, 내부는 물리 저장이다.",
+      "오답 검토 · 「내부 스키마」를 택하면 핵심 판단 기준과 어긋난다. 개념 스키마가 전체 DB의 통합 논리 구조를 표현한다. 외부는 개별 관점, 내부는 물리 저장이다.",
+      "오답 검토 · 「파일 시스템」를 택하면 핵심 판단 기준과 어긋난다. 개념 스키마가 전체 DB의 통합 논리 구조를 표현한다. 외부는 개별 관점, 내부는 물리 저장이다."
+    ],
     "sql": "",
     "input_tables": [],
     "result_table": null,
@@ -624,14 +739,15 @@
       15
     ],
     "verification_method": "concept_reviewed",
-    "question_type": "개념 판단"
+    "question_type": "개념 판단",
+    "option_note_method": "concept_rule_based"
   },
   {
     "id": "qv3_0022",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_join",
     "topic_label": "JOIN",
-    "difficulty": "미분류",
+    "difficulty": "하 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "INNER JOIN에서 키가 일치하는 A 행이 3개, B 행이 2개이면 해당 키의 결과 행 수는?",
@@ -643,7 +759,12 @@
     ],
     "answer": 2,
     "explanation": "조인 결과는 두 테이블에서 일치하는 행의 모든 조합으로 구성된다. 3×2=6행이다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "오답 검토 · 「3행」를 택하면 핵심 판단 기준과 어긋난다. INNER JOIN에서 같은 키의 행이 3개와 2개면 일치하는 조합이 3×2=6개 생긴다.",
+      "오답 검토 · 「5행」를 택하면 핵심 판단 기준과 어긋난다. INNER JOIN에서 같은 키의 행이 3개와 2개면 일치하는 조합이 3×2=6개 생긴다.",
+      "정답 근거 · INNER JOIN에서 같은 키의 행이 3개와 2개면 일치하는 조합이 3×2=6개 생긴다.",
+      "오답 검토 · 「2행」를 택하면 핵심 판단 기준과 어긋난다. INNER JOIN에서 같은 키의 행이 3개와 2개면 일치하는 조합이 3×2=6개 생긴다."
+    ],
     "sql": "",
     "input_tables": [],
     "result_table": null,
@@ -654,14 +775,15 @@
       6
     ],
     "verification_method": "concept_reviewed",
-    "question_type": "개념 판단"
+    "question_type": "개념 판단",
+    "option_note_method": "concept_rule_based"
   },
   {
     "id": "qv3_0023",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_join",
     "topic_label": "JOIN",
-    "difficulty": "미분류",
+    "difficulty": "상 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "LEFT JOIN 이후 WHERE B.status = 1을 적용하면 무슨 일이 일어날 수 있는가?",
@@ -693,14 +815,15 @@
       6
     ],
     "verification_method": "concept_reviewed",
-    "question_type": "개념 판단"
+    "question_type": "개념 판단",
+    "option_note_method": "hand_authored"
   },
   {
     "id": "qv3_0024",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_join",
     "topic_label": "JOIN",
-    "difficulty": "미분류",
+    "difficulty": "하 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "FULL OUTER JOIN의 일반적인 설명은?",
@@ -712,7 +835,12 @@
     ],
     "answer": 0,
     "explanation": "FULL OUTER JOIN은 양쪽의 일치 행과 매칭되지 않는 양쪽 행을 모두 보존한다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "정답 근거 · FULL OUTER JOIN은 왼쪽과 오른쪽의 미매칭 행을 모두 보존하며 일치 행도 반환한다.",
+      "오답 검토 · 「오른쪽 미매칭 행만 남긴다」를 택하면 핵심 판단 기준과 어긋난다. FULL OUTER JOIN은 왼쪽과 오른쪽의 미매칭 행을 모두 보존하며 일치 행도 반환한다.",
+      "오답 검토 · 「왼쪽 미매칭 행만 남긴다」를 택하면 핵심 판단 기준과 어긋난다. FULL OUTER JOIN은 왼쪽과 오른쪽의 미매칭 행을 모두 보존하며 일치 행도 반환한다.",
+      "오답 검토 · 「일치하는 행만 남긴다」를 택하면 핵심 판단 기준과 어긋난다. FULL OUTER JOIN은 왼쪽과 오른쪽의 미매칭 행을 모두 보존하며 일치 행도 반환한다."
+    ],
     "sql": "",
     "input_tables": [],
     "result_table": null,
@@ -723,14 +851,15 @@
       6
     ],
     "verification_method": "concept_reviewed",
-    "question_type": "개념 판단"
+    "question_type": "개념 판단",
+    "option_note_method": "concept_rule_based"
   },
   {
     "id": "qv3_0025",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_join",
     "topic_label": "JOIN",
-    "difficulty": "미분류",
+    "difficulty": "하 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "CROSS JOIN의 기본 동작은?",
@@ -742,7 +871,12 @@
     ],
     "answer": 1,
     "explanation": "CROSS JOIN은 별도 매칭 조건 없이 모든 행 조합을 생성한다. A 2행, B 4행이라면 8행이 된다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "오답 검토 · 「PK 기준 자동 매칭」를 택하면 핵심 판단 기준과 어긋난다. CROSS JOIN은 매칭 조건 없이 양쪽 모든 행의 조합을 생성하므로 결과 수는 두 테이블 행 수의 곱이다.",
+      "정답 근거 · CROSS JOIN은 매칭 조건 없이 양쪽 모든 행의 조합을 생성하므로 결과 수는 두 테이블 행 수의 곱이다.",
+      "오답 검토 · 「중복을 무조건 제거」를 택하면 핵심 판단 기준과 어긋난다. CROSS JOIN은 매칭 조건 없이 양쪽 모든 행의 조합을 생성하므로 결과 수는 두 테이블 행 수의 곱이다.",
+      "오답 검토 · 「일치하지 않는 행만 반환」를 택하면 핵심 판단 기준과 어긋난다. CROSS JOIN은 매칭 조건 없이 양쪽 모든 행의 조합을 생성하므로 결과 수는 두 테이블 행 수의 곱이다."
+    ],
     "sql": "",
     "input_tables": [],
     "result_table": null,
@@ -753,14 +887,15 @@
       6
     ],
     "verification_method": "concept_reviewed",
-    "question_type": "개념 판단"
+    "question_type": "개념 판단",
+    "option_note_method": "concept_rule_based"
   },
   {
     "id": "qv3_0026",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_null",
     "topic_label": "NULL·3값 논리",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "NULL = NULL의 SQL 3값 논리 평가 결과는?",
@@ -772,7 +907,12 @@
     ],
     "answer": 2,
     "explanation": "NULL은 알 수 없는 값이므로 일반 비교 결과가 UNKNOWN이다. NULL 여부는 IS NULL을 사용한다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "오답 검토 · 「FALSE」를 택하면 핵심 판단 기준과 어긋난다. NULL = NULL은 TRUE나 FALSE가 아니라 UNKNOWN이다. NULL 확인은 IS NULL을 쓴다.",
+      "오답 검토 · 「0이라는 정수」를 택하면 핵심 판단 기준과 어긋난다. NULL = NULL은 TRUE나 FALSE가 아니라 UNKNOWN이다. NULL 확인은 IS NULL을 쓴다.",
+      "정답 근거 · NULL = NULL은 TRUE나 FALSE가 아니라 UNKNOWN이다. NULL 확인은 IS NULL을 쓴다.",
+      "오답 검토 · 「TRUE」를 택하면 핵심 판단 기준과 어긋난다. NULL = NULL은 TRUE나 FALSE가 아니라 UNKNOWN이다. NULL 확인은 IS NULL을 쓴다."
+    ],
     "sql": "",
     "input_tables": [],
     "result_table": null,
@@ -782,14 +922,15 @@
       2
     ],
     "verification_method": "concept_reviewed",
-    "question_type": "개념 판단"
+    "question_type": "개념 판단",
+    "option_note_method": "concept_rule_based"
   },
   {
     "id": "qv3_0027",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_null",
     "topic_label": "NULL·3값 논리",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "WHERE 컬럼 <> 10에서 컬럼 값이 NULL이면?",
@@ -801,7 +942,12 @@
     ],
     "answer": 3,
     "explanation": "NULL <> 10은 UNKNOWN이며 WHERE는 TRUE인 행만 통과시킨다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "오답 검토 · 「자동으로 0으로 변환된다」를 택하면 핵심 판단 기준과 어긋난다. WHERE는 TRUE만 통과시키므로 NULL <> 10의 UNKNOWN은 반환하지 않는다.",
+      "오답 검토 · 「TRUE로 처리되어 포함된다」를 택하면 핵심 판단 기준과 어긋난다. WHERE는 TRUE만 통과시키므로 NULL <> 10의 UNKNOWN은 반환하지 않는다.",
+      "오답 검토 · 「FALSE지만 출력된다」를 택하면 핵심 판단 기준과 어긋난다. WHERE는 TRUE만 통과시키므로 NULL <> 10의 UNKNOWN은 반환하지 않는다.",
+      "정답 근거 · WHERE는 TRUE만 통과시키므로 NULL <> 10의 UNKNOWN은 반환하지 않는다."
+    ],
     "sql": "",
     "input_tables": [],
     "result_table": null,
@@ -811,14 +957,15 @@
       2
     ],
     "verification_method": "concept_reviewed",
-    "question_type": "개념 판단"
+    "question_type": "개념 판단",
+    "option_note_method": "concept_rule_based"
   },
   {
     "id": "qv3_0028",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_null",
     "topic_label": "NULL·3값 논리",
-    "difficulty": "미분류",
+    "difficulty": "상 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "NOT IN 목록에 NULL이 포함되면 주의해야 하는 이유는?",
@@ -849,14 +996,15 @@
       2
     ],
     "verification_method": "concept_reviewed",
-    "question_type": "개념 판단"
+    "question_type": "개념 판단",
+    "option_note_method": "hand_authored"
   },
   {
     "id": "qv3_0029",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_null",
     "topic_label": "NULL·3값 논리",
-    "difficulty": "미분류",
+    "difficulty": "하 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "IS NOT NULL 조건이 TRUE인 값은?",
@@ -868,7 +1016,12 @@
     ],
     "answer": 1,
     "explanation": "0은 실제 숫자 값이므로 NULL이 아니다. IS NOT NULL은 값이 존재하는지를 검사한다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "오답 검토 · 「NULL」를 택하면 핵심 판단 기준과 어긋난다. 0은 NULL이 아니라 실제 숫자값이다. IS NOT NULL은 0도 TRUE가 된다.",
+      "정답 근거 · 0은 NULL이 아니라 실제 숫자값이다. IS NOT NULL은 0도 TRUE가 된다.",
+      "오답 검토 · 「미정의 값」를 택하면 핵심 판단 기준과 어긋난다. 0은 NULL이 아니라 실제 숫자값이다. IS NOT NULL은 0도 TRUE가 된다.",
+      "오답 검토 · 「NULL과 0 둘 다」를 택하면 핵심 판단 기준과 어긋난다. 0은 NULL이 아니라 실제 숫자값이다. IS NOT NULL은 0도 TRUE가 된다."
+    ],
     "sql": "",
     "input_tables": [],
     "result_table": null,
@@ -878,14 +1031,15 @@
       2
     ],
     "verification_method": "concept_reviewed",
-    "question_type": "개념 판단"
+    "question_type": "개념 판단",
+    "option_note_method": "concept_rule_based"
   },
   {
     "id": "qv3_0030",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_group",
     "topic_label": "GROUP BY·집계",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "COUNT(*)와 COUNT(컬럼)의 핵심 차이는?",
@@ -916,14 +1070,15 @@
       6
     ],
     "verification_method": "concept_reviewed",
-    "question_type": "개념 판단"
+    "question_type": "개념 판단",
+    "option_note_method": "hand_authored"
   },
   {
     "id": "qv3_0031",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_group",
     "topic_label": "GROUP BY·집계",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "WHERE와 HAVING의 적용 단계는?",
@@ -955,14 +1110,15 @@
       6
     ],
     "verification_method": "concept_reviewed",
-    "question_type": "개념 판단"
+    "question_type": "개념 판단",
+    "option_note_method": "hand_authored"
   },
   {
     "id": "qv3_0032",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_group",
     "topic_label": "GROUP BY·집계",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "COUNT(DISTINCT dept)의 의미는?",
@@ -974,7 +1130,12 @@
     ],
     "answer": 0,
     "explanation": "COUNT(DISTINCT col)은 NULL이 아닌 서로 다른 값의 개수를 센다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "정답 근거 · COUNT(DISTINCT dept)는 NULL 아닌 서로 다른 dept 값의 개수를 센다. 전체 행 수와 다를 수 있다.",
+      "오답 검토 · 「NULL 행만 세는 수」를 택하면 핵심 판단 기준과 어긋난다. COUNT(DISTINCT dept)는 NULL 아닌 서로 다른 dept 값의 개수를 센다. 전체 행 수와 다를 수 있다.",
+      "오답 검토 · 「모든 행 수」를 택하면 핵심 판단 기준과 어긋난다. COUNT(DISTINCT dept)는 NULL 아닌 서로 다른 dept 값의 개수를 센다. 전체 행 수와 다를 수 있다.",
+      "오답 검토 · 「중복을 포함한 dept 값의 수」를 택하면 핵심 판단 기준과 어긋난다. COUNT(DISTINCT dept)는 NULL 아닌 서로 다른 dept 값의 개수를 센다. 전체 행 수와 다를 수 있다."
+    ],
     "sql": "",
     "input_tables": [],
     "result_table": null,
@@ -985,14 +1146,15 @@
       6
     ],
     "verification_method": "concept_reviewed",
-    "question_type": "개념 판단"
+    "question_type": "개념 판단",
+    "option_note_method": "concept_rule_based"
   },
   {
     "id": "qv3_0033",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_group",
     "topic_label": "GROUP BY·집계",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "SUM(col)과 COUNT(col)의 공통 NULL 처리 특징은?",
@@ -1004,7 +1166,12 @@
     ],
     "answer": 1,
     "explanation": "COUNT(col)과 SUM(col)은 NULL 값을 집계 계산에서 제외한다. 단 빈 입력·모든 값 NULL에서는 SUM은 NULL, COUNT는 0이다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "오답 검토 · 「NULL을 모두 0으로 치환한다」를 택하면 핵심 판단 기준과 어긋난다. SUM(col)·COUNT(col)은 NULL 값을 집계 대상에서 제외한다. 단 0과 NULL은 구별해야 한다.",
+      "정답 근거 · SUM(col)·COUNT(col)은 NULL 값을 집계 대상에서 제외한다. 단 0과 NULL은 구별해야 한다.",
+      "오답 검토 · 「집계 함수는 NULL을 만나면 무조건 오류다」를 택하면 핵심 판단 기준과 어긋난다. SUM(col)·COUNT(col)은 NULL 값을 집계 대상에서 제외한다. 단 0과 NULL은 구별해야 한다.",
+      "오답 검토 · 「NULL 행을 별도 그룹으로 만든다」를 택하면 핵심 판단 기준과 어긋난다. SUM(col)·COUNT(col)은 NULL 값을 집계 대상에서 제외한다. 단 0과 NULL은 구별해야 한다."
+    ],
     "sql": "",
     "input_tables": [],
     "result_table": null,
@@ -1015,14 +1182,15 @@
       6
     ],
     "verification_method": "concept_reviewed",
-    "question_type": "개념 판단"
+    "question_type": "개념 판단",
+    "option_note_method": "concept_rule_based"
   },
   {
     "id": "qv3_0034",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_subquery",
     "topic_label": "서브쿼리",
-    "difficulty": "미분류",
+    "difficulty": "하 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "EXISTS 서브쿼리가 판단하는 핵심은?",
@@ -1034,7 +1202,12 @@
     ],
     "answer": 2,
     "explanation": "EXISTS는 서브쿼리가 한 행 이상 반환하는지를 검사한다. SELECT 목록 자체의 값은 존재 판정의 핵심이 아니다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "오답 검토 · 「첫 행의 첫 열만 숫자 비교」를 택하면 핵심 판단 기준과 어긋난다. EXISTS는 서브쿼리의 반환 행 존재 여부를 판정하며 SELECT 절의 특정 값은 본질이 아니다.",
+      "오답 검토 · 「항상 정렬된 순서」를 택하면 핵심 판단 기준과 어긋난다. EXISTS는 서브쿼리의 반환 행 존재 여부를 판정하며 SELECT 절의 특정 값은 본질이 아니다.",
+      "정답 근거 · EXISTS는 서브쿼리의 반환 행 존재 여부를 판정하며 SELECT 절의 특정 값은 본질이 아니다.",
+      "오답 검토 · 「SELECT 목록의 합계」를 택하면 핵심 판단 기준과 어긋난다. EXISTS는 서브쿼리의 반환 행 존재 여부를 판정하며 SELECT 절의 특정 값은 본질이 아니다."
+    ],
     "sql": "",
     "input_tables": [],
     "result_table": null,
@@ -1044,14 +1217,15 @@
       5
     ],
     "verification_method": "concept_reviewed",
-    "question_type": "개념 판단"
+    "question_type": "개념 판단",
+    "option_note_method": "concept_rule_based"
   },
   {
     "id": "qv3_0035",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_subquery",
     "topic_label": "서브쿼리",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "스칼라 서브쿼리의 일반적인 반환 요구는?",
@@ -1063,7 +1237,12 @@
     ],
     "answer": 3,
     "explanation": "스칼라 위치에 사용되는 서브쿼리는 하나의 값으로 평가되어야 한다. 여러 행 반환 시 오류가 날 수 있다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "오답 검토 · 「정렬된 전체 테이블」를 택하면 핵심 판단 기준과 어긋난다. 스칼라 문맥에서는 서브쿼리가 한 행·한 열의 값으로 평가되어야 한다. 여러 행이면 DBMS 오류가 날 수 있다.",
+      "오답 검토 · 「반드시 두 행」를 택하면 핵심 판단 기준과 어긋난다. 스칼라 문맥에서는 서브쿼리가 한 행·한 열의 값으로 평가되어야 한다. 여러 행이면 DBMS 오류가 날 수 있다.",
+      "오답 검토 · 「무조건 여러 열」를 택하면 핵심 판단 기준과 어긋난다. 스칼라 문맥에서는 서브쿼리가 한 행·한 열의 값으로 평가되어야 한다. 여러 행이면 DBMS 오류가 날 수 있다.",
+      "정답 근거 · 스칼라 문맥에서는 서브쿼리가 한 행·한 열의 값으로 평가되어야 한다. 여러 행이면 DBMS 오류가 날 수 있다."
+    ],
     "sql": "",
     "input_tables": [],
     "result_table": null,
@@ -1073,14 +1252,15 @@
       5
     ],
     "verification_method": "concept_reviewed",
-    "question_type": "개념 판단"
+    "question_type": "개념 판단",
+    "option_note_method": "concept_rule_based"
   },
   {
     "id": "qv3_0036",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_subquery",
     "topic_label": "서브쿼리",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "상관 서브쿼리의 핵심 특징은?",
@@ -1092,7 +1272,12 @@
     ],
     "answer": 0,
     "explanation": "상관 서브쿼리는 외부 행의 값을 조건에 사용한다. DBMS는 실행을 최적화할 수 있으므로 실제 반복 실행 방식은 단순화하면 안 된다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "정답 근거 · 상관 서브쿼리는 바깥쪽 행의 열을 참조한다. 실행 성능은 DBMS 최적화에 좌우된다.",
+      "오답 검토 · 「반드시 JOIN보다 빠르다」를 택하면 핵심 판단 기준과 어긋난다. 상관 서브쿼리는 바깥쪽 행의 열을 참조한다. 실행 성능은 DBMS 최적화에 좌우된다.",
+      "오답 검토 · 「바깥쪽 쿼리와 데이터를 교환할 수 없다」를 택하면 핵심 판단 기준과 어긋난다. 상관 서브쿼리는 바깥쪽 행의 열을 참조한다. 실행 성능은 DBMS 최적화에 좌우된다.",
+      "오답 검토 · 「항상 결과가 0행이다」를 택하면 핵심 판단 기준과 어긋난다. 상관 서브쿼리는 바깥쪽 행의 열을 참조한다. 실행 성능은 DBMS 최적화에 좌우된다."
+    ],
     "sql": "",
     "input_tables": [],
     "result_table": null,
@@ -1102,14 +1287,15 @@
       5
     ],
     "verification_method": "concept_reviewed",
-    "question_type": "개념 판단"
+    "question_type": "개념 판단",
+    "option_note_method": "concept_rule_based"
   },
   {
     "id": "qv3_0037",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_subquery",
     "topic_label": "서브쿼리",
-    "difficulty": "미분류",
+    "difficulty": "상 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "ANY와 ALL 비교 중 x > ALL(서브쿼리)의 의미는?",
@@ -1139,14 +1325,15 @@
       5
     ],
     "verification_method": "concept_reviewed",
-    "question_type": "개념 판단"
+    "question_type": "개념 판단",
+    "option_note_method": "hand_authored"
   },
   {
     "id": "qv3_0038",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_order",
     "topic_label": "정렬·TOP-N",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "ORDER BY 없이 LIMIT 또는 FETCH를 사용하면?",
@@ -1158,7 +1345,12 @@
     ],
     "answer": 2,
     "explanation": "정렬을 명시하지 않으면 행 순서를 보장할 수 없다. 페이징은 고유한 정렬 키를 포함하는 편이 안전하다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "오답 검토 · 「삽입 순서가 언제나 유지」를 택하면 핵심 판단 기준과 어긋난다. ORDER BY가 없으면 LIMIT/FETCH가 어느 행을 반환할지 순서가 보장되지 않는다.",
+      "오답 검토 · 「항상 전체 행을 반환」를 택하면 핵심 판단 기준과 어긋난다. ORDER BY가 없으면 LIMIT/FETCH가 어느 행을 반환할지 순서가 보장되지 않는다.",
+      "정답 근거 · ORDER BY가 없으면 LIMIT/FETCH가 어느 행을 반환할지 순서가 보장되지 않는다.",
+      "오답 검토 · 「기본키 순서로 항상 반환」를 택하면 핵심 판단 기준과 어긋난다. ORDER BY가 없으면 LIMIT/FETCH가 어느 행을 반환할지 순서가 보장되지 않는다."
+    ],
     "sql": "",
     "input_tables": [],
     "result_table": null,
@@ -1169,14 +1361,15 @@
       14
     ],
     "verification_method": "concept_reviewed",
-    "question_type": "개념 판단"
+    "question_type": "개념 판단",
+    "option_note_method": "concept_rule_based"
   },
   {
     "id": "qv3_0039",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_order",
     "topic_label": "정렬·TOP-N",
-    "difficulty": "미분류",
+    "difficulty": "상 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "ORDER BY score DESC에서 동점 행의 안정적 정렬을 위해 추가할 것은?",
@@ -1208,14 +1401,15 @@
       14
     ],
     "verification_method": "concept_reviewed",
-    "question_type": "개념 판단"
+    "question_type": "개념 판단",
+    "option_note_method": "hand_authored"
   },
   {
     "id": "qv3_0040",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_order",
     "topic_label": "정렬·TOP-N",
-    "difficulty": "미분류",
+    "difficulty": "상 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "FETCH FIRST 2 ROWS WITH TIES가 의미하는 것은?",
@@ -1247,14 +1441,15 @@
       14
     ],
     "verification_method": "concept_reviewed",
-    "question_type": "개념 판단"
+    "question_type": "개념 판단",
+    "option_note_method": "hand_authored"
   },
   {
     "id": "qv3_0041",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_order",
     "topic_label": "정렬·TOP-N",
-    "difficulty": "미분류",
+    "difficulty": "상 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "Oracle ROWNUM의 일반적인 주의점은?",
@@ -1285,14 +1480,15 @@
       14
     ],
     "verification_method": "concept_reviewed",
-    "question_type": "개념 판단"
+    "question_type": "개념 판단",
+    "option_note_method": "hand_authored"
   },
   {
     "id": "qv3_0042",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_dml",
     "topic_label": "DML·TCL·DDL·DCL",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "SAVEPOINT s1 후 변경을 하고 ROLLBACK TO s1 하면?",
@@ -1304,7 +1500,12 @@
     ],
     "answer": 2,
     "explanation": "ROLLBACK TO SAVEPOINT는 지정 시점 이후의 작업을 되돌리고 그 이전 미확정 작업은 남긴다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "오답 검토 · 「s1 이전 변경만 취소」를 택하면 핵심 판단 기준과 어긋난다. ROLLBACK TO s1은 s1 이후의 미확정 변경을 취소하고 그 전 변경은 남긴다.",
+      "오답 검토 · 「즉시 자동 COMMIT」를 택하면 핵심 판단 기준과 어긋난다. ROLLBACK TO s1은 s1 이후의 미확정 변경을 취소하고 그 전 변경은 남긴다.",
+      "정답 근거 · ROLLBACK TO s1은 s1 이후의 미확정 변경을 취소하고 그 전 변경은 남긴다.",
+      "오답 검토 · 「항상 전체 트랜잭션 취소」를 택하면 핵심 판단 기준과 어긋난다. ROLLBACK TO s1은 s1 이후의 미확정 변경을 취소하고 그 전 변경은 남긴다."
+    ],
     "sql": "",
     "input_tables": [],
     "result_table": null,
@@ -1314,14 +1515,15 @@
       7
     ],
     "verification_method": "concept_reviewed",
-    "question_type": "개념 판단"
+    "question_type": "개념 판단",
+    "option_note_method": "concept_rule_based"
   },
   {
     "id": "qv3_0043",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_dml",
     "topic_label": "DML·TCL·DDL·DCL",
-    "difficulty": "미분류",
+    "difficulty": "하 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "COMMIT이 수행하는 작업은?",
@@ -1333,7 +1535,12 @@
     ],
     "answer": 3,
     "explanation": "COMMIT은 현재 트랜잭션에서 일어난 변경 사항을 확정하여 영구 반영한다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "오답 검토 · 「조회 결과만 정렬한다」를 택하면 핵심 판단 기준과 어긋난다. COMMIT은 현재 트랜잭션 변경을 확정하는 TCL 명령이다.",
+      "오답 검토 · 「새 테이블을 만든다」를 택하면 핵심 판단 기준과 어긋난다. COMMIT은 현재 트랜잭션 변경을 확정하는 TCL 명령이다.",
+      "오답 검토 · 「모든 테이블을 삭제한다」를 택하면 핵심 판단 기준과 어긋난다. COMMIT은 현재 트랜잭션 변경을 확정하는 TCL 명령이다.",
+      "정답 근거 · COMMIT은 현재 트랜잭션 변경을 확정하는 TCL 명령이다."
+    ],
     "sql": "",
     "input_tables": [],
     "result_table": null,
@@ -1343,14 +1550,15 @@
       7
     ],
     "verification_method": "concept_reviewed",
-    "question_type": "개념 판단"
+    "question_type": "개념 판단",
+    "option_note_method": "concept_rule_based"
   },
   {
     "id": "qv3_0044",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_dml",
     "topic_label": "DML·TCL·DDL·DCL",
-    "difficulty": "미분류",
+    "difficulty": "하 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "다음 중 DDL로 분류되는 구문은?",
@@ -1362,7 +1570,12 @@
     ],
     "answer": 0,
     "explanation": "CREATE TABLE은 구조를 정의하는 DDL이다. UPDATE는 DML, ROLLBACK은 TCL, GRANT는 DCL이다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "정답 근거 · CREATE TABLE은 구조 정의 DDL이고 UPDATE는 DML, ROLLBACK은 TCL, GRANT는 DCL이다.",
+      "오답 검토 · 「ROLLBACK」를 택하면 핵심 판단 기준과 어긋난다. CREATE TABLE은 구조 정의 DDL이고 UPDATE는 DML, ROLLBACK은 TCL, GRANT는 DCL이다.",
+      "오답 검토 · 「UPDATE」를 택하면 핵심 판단 기준과 어긋난다. CREATE TABLE은 구조 정의 DDL이고 UPDATE는 DML, ROLLBACK은 TCL, GRANT는 DCL이다.",
+      "오답 검토 · 「GRANT」를 택하면 핵심 판단 기준과 어긋난다. CREATE TABLE은 구조 정의 DDL이고 UPDATE는 DML, ROLLBACK은 TCL, GRANT는 DCL이다."
+    ],
     "sql": "",
     "input_tables": [],
     "result_table": null,
@@ -1372,14 +1585,15 @@
       7
     ],
     "verification_method": "concept_reviewed",
-    "question_type": "개념 판단"
+    "question_type": "개념 판단",
+    "option_note_method": "concept_rule_based"
   },
   {
     "id": "qv3_0045",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_dml",
     "topic_label": "DML·TCL·DDL·DCL",
-    "difficulty": "미분류",
+    "difficulty": "하 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "GRANT SELECT ON T TO U가 하는 일은?",
@@ -1391,7 +1605,12 @@
     ],
     "answer": 1,
     "explanation": "GRANT는 객체에 대한 권한을 부여하는 DCL이다. 권한 회수는 REVOKE를 사용한다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "오답 검토 · 「U의 권한을 회수한다」를 택하면 핵심 판단 기준과 어긋난다. GRANT SELECT ON T TO U는 U에게 T의 조회 권한을 부여한다. 회수는 REVOKE다.",
+      "정답 근거 · GRANT SELECT ON T TO U는 U에게 T의 조회 권한을 부여한다. 회수는 REVOKE다.",
+      "오답 검토 · 「T를 삭제한다」를 택하면 핵심 판단 기준과 어긋난다. GRANT SELECT ON T TO U는 U에게 T의 조회 권한을 부여한다. 회수는 REVOKE다.",
+      "오답 검토 · 「T를 자동 백업한다」를 택하면 핵심 판단 기준과 어긋난다. GRANT SELECT ON T TO U는 U에게 T의 조회 권한을 부여한다. 회수는 REVOKE다."
+    ],
     "sql": "",
     "input_tables": [],
     "result_table": null,
@@ -1401,14 +1620,15 @@
       7
     ],
     "verification_method": "concept_reviewed",
-    "question_type": "개념 판단"
+    "question_type": "개념 판단",
+    "option_note_method": "concept_rule_based"
   },
   {
     "id": "qv3_0046",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_dml",
     "topic_label": "DML·TCL·DDL·DCL",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "Oracle에서 TRUNCATE TABLE의 대표적 특징은?",
@@ -1420,7 +1640,12 @@
     ],
     "answer": 2,
     "explanation": "Oracle의 TRUNCATE는 DDL이며 암묵적 COMMIT과 관련된다. 실행 후 일반적인 ROLLBACK으로 되돌릴 수 없다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "오답 검토 · 「항상 WHERE를 사용한다」를 택하면 핵심 판단 기준과 어긋난다. Oracle TRUNCATE는 DDL 성격으로 암묵적 COMMIT이 발생하므로 일반 ROLLBACK 대상이 아니다.",
+      "오답 검토 · 「순수 SELECT 구문이다」를 택하면 핵심 판단 기준과 어긋난다. Oracle TRUNCATE는 DDL 성격으로 암묵적 COMMIT이 발생하므로 일반 ROLLBACK 대상이 아니다.",
+      "정답 근거 · Oracle TRUNCATE는 DDL 성격으로 암묵적 COMMIT이 발생하므로 일반 ROLLBACK 대상이 아니다.",
+      "오답 검토 · 「행마다 트리거를 반드시 실행한다」를 택하면 핵심 판단 기준과 어긋난다. Oracle TRUNCATE는 DDL 성격으로 암묵적 COMMIT이 발생하므로 일반 ROLLBACK 대상이 아니다."
+    ],
     "sql": "",
     "input_tables": [],
     "result_table": null,
@@ -1430,14 +1655,15 @@
       7
     ],
     "verification_method": "concept_reviewed",
-    "question_type": "개념 판단"
+    "question_type": "개념 판단",
+    "option_note_method": "concept_rule_based"
   },
   {
     "id": "qv3_0047",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_window",
     "topic_label": "윈도우 함수",
-    "difficulty": "미분류",
+    "difficulty": "상 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "RANK 순위가 1,1 다음으로 이어질 때 순위는?",
@@ -1468,14 +1694,15 @@
       4
     ],
     "verification_method": "concept_reviewed",
-    "question_type": "개념 판단"
+    "question_type": "개념 판단",
+    "option_note_method": "hand_authored"
   },
   {
     "id": "qv3_0048",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_window",
     "topic_label": "윈도우 함수",
-    "difficulty": "미분류",
+    "difficulty": "상 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "DENSE_RANK에서 동점 1,1 다음 순위는?",
@@ -1505,14 +1732,15 @@
       4
     ],
     "verification_method": "concept_reviewed",
-    "question_type": "개념 판단"
+    "question_type": "개념 판단",
+    "option_note_method": "hand_authored"
   },
   {
     "id": "qv3_0049",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_window",
     "topic_label": "윈도우 함수",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "ROW_NUMBER()의 동점 처리 특징은?",
@@ -1524,7 +1752,12 @@
     ],
     "answer": 1,
     "explanation": "ROW_NUMBER는 순서대로 서로 다른 번호를 할당한다. 동점의 순서를 안정적으로 정하려면 ORDER BY에 고유 키를 추가한다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "오답 검토 · 「동점이면 같은 번호가 된다」를 택하면 핵심 판단 기준과 어긋난다. ROW_NUMBER는 동점에도 서로 다른 번호를 주며 고유한 ORDER BY가 없다면 동점 내 순서는 비결정적일 수 있다.",
+      "정답 근거 · ROW_NUMBER는 동점에도 서로 다른 번호를 주며 고유한 ORDER BY가 없다면 동점 내 순서는 비결정적일 수 있다.",
+      "오답 검토 · 「동점이면 행을 제거한다」를 택하면 핵심 판단 기준과 어긋난다. ROW_NUMBER는 동점에도 서로 다른 번호를 주며 고유한 ORDER BY가 없다면 동점 내 순서는 비결정적일 수 있다.",
+      "오답 검토 · 「모든 행 번호가 0이다」를 택하면 핵심 판단 기준과 어긋난다. ROW_NUMBER는 동점에도 서로 다른 번호를 주며 고유한 ORDER BY가 없다면 동점 내 순서는 비결정적일 수 있다."
+    ],
     "sql": "",
     "input_tables": [],
     "result_table": null,
@@ -1534,14 +1767,15 @@
       4
     ],
     "verification_method": "concept_reviewed",
-    "question_type": "개념 판단"
+    "question_type": "개념 판단",
+    "option_note_method": "concept_rule_based"
   },
   {
     "id": "qv3_0050",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_window",
     "topic_label": "윈도우 함수",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "LAG(salary) OVER(ORDER BY id)의 역할은?",
@@ -1553,7 +1787,12 @@
     ],
     "answer": 2,
     "explanation": "LAG는 윈도우 순서에서 이전 행 값을 가져온다. LEAD는 다음 행 값을 가져온다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "오답 검토 · 「전체 행 합계」를 택하면 핵심 판단 기준과 어긋난다. LAG는 현재 행 앞 행의 값을, LEAD는 뒤 행의 값을 조회한다.",
+      "오답 검토 · 「salary 값 중복 제거」를 택하면 핵심 판단 기준과 어긋난다. LAG는 현재 행 앞 행의 값을, LEAD는 뒤 행의 값을 조회한다.",
+      "정답 근거 · LAG는 현재 행 앞 행의 값을, LEAD는 뒤 행의 값을 조회한다.",
+      "오답 검토 · 「다음 행의 salary 조회」를 택하면 핵심 판단 기준과 어긋난다. LAG는 현재 행 앞 행의 값을, LEAD는 뒤 행의 값을 조회한다."
+    ],
     "sql": "",
     "input_tables": [],
     "result_table": null,
@@ -1563,14 +1802,15 @@
       4
     ],
     "verification_method": "concept_reviewed",
-    "question_type": "개념 판단"
+    "question_type": "개념 판단",
+    "option_note_method": "concept_rule_based"
   },
   {
     "id": "qv3_0051",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_window",
     "topic_label": "윈도우 함수",
-    "difficulty": "미분류",
+    "difficulty": "상 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "PARTITION BY dept와 GROUP BY dept의 차이는?",
@@ -1600,14 +1840,15 @@
       4
     ],
     "verification_method": "concept_reviewed",
-    "question_type": "개념 판단"
+    "question_type": "개념 판단",
+    "option_note_method": "hand_authored"
   },
   {
     "id": "qv3_0052",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_rollup",
     "topic_label": "ROLLUP·CUBE",
-    "difficulty": "미분류",
+    "difficulty": "상 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "ROLLUP(region,product)에 포함되는 집계 수준은?",
@@ -1638,14 +1879,15 @@
       11
     ],
     "verification_method": "concept_reviewed",
-    "question_type": "개념 판단"
+    "question_type": "개념 판단",
+    "option_note_method": "hand_authored"
   },
   {
     "id": "qv3_0053",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_rollup",
     "topic_label": "ROLLUP·CUBE",
-    "difficulty": "미분류",
+    "difficulty": "상 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "CUBE(A,B)가 생성하는 그룹 조합은?",
@@ -1657,7 +1899,12 @@
     ],
     "answer": 1,
     "explanation": "CUBE는 각 그룹 열을 포함하거나 제외하는 모든 조합을 집계한다. 두 열이면 2²=4가지 수준이다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "오답 검토 · 「(A,B), (A)만」를 택하면 핵심 판단 기준과 어긋난다. CUBE(A,B)는 (A,B), (A), (B), () 네 집계 수준을 만든다.",
+      "정답 근거 · CUBE(A,B)는 (A,B), (A), (B), () 네 집계 수준을 만든다.",
+      "오답 검토 · 「(A,B), ()만」를 택하면 핵심 판단 기준과 어긋난다. CUBE(A,B)는 (A,B), (A), (B), () 네 집계 수준을 만든다.",
+      "오답 검토 · 「(A), (B)만」를 택하면 핵심 판단 기준과 어긋난다. CUBE(A,B)는 (A,B), (A), (B), () 네 집계 수준을 만든다."
+    ],
     "sql": "",
     "input_tables": [],
     "result_table": null,
@@ -1667,14 +1914,15 @@
       11
     ],
     "verification_method": "concept_reviewed",
-    "question_type": "개념 판단"
+    "question_type": "개념 판단",
+    "option_note_method": "concept_rule_based"
   },
   {
     "id": "qv3_0054",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_rollup",
     "topic_label": "ROLLUP·CUBE",
-    "difficulty": "미분류",
+    "difficulty": "상 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "GROUPING(region)=1의 해석으로 적절한 것은?",
@@ -1686,7 +1934,12 @@
     ],
     "answer": 2,
     "explanation": "GROUPING은 집계로 만들어진 NULL인지 구분한다. 1이면 해당 집계 수준에서 그 열을 집계 기준으로 사용하지 않은 자리다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "오답 검토 · 「region이 반드시 원본 NULL이라는 뜻」를 택하면 핵심 판단 기준과 어긋난다. GROUPING(region)=1은 해당 소계/총계 행에서 region이 집계 기준에서 빠졌음을 나타낸다.",
+      "오답 검토 · 「행 수가 1이라는 뜻」를 택하면 핵심 판단 기준과 어긋난다. GROUPING(region)=1은 해당 소계/총계 행에서 region이 집계 기준에서 빠졌음을 나타낸다.",
+      "정답 근거 · GROUPING(region)=1은 해당 소계/총계 행에서 region이 집계 기준에서 빠졌음을 나타낸다.",
+      "오답 검토 · 「region 값이 1이라는 뜻」를 택하면 핵심 판단 기준과 어긋난다. GROUPING(region)=1은 해당 소계/총계 행에서 region이 집계 기준에서 빠졌음을 나타낸다."
+    ],
     "sql": "",
     "input_tables": [],
     "result_table": null,
@@ -1696,14 +1949,15 @@
       11
     ],
     "verification_method": "concept_reviewed",
-    "question_type": "개념 판단"
+    "question_type": "개념 판단",
+    "option_note_method": "concept_rule_based"
   },
   {
     "id": "qv3_0055",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_rollup",
     "topic_label": "ROLLUP·CUBE",
-    "difficulty": "미분류",
+    "difficulty": "상 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "GROUPING SETS ((A),(B))는 어떤 집계를 요청하는가?",
@@ -1715,7 +1969,12 @@
     ],
     "answer": 3,
     "explanation": "GROUPING SETS는 지정한 집계 수준만 선택적으로 생성한다. ((A),(B))면 A별과 B별 집계가 계산된다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "오답 검토 · 「집계 함수를 사용하지 않는다」를 택하면 핵심 판단 기준과 어긋난다. GROUPING SETS ((A),(B))는 A별과 B별만 집계하며 (A,B)나 전체 총계는 명시하지 않으면 포함되지 않는다.",
+      "오답 검토 · 「반드시 (A,B) 조합만」를 택하면 핵심 판단 기준과 어긋난다. GROUPING SETS ((A),(B))는 A별과 B별만 집계하며 (A,B)나 전체 총계는 명시하지 않으면 포함되지 않는다.",
+      "오답 검토 · 「오직 전체 총계」를 택하면 핵심 판단 기준과 어긋난다. GROUPING SETS ((A),(B))는 A별과 B별만 집계하며 (A,B)나 전체 총계는 명시하지 않으면 포함되지 않는다.",
+      "정답 근거 · GROUPING SETS ((A),(B))는 A별과 B별만 집계하며 (A,B)나 전체 총계는 명시하지 않으면 포함되지 않는다."
+    ],
     "sql": "",
     "input_tables": [],
     "result_table": null,
@@ -1725,14 +1984,15 @@
       11
     ],
     "verification_method": "concept_reviewed",
-    "question_type": "개념 판단"
+    "question_type": "개념 판단",
+    "option_note_method": "concept_rule_based"
   },
   {
     "id": "qv3_0056",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_hierarchy",
     "topic_label": "계층형 질의",
-    "difficulty": "미분류",
+    "difficulty": "하 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "Oracle 계층형 질의에서 START WITH가 하는 일은?",
@@ -1744,7 +2004,12 @@
     ],
     "answer": 0,
     "explanation": "START WITH는 루트 조건을 정의한다. 계층 확장은 CONNECT BY가 담당한다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "정답 근거 · START WITH는 계층의 시작 행을 선택하고 CONNECT BY가 하위 노드를 확장한다.",
+      "오답 검토 · 「모든 노드를 제거」를 택하면 핵심 판단 기준과 어긋난다. START WITH는 계층의 시작 행을 선택하고 CONNECT BY가 하위 노드를 확장한다.",
+      "오답 검토 · 「형제 노드만 정렬」를 택하면 핵심 판단 기준과 어긋난다. START WITH는 계층의 시작 행을 선택하고 CONNECT BY가 하위 노드를 확장한다.",
+      "오답 검토 · 「현재 LEVEL을 0으로 지정」를 택하면 핵심 판단 기준과 어긋난다. START WITH는 계층의 시작 행을 선택하고 CONNECT BY가 하위 노드를 확장한다."
+    ],
     "sql": "",
     "input_tables": [],
     "result_table": null,
@@ -1754,14 +2019,15 @@
       12
     ],
     "verification_method": "concept_reviewed",
-    "question_type": "개념 판단"
+    "question_type": "개념 판단",
+    "option_note_method": "concept_rule_based"
   },
   {
     "id": "qv3_0057",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_hierarchy",
     "topic_label": "계층형 질의",
-    "difficulty": "미분류",
+    "difficulty": "상 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "CONNECT BY PRIOR id = parent_id에서 PRIOR가 붙은 id는?",
@@ -1791,14 +2057,15 @@
       12
     ],
     "verification_method": "concept_reviewed",
-    "question_type": "개념 판단"
+    "question_type": "개념 판단",
+    "option_note_method": "hand_authored"
   },
   {
     "id": "qv3_0058",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_hierarchy",
     "topic_label": "계층형 질의",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "Oracle 계층형 질의 루트 노드의 LEVEL은?",
@@ -1810,7 +2077,12 @@
     ],
     "answer": 2,
     "explanation": "Oracle LEVEL 의사 컬럼은 시작 행이 1이며 하위 레벨로 갈수록 증가한다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "오답 검토 · 「-1」를 택하면 핵심 판단 기준과 어긋난다. Oracle 계층형 질의의 루트 LEVEL은 1이고 내려갈수록 2,3 순서로 증가한다.",
+      "오답 검토 · 「NULL」를 택하면 핵심 판단 기준과 어긋난다. Oracle 계층형 질의의 루트 LEVEL은 1이고 내려갈수록 2,3 순서로 증가한다.",
+      "정답 근거 · Oracle 계층형 질의의 루트 LEVEL은 1이고 내려갈수록 2,3 순서로 증가한다.",
+      "오답 검토 · 「0」를 택하면 핵심 판단 기준과 어긋난다. Oracle 계층형 질의의 루트 LEVEL은 1이고 내려갈수록 2,3 순서로 증가한다."
+    ],
     "sql": "",
     "input_tables": [],
     "result_table": null,
@@ -1820,14 +2092,15 @@
       12
     ],
     "verification_method": "concept_reviewed",
-    "question_type": "개념 판단"
+    "question_type": "개념 판단",
+    "option_note_method": "concept_rule_based"
   },
   {
     "id": "qv3_0059",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_hierarchy",
     "topic_label": "계층형 질의",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "ORDER SIBLINGS BY의 역할은?",
@@ -1839,7 +2112,12 @@
     ],
     "answer": 3,
     "explanation": "ORDER SIBLINGS BY는 계층 관계를 보존하면서 형제 노드 간의 표시 순서를 정한다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "오답 검토 · 「루트 노드를 삭제」를 택하면 핵심 판단 기준과 어긋난다. ORDER SIBLINGS BY는 계층 구조를 유지한 채 형제 노드만 정렬한다.",
+      "오답 검토 · 「전체 트리를 계층 무시하고 정렬」를 택하면 핵심 판단 기준과 어긋난다. ORDER SIBLINGS BY는 계층 구조를 유지한 채 형제 노드만 정렬한다.",
+      "오답 검토 · 「계층 조회를 중지」를 택하면 핵심 판단 기준과 어긋난다. ORDER SIBLINGS BY는 계층 구조를 유지한 채 형제 노드만 정렬한다.",
+      "정답 근거 · ORDER SIBLINGS BY는 계층 구조를 유지한 채 형제 노드만 정렬한다."
+    ],
     "sql": "",
     "input_tables": [],
     "result_table": null,
@@ -1849,14 +2127,15 @@
       12
     ],
     "verification_method": "concept_reviewed",
-    "question_type": "개념 판단"
+    "question_type": "개념 판단",
+    "option_note_method": "concept_rule_based"
   },
   {
     "id": "qv3_0060",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_function",
     "topic_label": "함수·CASE",
-    "difficulty": "미분류",
+    "difficulty": "하 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "COALESCE(NULL, 0, 7)의 결과는?",
@@ -1868,7 +2147,12 @@
     ],
     "answer": 0,
     "explanation": "COALESCE는 왼쪽부터 첫 번째 NULL이 아닌 값을 반환한다. NULL 다음의 0은 유효한 값이다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "정답 근거 · COALESCE는 왼쪽부터 첫 NULL 아닌 값을 선택하며 숫자 0도 정상 값이다.",
+      "오답 검토 · 「7」를 택하면 핵심 판단 기준과 어긋난다. COALESCE는 왼쪽부터 첫 NULL 아닌 값을 선택하며 숫자 0도 정상 값이다.",
+      "오답 검토 · 「NULL」를 택하면 핵심 판단 기준과 어긋난다. COALESCE는 왼쪽부터 첫 NULL 아닌 값을 선택하며 숫자 0도 정상 값이다.",
+      "오답 검토 · 「오류」를 택하면 핵심 판단 기준과 어긋난다. COALESCE는 왼쪽부터 첫 NULL 아닌 값을 선택하며 숫자 0도 정상 값이다."
+    ],
     "sql": "",
     "input_tables": [],
     "result_table": null,
@@ -1878,14 +2162,15 @@
       13
     ],
     "verification_method": "concept_reviewed",
-    "question_type": "개념 판단"
+    "question_type": "개념 판단",
+    "option_note_method": "concept_rule_based"
   },
   {
     "id": "qv3_0061",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_function",
     "topic_label": "함수·CASE",
-    "difficulty": "미분류",
+    "difficulty": "하 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "NULLIF(3,3)의 결과는?",
@@ -1897,7 +2182,12 @@
     ],
     "answer": 1,
     "explanation": "NULLIF(a,b)는 두 값이 같을 때 NULL을 반환하고 다를 때 첫 인자 a를 반환한다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "오답 검토 · 「0」를 택하면 핵심 판단 기준과 어긋난다. NULLIF(a,b)는 두 값이 같으면 NULL을, 다르면 a를 반환한다.",
+      "정답 근거 · NULLIF(a,b)는 두 값이 같으면 NULL을, 다르면 a를 반환한다.",
+      "오답 검토 · 「3」를 택하면 핵심 판단 기준과 어긋난다. NULLIF(a,b)는 두 값이 같으면 NULL을, 다르면 a를 반환한다.",
+      "오답 검토 · 「TRUE」를 택하면 핵심 판단 기준과 어긋난다. NULLIF(a,b)는 두 값이 같으면 NULL을, 다르면 a를 반환한다."
+    ],
     "sql": "",
     "input_tables": [],
     "result_table": null,
@@ -1907,14 +2197,15 @@
       13
     ],
     "verification_method": "concept_reviewed",
-    "question_type": "개념 판단"
+    "question_type": "개념 판단",
+    "option_note_method": "concept_rule_based"
   },
   {
     "id": "qv3_0062",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_function",
     "topic_label": "함수·CASE",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "Oracle NVL2(NULL, 10, 20)의 결과는?",
@@ -1926,7 +2217,12 @@
     ],
     "answer": 2,
     "explanation": "NVL2(expr,a,b)는 expr이 NULL이면 b를, NULL이 아니면 a를 반환한다. 여기서는 20이다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "오답 검토 · 「NULL」를 택하면 핵심 판단 기준과 어긋난다. NVL2(x,a,b)는 x가 NULL이면 b, NULL이 아니면 a를 반환한다.",
+      "오답 검토 · 「0」를 택하면 핵심 판단 기준과 어긋난다. NVL2(x,a,b)는 x가 NULL이면 b, NULL이 아니면 a를 반환한다.",
+      "정답 근거 · NVL2(x,a,b)는 x가 NULL이면 b, NULL이 아니면 a를 반환한다.",
+      "오답 검토 · 「10」를 택하면 핵심 판단 기준과 어긋난다. NVL2(x,a,b)는 x가 NULL이면 b, NULL이 아니면 a를 반환한다."
+    ],
     "sql": "",
     "input_tables": [],
     "result_table": null,
@@ -1936,14 +2232,15 @@
       13
     ],
     "verification_method": "concept_reviewed",
-    "question_type": "개념 판단"
+    "question_type": "개념 판단",
+    "option_note_method": "concept_rule_based"
   },
   {
     "id": "qv3_0063",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_function",
     "topic_label": "함수·CASE",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "CASE WHEN score>=60 THEN 'PASS' ELSE 'FAIL' END에서 score=59면?",
@@ -1955,7 +2252,12 @@
     ],
     "answer": 3,
     "explanation": "CASE 조건 59>=60이 FALSE이므로 ELSE 분기인 FAIL이 선택된다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "오답 검토 · 「TRUE」를 택하면 핵심 판단 기준과 어긋난다. CASE는 조건을 순서대로 평가한다. 59>=60은 FALSE이므로 ELSE의 FAIL이 나온다.",
+      "오답 검토 · 「PASS」를 택하면 핵심 판단 기준과 어긋난다. CASE는 조건을 순서대로 평가한다. 59>=60은 FALSE이므로 ELSE의 FAIL이 나온다.",
+      "오답 검토 · 「NULL」를 택하면 핵심 판단 기준과 어긋난다. CASE는 조건을 순서대로 평가한다. 59>=60은 FALSE이므로 ELSE의 FAIL이 나온다.",
+      "정답 근거 · CASE는 조건을 순서대로 평가한다. 59>=60은 FALSE이므로 ELSE의 FAIL이 나온다."
+    ],
     "sql": "",
     "input_tables": [],
     "result_table": null,
@@ -1965,14 +2267,15 @@
       13
     ],
     "verification_method": "concept_reviewed",
-    "question_type": "개념 판단"
+    "question_type": "개념 판단",
+    "option_note_method": "concept_rule_based"
   },
   {
     "id": "qv3_0064",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_function",
     "topic_label": "함수·CASE",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "SUBSTR('DATABASE',1,4)의 결과는?",
@@ -1984,7 +2287,12 @@
     ],
     "answer": 0,
     "explanation": "Oracle SQL에서 SUBSTR는 1부터 위치를 세며 1부터 4글자를 가져오므로 DATA다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "정답 근거 · Oracle SUBSTR의 위치는 1부터 시작한다. DATABASE의 첫 네 글자는 DATA다.",
+      "오답 검토 · 「ATAB」를 택하면 핵심 판단 기준과 어긋난다. Oracle SUBSTR의 위치는 1부터 시작한다. DATABASE의 첫 네 글자는 DATA다.",
+      "오답 검토 · 「BASE」를 택하면 핵심 판단 기준과 어긋난다. Oracle SUBSTR의 위치는 1부터 시작한다. DATABASE의 첫 네 글자는 DATA다.",
+      "오답 검토 · 「DATAB」를 택하면 핵심 판단 기준과 어긋난다. Oracle SUBSTR의 위치는 1부터 시작한다. DATABASE의 첫 네 글자는 DATA다."
+    ],
     "sql": "",
     "input_tables": [],
     "result_table": null,
@@ -1994,14 +2302,15 @@
       13
     ],
     "verification_method": "concept_reviewed",
-    "question_type": "개념 판단"
+    "question_type": "개념 판단",
+    "option_note_method": "concept_rule_based"
   },
   {
     "id": "qv3_0065",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_set",
     "topic_label": "집합 연산자",
-    "difficulty": "미분류",
+    "difficulty": "상 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "UNION과 UNION ALL의 차이는?",
@@ -2030,14 +2339,15 @@
     "verified": true,
     "linked_chapters": [],
     "verification_method": "concept_reviewed",
-    "question_type": "개념 판단"
+    "question_type": "개념 판단",
+    "option_note_method": "hand_authored"
   },
   {
     "id": "qv3_0066",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_set",
     "topic_label": "집합 연산자",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "INTERSECT가 반환하는 행은?",
@@ -2049,7 +2359,12 @@
     ],
     "answer": 2,
     "explanation": "INTERSECT는 두 결과 집합에 공통으로 존재하는 행을 반환한다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "오답 검토 · 「두 번째 결과에만 있는 행」를 택하면 핵심 판단 기준과 어긋난다. INTERSECT는 양쪽 결과에 공통으로 존재하는 행을 반환한다.",
+      "오답 검토 · 「두 결과의 모든 행」를 택하면 핵심 판단 기준과 어긋난다. INTERSECT는 양쪽 결과에 공통으로 존재하는 행을 반환한다.",
+      "정답 근거 · INTERSECT는 양쪽 결과에 공통으로 존재하는 행을 반환한다.",
+      "오답 검토 · 「첫 번째 결과만」를 택하면 핵심 판단 기준과 어긋난다. INTERSECT는 양쪽 결과에 공통으로 존재하는 행을 반환한다."
+    ],
     "sql": "",
     "input_tables": [],
     "result_table": null,
@@ -2057,14 +2372,15 @@
     "verified": true,
     "linked_chapters": [],
     "verification_method": "concept_reviewed",
-    "question_type": "개념 판단"
+    "question_type": "개념 판단",
+    "option_note_method": "concept_rule_based"
   },
   {
     "id": "qv3_0067",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_set",
     "topic_label": "집합 연산자",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "EXCEPT 또는 MINUS의 기본 의미는?",
@@ -2076,7 +2392,12 @@
     ],
     "answer": 3,
     "explanation": "차집합은 왼쪽 결과 집합에는 있지만 오른쪽에는 없는 행을 구한다. 키워드는 DBMS에 따라 EXCEPT/MINUS다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "오답 검토 · 「중복 행을 두 배로 만든다」를 택하면 핵심 판단 기준과 어긋난다. EXCEPT/MINUS는 왼쪽 결과에서 오른쪽 결과와 중복되는 값을 제외하는 차집합이다.",
+      "오답 검토 · 「오른쪽 결과에만 있는 행」를 택하면 핵심 판단 기준과 어긋난다. EXCEPT/MINUS는 왼쪽 결과에서 오른쪽 결과와 중복되는 값을 제외하는 차집합이다.",
+      "오답 검토 · 「공통으로 있는 행」를 택하면 핵심 판단 기준과 어긋난다. EXCEPT/MINUS는 왼쪽 결과에서 오른쪽 결과와 중복되는 값을 제외하는 차집합이다.",
+      "정답 근거 · EXCEPT/MINUS는 왼쪽 결과에서 오른쪽 결과와 중복되는 값을 제외하는 차집합이다."
+    ],
     "sql": "",
     "input_tables": [],
     "result_table": null,
@@ -2084,14 +2405,15 @@
     "verified": true,
     "linked_chapters": [],
     "verification_method": "concept_reviewed",
-    "question_type": "개념 판단"
+    "question_type": "개념 판단",
+    "option_note_method": "concept_rule_based"
   },
   {
     "id": "qv3_0068",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_pivot",
     "topic_label": "PIVOT·정규표현식",
-    "difficulty": "미분류",
+    "difficulty": "상 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "PIVOT의 기본 역할은?",
@@ -2119,14 +2441,15 @@
     "verified": true,
     "linked_chapters": [],
     "verification_method": "concept_reviewed",
-    "question_type": "개념 판단"
+    "question_type": "개념 판단",
+    "option_note_method": "hand_authored"
   },
   {
     "id": "qv3_0069",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_pivot",
     "topic_label": "PIVOT·정규표현식",
-    "difficulty": "미분류",
+    "difficulty": "상 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "UNPIVOT의 일반적인 역할은?",
@@ -2138,7 +2461,12 @@
     ],
     "answer": 1,
     "explanation": "UNPIVOT은 열 형태로 펼쳐진 데이터를 항목명과 값의 여러 행으로 바꾸는 연산이다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "오답 검토 · 「행을 반드시 하나로 합친다」를 택하면 핵심 판단 기준과 어긋난다. UNPIVOT은 여러 열을 항목·값 형태의 행으로 변환한다. PIVOT과 반대 방향이다.",
+      "정답 근거 · UNPIVOT은 여러 열을 항목·값 형태의 행으로 변환한다. PIVOT과 반대 방향이다.",
+      "오답 검토 · 「항상 UPDATE를 실행한다」를 택하면 핵심 판단 기준과 어긋난다. UNPIVOT은 여러 열을 항목·값 형태의 행으로 변환한다. PIVOT과 반대 방향이다.",
+      "오답 검토 · 「집합 교집합을 계산한다」를 택하면 핵심 판단 기준과 어긋난다. UNPIVOT은 여러 열을 항목·값 형태의 행으로 변환한다. PIVOT과 반대 방향이다."
+    ],
     "sql": "",
     "input_tables": [],
     "result_table": null,
@@ -2146,14 +2474,15 @@
     "verified": true,
     "linked_chapters": [],
     "verification_method": "concept_reviewed",
-    "question_type": "개념 판단"
+    "question_type": "개념 판단",
+    "option_note_method": "concept_rule_based"
   },
   {
     "id": "qv3_0070",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_pivot",
     "topic_label": "PIVOT·정규표현식",
-    "difficulty": "미분류",
+    "difficulty": "상 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "정규표현식 ^A의 의미는?",
@@ -2181,14 +2510,15 @@
     "verified": true,
     "linked_chapters": [],
     "verification_method": "concept_reviewed",
-    "question_type": "개념 판단"
+    "question_type": "개념 판단",
+    "option_note_method": "hand_authored"
   },
   {
     "id": "qv3_0071",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_pivot",
     "topic_label": "PIVOT·정규표현식",
-    "difficulty": "미분류",
+    "difficulty": "상 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL 중심",
     "stem": "정규표현식 [0-9]+의 기본 의미는?",
@@ -2200,7 +2530,12 @@
     ],
     "answer": 3,
     "explanation": "[0-9]는 숫자 한 글자를 나타내며 +는 앞 패턴이 한 번 이상 반복됨을 의미한다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "오답 검토 · 「0부터 9 사이 값 한 개만」를 택하면 핵심 판단 기준과 어긋난다. 정규표현식 [0-9]는 숫자 한 문자, +는 앞 패턴이 한 번 이상 반복됨을 뜻한다.",
+      "오답 검토 · 「숫자 문자가 정확히 0회」를 택하면 핵심 판단 기준과 어긋난다. 정규표현식 [0-9]는 숫자 한 문자, +는 앞 패턴이 한 번 이상 반복됨을 뜻한다.",
+      "오답 검토 · 「숫자가 아닌 문자만」를 택하면 핵심 판단 기준과 어긋난다. 정규표현식 [0-9]는 숫자 한 문자, +는 앞 패턴이 한 번 이상 반복됨을 뜻한다.",
+      "정답 근거 · 정규표현식 [0-9]는 숫자 한 문자, +는 앞 패턴이 한 번 이상 반복됨을 뜻한다."
+    ],
     "sql": "",
     "input_tables": [],
     "result_table": null,
@@ -2208,14 +2543,15 @@
     "verified": true,
     "linked_chapters": [],
     "verification_method": "concept_reviewed",
-    "question_type": "개념 판단"
+    "question_type": "개념 판단",
+    "option_note_method": "concept_rule_based"
   },
   {
     "id": "qv3_0072",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_null",
     "topic_label": "NULL·3값 논리",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "다음 SQL의 COUNT(*) 값은? (조건: v >= 3) (데이터 세트 1)",
@@ -2227,7 +2563,12 @@
     ],
     "answer": 3,
     "explanation": "WHERE는 v >= 3인 행만 남기고 COUNT(*)는 해당 행 수를 센다. 해당 데이터를 SQL 순서대로 계산한 결과는 5이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "7은(는) 정답보다 2 큰 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 5이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다.",
+      "6은(는) 정답보다 1 큰 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 5이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다.",
+      "4은(는) 정답보다 1 작은 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 5이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다.",
+      "정답 · 실제 검증된 SQL의 출력은 1행이고, 문제에서 요구한 계산값은 5이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다."
+    ],
     "sql": "SELECT COUNT(*) FROM T WHERE v >= 3",
     "input_tables": [
       {
@@ -2289,14 +2630,15 @@
           5
         ]
       ]
-    }
+    },
+    "option_note_method": "sql_result_derived"
   },
   {
     "id": "qv3_0073",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_null",
     "topic_label": "NULL·3값 논리",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "다음 SQL의 COUNT(v) 값은? (데이터 세트 1)",
@@ -2308,7 +2650,12 @@
     ],
     "answer": 1,
     "explanation": "COUNT(v)는 NULL을 제외하고 v가 존재하는 행만 계산한다. 해당 데이터를 SQL 순서대로 계산한 결과는 6이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "7은(는) 정답보다 1 큰 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 6이다. COUNT(열)은 NULL이 아닌 값만 세며, WHERE가 있으면 먼저 조건을 통과한 행만 집계한다.",
+      "정답 · 실제 검증된 SQL의 출력은 1행이고, 문제에서 요구한 계산값은 6이다. COUNT(열)은 NULL이 아닌 값만 세며, WHERE가 있으면 먼저 조건을 통과한 행만 집계한다.",
+      "5은(는) 정답보다 1 작은 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 6이다. COUNT(열)은 NULL이 아닌 값만 세며, WHERE가 있으면 먼저 조건을 통과한 행만 집계한다.",
+      "8은(는) 정답보다 2 큰 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 6이다. COUNT(열)은 NULL이 아닌 값만 세며, WHERE가 있으면 먼저 조건을 통과한 행만 집계한다."
+    ],
     "sql": "SELECT COUNT(v) FROM T",
     "input_tables": [
       {
@@ -2370,14 +2717,15 @@
           6
         ]
       ]
-    }
+    },
+    "option_note_method": "sql_result_derived"
   },
   {
     "id": "qv3_0074",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_group",
     "topic_label": "GROUP BY·집계",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "다음 SQL의 COUNT(*) 값은? (데이터 세트 1)",
@@ -2389,7 +2737,12 @@
     ],
     "answer": 0,
     "explanation": "id=2 조건과 amount IS NOT NULL을 동시에 만족하는 행만 센다. 해당 데이터를 SQL 순서대로 계산한 결과는 1이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "정답 · 실제 검증된 SQL의 출력은 1행이고, 문제에서 요구한 계산값은 1이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다.",
+      "2은(는) 정답보다 1 큰 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 1이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다.",
+      "3은(는) 정답보다 2 큰 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 1이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다.",
+      "0은(는) 정답보다 1 작은 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 1이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다."
+    ],
     "sql": "SELECT COUNT(*) FROM T WHERE id = 2 AND amount IS NOT NULL",
     "input_tables": [
       {
@@ -2460,14 +2813,15 @@
           1
         ]
       ]
-    }
+    },
+    "option_note_method": "sql_result_derived"
   },
   {
     "id": "qv3_0075",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_group",
     "topic_label": "GROUP BY·집계",
-    "difficulty": "미분류",
+    "difficulty": "상 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "다음 GROUP BY/HAVING SQL에서 결과 그룹은 몇 행인가? (HAVING COUNT(*) >= 2) (데이터 세트 1)",
@@ -2479,7 +2833,12 @@
     ],
     "answer": 0,
     "explanation": "GROUP BY id로 묶고 HAVING은 그룹별 행 수로 판단한다. 해당 데이터를 SQL 순서대로 계산한 결과는 3행이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "정답 · 실제 검증된 SQL의 출력은 3행이고, 문제에서 요구한 계산값은 3이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다.",
+      "2행은(는) 정답보다 1 작은 값이다. 실제 SQL 출력은 3행, 이 문제의 계산 기준값은 3이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다.",
+      "5행은(는) 정답보다 2 큰 값이다. 실제 SQL 출력은 3행, 이 문제의 계산 기준값은 3이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다.",
+      "4행은(는) 정답보다 1 큰 값이다. 실제 SQL 출력은 3행, 이 문제의 계산 기준값은 3이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다."
+    ],
     "sql": "SELECT id, SUM(amount) FROM T GROUP BY id HAVING COUNT(*) >= 2",
     "input_tables": [
       {
@@ -2564,14 +2923,15 @@
           40
         ]
       ]
-    }
+    },
+    "option_note_method": "sql_result_derived"
   },
   {
     "id": "qv3_0076",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_order",
     "topic_label": "정렬·TOP-N",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "중복 제거 및 정렬 후 LIMIT 2를 적용하면 몇 행이 반환되는가? (데이터 세트 1)",
@@ -2583,7 +2943,12 @@
     ],
     "answer": 1,
     "explanation": "WHERE로 먼저 거르고 DISTINCT로 중복을 제거하며, 정렬 후 LIMIT 2를 적용한다. 해당 데이터를 SQL 순서대로 계산한 결과는 2행이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "3행은(는) 정답보다 1 큰 값이다. 실제 SQL 출력은 2행, 이 문제의 계산 기준값은 2이다. DISTINCT·집합 연산의 중복 제거와 최종 SQL 출력 행을 구분해야 한다.",
+      "정답 · 실제 검증된 SQL의 출력은 2행이고, 문제에서 요구한 계산값은 2이다. DISTINCT·집합 연산의 중복 제거와 최종 SQL 출력 행을 구분해야 한다.",
+      "1행은(는) 정답보다 1 작은 값이다. 실제 SQL 출력은 2행, 이 문제의 계산 기준값은 2이다. DISTINCT·집합 연산의 중복 제거와 최종 SQL 출력 행을 구분해야 한다.",
+      "4행은(는) 정답보다 2 큰 값이다. 실제 SQL 출력은 2행, 이 문제의 계산 기준값은 2이다. DISTINCT·집합 연산의 중복 제거와 최종 SQL 출력 행을 구분해야 한다."
+    ],
     "sql": "SELECT DISTINCT score FROM T WHERE score >= 1 ORDER BY score DESC LIMIT 2",
     "input_tables": [
       {
@@ -2652,14 +3017,15 @@
           2
         ]
       ]
-    }
+    },
+    "option_note_method": "sql_result_derived"
   },
   {
     "id": "qv3_0077",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_function",
     "topic_label": "함수·CASE",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "CASE 결과를 SUM한 값은? (score >= 7이면 1) (데이터 세트 1)",
@@ -2671,7 +3037,12 @@
     ],
     "answer": 2,
     "explanation": "CASE가 각 행의 조건에 따라 1 또는 0을 반환하고 이를 모두 합산한다. 해당 데이터를 SQL 순서대로 계산한 결과는 4이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "3은(는) 정답보다 1 작은 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 4이다. CASE의 행별 선택 또는 COALESCE의 NULL 치환을 먼저 수행한 다음 집계해야 한다.",
+      "6은(는) 정답보다 2 큰 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 4이다. CASE의 행별 선택 또는 COALESCE의 NULL 치환을 먼저 수행한 다음 집계해야 한다.",
+      "정답 · 실제 검증된 SQL의 출력은 1행이고, 문제에서 요구한 계산값은 4이다. CASE의 행별 선택 또는 COALESCE의 NULL 치환을 먼저 수행한 다음 집계해야 한다.",
+      "5은(는) 정답보다 1 큰 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 4이다. CASE의 행별 선택 또는 COALESCE의 NULL 치환을 먼저 수행한 다음 집계해야 한다."
+    ],
     "sql": "SELECT SUM(CASE WHEN score >= 7 THEN 1 ELSE 0 END) FROM T",
     "input_tables": [
       {
@@ -2733,14 +3104,15 @@
           4
         ]
       ]
-    }
+    },
+    "option_note_method": "sql_result_derived"
   },
   {
     "id": "qv3_0078",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_function",
     "topic_label": "함수·CASE",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "NULL을 0으로 바꾼 후 SUM한 값은? (데이터 세트 1)",
@@ -2752,7 +3124,12 @@
     ],
     "answer": 0,
     "explanation": "COALESCE(v,0)으로 NULL만 0으로 바꾸고 나머지 정수를 모두 합산한다. 해당 데이터를 SQL 순서대로 계산한 결과는 17이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "정답 · 실제 검증된 SQL의 출력은 1행이고, 문제에서 요구한 계산값은 17이다. CASE의 행별 선택 또는 COALESCE의 NULL 치환을 먼저 수행한 다음 집계해야 한다.",
+      "16은(는) 정답보다 1 작은 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 17이다. CASE의 행별 선택 또는 COALESCE의 NULL 치환을 먼저 수행한 다음 집계해야 한다.",
+      "19은(는) 정답보다 2 큰 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 17이다. CASE의 행별 선택 또는 COALESCE의 NULL 치환을 먼저 수행한 다음 집계해야 한다.",
+      "18은(는) 정답보다 1 큰 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 17이다. CASE의 행별 선택 또는 COALESCE의 NULL 치환을 먼저 수행한 다음 집계해야 한다."
+    ],
     "sql": "SELECT SUM(COALESCE(v,0)) FROM T",
     "input_tables": [
       {
@@ -2814,14 +3191,15 @@
           17
         ]
       ]
-    }
+    },
+    "option_note_method": "sql_result_derived"
   },
   {
     "id": "qv3_0079",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_subquery",
     "topic_label": "서브쿼리",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "EXISTS 조건을 만족하는 결과 행 수는? (값 >= 5) (데이터 세트 1)",
@@ -2833,7 +3211,12 @@
     ],
     "answer": 3,
     "explanation": "외부 행의 값과 일치하며 기준 이상인 내부 행이 존재하면 해당 외부 행을 반환한다. 해당 데이터를 SQL 순서대로 계산한 결과는 2행이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "3행은(는) 정답보다 1 큰 값이다. 실제 SQL 출력은 2행, 이 문제의 계산 기준값은 2이다. 입력 표에 SQL 조건을 차례대로 적용하고 실제 출력 결과와 비교해야 한다.",
+      "4행은(는) 정답보다 2 큰 값이다. 실제 SQL 출력은 2행, 이 문제의 계산 기준값은 2이다. 입력 표에 SQL 조건을 차례대로 적용하고 실제 출력 결과와 비교해야 한다.",
+      "1행은(는) 정답보다 1 작은 값이다. 실제 SQL 출력은 2행, 이 문제의 계산 기준값은 2이다. 입력 표에 SQL 조건을 차례대로 적용하고 실제 출력 결과와 비교해야 한다.",
+      "정답 · 실제 검증된 SQL의 출력은 2행이고, 문제에서 요구한 계산값은 2이다. 입력 표에 SQL 조건을 차례대로 적용하고 실제 출력 결과와 비교해야 한다."
+    ],
     "sql": "SELECT v FROM T a WHERE EXISTS(SELECT 1 FROM T b WHERE b.v = a.v AND b.v >= 5)",
     "input_tables": [
       {
@@ -2898,14 +3281,15 @@
           7
         ]
       ]
-    }
+    },
+    "option_note_method": "sql_result_derived"
   },
   {
     "id": "qv3_0080",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_set",
     "topic_label": "집합 연산자",
-    "difficulty": "미분류",
+    "difficulty": "상 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "다음 UNION 결과 행 수는? (데이터 세트 1)",
@@ -2917,7 +3301,12 @@
     ],
     "answer": 2,
     "explanation": "UNION은 두 조건을 합친 뒤 동일한 값의 중복을 제거한다. 해당 데이터를 SQL 순서대로 계산한 결과는 4행이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "5행은(는) 정답보다 1 큰 값이다. 실제 SQL 출력은 4행, 이 문제의 계산 기준값은 4이다. DISTINCT·집합 연산의 중복 제거와 최종 SQL 출력 행을 구분해야 한다.",
+      "3행은(는) 정답보다 1 작은 값이다. 실제 SQL 출력은 4행, 이 문제의 계산 기준값은 4이다. DISTINCT·집합 연산의 중복 제거와 최종 SQL 출력 행을 구분해야 한다.",
+      "정답 · 실제 검증된 SQL의 출력은 4행이고, 문제에서 요구한 계산값은 4이다. DISTINCT·집합 연산의 중복 제거와 최종 SQL 출력 행을 구분해야 한다.",
+      "6행은(는) 정답보다 2 큰 값이다. 실제 SQL 출력은 4행, 이 문제의 계산 기준값은 4이다. DISTINCT·집합 연산의 중복 제거와 최종 SQL 출력 행을 구분해야 한다."
+    ],
     "sql": "SELECT v FROM T WHERE v <= 2 UNION SELECT v FROM T WHERE v >= 3",
     "input_tables": [
       {
@@ -2986,14 +3375,15 @@
           5
         ]
       ]
-    }
+    },
+    "option_note_method": "sql_result_derived"
   },
   {
     "id": "qv3_0081",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_subquery",
     "topic_label": "서브쿼리",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "IN 서브쿼리 조건의 결과 행 수는? (기준 >= 5) (데이터 세트 1)",
@@ -3005,7 +3395,12 @@
     ],
     "answer": 0,
     "explanation": "기준 이상의 값이 IN 집합에 들어가며 외부 쿼리는 해당 값을 가진 모든 행을 반환한다. 해당 데이터를 SQL 순서대로 계산한 결과는 1행이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "정답 · 실제 검증된 SQL의 출력은 1행이고, 문제에서 요구한 계산값은 1이다. 서브쿼리 결과와 NULL의 3값 논리를 반영한 후 남는 행 수를 계산해야 한다.",
+      "0행은(는) 정답보다 1 작은 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 1이다. 서브쿼리 결과와 NULL의 3값 논리를 반영한 후 남는 행 수를 계산해야 한다.",
+      "2행은(는) 정답보다 1 큰 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 1이다. 서브쿼리 결과와 NULL의 3값 논리를 반영한 후 남는 행 수를 계산해야 한다.",
+      "3행은(는) 정답보다 2 큰 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 1이다. 서브쿼리 결과와 NULL의 3값 논리를 반영한 후 남는 행 수를 계산해야 한다."
+    ],
     "sql": "SELECT v FROM T WHERE v IN (SELECT v FROM T WHERE v >= 5)",
     "input_tables": [
       {
@@ -3067,14 +3462,15 @@
           5
         ]
       ]
-    }
+    },
+    "option_note_method": "sql_result_derived"
   },
   {
     "id": "qv3_0082",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_order",
     "topic_label": "정렬·TOP-N",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "COUNT(DISTINCT v) 결과는? (데이터 세트 1)",
@@ -3086,7 +3482,12 @@
     ],
     "answer": 2,
     "explanation": "중복 v 값은 한 번만 세므로 값의 종류 수가 된다. 해당 데이터를 SQL 순서대로 계산한 결과는 4이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "6은(는) 정답보다 2 큰 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 4이다. DISTINCT·집합 연산의 중복 제거와 최종 SQL 출력 행을 구분해야 한다.",
+      "5은(는) 정답보다 1 큰 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 4이다. DISTINCT·집합 연산의 중복 제거와 최종 SQL 출력 행을 구분해야 한다.",
+      "정답 · 실제 검증된 SQL의 출력은 1행이고, 문제에서 요구한 계산값은 4이다. DISTINCT·집합 연산의 중복 제거와 최종 SQL 출력 행을 구분해야 한다.",
+      "3은(는) 정답보다 1 작은 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 4이다. DISTINCT·집합 연산의 중복 제거와 최종 SQL 출력 행을 구분해야 한다."
+    ],
     "sql": "SELECT COUNT(DISTINCT v) FROM T",
     "input_tables": [
       {
@@ -3149,14 +3550,15 @@
           4
         ]
       ]
-    }
+    },
+    "option_note_method": "sql_result_derived"
   },
   {
     "id": "qv3_0083",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_null",
     "topic_label": "NULL·3값 논리",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "OR 필터를 만족하는 행 수는? (v > 4 또는 v=0) (데이터 세트 1)",
@@ -3168,7 +3570,12 @@
     ],
     "answer": 3,
     "explanation": "OR 조건은 둘 중 하나라도 TRUE인 행을 통과시킨다. 중복 조건을 만족해도 한 행은 한 번 센다. 해당 데이터를 SQL 순서대로 계산한 결과는 3이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "5은(는) 정답보다 2 큰 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 3이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다.",
+      "2은(는) 정답보다 1 작은 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 3이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다.",
+      "4은(는) 정답보다 1 큰 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 3이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다.",
+      "정답 · 실제 검증된 SQL의 출력은 1행이고, 문제에서 요구한 계산값은 3이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다."
+    ],
     "sql": "SELECT COUNT(*) FROM T WHERE v > 4 OR v = 0",
     "input_tables": [
       {
@@ -3230,14 +3637,15 @@
           3
         ]
       ]
-    }
+    },
+    "option_note_method": "sql_result_derived"
   },
   {
     "id": "qv3_0084",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_null",
     "topic_label": "NULL·3값 논리",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "다음 SQL의 COUNT(*) 값은? (조건: v >= 6) (데이터 세트 2)",
@@ -3249,7 +3657,12 @@
     ],
     "answer": 1,
     "explanation": "WHERE는 v >= 6인 행만 남기고 COUNT(*)는 해당 행 수를 센다. 해당 데이터를 SQL 순서대로 계산한 결과는 2이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "3은(는) 정답보다 1 큰 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 2이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다.",
+      "정답 · 실제 검증된 SQL의 출력은 1행이고, 문제에서 요구한 계산값은 2이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다.",
+      "4은(는) 정답보다 2 큰 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 2이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다.",
+      "1은(는) 정답보다 1 작은 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 2이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다."
+    ],
     "sql": "SELECT COUNT(*) FROM T WHERE v >= 6",
     "input_tables": [
       {
@@ -3311,14 +3724,15 @@
           2
         ]
       ]
-    }
+    },
+    "option_note_method": "sql_result_derived"
   },
   {
     "id": "qv3_0085",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_null",
     "topic_label": "NULL·3값 논리",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "다음 SQL의 COUNT(v) 값은? (데이터 세트 2)",
@@ -3330,7 +3744,12 @@
     ],
     "answer": 3,
     "explanation": "COUNT(v)는 NULL을 제외하고 v가 존재하는 행만 계산한다. 해당 데이터를 SQL 순서대로 계산한 결과는 6이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "7은(는) 정답보다 1 큰 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 6이다. COUNT(열)은 NULL이 아닌 값만 세며, WHERE가 있으면 먼저 조건을 통과한 행만 집계한다.",
+      "5은(는) 정답보다 1 작은 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 6이다. COUNT(열)은 NULL이 아닌 값만 세며, WHERE가 있으면 먼저 조건을 통과한 행만 집계한다.",
+      "8은(는) 정답보다 2 큰 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 6이다. COUNT(열)은 NULL이 아닌 값만 세며, WHERE가 있으면 먼저 조건을 통과한 행만 집계한다.",
+      "정답 · 실제 검증된 SQL의 출력은 1행이고, 문제에서 요구한 계산값은 6이다. COUNT(열)은 NULL이 아닌 값만 세며, WHERE가 있으면 먼저 조건을 통과한 행만 집계한다."
+    ],
     "sql": "SELECT COUNT(v) FROM T",
     "input_tables": [
       {
@@ -3392,14 +3811,15 @@
           6
         ]
       ]
-    }
+    },
+    "option_note_method": "sql_result_derived"
   },
   {
     "id": "qv3_0086",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_group",
     "topic_label": "GROUP BY·집계",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "다음 SQL의 COUNT(*) 값은? (데이터 세트 2)",
@@ -3411,7 +3831,12 @@
     ],
     "answer": 1,
     "explanation": "id=2 조건과 amount IS NOT NULL을 동시에 만족하는 행만 센다. 해당 데이터를 SQL 순서대로 계산한 결과는 3이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "2은(는) 정답보다 1 작은 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 3이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다.",
+      "정답 · 실제 검증된 SQL의 출력은 1행이고, 문제에서 요구한 계산값은 3이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다.",
+      "5은(는) 정답보다 2 큰 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 3이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다.",
+      "4은(는) 정답보다 1 큰 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 3이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다."
+    ],
     "sql": "SELECT COUNT(*) FROM T WHERE id = 2 AND amount IS NOT NULL",
     "input_tables": [
       {
@@ -3482,14 +3907,15 @@
           3
         ]
       ]
-    }
+    },
+    "option_note_method": "sql_result_derived"
   },
   {
     "id": "qv3_0087",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_group",
     "topic_label": "GROUP BY·집계",
-    "difficulty": "미분류",
+    "difficulty": "상 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "다음 GROUP BY/HAVING SQL에서 결과 그룹은 몇 행인가? (HAVING COUNT(*) >= 4) (데이터 세트 2)",
@@ -3501,7 +3927,12 @@
     ],
     "answer": 3,
     "explanation": "GROUP BY id로 묶고 HAVING은 그룹별 행 수로 판단한다. 해당 데이터를 SQL 순서대로 계산한 결과는 0행이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "2행은(는) 정답보다 2 큰 값이다. 실제 SQL 출력은 0행, 이 문제의 계산 기준값은 0이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다.",
+      "3행은(는) 정답보다 3 큰 값이다. 실제 SQL 출력은 0행, 이 문제의 계산 기준값은 0이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다.",
+      "1행은(는) 정답보다 1 큰 값이다. 실제 SQL 출력은 0행, 이 문제의 계산 기준값은 0이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다.",
+      "정답 · 실제 검증된 SQL의 출력은 0행이고, 문제에서 요구한 계산값은 0이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다."
+    ],
     "sql": "SELECT id, SUM(amount) FROM T GROUP BY id HAVING COUNT(*) >= 4",
     "input_tables": [
       {
@@ -3573,14 +4004,15 @@
         "SUM(amount)"
       ],
       "rows": []
-    }
+    },
+    "option_note_method": "sql_result_derived"
   },
   {
     "id": "qv3_0088",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_order",
     "topic_label": "정렬·TOP-N",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "중복 제거 및 정렬 후 LIMIT 2를 적용하면 몇 행이 반환되는가? (데이터 세트 2)",
@@ -3592,7 +4024,12 @@
     ],
     "answer": 1,
     "explanation": "WHERE로 먼저 거르고 DISTINCT로 중복을 제거하며, 정렬 후 LIMIT 2를 적용한다. 해당 데이터를 SQL 순서대로 계산한 결과는 2행이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "1행은(는) 정답보다 1 작은 값이다. 실제 SQL 출력은 2행, 이 문제의 계산 기준값은 2이다. DISTINCT·집합 연산의 중복 제거와 최종 SQL 출력 행을 구분해야 한다.",
+      "정답 · 실제 검증된 SQL의 출력은 2행이고, 문제에서 요구한 계산값은 2이다. DISTINCT·집합 연산의 중복 제거와 최종 SQL 출력 행을 구분해야 한다.",
+      "3행은(는) 정답보다 1 큰 값이다. 실제 SQL 출력은 2행, 이 문제의 계산 기준값은 2이다. DISTINCT·집합 연산의 중복 제거와 최종 SQL 출력 행을 구분해야 한다.",
+      "4행은(는) 정답보다 2 큰 값이다. 실제 SQL 출력은 2행, 이 문제의 계산 기준값은 2이다. DISTINCT·집합 연산의 중복 제거와 최종 SQL 출력 행을 구분해야 한다."
+    ],
     "sql": "SELECT DISTINCT score FROM T WHERE score >= 1 ORDER BY score DESC LIMIT 2",
     "input_tables": [
       {
@@ -3661,14 +4098,15 @@
           3
         ]
       ]
-    }
+    },
+    "option_note_method": "sql_result_derived"
   },
   {
     "id": "qv3_0089",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_function",
     "topic_label": "함수·CASE",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "CASE 결과를 SUM한 값은? (score >= 5이면 1) (데이터 세트 2)",
@@ -3680,7 +4118,12 @@
     ],
     "answer": 2,
     "explanation": "CASE가 각 행의 조건에 따라 1 또는 0을 반환하고 이를 모두 합산한다. 해당 데이터를 SQL 순서대로 계산한 결과는 3이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "2은(는) 정답보다 1 작은 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 3이다. CASE의 행별 선택 또는 COALESCE의 NULL 치환을 먼저 수행한 다음 집계해야 한다.",
+      "4은(는) 정답보다 1 큰 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 3이다. CASE의 행별 선택 또는 COALESCE의 NULL 치환을 먼저 수행한 다음 집계해야 한다.",
+      "정답 · 실제 검증된 SQL의 출력은 1행이고, 문제에서 요구한 계산값은 3이다. CASE의 행별 선택 또는 COALESCE의 NULL 치환을 먼저 수행한 다음 집계해야 한다.",
+      "5은(는) 정답보다 2 큰 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 3이다. CASE의 행별 선택 또는 COALESCE의 NULL 치환을 먼저 수행한 다음 집계해야 한다."
+    ],
     "sql": "SELECT SUM(CASE WHEN score >= 5 THEN 1 ELSE 0 END) FROM T",
     "input_tables": [
       {
@@ -3742,14 +4185,15 @@
           3
         ]
       ]
-    }
+    },
+    "option_note_method": "sql_result_derived"
   },
   {
     "id": "qv3_0090",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_function",
     "topic_label": "함수·CASE",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "NULL을 0으로 바꾼 후 SUM한 값은? (데이터 세트 2)",
@@ -3761,7 +4205,12 @@
     ],
     "answer": 2,
     "explanation": "COALESCE(v,0)으로 NULL만 0으로 바꾸고 나머지 정수를 모두 합산한다. 해당 데이터를 SQL 순서대로 계산한 결과는 14이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "13은(는) 정답보다 1 작은 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 14이다. CASE의 행별 선택 또는 COALESCE의 NULL 치환을 먼저 수행한 다음 집계해야 한다.",
+      "15은(는) 정답보다 1 큰 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 14이다. CASE의 행별 선택 또는 COALESCE의 NULL 치환을 먼저 수행한 다음 집계해야 한다.",
+      "정답 · 실제 검증된 SQL의 출력은 1행이고, 문제에서 요구한 계산값은 14이다. CASE의 행별 선택 또는 COALESCE의 NULL 치환을 먼저 수행한 다음 집계해야 한다.",
+      "16은(는) 정답보다 2 큰 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 14이다. CASE의 행별 선택 또는 COALESCE의 NULL 치환을 먼저 수행한 다음 집계해야 한다."
+    ],
     "sql": "SELECT SUM(COALESCE(v,0)) FROM T",
     "input_tables": [
       {
@@ -3823,14 +4272,15 @@
           14
         ]
       ]
-    }
+    },
+    "option_note_method": "sql_result_derived"
   },
   {
     "id": "qv3_0091",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_subquery",
     "topic_label": "서브쿼리",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "EXISTS 조건을 만족하는 결과 행 수는? (값 >= 4) (데이터 세트 2)",
@@ -3842,7 +4292,12 @@
     ],
     "answer": 2,
     "explanation": "외부 행의 값과 일치하며 기준 이상인 내부 행이 존재하면 해당 외부 행을 반환한다. 해당 데이터를 SQL 순서대로 계산한 결과는 4행이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "6행은(는) 정답보다 2 큰 값이다. 실제 SQL 출력은 4행, 이 문제의 계산 기준값은 4이다. 입력 표에 SQL 조건을 차례대로 적용하고 실제 출력 결과와 비교해야 한다.",
+      "3행은(는) 정답보다 1 작은 값이다. 실제 SQL 출력은 4행, 이 문제의 계산 기준값은 4이다. 입력 표에 SQL 조건을 차례대로 적용하고 실제 출력 결과와 비교해야 한다.",
+      "정답 · 실제 검증된 SQL의 출력은 4행이고, 문제에서 요구한 계산값은 4이다. 입력 표에 SQL 조건을 차례대로 적용하고 실제 출력 결과와 비교해야 한다.",
+      "5행은(는) 정답보다 1 큰 값이다. 실제 SQL 출력은 4행, 이 문제의 계산 기준값은 4이다. 입력 표에 SQL 조건을 차례대로 적용하고 실제 출력 결과와 비교해야 한다."
+    ],
     "sql": "SELECT v FROM T a WHERE EXISTS(SELECT 1 FROM T b WHERE b.v = a.v AND b.v >= 4)",
     "input_tables": [
       {
@@ -3913,14 +4368,15 @@
           5
         ]
       ]
-    }
+    },
+    "option_note_method": "sql_result_derived"
   },
   {
     "id": "qv3_0092",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_set",
     "topic_label": "집합 연산자",
-    "difficulty": "미분류",
+    "difficulty": "상 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "다음 UNION 결과 행 수는? (데이터 세트 2)",
@@ -3932,7 +4388,12 @@
     ],
     "answer": 2,
     "explanation": "UNION은 두 조건을 합친 뒤 동일한 값의 중복을 제거한다. 해당 데이터를 SQL 순서대로 계산한 결과는 4행이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "3행은(는) 정답보다 1 작은 값이다. 실제 SQL 출력은 4행, 이 문제의 계산 기준값은 4이다. DISTINCT·집합 연산의 중복 제거와 최종 SQL 출력 행을 구분해야 한다.",
+      "6행은(는) 정답보다 2 큰 값이다. 실제 SQL 출력은 4행, 이 문제의 계산 기준값은 4이다. DISTINCT·집합 연산의 중복 제거와 최종 SQL 출력 행을 구분해야 한다.",
+      "정답 · 실제 검증된 SQL의 출력은 4행이고, 문제에서 요구한 계산값은 4이다. DISTINCT·집합 연산의 중복 제거와 최종 SQL 출력 행을 구분해야 한다.",
+      "5행은(는) 정답보다 1 큰 값이다. 실제 SQL 출력은 4행, 이 문제의 계산 기준값은 4이다. DISTINCT·집합 연산의 중복 제거와 최종 SQL 출력 행을 구분해야 한다."
+    ],
     "sql": "SELECT v FROM T WHERE v <= 2 UNION SELECT v FROM T WHERE v >= 3",
     "input_tables": [
       {
@@ -4001,14 +4462,15 @@
           5
         ]
       ]
-    }
+    },
+    "option_note_method": "sql_result_derived"
   },
   {
     "id": "qv3_0093",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_subquery",
     "topic_label": "서브쿼리",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "IN 서브쿼리 조건의 결과 행 수는? (기준 >= 3) (데이터 세트 2)",
@@ -4020,7 +4482,12 @@
     ],
     "answer": 1,
     "explanation": "기준 이상의 값이 IN 집합에 들어가며 외부 쿼리는 해당 값을 가진 모든 행을 반환한다. 해당 데이터를 SQL 순서대로 계산한 결과는 6행이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "5행은(는) 정답보다 1 작은 값이다. 실제 SQL 출력은 6행, 이 문제의 계산 기준값은 6이다. 서브쿼리 결과와 NULL의 3값 논리를 반영한 후 남는 행 수를 계산해야 한다.",
+      "정답 · 실제 검증된 SQL의 출력은 6행이고, 문제에서 요구한 계산값은 6이다. 서브쿼리 결과와 NULL의 3값 논리를 반영한 후 남는 행 수를 계산해야 한다.",
+      "7행은(는) 정답보다 1 큰 값이다. 실제 SQL 출력은 6행, 이 문제의 계산 기준값은 6이다. 서브쿼리 결과와 NULL의 3값 논리를 반영한 후 남는 행 수를 계산해야 한다.",
+      "8행은(는) 정답보다 2 큰 값이다. 실제 SQL 출력은 6행, 이 문제의 계산 기준값은 6이다. 서브쿼리 결과와 NULL의 3값 논리를 반영한 후 남는 행 수를 계산해야 한다."
+    ],
     "sql": "SELECT v FROM T WHERE v IN (SELECT v FROM T WHERE v >= 3)",
     "input_tables": [
       {
@@ -4097,14 +4564,15 @@
           5
         ]
       ]
-    }
+    },
+    "option_note_method": "sql_result_derived"
   },
   {
     "id": "qv3_0094",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_order",
     "topic_label": "정렬·TOP-N",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "COUNT(DISTINCT v) 결과는? (데이터 세트 2)",
@@ -4116,7 +4584,12 @@
     ],
     "answer": 0,
     "explanation": "중복 v 값은 한 번만 세므로 값의 종류 수가 된다. 해당 데이터를 SQL 순서대로 계산한 결과는 4이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "정답 · 실제 검증된 SQL의 출력은 1행이고, 문제에서 요구한 계산값은 4이다. DISTINCT·집합 연산의 중복 제거와 최종 SQL 출력 행을 구분해야 한다.",
+      "5은(는) 정답보다 1 큰 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 4이다. DISTINCT·집합 연산의 중복 제거와 최종 SQL 출력 행을 구분해야 한다.",
+      "6은(는) 정답보다 2 큰 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 4이다. DISTINCT·집합 연산의 중복 제거와 최종 SQL 출력 행을 구분해야 한다.",
+      "3은(는) 정답보다 1 작은 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 4이다. DISTINCT·집합 연산의 중복 제거와 최종 SQL 출력 행을 구분해야 한다."
+    ],
     "sql": "SELECT COUNT(DISTINCT v) FROM T",
     "input_tables": [
       {
@@ -4179,14 +4652,15 @@
           4
         ]
       ]
-    }
+    },
+    "option_note_method": "sql_result_derived"
   },
   {
     "id": "qv3_0095",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_null",
     "topic_label": "NULL·3값 논리",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "OR 필터를 만족하는 행 수는? (v > 6 또는 v=0) (데이터 세트 2)",
@@ -4198,7 +4672,12 @@
     ],
     "answer": 0,
     "explanation": "OR 조건은 둘 중 하나라도 TRUE인 행을 통과시킨다. 중복 조건을 만족해도 한 행은 한 번 센다. 해당 데이터를 SQL 순서대로 계산한 결과는 1이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "정답 · 실제 검증된 SQL의 출력은 1행이고, 문제에서 요구한 계산값은 1이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다.",
+      "0은(는) 정답보다 1 작은 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 1이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다.",
+      "2은(는) 정답보다 1 큰 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 1이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다.",
+      "3은(는) 정답보다 2 큰 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 1이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다."
+    ],
     "sql": "SELECT COUNT(*) FROM T WHERE v > 6 OR v = 0",
     "input_tables": [
       {
@@ -4260,14 +4739,15 @@
           1
         ]
       ]
-    }
+    },
+    "option_note_method": "sql_result_derived"
   },
   {
     "id": "qv3_0096",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_null",
     "topic_label": "NULL·3값 논리",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "다음 SQL의 COUNT(*) 값은? (조건: v >= 6) (데이터 세트 3)",
@@ -4279,7 +4759,12 @@
     ],
     "answer": 3,
     "explanation": "WHERE는 v >= 6인 행만 남기고 COUNT(*)는 해당 행 수를 센다. 해당 데이터를 SQL 순서대로 계산한 결과는 3이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "5은(는) 정답보다 2 큰 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 3이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다.",
+      "4은(는) 정답보다 1 큰 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 3이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다.",
+      "2은(는) 정답보다 1 작은 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 3이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다.",
+      "정답 · 실제 검증된 SQL의 출력은 1행이고, 문제에서 요구한 계산값은 3이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다."
+    ],
     "sql": "SELECT COUNT(*) FROM T WHERE v >= 6",
     "input_tables": [
       {
@@ -4341,14 +4826,15 @@
           3
         ]
       ]
-    }
+    },
+    "option_note_method": "sql_result_derived"
   },
   {
     "id": "qv3_0097",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_null",
     "topic_label": "NULL·3값 논리",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "다음 SQL의 COUNT(v) 값은? (데이터 세트 3)",
@@ -4360,7 +4846,12 @@
     ],
     "answer": 1,
     "explanation": "COUNT(v)는 NULL을 제외하고 v가 존재하는 행만 계산한다. 해당 데이터를 SQL 순서대로 계산한 결과는 4이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "6은(는) 정답보다 2 큰 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 4이다. COUNT(열)은 NULL이 아닌 값만 세며, WHERE가 있으면 먼저 조건을 통과한 행만 집계한다.",
+      "정답 · 실제 검증된 SQL의 출력은 1행이고, 문제에서 요구한 계산값은 4이다. COUNT(열)은 NULL이 아닌 값만 세며, WHERE가 있으면 먼저 조건을 통과한 행만 집계한다.",
+      "5은(는) 정답보다 1 큰 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 4이다. COUNT(열)은 NULL이 아닌 값만 세며, WHERE가 있으면 먼저 조건을 통과한 행만 집계한다.",
+      "3은(는) 정답보다 1 작은 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 4이다. COUNT(열)은 NULL이 아닌 값만 세며, WHERE가 있으면 먼저 조건을 통과한 행만 집계한다."
+    ],
     "sql": "SELECT COUNT(v) FROM T",
     "input_tables": [
       {
@@ -4422,14 +4913,15 @@
           4
         ]
       ]
-    }
+    },
+    "option_note_method": "sql_result_derived"
   },
   {
     "id": "qv3_0098",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_group",
     "topic_label": "GROUP BY·집계",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "다음 SQL의 COUNT(*) 값은? (데이터 세트 3)",
@@ -4441,7 +4933,12 @@
     ],
     "answer": 2,
     "explanation": "id=2 조건과 amount IS NOT NULL을 동시에 만족하는 행만 센다. 해당 데이터를 SQL 순서대로 계산한 결과는 3이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "5은(는) 정답보다 2 큰 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 3이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다.",
+      "4은(는) 정답보다 1 큰 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 3이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다.",
+      "정답 · 실제 검증된 SQL의 출력은 1행이고, 문제에서 요구한 계산값은 3이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다.",
+      "2은(는) 정답보다 1 작은 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 3이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다."
+    ],
     "sql": "SELECT COUNT(*) FROM T WHERE id = 2 AND amount IS NOT NULL",
     "input_tables": [
       {
@@ -4512,14 +5009,15 @@
           3
         ]
       ]
-    }
+    },
+    "option_note_method": "sql_result_derived"
   },
   {
     "id": "qv3_0099",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_group",
     "topic_label": "GROUP BY·집계",
-    "difficulty": "미분류",
+    "difficulty": "상 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "다음 GROUP BY/HAVING SQL에서 결과 그룹은 몇 행인가? (HAVING COUNT(*) >= 3) (데이터 세트 3)",
@@ -4531,7 +5029,12 @@
     ],
     "answer": 3,
     "explanation": "GROUP BY id로 묶고 HAVING은 그룹별 행 수로 판단한다. 해당 데이터를 SQL 순서대로 계산한 결과는 1행이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "3행은(는) 정답보다 2 큰 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 1이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다.",
+      "0행은(는) 정답보다 1 작은 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 1이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다.",
+      "2행은(는) 정답보다 1 큰 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 1이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다.",
+      "정답 · 실제 검증된 SQL의 출력은 1행이고, 문제에서 요구한 계산값은 1이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다."
+    ],
     "sql": "SELECT id, SUM(amount) FROM T GROUP BY id HAVING COUNT(*) >= 3",
     "input_tables": [
       {
@@ -4608,14 +5111,15 @@
           66
         ]
       ]
-    }
+    },
+    "option_note_method": "sql_result_derived"
   },
   {
     "id": "qv3_0100",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_order",
     "topic_label": "정렬·TOP-N",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "중복 제거 및 정렬 후 LIMIT 2를 적용하면 몇 행이 반환되는가? (데이터 세트 3)",
@@ -4627,7 +5131,12 @@
     ],
     "answer": 3,
     "explanation": "WHERE로 먼저 거르고 DISTINCT로 중복을 제거하며, 정렬 후 LIMIT 2를 적용한다. 해당 데이터를 SQL 순서대로 계산한 결과는 2행이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "1행은(는) 정답보다 1 작은 값이다. 실제 SQL 출력은 2행, 이 문제의 계산 기준값은 2이다. DISTINCT·집합 연산의 중복 제거와 최종 SQL 출력 행을 구분해야 한다.",
+      "3행은(는) 정답보다 1 큰 값이다. 실제 SQL 출력은 2행, 이 문제의 계산 기준값은 2이다. DISTINCT·집합 연산의 중복 제거와 최종 SQL 출력 행을 구분해야 한다.",
+      "4행은(는) 정답보다 2 큰 값이다. 실제 SQL 출력은 2행, 이 문제의 계산 기준값은 2이다. DISTINCT·집합 연산의 중복 제거와 최종 SQL 출력 행을 구분해야 한다.",
+      "정답 · 실제 검증된 SQL의 출력은 2행이고, 문제에서 요구한 계산값은 2이다. DISTINCT·집합 연산의 중복 제거와 최종 SQL 출력 행을 구분해야 한다."
+    ],
     "sql": "SELECT DISTINCT score FROM T WHERE score >= 4 ORDER BY score DESC LIMIT 2",
     "input_tables": [
       {
@@ -4696,14 +5205,15 @@
           4
         ]
       ]
-    }
+    },
+    "option_note_method": "sql_result_derived"
   },
   {
     "id": "qv3_0101",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_function",
     "topic_label": "함수·CASE",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "CASE 결과를 SUM한 값은? (score >= 6이면 1) (데이터 세트 3)",
@@ -4715,7 +5225,12 @@
     ],
     "answer": 0,
     "explanation": "CASE가 각 행의 조건에 따라 1 또는 0을 반환하고 이를 모두 합산한다. 해당 데이터를 SQL 순서대로 계산한 결과는 5이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "정답 · 실제 검증된 SQL의 출력은 1행이고, 문제에서 요구한 계산값은 5이다. CASE의 행별 선택 또는 COALESCE의 NULL 치환을 먼저 수행한 다음 집계해야 한다.",
+      "4은(는) 정답보다 1 작은 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 5이다. CASE의 행별 선택 또는 COALESCE의 NULL 치환을 먼저 수행한 다음 집계해야 한다.",
+      "7은(는) 정답보다 2 큰 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 5이다. CASE의 행별 선택 또는 COALESCE의 NULL 치환을 먼저 수행한 다음 집계해야 한다.",
+      "6은(는) 정답보다 1 큰 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 5이다. CASE의 행별 선택 또는 COALESCE의 NULL 치환을 먼저 수행한 다음 집계해야 한다."
+    ],
     "sql": "SELECT SUM(CASE WHEN score >= 6 THEN 1 ELSE 0 END) FROM T",
     "input_tables": [
       {
@@ -4777,14 +5292,15 @@
           5
         ]
       ]
-    }
+    },
+    "option_note_method": "sql_result_derived"
   },
   {
     "id": "qv3_0102",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_function",
     "topic_label": "함수·CASE",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "NULL을 0으로 바꾼 후 SUM한 값은? (데이터 세트 3)",
@@ -4796,7 +5312,12 @@
     ],
     "answer": 1,
     "explanation": "COALESCE(v,0)으로 NULL만 0으로 바꾸고 나머지 정수를 모두 합산한다. 해당 데이터를 SQL 순서대로 계산한 결과는 15이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "17은(는) 정답보다 2 큰 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 15이다. CASE의 행별 선택 또는 COALESCE의 NULL 치환을 먼저 수행한 다음 집계해야 한다.",
+      "정답 · 실제 검증된 SQL의 출력은 1행이고, 문제에서 요구한 계산값은 15이다. CASE의 행별 선택 또는 COALESCE의 NULL 치환을 먼저 수행한 다음 집계해야 한다.",
+      "16은(는) 정답보다 1 큰 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 15이다. CASE의 행별 선택 또는 COALESCE의 NULL 치환을 먼저 수행한 다음 집계해야 한다.",
+      "14은(는) 정답보다 1 작은 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 15이다. CASE의 행별 선택 또는 COALESCE의 NULL 치환을 먼저 수행한 다음 집계해야 한다."
+    ],
     "sql": "SELECT SUM(COALESCE(v,0)) FROM T",
     "input_tables": [
       {
@@ -4858,14 +5379,15 @@
           15
         ]
       ]
-    }
+    },
+    "option_note_method": "sql_result_derived"
   },
   {
     "id": "qv3_0103",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_subquery",
     "topic_label": "서브쿼리",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "EXISTS 조건을 만족하는 결과 행 수는? (값 >= 4) (데이터 세트 3)",
@@ -4877,7 +5399,12 @@
     ],
     "answer": 0,
     "explanation": "외부 행의 값과 일치하며 기준 이상인 내부 행이 존재하면 해당 외부 행을 반환한다. 해당 데이터를 SQL 순서대로 계산한 결과는 3행이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "정답 · 실제 검증된 SQL의 출력은 3행이고, 문제에서 요구한 계산값은 3이다. 입력 표에 SQL 조건을 차례대로 적용하고 실제 출력 결과와 비교해야 한다.",
+      "4행은(는) 정답보다 1 큰 값이다. 실제 SQL 출력은 3행, 이 문제의 계산 기준값은 3이다. 입력 표에 SQL 조건을 차례대로 적용하고 실제 출력 결과와 비교해야 한다.",
+      "2행은(는) 정답보다 1 작은 값이다. 실제 SQL 출력은 3행, 이 문제의 계산 기준값은 3이다. 입력 표에 SQL 조건을 차례대로 적용하고 실제 출력 결과와 비교해야 한다.",
+      "5행은(는) 정답보다 2 큰 값이다. 실제 SQL 출력은 3행, 이 문제의 계산 기준값은 3이다. 입력 표에 SQL 조건을 차례대로 적용하고 실제 출력 결과와 비교해야 한다."
+    ],
     "sql": "SELECT v FROM T a WHERE EXISTS(SELECT 1 FROM T b WHERE b.v = a.v AND b.v >= 4)",
     "input_tables": [
       {
@@ -4945,14 +5472,15 @@
           6
         ]
       ]
-    }
+    },
+    "option_note_method": "sql_result_derived"
   },
   {
     "id": "qv3_0104",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_set",
     "topic_label": "집합 연산자",
-    "difficulty": "미분류",
+    "difficulty": "상 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "다음 UNION 결과 행 수는? (데이터 세트 3)",
@@ -4964,7 +5492,12 @@
     ],
     "answer": 1,
     "explanation": "UNION은 두 조건을 합친 뒤 동일한 값의 중복을 제거한다. 해당 데이터를 SQL 순서대로 계산한 결과는 4행이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "6행은(는) 정답보다 2 큰 값이다. 실제 SQL 출력은 4행, 이 문제의 계산 기준값은 4이다. DISTINCT·집합 연산의 중복 제거와 최종 SQL 출력 행을 구분해야 한다.",
+      "정답 · 실제 검증된 SQL의 출력은 4행이고, 문제에서 요구한 계산값은 4이다. DISTINCT·집합 연산의 중복 제거와 최종 SQL 출력 행을 구분해야 한다.",
+      "5행은(는) 정답보다 1 큰 값이다. 실제 SQL 출력은 4행, 이 문제의 계산 기준값은 4이다. DISTINCT·집합 연산의 중복 제거와 최종 SQL 출력 행을 구분해야 한다.",
+      "3행은(는) 정답보다 1 작은 값이다. 실제 SQL 출력은 4행, 이 문제의 계산 기준값은 4이다. DISTINCT·집합 연산의 중복 제거와 최종 SQL 출력 행을 구분해야 한다."
+    ],
     "sql": "SELECT v FROM T WHERE v <= 2 UNION SELECT v FROM T WHERE v >= 3",
     "input_tables": [
       {
@@ -5033,14 +5566,15 @@
           5
         ]
       ]
-    }
+    },
+    "option_note_method": "sql_result_derived"
   },
   {
     "id": "qv3_0105",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_subquery",
     "topic_label": "서브쿼리",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "IN 서브쿼리 조건의 결과 행 수는? (기준 >= 5) (데이터 세트 3)",
@@ -5052,7 +5586,12 @@
     ],
     "answer": 0,
     "explanation": "기준 이상의 값이 IN 집합에 들어가며 외부 쿼리는 해당 값을 가진 모든 행을 반환한다. 해당 데이터를 SQL 순서대로 계산한 결과는 2행이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "정답 · 실제 검증된 SQL의 출력은 2행이고, 문제에서 요구한 계산값은 2이다. 서브쿼리 결과와 NULL의 3값 논리를 반영한 후 남는 행 수를 계산해야 한다.",
+      "3행은(는) 정답보다 1 큰 값이다. 실제 SQL 출력은 2행, 이 문제의 계산 기준값은 2이다. 서브쿼리 결과와 NULL의 3값 논리를 반영한 후 남는 행 수를 계산해야 한다.",
+      "1행은(는) 정답보다 1 작은 값이다. 실제 SQL 출력은 2행, 이 문제의 계산 기준값은 2이다. 서브쿼리 결과와 NULL의 3값 논리를 반영한 후 남는 행 수를 계산해야 한다.",
+      "4행은(는) 정답보다 2 큰 값이다. 실제 SQL 출력은 2행, 이 문제의 계산 기준값은 2이다. 서브쿼리 결과와 NULL의 3값 논리를 반영한 후 남는 행 수를 계산해야 한다."
+    ],
     "sql": "SELECT v FROM T WHERE v IN (SELECT v FROM T WHERE v >= 5)",
     "input_tables": [
       {
@@ -5117,14 +5656,15 @@
           5
         ]
       ]
-    }
+    },
+    "option_note_method": "sql_result_derived"
   },
   {
     "id": "qv3_0106",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_order",
     "topic_label": "정렬·TOP-N",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "COUNT(DISTINCT v) 결과는? (데이터 세트 3)",
@@ -5136,7 +5676,12 @@
     ],
     "answer": 2,
     "explanation": "중복 v 값은 한 번만 세므로 값의 종류 수가 된다. 해당 데이터를 SQL 순서대로 계산한 결과는 3이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "5은(는) 정답보다 2 큰 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 3이다. DISTINCT·집합 연산의 중복 제거와 최종 SQL 출력 행을 구분해야 한다.",
+      "4은(는) 정답보다 1 큰 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 3이다. DISTINCT·집합 연산의 중복 제거와 최종 SQL 출력 행을 구분해야 한다.",
+      "정답 · 실제 검증된 SQL의 출력은 1행이고, 문제에서 요구한 계산값은 3이다. DISTINCT·집합 연산의 중복 제거와 최종 SQL 출력 행을 구분해야 한다.",
+      "2은(는) 정답보다 1 작은 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 3이다. DISTINCT·집합 연산의 중복 제거와 최종 SQL 출력 행을 구분해야 한다."
+    ],
     "sql": "SELECT COUNT(DISTINCT v) FROM T",
     "input_tables": [
       {
@@ -5199,14 +5744,15 @@
           3
         ]
       ]
-    }
+    },
+    "option_note_method": "sql_result_derived"
   },
   {
     "id": "qv3_0107",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_null",
     "topic_label": "NULL·3값 논리",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "OR 필터를 만족하는 행 수는? (v > 7 또는 v=0) (데이터 세트 3)",
@@ -5218,7 +5764,12 @@
     ],
     "answer": 1,
     "explanation": "OR 조건은 둘 중 하나라도 TRUE인 행을 통과시킨다. 중복 조건을 만족해도 한 행은 한 번 센다. 해당 데이터를 SQL 순서대로 계산한 결과는 4이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "6은(는) 정답보다 2 큰 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 4이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다.",
+      "정답 · 실제 검증된 SQL의 출력은 1행이고, 문제에서 요구한 계산값은 4이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다.",
+      "3은(는) 정답보다 1 작은 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 4이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다.",
+      "5은(는) 정답보다 1 큰 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 4이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다."
+    ],
     "sql": "SELECT COUNT(*) FROM T WHERE v > 7 OR v = 0",
     "input_tables": [
       {
@@ -5280,14 +5831,15 @@
           4
         ]
       ]
-    }
+    },
+    "option_note_method": "sql_result_derived"
   },
   {
     "id": "qv3_0108",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_null",
     "topic_label": "NULL·3값 논리",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "다음 SQL의 COUNT(*) 값은? (조건: v >= 2) (데이터 세트 4)",
@@ -5299,7 +5851,12 @@
     ],
     "answer": 2,
     "explanation": "WHERE는 v >= 2인 행만 남기고 COUNT(*)는 해당 행 수를 센다. 해당 데이터를 SQL 순서대로 계산한 결과는 5이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "4은(는) 정답보다 1 작은 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 5이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다.",
+      "6은(는) 정답보다 1 큰 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 5이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다.",
+      "정답 · 실제 검증된 SQL의 출력은 1행이고, 문제에서 요구한 계산값은 5이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다.",
+      "7은(는) 정답보다 2 큰 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 5이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다."
+    ],
     "sql": "SELECT COUNT(*) FROM T WHERE v >= 2",
     "input_tables": [
       {
@@ -5361,14 +5918,15 @@
           5
         ]
       ]
-    }
+    },
+    "option_note_method": "sql_result_derived"
   },
   {
     "id": "qv3_0109",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_null",
     "topic_label": "NULL·3값 논리",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "다음 SQL의 COUNT(v) 값은? (데이터 세트 4)",
@@ -5380,7 +5938,12 @@
     ],
     "answer": 3,
     "explanation": "COUNT(v)는 NULL을 제외하고 v가 존재하는 행만 계산한다. 해당 데이터를 SQL 순서대로 계산한 결과는 6이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "7은(는) 정답보다 1 큰 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 6이다. COUNT(열)은 NULL이 아닌 값만 세며, WHERE가 있으면 먼저 조건을 통과한 행만 집계한다.",
+      "8은(는) 정답보다 2 큰 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 6이다. COUNT(열)은 NULL이 아닌 값만 세며, WHERE가 있으면 먼저 조건을 통과한 행만 집계한다.",
+      "5은(는) 정답보다 1 작은 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 6이다. COUNT(열)은 NULL이 아닌 값만 세며, WHERE가 있으면 먼저 조건을 통과한 행만 집계한다.",
+      "정답 · 실제 검증된 SQL의 출력은 1행이고, 문제에서 요구한 계산값은 6이다. COUNT(열)은 NULL이 아닌 값만 세며, WHERE가 있으면 먼저 조건을 통과한 행만 집계한다."
+    ],
     "sql": "SELECT COUNT(v) FROM T",
     "input_tables": [
       {
@@ -5442,14 +6005,15 @@
           6
         ]
       ]
-    }
+    },
+    "option_note_method": "sql_result_derived"
   },
   {
     "id": "qv3_0110",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_group",
     "topic_label": "GROUP BY·집계",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "다음 SQL의 COUNT(*) 값은? (데이터 세트 4)",
@@ -5461,7 +6025,12 @@
     ],
     "answer": 3,
     "explanation": "id=2 조건과 amount IS NOT NULL을 동시에 만족하는 행만 센다. 해당 데이터를 SQL 순서대로 계산한 결과는 1이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "3은(는) 정답보다 2 큰 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 1이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다.",
+      "0은(는) 정답보다 1 작은 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 1이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다.",
+      "2은(는) 정답보다 1 큰 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 1이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다.",
+      "정답 · 실제 검증된 SQL의 출력은 1행이고, 문제에서 요구한 계산값은 1이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다."
+    ],
     "sql": "SELECT COUNT(*) FROM T WHERE id = 2 AND amount IS NOT NULL",
     "input_tables": [
       {
@@ -5532,14 +6101,15 @@
           1
         ]
       ]
-    }
+    },
+    "option_note_method": "sql_result_derived"
   },
   {
     "id": "qv3_0111",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_group",
     "topic_label": "GROUP BY·집계",
-    "difficulty": "미분류",
+    "difficulty": "상 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "다음 GROUP BY/HAVING SQL에서 결과 그룹은 몇 행인가? (HAVING COUNT(*) >= 4) (데이터 세트 4)",
@@ -5551,7 +6121,12 @@
     ],
     "answer": 0,
     "explanation": "GROUP BY id로 묶고 HAVING은 그룹별 행 수로 판단한다. 해당 데이터를 SQL 순서대로 계산한 결과는 0행이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "정답 · 실제 검증된 SQL의 출력은 0행이고, 문제에서 요구한 계산값은 0이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다.",
+      "2행은(는) 정답보다 2 큰 값이다. 실제 SQL 출력은 0행, 이 문제의 계산 기준값은 0이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다.",
+      "3행은(는) 정답보다 3 큰 값이다. 실제 SQL 출력은 0행, 이 문제의 계산 기준값은 0이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다.",
+      "1행은(는) 정답보다 1 큰 값이다. 실제 SQL 출력은 0행, 이 문제의 계산 기준값은 0이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다."
+    ],
     "sql": "SELECT id, SUM(amount) FROM T GROUP BY id HAVING COUNT(*) >= 4",
     "input_tables": [
       {
@@ -5623,14 +6198,15 @@
         "SUM(amount)"
       ],
       "rows": []
-    }
+    },
+    "option_note_method": "sql_result_derived"
   },
   {
     "id": "qv3_0112",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_order",
     "topic_label": "정렬·TOP-N",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "중복 제거 및 정렬 후 LIMIT 2를 적용하면 몇 행이 반환되는가? (데이터 세트 4)",
@@ -5642,7 +6218,12 @@
     ],
     "answer": 1,
     "explanation": "WHERE로 먼저 거르고 DISTINCT로 중복을 제거하며, 정렬 후 LIMIT 2를 적용한다. 해당 데이터를 SQL 순서대로 계산한 결과는 2행이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "4행은(는) 정답보다 2 큰 값이다. 실제 SQL 출력은 2행, 이 문제의 계산 기준값은 2이다. DISTINCT·집합 연산의 중복 제거와 최종 SQL 출력 행을 구분해야 한다.",
+      "정답 · 실제 검증된 SQL의 출력은 2행이고, 문제에서 요구한 계산값은 2이다. DISTINCT·집합 연산의 중복 제거와 최종 SQL 출력 행을 구분해야 한다.",
+      "1행은(는) 정답보다 1 작은 값이다. 실제 SQL 출력은 2행, 이 문제의 계산 기준값은 2이다. DISTINCT·집합 연산의 중복 제거와 최종 SQL 출력 행을 구분해야 한다.",
+      "3행은(는) 정답보다 1 큰 값이다. 실제 SQL 출력은 2행, 이 문제의 계산 기준값은 2이다. DISTINCT·집합 연산의 중복 제거와 최종 SQL 출력 행을 구분해야 한다."
+    ],
     "sql": "SELECT DISTINCT score FROM T WHERE score >= 2 ORDER BY score DESC LIMIT 2",
     "input_tables": [
       {
@@ -5711,14 +6292,15 @@
           3
         ]
       ]
-    }
+    },
+    "option_note_method": "sql_result_derived"
   },
   {
     "id": "qv3_0113",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_function",
     "topic_label": "함수·CASE",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "CASE 결과를 SUM한 값은? (score >= 10이면 1) (데이터 세트 4)",
@@ -5730,7 +6312,12 @@
     ],
     "answer": 2,
     "explanation": "CASE가 각 행의 조건에 따라 1 또는 0을 반환하고 이를 모두 합산한다. 해당 데이터를 SQL 순서대로 계산한 결과는 1이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "3은(는) 정답보다 2 큰 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 1이다. CASE의 행별 선택 또는 COALESCE의 NULL 치환을 먼저 수행한 다음 집계해야 한다.",
+      "2은(는) 정답보다 1 큰 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 1이다. CASE의 행별 선택 또는 COALESCE의 NULL 치환을 먼저 수행한 다음 집계해야 한다.",
+      "정답 · 실제 검증된 SQL의 출력은 1행이고, 문제에서 요구한 계산값은 1이다. CASE의 행별 선택 또는 COALESCE의 NULL 치환을 먼저 수행한 다음 집계해야 한다.",
+      "0은(는) 정답보다 1 작은 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 1이다. CASE의 행별 선택 또는 COALESCE의 NULL 치환을 먼저 수행한 다음 집계해야 한다."
+    ],
     "sql": "SELECT SUM(CASE WHEN score >= 10 THEN 1 ELSE 0 END) FROM T",
     "input_tables": [
       {
@@ -5792,14 +6379,15 @@
           1
         ]
       ]
-    }
+    },
+    "option_note_method": "sql_result_derived"
   },
   {
     "id": "qv3_0114",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_function",
     "topic_label": "함수·CASE",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "NULL을 0으로 바꾼 후 SUM한 값은? (데이터 세트 4)",
@@ -5811,7 +6399,12 @@
     ],
     "answer": 2,
     "explanation": "COALESCE(v,0)으로 NULL만 0으로 바꾸고 나머지 정수를 모두 합산한다. 해당 데이터를 SQL 순서대로 계산한 결과는 24이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "25은(는) 정답보다 1 큰 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 24이다. CASE의 행별 선택 또는 COALESCE의 NULL 치환을 먼저 수행한 다음 집계해야 한다.",
+      "26은(는) 정답보다 2 큰 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 24이다. CASE의 행별 선택 또는 COALESCE의 NULL 치환을 먼저 수행한 다음 집계해야 한다.",
+      "정답 · 실제 검증된 SQL의 출력은 1행이고, 문제에서 요구한 계산값은 24이다. CASE의 행별 선택 또는 COALESCE의 NULL 치환을 먼저 수행한 다음 집계해야 한다.",
+      "23은(는) 정답보다 1 작은 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 24이다. CASE의 행별 선택 또는 COALESCE의 NULL 치환을 먼저 수행한 다음 집계해야 한다."
+    ],
     "sql": "SELECT SUM(COALESCE(v,0)) FROM T",
     "input_tables": [
       {
@@ -5873,14 +6466,15 @@
           24
         ]
       ]
-    }
+    },
+    "option_note_method": "sql_result_derived"
   },
   {
     "id": "qv3_0115",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_subquery",
     "topic_label": "서브쿼리",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "EXISTS 조건을 만족하는 결과 행 수는? (값 >= 4) (데이터 세트 4)",
@@ -5892,7 +6486,12 @@
     ],
     "answer": 2,
     "explanation": "외부 행의 값과 일치하며 기준 이상인 내부 행이 존재하면 해당 외부 행을 반환한다. 해당 데이터를 SQL 순서대로 계산한 결과는 1행이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "3행은(는) 정답보다 2 큰 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 1이다. 입력 표에 SQL 조건을 차례대로 적용하고 실제 출력 결과와 비교해야 한다.",
+      "2행은(는) 정답보다 1 큰 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 1이다. 입력 표에 SQL 조건을 차례대로 적용하고 실제 출력 결과와 비교해야 한다.",
+      "정답 · 실제 검증된 SQL의 출력은 1행이고, 문제에서 요구한 계산값은 1이다. 입력 표에 SQL 조건을 차례대로 적용하고 실제 출력 결과와 비교해야 한다.",
+      "0행은(는) 정답보다 1 작은 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 1이다. 입력 표에 SQL 조건을 차례대로 적용하고 실제 출력 결과와 비교해야 한다."
+    ],
     "sql": "SELECT v FROM T a WHERE EXISTS(SELECT 1 FROM T b WHERE b.v = a.v AND b.v >= 4)",
     "input_tables": [
       {
@@ -5954,14 +6553,15 @@
           6
         ]
       ]
-    }
+    },
+    "option_note_method": "sql_result_derived"
   },
   {
     "id": "qv3_0116",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_set",
     "topic_label": "집합 연산자",
-    "difficulty": "미분류",
+    "difficulty": "상 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "다음 UNION 결과 행 수는? (데이터 세트 4)",
@@ -5973,7 +6573,12 @@
     ],
     "answer": 0,
     "explanation": "UNION은 두 조건을 합친 뒤 동일한 값의 중복을 제거한다. 해당 데이터를 SQL 순서대로 계산한 결과는 5행이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "정답 · 실제 검증된 SQL의 출력은 5행이고, 문제에서 요구한 계산값은 5이다. DISTINCT·집합 연산의 중복 제거와 최종 SQL 출력 행을 구분해야 한다.",
+      "6행은(는) 정답보다 1 큰 값이다. 실제 SQL 출력은 5행, 이 문제의 계산 기준값은 5이다. DISTINCT·집합 연산의 중복 제거와 최종 SQL 출력 행을 구분해야 한다.",
+      "4행은(는) 정답보다 1 작은 값이다. 실제 SQL 출력은 5행, 이 문제의 계산 기준값은 5이다. DISTINCT·집합 연산의 중복 제거와 최종 SQL 출력 행을 구분해야 한다.",
+      "7행은(는) 정답보다 2 큰 값이다. 실제 SQL 출력은 5행, 이 문제의 계산 기준값은 5이다. DISTINCT·집합 연산의 중복 제거와 최종 SQL 출력 행을 구분해야 한다."
+    ],
     "sql": "SELECT v FROM T WHERE v <= 2 UNION SELECT v FROM T WHERE v >= 3",
     "input_tables": [
       {
@@ -6045,14 +6650,15 @@
           5
         ]
       ]
-    }
+    },
+    "option_note_method": "sql_result_derived"
   },
   {
     "id": "qv3_0117",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_subquery",
     "topic_label": "서브쿼리",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "IN 서브쿼리 조건의 결과 행 수는? (기준 >= 4) (데이터 세트 4)",
@@ -6064,7 +6670,12 @@
     ],
     "answer": 3,
     "explanation": "기준 이상의 값이 IN 집합에 들어가며 외부 쿼리는 해당 값을 가진 모든 행을 반환한다. 해당 데이터를 SQL 순서대로 계산한 결과는 3행이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "5행은(는) 정답보다 2 큰 값이다. 실제 SQL 출력은 3행, 이 문제의 계산 기준값은 3이다. 서브쿼리 결과와 NULL의 3값 논리를 반영한 후 남는 행 수를 계산해야 한다.",
+      "4행은(는) 정답보다 1 큰 값이다. 실제 SQL 출력은 3행, 이 문제의 계산 기준값은 3이다. 서브쿼리 결과와 NULL의 3값 논리를 반영한 후 남는 행 수를 계산해야 한다.",
+      "2행은(는) 정답보다 1 작은 값이다. 실제 SQL 출력은 3행, 이 문제의 계산 기준값은 3이다. 서브쿼리 결과와 NULL의 3값 논리를 반영한 후 남는 행 수를 계산해야 한다.",
+      "정답 · 실제 검증된 SQL의 출력은 3행이고, 문제에서 요구한 계산값은 3이다. 서브쿼리 결과와 NULL의 3값 논리를 반영한 후 남는 행 수를 계산해야 한다."
+    ],
     "sql": "SELECT v FROM T WHERE v IN (SELECT v FROM T WHERE v >= 4)",
     "input_tables": [
       {
@@ -6132,14 +6743,15 @@
           5
         ]
       ]
-    }
+    },
+    "option_note_method": "sql_result_derived"
   },
   {
     "id": "qv3_0118",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_order",
     "topic_label": "정렬·TOP-N",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "COUNT(DISTINCT v) 결과는? (데이터 세트 4)",
@@ -6151,7 +6763,12 @@
     ],
     "answer": 2,
     "explanation": "중복 v 값은 한 번만 세므로 값의 종류 수가 된다. 해당 데이터를 SQL 순서대로 계산한 결과는 4이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "3은(는) 정답보다 1 작은 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 4이다. DISTINCT·집합 연산의 중복 제거와 최종 SQL 출력 행을 구분해야 한다.",
+      "6은(는) 정답보다 2 큰 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 4이다. DISTINCT·집합 연산의 중복 제거와 최종 SQL 출력 행을 구분해야 한다.",
+      "정답 · 실제 검증된 SQL의 출력은 1행이고, 문제에서 요구한 계산값은 4이다. DISTINCT·집합 연산의 중복 제거와 최종 SQL 출력 행을 구분해야 한다.",
+      "5은(는) 정답보다 1 큰 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 4이다. DISTINCT·집합 연산의 중복 제거와 최종 SQL 출력 행을 구분해야 한다."
+    ],
     "sql": "SELECT COUNT(DISTINCT v) FROM T",
     "input_tables": [
       {
@@ -6214,14 +6831,15 @@
           4
         ]
       ]
-    }
+    },
+    "option_note_method": "sql_result_derived"
   },
   {
     "id": "qv3_0119",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_null",
     "topic_label": "NULL·3값 논리",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "OR 필터를 만족하는 행 수는? (v > 4 또는 v=0) (데이터 세트 4)",
@@ -6233,7 +6851,12 @@
     ],
     "answer": 2,
     "explanation": "OR 조건은 둘 중 하나라도 TRUE인 행을 통과시킨다. 중복 조건을 만족해도 한 행은 한 번 센다. 해당 데이터를 SQL 순서대로 계산한 결과는 1이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "0은(는) 정답보다 1 작은 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 1이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다.",
+      "3은(는) 정답보다 2 큰 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 1이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다.",
+      "정답 · 실제 검증된 SQL의 출력은 1행이고, 문제에서 요구한 계산값은 1이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다.",
+      "2은(는) 정답보다 1 큰 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 1이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다."
+    ],
     "sql": "SELECT COUNT(*) FROM T WHERE v > 4 OR v = 0",
     "input_tables": [
       {
@@ -6295,14 +6918,15 @@
           1
         ]
       ]
-    }
+    },
+    "option_note_method": "sql_result_derived"
   },
   {
     "id": "qv3_0120",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_null",
     "topic_label": "NULL·3값 논리",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "다음 SQL의 COUNT(*) 값은? (조건: v >= 3) (데이터 세트 5)",
@@ -6314,7 +6938,12 @@
     ],
     "answer": 3,
     "explanation": "WHERE는 v >= 3인 행만 남기고 COUNT(*)는 해당 행 수를 센다. 해당 데이터를 SQL 순서대로 계산한 결과는 5이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "7은(는) 정답보다 2 큰 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 5이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다.",
+      "6은(는) 정답보다 1 큰 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 5이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다.",
+      "4은(는) 정답보다 1 작은 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 5이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다.",
+      "정답 · 실제 검증된 SQL의 출력은 1행이고, 문제에서 요구한 계산값은 5이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다."
+    ],
     "sql": "SELECT COUNT(*) FROM T WHERE v >= 3",
     "input_tables": [
       {
@@ -6376,14 +7005,15 @@
           5
         ]
       ]
-    }
+    },
+    "option_note_method": "sql_result_derived"
   },
   {
     "id": "qv3_0121",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_null",
     "topic_label": "NULL·3값 논리",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "다음 SQL의 COUNT(v) 값은? (데이터 세트 5)",
@@ -6395,7 +7025,12 @@
     ],
     "answer": 3,
     "explanation": "COUNT(v)는 NULL을 제외하고 v가 존재하는 행만 계산한다. 해당 데이터를 SQL 순서대로 계산한 결과는 5이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "7은(는) 정답보다 2 큰 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 5이다. COUNT(열)은 NULL이 아닌 값만 세며, WHERE가 있으면 먼저 조건을 통과한 행만 집계한다.",
+      "6은(는) 정답보다 1 큰 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 5이다. COUNT(열)은 NULL이 아닌 값만 세며, WHERE가 있으면 먼저 조건을 통과한 행만 집계한다.",
+      "4은(는) 정답보다 1 작은 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 5이다. COUNT(열)은 NULL이 아닌 값만 세며, WHERE가 있으면 먼저 조건을 통과한 행만 집계한다.",
+      "정답 · 실제 검증된 SQL의 출력은 1행이고, 문제에서 요구한 계산값은 5이다. COUNT(열)은 NULL이 아닌 값만 세며, WHERE가 있으면 먼저 조건을 통과한 행만 집계한다."
+    ],
     "sql": "SELECT COUNT(v) FROM T",
     "input_tables": [
       {
@@ -6457,14 +7092,15 @@
           5
         ]
       ]
-    }
+    },
+    "option_note_method": "sql_result_derived"
   },
   {
     "id": "qv3_0122",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_group",
     "topic_label": "GROUP BY·집계",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "다음 SQL의 COUNT(*) 값은? (데이터 세트 5)",
@@ -6476,7 +7112,12 @@
     ],
     "answer": 0,
     "explanation": "id=2 조건과 amount IS NOT NULL을 동시에 만족하는 행만 센다. 해당 데이터를 SQL 순서대로 계산한 결과는 2이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "정답 · 실제 검증된 SQL의 출력은 1행이고, 문제에서 요구한 계산값은 2이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다.",
+      "4은(는) 정답보다 2 큰 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 2이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다.",
+      "3은(는) 정답보다 1 큰 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 2이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다.",
+      "1은(는) 정답보다 1 작은 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 2이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다."
+    ],
     "sql": "SELECT COUNT(*) FROM T WHERE id = 2 AND amount IS NOT NULL",
     "input_tables": [
       {
@@ -6547,14 +7188,15 @@
           2
         ]
       ]
-    }
+    },
+    "option_note_method": "sql_result_derived"
   },
   {
     "id": "qv3_0123",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_group",
     "topic_label": "GROUP BY·집계",
-    "difficulty": "미분류",
+    "difficulty": "상 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "다음 GROUP BY/HAVING SQL에서 결과 그룹은 몇 행인가? (HAVING COUNT(*) >= 2) (데이터 세트 5)",
@@ -6566,7 +7208,12 @@
     ],
     "answer": 0,
     "explanation": "GROUP BY id로 묶고 HAVING은 그룹별 행 수로 판단한다. 해당 데이터를 SQL 순서대로 계산한 결과는 2행이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "정답 · 실제 검증된 SQL의 출력은 2행이고, 문제에서 요구한 계산값은 2이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다.",
+      "1행은(는) 정답보다 1 작은 값이다. 실제 SQL 출력은 2행, 이 문제의 계산 기준값은 2이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다.",
+      "3행은(는) 정답보다 1 큰 값이다. 실제 SQL 출력은 2행, 이 문제의 계산 기준값은 2이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다.",
+      "4행은(는) 정답보다 2 큰 값이다. 실제 SQL 출력은 2행, 이 문제의 계산 기준값은 2이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다."
+    ],
     "sql": "SELECT id, SUM(amount) FROM T GROUP BY id HAVING COUNT(*) >= 2",
     "input_tables": [
       {
@@ -6647,14 +7294,15 @@
           28
         ]
       ]
-    }
+    },
+    "option_note_method": "sql_result_derived"
   },
   {
     "id": "qv3_0124",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_order",
     "topic_label": "정렬·TOP-N",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "중복 제거 및 정렬 후 LIMIT 2를 적용하면 몇 행이 반환되는가? (데이터 세트 5)",
@@ -6666,7 +7314,12 @@
     ],
     "answer": 2,
     "explanation": "WHERE로 먼저 거르고 DISTINCT로 중복을 제거하며, 정렬 후 LIMIT 2를 적용한다. 해당 데이터를 SQL 순서대로 계산한 결과는 2행이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "1행은(는) 정답보다 1 작은 값이다. 실제 SQL 출력은 2행, 이 문제의 계산 기준값은 2이다. DISTINCT·집합 연산의 중복 제거와 최종 SQL 출력 행을 구분해야 한다.",
+      "4행은(는) 정답보다 2 큰 값이다. 실제 SQL 출력은 2행, 이 문제의 계산 기준값은 2이다. DISTINCT·집합 연산의 중복 제거와 최종 SQL 출력 행을 구분해야 한다.",
+      "정답 · 실제 검증된 SQL의 출력은 2행이고, 문제에서 요구한 계산값은 2이다. DISTINCT·집합 연산의 중복 제거와 최종 SQL 출력 행을 구분해야 한다.",
+      "3행은(는) 정답보다 1 큰 값이다. 실제 SQL 출력은 2행, 이 문제의 계산 기준값은 2이다. DISTINCT·집합 연산의 중복 제거와 최종 SQL 출력 행을 구분해야 한다."
+    ],
     "sql": "SELECT DISTINCT score FROM T WHERE score >= 1 ORDER BY score DESC LIMIT 2",
     "input_tables": [
       {
@@ -6735,14 +7388,15 @@
           2
         ]
       ]
-    }
+    },
+    "option_note_method": "sql_result_derived"
   },
   {
     "id": "qv3_0125",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_function",
     "topic_label": "함수·CASE",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "CASE 결과를 SUM한 값은? (score >= 5이면 1) (데이터 세트 5)",
@@ -6754,7 +7408,12 @@
     ],
     "answer": 2,
     "explanation": "CASE가 각 행의 조건에 따라 1 또는 0을 반환하고 이를 모두 합산한다. 해당 데이터를 SQL 순서대로 계산한 결과는 4이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "6은(는) 정답보다 2 큰 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 4이다. CASE의 행별 선택 또는 COALESCE의 NULL 치환을 먼저 수행한 다음 집계해야 한다.",
+      "3은(는) 정답보다 1 작은 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 4이다. CASE의 행별 선택 또는 COALESCE의 NULL 치환을 먼저 수행한 다음 집계해야 한다.",
+      "정답 · 실제 검증된 SQL의 출력은 1행이고, 문제에서 요구한 계산값은 4이다. CASE의 행별 선택 또는 COALESCE의 NULL 치환을 먼저 수행한 다음 집계해야 한다.",
+      "5은(는) 정답보다 1 큰 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 4이다. CASE의 행별 선택 또는 COALESCE의 NULL 치환을 먼저 수행한 다음 집계해야 한다."
+    ],
     "sql": "SELECT SUM(CASE WHEN score >= 5 THEN 1 ELSE 0 END) FROM T",
     "input_tables": [
       {
@@ -6816,14 +7475,15 @@
           4
         ]
       ]
-    }
+    },
+    "option_note_method": "sql_result_derived"
   },
   {
     "id": "qv3_0126",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_function",
     "topic_label": "함수·CASE",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "NULL을 0으로 바꾼 후 SUM한 값은? (데이터 세트 5)",
@@ -6835,7 +7495,12 @@
     ],
     "answer": 0,
     "explanation": "COALESCE(v,0)으로 NULL만 0으로 바꾸고 나머지 정수를 모두 합산한다. 해당 데이터를 SQL 순서대로 계산한 결과는 13이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "정답 · 실제 검증된 SQL의 출력은 1행이고, 문제에서 요구한 계산값은 13이다. CASE의 행별 선택 또는 COALESCE의 NULL 치환을 먼저 수행한 다음 집계해야 한다.",
+      "15은(는) 정답보다 2 큰 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 13이다. CASE의 행별 선택 또는 COALESCE의 NULL 치환을 먼저 수행한 다음 집계해야 한다.",
+      "12은(는) 정답보다 1 작은 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 13이다. CASE의 행별 선택 또는 COALESCE의 NULL 치환을 먼저 수행한 다음 집계해야 한다.",
+      "14은(는) 정답보다 1 큰 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 13이다. CASE의 행별 선택 또는 COALESCE의 NULL 치환을 먼저 수행한 다음 집계해야 한다."
+    ],
     "sql": "SELECT SUM(COALESCE(v,0)) FROM T",
     "input_tables": [
       {
@@ -6897,14 +7562,15 @@
           13
         ]
       ]
-    }
+    },
+    "option_note_method": "sql_result_derived"
   },
   {
     "id": "qv3_0127",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_subquery",
     "topic_label": "서브쿼리",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "EXISTS 조건을 만족하는 결과 행 수는? (값 >= 5) (데이터 세트 5)",
@@ -6916,7 +7582,12 @@
     ],
     "answer": 1,
     "explanation": "외부 행의 값과 일치하며 기준 이상인 내부 행이 존재하면 해당 외부 행을 반환한다. 해당 데이터를 SQL 순서대로 계산한 결과는 2행이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "4행은(는) 정답보다 2 큰 값이다. 실제 SQL 출력은 2행, 이 문제의 계산 기준값은 2이다. 입력 표에 SQL 조건을 차례대로 적용하고 실제 출력 결과와 비교해야 한다.",
+      "정답 · 실제 검증된 SQL의 출력은 2행이고, 문제에서 요구한 계산값은 2이다. 입력 표에 SQL 조건을 차례대로 적용하고 실제 출력 결과와 비교해야 한다.",
+      "1행은(는) 정답보다 1 작은 값이다. 실제 SQL 출력은 2행, 이 문제의 계산 기준값은 2이다. 입력 표에 SQL 조건을 차례대로 적용하고 실제 출력 결과와 비교해야 한다.",
+      "3행은(는) 정답보다 1 큰 값이다. 실제 SQL 출력은 2행, 이 문제의 계산 기준값은 2이다. 입력 표에 SQL 조건을 차례대로 적용하고 실제 출력 결과와 비교해야 한다."
+    ],
     "sql": "SELECT v FROM T a WHERE EXISTS(SELECT 1 FROM T b WHERE b.v = a.v AND b.v >= 5)",
     "input_tables": [
       {
@@ -6981,14 +7652,15 @@
           6
         ]
       ]
-    }
+    },
+    "option_note_method": "sql_result_derived"
   },
   {
     "id": "qv3_0128",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_set",
     "topic_label": "집합 연산자",
-    "difficulty": "미분류",
+    "difficulty": "상 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "다음 UNION 결과 행 수는? (데이터 세트 5)",
@@ -7000,7 +7672,12 @@
     ],
     "answer": 1,
     "explanation": "UNION은 두 조건을 합친 뒤 동일한 값의 중복을 제거한다. 해당 데이터를 SQL 순서대로 계산한 결과는 3행이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "4행은(는) 정답보다 1 큰 값이다. 실제 SQL 출력은 3행, 이 문제의 계산 기준값은 3이다. DISTINCT·집합 연산의 중복 제거와 최종 SQL 출력 행을 구분해야 한다.",
+      "정답 · 실제 검증된 SQL의 출력은 3행이고, 문제에서 요구한 계산값은 3이다. DISTINCT·집합 연산의 중복 제거와 최종 SQL 출력 행을 구분해야 한다.",
+      "5행은(는) 정답보다 2 큰 값이다. 실제 SQL 출력은 3행, 이 문제의 계산 기준값은 3이다. DISTINCT·집합 연산의 중복 제거와 최종 SQL 출력 행을 구분해야 한다.",
+      "2행은(는) 정답보다 1 작은 값이다. 실제 SQL 출력은 3행, 이 문제의 계산 기준값은 3이다. DISTINCT·집합 연산의 중복 제거와 최종 SQL 출력 행을 구분해야 한다."
+    ],
     "sql": "SELECT v FROM T WHERE v <= 2 UNION SELECT v FROM T WHERE v >= 3",
     "input_tables": [
       {
@@ -7066,14 +7743,15 @@
           4
         ]
       ]
-    }
+    },
+    "option_note_method": "sql_result_derived"
   },
   {
     "id": "qv3_0129",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_subquery",
     "topic_label": "서브쿼리",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "IN 서브쿼리 조건의 결과 행 수는? (기준 >= 2) (데이터 세트 5)",
@@ -7085,7 +7763,12 @@
     ],
     "answer": 1,
     "explanation": "기준 이상의 값이 IN 집합에 들어가며 외부 쿼리는 해당 값을 가진 모든 행을 반환한다. 해당 데이터를 SQL 순서대로 계산한 결과는 6행이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "8행은(는) 정답보다 2 큰 값이다. 실제 SQL 출력은 6행, 이 문제의 계산 기준값은 6이다. 서브쿼리 결과와 NULL의 3값 논리를 반영한 후 남는 행 수를 계산해야 한다.",
+      "정답 · 실제 검증된 SQL의 출력은 6행이고, 문제에서 요구한 계산값은 6이다. 서브쿼리 결과와 NULL의 3값 논리를 반영한 후 남는 행 수를 계산해야 한다.",
+      "7행은(는) 정답보다 1 큰 값이다. 실제 SQL 출력은 6행, 이 문제의 계산 기준값은 6이다. 서브쿼리 결과와 NULL의 3값 논리를 반영한 후 남는 행 수를 계산해야 한다.",
+      "5행은(는) 정답보다 1 작은 값이다. 실제 SQL 출력은 6행, 이 문제의 계산 기준값은 6이다. 서브쿼리 결과와 NULL의 3값 논리를 반영한 후 남는 행 수를 계산해야 한다."
+    ],
     "sql": "SELECT v FROM T WHERE v IN (SELECT v FROM T WHERE v >= 2)",
     "input_tables": [
       {
@@ -7162,14 +7845,15 @@
           3
         ]
       ]
-    }
+    },
+    "option_note_method": "sql_result_derived"
   },
   {
     "id": "qv3_0130",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_order",
     "topic_label": "정렬·TOP-N",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "COUNT(DISTINCT v) 결과는? (데이터 세트 5)",
@@ -7181,7 +7865,12 @@
     ],
     "answer": 2,
     "explanation": "중복 v 값은 한 번만 세므로 값의 종류 수가 된다. 해당 데이터를 SQL 순서대로 계산한 결과는 5이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "7은(는) 정답보다 2 큰 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 5이다. DISTINCT·집합 연산의 중복 제거와 최종 SQL 출력 행을 구분해야 한다.",
+      "4은(는) 정답보다 1 작은 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 5이다. DISTINCT·집합 연산의 중복 제거와 최종 SQL 출력 행을 구분해야 한다.",
+      "정답 · 실제 검증된 SQL의 출력은 1행이고, 문제에서 요구한 계산값은 5이다. DISTINCT·집합 연산의 중복 제거와 최종 SQL 출력 행을 구분해야 한다.",
+      "6은(는) 정답보다 1 큰 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 5이다. DISTINCT·집합 연산의 중복 제거와 최종 SQL 출력 행을 구분해야 한다."
+    ],
     "sql": "SELECT COUNT(DISTINCT v) FROM T",
     "input_tables": [
       {
@@ -7244,14 +7933,15 @@
           5
         ]
       ]
-    }
+    },
+    "option_note_method": "sql_result_derived"
   },
   {
     "id": "qv3_0131",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_null",
     "topic_label": "NULL·3값 논리",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "표준 SQL · SQLite에서 결과 검증",
     "stem": "OR 필터를 만족하는 행 수는? (v > 3 또는 v=0) (데이터 세트 5)",
@@ -7263,7 +7953,12 @@
     ],
     "answer": 0,
     "explanation": "OR 조건은 둘 중 하나라도 TRUE인 행을 통과시킨다. 중복 조건을 만족해도 한 행은 한 번 센다. 해당 데이터를 SQL 순서대로 계산한 결과는 5이며, 다른 숫자는 해당 조건의 집계 또는 필터 결과와 다르다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "정답 · 실제 검증된 SQL의 출력은 1행이고, 문제에서 요구한 계산값은 5이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다.",
+      "7은(는) 정답보다 2 큰 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 5이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다.",
+      "6은(는) 정답보다 1 큰 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 5이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다.",
+      "4은(는) 정답보다 1 작은 값이다. 실제 SQL 출력은 1행, 이 문제의 계산 기준값은 5이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다."
+    ],
     "sql": "SELECT COUNT(*) FROM T WHERE v > 3 OR v = 0",
     "input_tables": [
       {
@@ -7325,14 +8020,15 @@
           5
         ]
       ]
-    }
+    },
+    "option_note_method": "sql_result_derived"
   },
   {
     "id": "qv3_0132",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_join",
     "topic_label": "JOIN · 중복 행",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "SQLite 확인 · 표준 SQL 중심",
     "stem": "LEFT JOIN에서 중복 키를 고려했을 때 결과는 몇 행인가?",
@@ -7344,7 +8040,12 @@
     ],
     "answer": 0,
     "explanation": "해당 SQL을 입력 데이터에 적용하여 반환되는 실제 행 수를 계산한다. 최종 행 수는 1+4=5행이다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "정답 · 실제 검증된 SQL의 출력은 5행이고, 문제에서 요구한 계산값은 5이다. JOIN 후 모든 일치 조합을 계산하고 OUTER JOIN의 NULL 확장 및 WHERE 제거 여부를 따져야 한다.",
+      "4행은(는) 정답보다 1 작은 값이다. 실제 SQL 출력은 5행, 이 문제의 계산 기준값은 5이다. JOIN 후 모든 일치 조합을 계산하고 OUTER JOIN의 NULL 확장 및 WHERE 제거 여부를 따져야 한다.",
+      "6행은(는) 정답보다 1 큰 값이다. 실제 SQL 출력은 5행, 이 문제의 계산 기준값은 5이다. JOIN 후 모든 일치 조합을 계산하고 OUTER JOIN의 NULL 확장 및 WHERE 제거 여부를 따져야 한다.",
+      "7행은(는) 정답보다 2 큰 값이다. 실제 SQL 출력은 5행, 이 문제의 계산 기준값은 5이다. JOIN 후 모든 일치 조합을 계산하고 OUTER JOIN의 NULL 확장 및 WHERE 제거 여부를 따져야 한다."
+    ],
     "sql": "SELECT A.id, B.tag FROM A LEFT JOIN B ON A.id=B.id ORDER BY A.id, B.tag;",
     "input_tables": [
       {
@@ -7435,14 +8136,15 @@
       6
     ],
     "verification_method": "sql_executed",
-    "question_type": "SQL 결과 추론"
+    "question_type": "SQL 결과 추론",
+    "option_note_method": "sql_result_derived"
   },
   {
     "id": "qv3_0133",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_join",
     "topic_label": "JOIN · ON/WHERE",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "SQLite 확인 · 표준 SQL 중심",
     "stem": "LEFT JOIN 후 WHERE B.tag = 'X'를 적용하면 몇 행인가?",
@@ -7454,7 +8156,12 @@
     ],
     "answer": 3,
     "explanation": "해당 SQL을 입력 데이터에 적용하여 반환되는 실제 행 수를 계산한다. A.id=2가 2행이고 각각 X 한 행과 매칭되어 2행 남는다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "1행은(는) 정답보다 1 작은 값이다. 실제 SQL 출력은 2행, 이 문제의 계산 기준값은 2이다. JOIN 후 모든 일치 조합을 계산하고 OUTER JOIN의 NULL 확장 및 WHERE 제거 여부를 따져야 한다.",
+      "3행은(는) 정답보다 1 큰 값이다. 실제 SQL 출력은 2행, 이 문제의 계산 기준값은 2이다. JOIN 후 모든 일치 조합을 계산하고 OUTER JOIN의 NULL 확장 및 WHERE 제거 여부를 따져야 한다.",
+      "4행은(는) 정답보다 2 큰 값이다. 실제 SQL 출력은 2행, 이 문제의 계산 기준값은 2이다. JOIN 후 모든 일치 조합을 계산하고 OUTER JOIN의 NULL 확장 및 WHERE 제거 여부를 따져야 한다.",
+      "정답 · 실제 검증된 SQL의 출력은 2행이고, 문제에서 요구한 계산값은 2이다. JOIN 후 모든 일치 조합을 계산하고 OUTER JOIN의 NULL 확장 및 WHERE 제거 여부를 따져야 한다."
+    ],
     "sql": "SELECT A.id,B.tag FROM A LEFT JOIN B ON A.id=B.id WHERE B.tag='X' ORDER BY A.id;",
     "input_tables": [
       {
@@ -7533,14 +8240,15 @@
       6
     ],
     "verification_method": "sql_executed",
-    "question_type": "SQL 결과 추론"
+    "question_type": "SQL 결과 추론",
+    "option_note_method": "sql_result_derived"
   },
   {
     "id": "qv3_0134",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_join",
     "topic_label": "JOIN · ON/WHERE",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "SQLite 확인 · 표준 SQL 중심",
     "stem": "LEFT JOIN의 ON에 B.tag = 'X' 조건을 넣으면 몇 행인가?",
@@ -7552,7 +8260,12 @@
     ],
     "answer": 2,
     "explanation": "해당 SQL을 입력 데이터에 적용하여 반환되는 실제 행 수를 계산한다. A.id=2 두 행은 X와 각각 매칭되어 2행, 합계 3행이다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "4행은(는) 정답보다 1 큰 값이다. 실제 SQL 출력은 3행, 이 문제의 계산 기준값은 3이다. JOIN 후 모든 일치 조합을 계산하고 OUTER JOIN의 NULL 확장 및 WHERE 제거 여부를 따져야 한다.",
+      "5행은(는) 정답보다 2 큰 값이다. 실제 SQL 출력은 3행, 이 문제의 계산 기준값은 3이다. JOIN 후 모든 일치 조합을 계산하고 OUTER JOIN의 NULL 확장 및 WHERE 제거 여부를 따져야 한다.",
+      "정답 · 실제 검증된 SQL의 출력은 3행이고, 문제에서 요구한 계산값은 3이다. JOIN 후 모든 일치 조합을 계산하고 OUTER JOIN의 NULL 확장 및 WHERE 제거 여부를 따져야 한다.",
+      "2행은(는) 정답보다 1 작은 값이다. 실제 SQL 출력은 3행, 이 문제의 계산 기준값은 3이다. JOIN 후 모든 일치 조합을 계산하고 OUTER JOIN의 NULL 확장 및 WHERE 제거 여부를 따져야 한다."
+    ],
     "sql": "SELECT A.id,B.tag FROM A LEFT JOIN B ON A.id=B.id AND B.tag='X' ORDER BY A.id;",
     "input_tables": [
       {
@@ -7635,14 +8348,15 @@
       6
     ],
     "verification_method": "sql_executed",
-    "question_type": "SQL 결과 추론"
+    "question_type": "SQL 결과 추론",
+    "option_note_method": "sql_result_derived"
   },
   {
     "id": "qv3_0135",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_join",
     "topic_label": "JOIN · 곱셈",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "SQLite 확인 · 표준 SQL 중심",
     "stem": "동일한 키가 A에 2행, B에 3행 있을 때 INNER JOIN 결과 행은?",
@@ -7654,7 +8368,12 @@
     ],
     "answer": 1,
     "explanation": "해당 SQL을 입력 데이터에 적용하여 반환되는 실제 행 수를 계산한다. 동일 키가 일치하는 모든 조합을 만들므로 2×3=6행이다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "8행은(는) 정답보다 2 큰 값이다. 실제 SQL 출력은 6행, 이 문제의 계산 기준값은 6이다. JOIN 후 모든 일치 조합을 계산하고 OUTER JOIN의 NULL 확장 및 WHERE 제거 여부를 따져야 한다.",
+      "정답 · 실제 검증된 SQL의 출력은 6행이고, 문제에서 요구한 계산값은 6이다. JOIN 후 모든 일치 조합을 계산하고 OUTER JOIN의 NULL 확장 및 WHERE 제거 여부를 따져야 한다.",
+      "5행은(는) 정답보다 1 작은 값이다. 실제 SQL 출력은 6행, 이 문제의 계산 기준값은 6이다. JOIN 후 모든 일치 조합을 계산하고 OUTER JOIN의 NULL 확장 및 WHERE 제거 여부를 따져야 한다.",
+      "7행은(는) 정답보다 1 큰 값이다. 실제 SQL 출력은 6행, 이 문제의 계산 기준값은 6이다. JOIN 후 모든 일치 조합을 계산하고 OUTER JOIN의 NULL 확장 및 WHERE 제거 여부를 따져야 한다."
+    ],
     "sql": "SELECT A.a,B.b FROM A INNER JOIN B ON A.id=B.id ORDER BY A.a,B.b;",
     "input_tables": [
       {
@@ -7748,14 +8467,15 @@
       6
     ],
     "verification_method": "sql_executed",
-    "question_type": "SQL 결과 추론"
+    "question_type": "SQL 결과 추론",
+    "option_note_method": "sql_result_derived"
   },
   {
     "id": "qv3_0136",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_join",
     "topic_label": "JOIN · CROSS",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "SQLite 확인 · 표준 SQL 중심",
     "stem": "A가 2행이고 B가 3행일 때 CROSS JOIN 결과 행은?",
@@ -7767,7 +8487,12 @@
     ],
     "answer": 0,
     "explanation": "해당 SQL을 입력 데이터에 적용하여 반환되는 실제 행 수를 계산한다. 2행 × 3행 = 6행이다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "정답 · 실제 검증된 SQL의 출력은 6행이고, 문제에서 요구한 계산값은 6이다. JOIN 후 모든 일치 조합을 계산하고 OUTER JOIN의 NULL 확장 및 WHERE 제거 여부를 따져야 한다.",
+      "5행은(는) 정답보다 1 작은 값이다. 실제 SQL 출력은 6행, 이 문제의 계산 기준값은 6이다. JOIN 후 모든 일치 조합을 계산하고 OUTER JOIN의 NULL 확장 및 WHERE 제거 여부를 따져야 한다.",
+      "7행은(는) 정답보다 1 큰 값이다. 실제 SQL 출력은 6행, 이 문제의 계산 기준값은 6이다. JOIN 후 모든 일치 조합을 계산하고 OUTER JOIN의 NULL 확장 및 WHERE 제거 여부를 따져야 한다.",
+      "8행은(는) 정답보다 2 큰 값이다. 실제 SQL 출력은 6행, 이 문제의 계산 기준값은 6이다. JOIN 후 모든 일치 조합을 계산하고 OUTER JOIN의 NULL 확장 및 WHERE 제거 여부를 따져야 한다."
+    ],
     "sql": "SELECT A.id,B.tag FROM A CROSS JOIN B ORDER BY A.id,B.tag;",
     "input_tables": [
       {
@@ -7854,14 +8579,15 @@
       6
     ],
     "verification_method": "sql_executed",
-    "question_type": "SQL 결과 추론"
+    "question_type": "SQL 결과 추론",
+    "option_note_method": "sql_result_derived"
   },
   {
     "id": "qv3_0137",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_join",
     "topic_label": "JOIN · 미매칭",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "SQLite 확인 · 표준 SQL 중심",
     "stem": "LEFT JOIN한 뒤 B.id IS NULL 조건을 적용하면 반환되는 A 행은 몇 개인가?",
@@ -7873,7 +8599,12 @@
     ],
     "answer": 3,
     "explanation": "해당 SQL을 입력 데이터에 적용하여 반환되는 실제 행 수를 계산한다. 조건을 통과하는 두 행만 반환된다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "1행은(는) 정답보다 1 작은 값이다. 실제 SQL 출력은 2행, 이 문제의 계산 기준값은 2이다. JOIN 후 모든 일치 조합을 계산하고 OUTER JOIN의 NULL 확장 및 WHERE 제거 여부를 따져야 한다.",
+      "3행은(는) 정답보다 1 큰 값이다. 실제 SQL 출력은 2행, 이 문제의 계산 기준값은 2이다. JOIN 후 모든 일치 조합을 계산하고 OUTER JOIN의 NULL 확장 및 WHERE 제거 여부를 따져야 한다.",
+      "4행은(는) 정답보다 2 큰 값이다. 실제 SQL 출력은 2행, 이 문제의 계산 기준값은 2이다. JOIN 후 모든 일치 조합을 계산하고 OUTER JOIN의 NULL 확장 및 WHERE 제거 여부를 따져야 한다.",
+      "정답 · 실제 검증된 SQL의 출력은 2행이고, 문제에서 요구한 계산값은 2이다. JOIN 후 모든 일치 조합을 계산하고 OUTER JOIN의 NULL 확장 및 WHERE 제거 여부를 따져야 한다."
+    ],
     "sql": "SELECT A.id FROM A LEFT JOIN B ON A.id=B.id WHERE B.id IS NULL ORDER BY A.id;",
     "input_tables": [
       {
@@ -7945,14 +8676,15 @@
       6
     ],
     "verification_method": "sql_executed",
-    "question_type": "SQL 결과 추론"
+    "question_type": "SQL 결과 추론",
+    "option_note_method": "sql_result_derived"
   },
   {
     "id": "qv3_0138",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_window",
     "topic_label": "윈도우 함수 · DENSE_RANK",
-    "difficulty": "미분류",
+    "difficulty": "상 · 예상",
     "source_type": "자체 제작",
     "dbms": "SQLite 확인 · 표준 SQL 중심",
     "stem": "DENSE_RANK를 이용해 상위 두 개 점수 그룹을 선택하면 몇 행인가?",
@@ -7964,7 +8696,12 @@
     ],
     "answer": 2,
     "explanation": "해당 SQL을 입력 데이터에 적용하여 반환되는 실제 행 수를 계산한다. 1위와 2위 점수 그룹을 모두 선택해 3행을 반환한다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "4행은(는) 정답보다 1 큰 값이다. 실제 SQL 출력은 3행, 이 문제의 계산 기준값은 3이다. 동점 처리와 RANK/DENSE_RANK 차이를 반영한 뒤 순위 조건으로 행을 선택해야 한다.",
+      "5행은(는) 정답보다 2 큰 값이다. 실제 SQL 출력은 3행, 이 문제의 계산 기준값은 3이다. 동점 처리와 RANK/DENSE_RANK 차이를 반영한 뒤 순위 조건으로 행을 선택해야 한다.",
+      "정답 · 실제 검증된 SQL의 출력은 3행이고, 문제에서 요구한 계산값은 3이다. 동점 처리와 RANK/DENSE_RANK 차이를 반영한 뒤 순위 조건으로 행을 선택해야 한다.",
+      "2행은(는) 정답보다 1 작은 값이다. 실제 SQL 출력은 3행, 이 문제의 계산 기준값은 3이다. 동점 처리와 RANK/DENSE_RANK 차이를 반영한 뒤 순위 조건으로 행을 선택해야 한다."
+    ],
     "sql": "SELECT id FROM (SELECT id,DENSE_RANK() OVER(ORDER BY score DESC) AS r FROM SCORE) WHERE r<=2 ORDER BY id;",
     "input_tables": [
       {
@@ -8028,14 +8765,15 @@
       4
     ],
     "verification_method": "sql_executed",
-    "question_type": "SQL 결과 추론"
+    "question_type": "SQL 결과 추론",
+    "option_note_method": "sql_result_derived"
   },
   {
     "id": "qv3_0139",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_window",
     "topic_label": "윈도우 함수 · RANK",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "SQLite 확인 · 표준 SQL 중심",
     "stem": "RANK로 2위까지 선택했을 때 몇 행이 반환되는가?",
@@ -8047,7 +8785,12 @@
     ],
     "answer": 1,
     "explanation": "해당 SQL을 입력 데이터에 적용하여 반환되는 실제 행 수를 계산한다. RANK<=2에 해당하는 것은 90점 두 행뿐이다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "4행은(는) 정답보다 2 큰 값이다. 실제 SQL 출력은 2행, 이 문제의 계산 기준값은 2이다. 동점 처리와 RANK/DENSE_RANK 차이를 반영한 뒤 순위 조건으로 행을 선택해야 한다.",
+      "정답 · 실제 검증된 SQL의 출력은 2행이고, 문제에서 요구한 계산값은 2이다. 동점 처리와 RANK/DENSE_RANK 차이를 반영한 뒤 순위 조건으로 행을 선택해야 한다.",
+      "1행은(는) 정답보다 1 작은 값이다. 실제 SQL 출력은 2행, 이 문제의 계산 기준값은 2이다. 동점 처리와 RANK/DENSE_RANK 차이를 반영한 뒤 순위 조건으로 행을 선택해야 한다.",
+      "3행은(는) 정답보다 1 큰 값이다. 실제 SQL 출력은 2행, 이 문제의 계산 기준값은 2이다. 동점 처리와 RANK/DENSE_RANK 차이를 반영한 뒤 순위 조건으로 행을 선택해야 한다."
+    ],
     "sql": "SELECT id FROM (SELECT id,RANK() OVER(ORDER BY score DESC) AS r FROM SCORE) WHERE r<=2 ORDER BY id;",
     "input_tables": [
       {
@@ -8108,14 +8851,15 @@
       4
     ],
     "verification_method": "sql_executed",
-    "question_type": "SQL 결과 추론"
+    "question_type": "SQL 결과 추론",
+    "option_note_method": "sql_result_derived"
   },
   {
     "id": "qv3_0140",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_group",
     "topic_label": "집계 · HAVING",
-    "difficulty": "미분류",
+    "difficulty": "상 · 예상",
     "source_type": "자체 제작",
     "dbms": "SQLite 확인 · 표준 SQL 중심",
     "stem": "부서별 COUNT(*)가 2 이상인 부서만 조회할 때 몇 그룹이 출력되는가?",
@@ -8127,7 +8871,12 @@
     ],
     "answer": 0,
     "explanation": "해당 SQL을 입력 데이터에 적용하여 반환되는 실제 행 수를 계산한다. HAVING COUNT(*)>=2 조건으로 A·B 두 그룹만 남는다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "정답 · 실제 검증된 SQL의 출력은 2행이고, 문제에서 요구한 계산값은 2이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다.",
+      "1행은(는) 정답보다 1 작은 값이다. 실제 SQL 출력은 2행, 이 문제의 계산 기준값은 2이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다.",
+      "3행은(는) 정답보다 1 큰 값이다. 실제 SQL 출력은 2행, 이 문제의 계산 기준값은 2이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다.",
+      "4행은(는) 정답보다 2 큰 값이다. 실제 SQL 출력은 2행, 이 문제의 계산 기준값은 2이다. WHERE·GROUP BY·HAVING의 적용 순서와 최종 그룹/행 수를 확인해야 한다."
+    ],
     "sql": "SELECT dept,COUNT(*) AS cnt FROM EMP GROUP BY dept HAVING COUNT(*)>=2 ORDER BY dept;",
     "input_tables": [
       {
@@ -8200,14 +8949,15 @@
       6
     ],
     "verification_method": "sql_executed",
-    "question_type": "SQL 결과 추론"
+    "question_type": "SQL 결과 추론",
+    "option_note_method": "sql_result_derived"
   },
   {
     "id": "qv3_0141",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_subquery",
     "topic_label": "서브쿼리 · EXISTS",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "SQLite 확인 · 표준 SQL 중심",
     "stem": "부서가 D에 속하는 직원 중 존재 조건을 만족하는 직원은 몇 명인가?",
@@ -8219,7 +8969,12 @@
     ],
     "answer": 3,
     "explanation": "해당 SQL을 입력 데이터에 적용하여 반환되는 실제 행 수를 계산한다. D 직원 3명이 반환된다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "2행은(는) 정답보다 1 작은 값이다. 실제 SQL 출력은 3행, 이 문제의 계산 기준값은 3이다. 정렬 및 행 제한의 순서를 지키고 동점·DISTINCT 적용 여부를 확인해야 한다.",
+      "4행은(는) 정답보다 1 큰 값이다. 실제 SQL 출력은 3행, 이 문제의 계산 기준값은 3이다. 정렬 및 행 제한의 순서를 지키고 동점·DISTINCT 적용 여부를 확인해야 한다.",
+      "5행은(는) 정답보다 2 큰 값이다. 실제 SQL 출력은 3행, 이 문제의 계산 기준값은 3이다. 정렬 및 행 제한의 순서를 지키고 동점·DISTINCT 적용 여부를 확인해야 한다.",
+      "정답 · 실제 검증된 SQL의 출력은 3행이고, 문제에서 요구한 계산값은 3이다. 정렬 및 행 제한의 순서를 지키고 동점·DISTINCT 적용 여부를 확인해야 한다."
+    ],
     "sql": "SELECT e.id FROM EMP e WHERE EXISTS (SELECT 1 FROM EMP x WHERE x.dept=e.dept AND x.salary>90) ORDER BY e.id;",
     "input_tables": [
       {
@@ -8289,14 +9044,15 @@
       5
     ],
     "verification_method": "sql_executed",
-    "question_type": "SQL 결과 추론"
+    "question_type": "SQL 결과 추론",
+    "option_note_method": "sql_result_derived"
   },
   {
     "id": "qv3_0142",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_order",
     "topic_label": "정렬 · LIMIT",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "SQLite 확인 · 표준 SQL 중심",
     "stem": "점수 내림차순, id 오름차순으로 정렬한 상위 2행의 반환 행 수는?",
@@ -8308,7 +9064,12 @@
     ],
     "answer": 2,
     "explanation": "해당 SQL을 입력 데이터에 적용하여 반환되는 실제 행 수를 계산한다. LIMIT 2로 최종 두 행이 반환된다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "3행은(는) 정답보다 1 큰 값이다. 실제 SQL 출력은 2행, 이 문제의 계산 기준값은 2이다. 정렬 및 행 제한의 순서를 지키고 동점·DISTINCT 적용 여부를 확인해야 한다.",
+      "4행은(는) 정답보다 2 큰 값이다. 실제 SQL 출력은 2행, 이 문제의 계산 기준값은 2이다. 정렬 및 행 제한의 순서를 지키고 동점·DISTINCT 적용 여부를 확인해야 한다.",
+      "정답 · 실제 검증된 SQL의 출력은 2행이고, 문제에서 요구한 계산값은 2이다. 정렬 및 행 제한의 순서를 지키고 동점·DISTINCT 적용 여부를 확인해야 한다.",
+      "1행은(는) 정답보다 1 작은 값이다. 실제 SQL 출력은 2행, 이 문제의 계산 기준값은 2이다. 정렬 및 행 제한의 순서를 지키고 동점·DISTINCT 적용 여부를 확인해야 한다."
+    ],
     "sql": "SELECT id,score FROM SCORE ORDER BY score DESC,id ASC LIMIT 2;",
     "input_tables": [
       {
@@ -8374,14 +9135,15 @@
       14
     ],
     "verification_method": "sql_executed",
-    "question_type": "SQL 결과 추론"
+    "question_type": "SQL 결과 추론",
+    "option_note_method": "sql_result_derived"
   },
   {
     "id": "qv3_0143",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_null",
     "topic_label": "NULL · NOT EXISTS",
-    "difficulty": "미분류",
+    "difficulty": "상 · 예상",
     "source_type": "자체 제작",
     "dbms": "SQLite 확인 · 표준 SQL 중심",
     "stem": "U에 NULL이 포함되어도 NOT EXISTS로 매칭되지 않은 T.id를 구하면 몇 행인가?",
@@ -8393,7 +9155,12 @@
     ],
     "answer": 1,
     "explanation": "해당 SQL을 입력 데이터에 적용하여 반환되는 실제 행 수를 계산한다. T.id=1과 3의 두 행이 남는다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "4행은(는) 정답보다 2 큰 값이다. 실제 SQL 출력은 2행, 이 문제의 계산 기준값은 2이다. 서브쿼리 결과와 NULL의 3값 논리를 반영한 후 남는 행 수를 계산해야 한다.",
+      "정답 · 실제 검증된 SQL의 출력은 2행이고, 문제에서 요구한 계산값은 2이다. 서브쿼리 결과와 NULL의 3값 논리를 반영한 후 남는 행 수를 계산해야 한다.",
+      "1행은(는) 정답보다 1 작은 값이다. 실제 SQL 출력은 2행, 이 문제의 계산 기준값은 2이다. 서브쿼리 결과와 NULL의 3값 논리를 반영한 후 남는 행 수를 계산해야 한다.",
+      "3행은(는) 정답보다 1 큰 값이다. 실제 SQL 출력은 2행, 이 문제의 계산 기준값은 2이다. 서브쿼리 결과와 NULL의 3값 논리를 반영한 후 남는 행 수를 계산해야 한다."
+    ],
     "sql": "SELECT t.id FROM T t WHERE NOT EXISTS(SELECT 1 FROM U u WHERE u.id=t.id) ORDER BY t.id;",
     "input_tables": [
       {
@@ -8461,14 +9228,15 @@
       2
     ],
     "verification_method": "sql_executed",
-    "question_type": "SQL 결과 추론"
+    "question_type": "SQL 결과 추론",
+    "option_note_method": "sql_result_derived"
   },
   {
     "id": "qv3_0144",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_set",
     "topic_label": "집합 연산 · UNION",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "SQLite 확인 · 표준 SQL 중심",
     "stem": "중복을 제거하는 UNION의 반환 행은 몇 개인가?",
@@ -8480,7 +9248,12 @@
     ],
     "answer": 0,
     "explanation": "해당 SQL을 입력 데이터에 적용하여 반환되는 실제 행 수를 계산한다. UNION은 중복을 제거하므로 1,2,3의 3행이 반환된다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "정답 · 실제 검증된 SQL의 출력은 3행이고, 문제에서 요구한 계산값은 3이다. DISTINCT·집합 연산의 중복 제거와 최종 SQL 출력 행을 구분해야 한다.",
+      "2행은(는) 정답보다 1 작은 값이다. 실제 SQL 출력은 3행, 이 문제의 계산 기준값은 3이다. DISTINCT·집합 연산의 중복 제거와 최종 SQL 출력 행을 구분해야 한다.",
+      "4행은(는) 정답보다 1 큰 값이다. 실제 SQL 출력은 3행, 이 문제의 계산 기준값은 3이다. DISTINCT·집합 연산의 중복 제거와 최종 SQL 출력 행을 구분해야 한다.",
+      "5행은(는) 정답보다 2 큰 값이다. 실제 SQL 출력은 3행, 이 문제의 계산 기준값은 3이다. DISTINCT·집합 연산의 중복 제거와 최종 SQL 출력 행을 구분해야 한다."
+    ],
     "sql": "SELECT id FROM A UNION SELECT id FROM B ORDER BY id;",
     "input_tables": [
       {
@@ -8548,14 +9321,15 @@
     "verified": true,
     "linked_chapters": [],
     "verification_method": "sql_executed",
-    "question_type": "SQL 결과 추론"
+    "question_type": "SQL 결과 추론",
+    "option_note_method": "sql_result_derived"
   },
   {
     "id": "qv3_0145",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_join",
     "topic_label": "JOIN · WHERE 조건",
-    "difficulty": "미분류",
+    "difficulty": "중 · 예상",
     "source_type": "자체 제작",
     "dbms": "SQLite 확인 · 표준 SQL 중심",
     "stem": "JOIN 후 양쪽 조건을 모두 만족하는 결과 행 수는?",
@@ -8567,7 +9341,12 @@
     ],
     "answer": 3,
     "explanation": "해당 SQL을 입력 데이터에 적용하여 반환되는 실제 행 수를 계산한다. WHERE D.active=1을 만족하는 A 부서 직원 2명만 남는다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "1행은(는) 정답보다 1 작은 값이다. 실제 SQL 출력은 2행, 이 문제의 계산 기준값은 2이다. JOIN 후 모든 일치 조합을 계산하고 OUTER JOIN의 NULL 확장 및 WHERE 제거 여부를 따져야 한다.",
+      "3행은(는) 정답보다 1 큰 값이다. 실제 SQL 출력은 2행, 이 문제의 계산 기준값은 2이다. JOIN 후 모든 일치 조합을 계산하고 OUTER JOIN의 NULL 확장 및 WHERE 제거 여부를 따져야 한다.",
+      "4행은(는) 정답보다 2 큰 값이다. 실제 SQL 출력은 2행, 이 문제의 계산 기준값은 2이다. JOIN 후 모든 일치 조합을 계산하고 OUTER JOIN의 NULL 확장 및 WHERE 제거 여부를 따져야 한다.",
+      "정답 · 실제 검증된 SQL의 출력은 2행이고, 문제에서 요구한 계산값은 2이다. JOIN 후 모든 일치 조합을 계산하고 OUTER JOIN의 NULL 확장 및 WHERE 제거 여부를 따져야 한다."
+    ],
     "sql": "SELECT E.id FROM EMP E JOIN DEPT D ON E.dept=D.dept WHERE D.active=1 ORDER BY E.id;",
     "input_tables": [
       {
@@ -8646,14 +9425,15 @@
       6
     ],
     "verification_method": "sql_executed",
-    "question_type": "SQL 결과 추론"
+    "question_type": "SQL 결과 추론",
+    "option_note_method": "sql_result_derived"
   },
   {
     "id": "qv3_0146",
     "subject": "SQL 기본 및 활용",
     "topic": "sql_null",
     "topic_label": "NULL · NOT IN",
-    "difficulty": "미분류",
+    "difficulty": "상 · 예상",
     "source_type": "자체 제작",
     "dbms": "SQLite 확인 · 표준 SQL 중심",
     "stem": "U에 NULL이 포함된 경우 NOT IN 쿼리 결과는 몇 행인가?",
@@ -8665,7 +9445,12 @@
     ],
     "answer": 2,
     "explanation": "해당 SQL을 입력 데이터에 적용하여 반환되는 실제 행 수를 계산한다. NOT IN의 결과는 0행이다.",
-    "option_explanations": [],
+    "option_explanations": [
+      "2행은(는) 정답보다 2 큰 값이다. 실제 SQL 출력은 0행, 이 문제의 계산 기준값은 0이다. 서브쿼리 결과와 NULL의 3값 논리를 반영한 후 남는 행 수를 계산해야 한다.",
+      "3행은(는) 정답보다 3 큰 값이다. 실제 SQL 출력은 0행, 이 문제의 계산 기준값은 0이다. 서브쿼리 결과와 NULL의 3값 논리를 반영한 후 남는 행 수를 계산해야 한다.",
+      "정답 · 실제 검증된 SQL의 출력은 0행이고, 문제에서 요구한 계산값은 0이다. 서브쿼리 결과와 NULL의 3값 논리를 반영한 후 남는 행 수를 계산해야 한다.",
+      "1행은(는) 정답보다 1 큰 값이다. 실제 SQL 출력은 0행, 이 문제의 계산 기준값은 0이다. 서브쿼리 결과와 NULL의 3값 논리를 반영한 후 남는 행 수를 계산해야 한다."
+    ],
     "sql": "SELECT id FROM T WHERE id NOT IN(SELECT id FROM U) ORDER BY id;",
     "input_tables": [
       {
@@ -8726,6 +9511,7 @@
       2
     ],
     "verification_method": "sql_executed",
-    "question_type": "SQL 결과 추론"
+    "question_type": "SQL 결과 추론",
+    "option_note_method": "sql_result_derived"
   }
 ]

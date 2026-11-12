@@ -1,10 +1,10 @@
 {
-  "version": "3.1",
+  "version": "3.2",
   "updated_at": "2026-11-12",
   "count": 146,
   "manual_count": 71,
   "sql_verified_count": 75,
-  "source_policy": "자체 제작 · 실행 검증 / 공개 복원 원문 무단 수록 금지",
+  "source_policy": "직접 제작 학습 문제 · SQL 75문항 SQLite 결과 검증 · 원문 무단 복제 금지",
   "subjects": [
     "데이터 모델링",
     "SQL 기본 및 활용"
@@ -17,5 +17,7 @@
     "sql_executed": 75,
     "concept_reviewed": 71
   },
-  "difficulty_policy": "기존 일괄 중 표시를 제거; 난이도는 문항별 교정 전까지 미분류"
+  "difficulty_policy": "콘텐츠 조건 기반 예상 난이도(하·중·상); 실제 수험자 정답률을 통한 교정 전까지 참고용",
+  "options_explained_count": 146,
+  "trace_viewer_chapters": 15
 }

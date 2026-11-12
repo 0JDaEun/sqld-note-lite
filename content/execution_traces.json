@@ -1,0 +1,1106 @@
+[
+  {
+    "chapter": 1,
+    "title": "LEFT JOIN: 일치 행이 누적되는 과정",
+    "steps": [
+      {
+        "title": "매칭 없음 → NULL 보존",
+        "note": "A.id=1은 B에 일치하는 행이 없으므로 LEFT JOIN의 NULL 확장 행을 하나 만든다.",
+        "columns": [
+          "A.id",
+          "B.tag"
+        ],
+        "rows": [
+          [
+            1,
+            null
+          ]
+        ],
+        "table_label": "부분 결과 · 1행"
+      },
+      {
+        "title": "중복 키 조합 추가",
+        "note": "A.id=2 두 행과 B.id=2 두 행이 2×2 조합을 만들어 네 행이 추가된다.",
+        "columns": [
+          "A.id",
+          "B.tag"
+        ],
+        "rows": [
+          [
+            1,
+            null
+          ],
+          [
+            2,
+            "X"
+          ],
+          [
+            2,
+            "X"
+          ],
+          [
+            2,
+            "Y"
+          ],
+          [
+            2,
+            "Y"
+          ]
+        ],
+        "table_label": "누적 조인 결과 · 5행"
+      },
+      {
+        "title": "ORDER BY 이후",
+        "note": "id와 tag 순서로 정렬한 최종 LEFT JOIN 결과다. INNER JOIN이라면 첫 NULL 행이 없다.",
+        "columns": [
+          "A.id",
+          "B.tag"
+        ],
+        "rows": [
+          [
+            1,
+            null
+          ],
+          [
+            2,
+            "X"
+          ],
+          [
+            2,
+            "X"
+          ],
+          [
+            2,
+            "Y"
+          ],
+          [
+            2,
+            "Y"
+          ]
+        ],
+        "table_label": "최종 SQL 출력 · 5행"
+      }
+    ]
+  },
+  {
+    "chapter": 2,
+    "title": "NOT IN: 행별 TRUE/FALSE/UNKNOWN 판단",
+    "steps": [
+      {
+        "title": "id=1",
+        "note": "1<>2는 TRUE, 1<>NULL은 UNKNOWN이므로 전체는 UNKNOWN이다.",
+        "columns": [
+          "T.id",
+          "id<>2",
+          "id<>NULL",
+          "WHERE 통과"
+        ],
+        "rows": [
+          [
+            1,
+            "TRUE",
+            "UNKNOWN",
+            "아니오"
+          ]
+        ],
+        "table_label": "조건 평가"
+      },
+      {
+        "title": "id=2",
+        "note": "2<>2가 FALSE이므로 최종 결과는 FALSE다.",
+        "columns": [
+          "T.id",
+          "id<>2",
+          "id<>NULL",
+          "WHERE 통과"
+        ],
+        "rows": [
+          [
+            1,
+            "TRUE",
+            "UNKNOWN",
+            "아니오"
+          ],
+          [
+            2,
+            "FALSE",
+            "UNKNOWN",
+            "아니오"
+          ]
+        ],
+        "table_label": "조건 평가 누적"
+      },
+      {
+        "title": "id=3 및 최종",
+        "note": "3 역시 UNKNOWN이다. WHERE는 TRUE만 통과시키므로 최종 SQL 출력은 0행이다.",
+        "columns": [
+          "T.id",
+          "id<>2",
+          "id<>NULL",
+          "WHERE 통과"
+        ],
+        "rows": [
+          [
+            1,
+            "TRUE",
+            "UNKNOWN",
+            "아니오"
+          ],
+          [
+            2,
+            "FALSE",
+            "UNKNOWN",
+            "아니오"
+          ],
+          [
+            3,
+            "TRUE",
+            "UNKNOWN",
+            "아니오"
+          ]
+        ],
+        "table_label": "판단표 · 출력 행 0개"
+      }
+    ]
+  },
+  {
+    "chapter": 3,
+    "title": "WHERE → GROUP BY → HAVING",
+    "steps": [
+      {
+        "title": "WHERE 필터",
+        "note": "amount가 NULL인 A행은 비교가 UNKNOWN이므로 제외된다.",
+        "columns": [
+          "region",
+          "amount"
+        ],
+        "rows": [
+          [
+            "A",
+            100
+          ],
+          [
+            "B",
+            50
+          ],
+          [
+            "B",
+            70
+          ]
+        ],
+        "table_label": "WHERE 이후 · 3행"
+      },
+      {
+        "title": "GROUP BY와 집계",
+        "note": "남은 데이터를 region별로 그룹화하고 COUNT와 SUM을 계산한다.",
+        "columns": [
+          "region",
+          "COUNT(*)",
+          "SUM(amount)"
+        ],
+        "rows": [
+          [
+            "A",
+            1,
+            100
+          ],
+          [
+            "B",
+            2,
+            120
+          ]
+        ],
+        "table_label": "집계 중간 결과 · 2그룹"
+      },
+      {
+        "title": "HAVING 필터",
+        "note": "COUNT(*)가 2 이상인 B 그룹만 최종 반환된다.",
+        "columns": [
+          "region",
+          "cnt",
+          "total"
+        ],
+        "rows": [
+          [
+            "B",
+            2,
+            120
+          ]
+        ],
+        "table_label": "최종 SQL 출력 · 1행"
+      }
+    ]
+  },
+  {
+    "chapter": 4,
+    "title": "동점 순위와 누적합 비교",
+    "steps": [
+      {
+        "title": "RANK / DENSE_RANK",
+        "note": "90점 두 행은 모두 1위이다. 다음 80점은 RANK 3위, DENSE_RANK 2위다.",
+        "columns": [
+          "id",
+          "score",
+          "RANK",
+          "DENSE_RANK"
+        ],
+        "rows": [
+          [
+            "A",
+            90,
+            1,
+            1
+          ],
+          [
+            "B",
+            90,
+            1,
+            1
+          ],
+          [
+            "C",
+            80,
+            3,
+            2
+          ],
+          [
+            "D",
+            70,
+            4,
+            3
+          ]
+        ],
+        "table_label": "순위 계산 결과"
+      },
+      {
+        "title": "동점의 RANGE 프레임",
+        "note": "동점인 A와 B는 기본 RANGE 프레임에서 서로 같은 누적합 180을 가진다.",
+        "columns": [
+          "id",
+          "score",
+          "누적합"
+        ],
+        "rows": [
+          [
+            "A",
+            90,
+            180
+          ],
+          [
+            "B",
+            90,
+            180
+          ]
+        ],
+        "table_label": "90점 동점 구간"
+      },
+      {
+        "title": "다음 점수 포함",
+        "note": "80점을 포함해 260, 70점까지 포함하면 330이 된다.",
+        "columns": [
+          "id",
+          "score",
+          "RANK",
+          "DENSE_RANK",
+          "누적합"
+        ],
+        "rows": [
+          [
+            "A",
+            90,
+            1,
+            1,
+            180
+          ],
+          [
+            "B",
+            90,
+            1,
+            1,
+            180
+          ],
+          [
+            "C",
+            80,
+            3,
+            2,
+            260
+          ],
+          [
+            "D",
+            70,
+            4,
+            3,
+            330
+          ]
+        ],
+        "table_label": "최종 계산 결과"
+      }
+    ]
+  },
+  {
+    "chapter": 5,
+    "title": "상관 서브쿼리: 바깥 행마다 부서 평균",
+    "steps": [
+      {
+        "title": "부서 평균",
+        "note": "A부서 평균 (100+80)/2=90, B부서 평균 90이다.",
+        "columns": [
+          "dept",
+          "AVG(salary)"
+        ],
+        "rows": [
+          [
+            "A",
+            90
+          ],
+          [
+            "B",
+            90
+          ]
+        ],
+        "table_label": "서브쿼리 계산 기준"
+      },
+      {
+        "title": "행별 비교",
+        "note": "각 EMP 행을 자기 부서 평균과 비교한다.",
+        "columns": [
+          "emp.id",
+          "salary",
+          "부서 평균",
+          "조건 통과"
+        ],
+        "rows": [
+          [
+            1,
+            100,
+            90,
+            "예"
+          ],
+          [
+            2,
+            80,
+            90,
+            "아니오"
+          ],
+          [
+            3,
+            90,
+            90,
+            "아니오"
+          ]
+        ],
+        "table_label": "WHERE 판정표"
+      },
+      {
+        "title": "필터 결과",
+        "note": "자기 부서 평균보다 급여가 큰 직원 1번만 남는다.",
+        "columns": [
+          "id"
+        ],
+        "rows": [
+          [
+            1
+          ]
+        ],
+        "table_label": "최종 SQL 출력 · 1행"
+      }
+    ]
+  },
+  {
+    "chapter": 6,
+    "title": "SQL 논리 처리 순서와 남은 행",
+    "steps": [
+      {
+        "title": "WHERE",
+        "note": "salary>=50으로 X의 두 행만 남기고 Y=40을 제외한다.",
+        "columns": [
+          "dept",
+          "salary"
+        ],
+        "rows": [
+          [
+            "X",
+            100
+          ],
+          [
+            "X",
+            60
+          ]
+        ],
+        "table_label": "WHERE 이후 · 2행"
+      },
+      {
+        "title": "GROUP BY",
+        "note": "X 그룹의 SUM=160, COUNT=2가 계산된다.",
+        "columns": [
+          "dept",
+          "SUM(salary)",
+          "COUNT(*)"
+        ],
+        "rows": [
+          [
+            "X",
+            160,
+            2
+          ]
+        ],
+        "table_label": "그룹 집계 중간 결과"
+      },
+      {
+        "title": "HAVING → SELECT",
+        "note": "COUNT>=2를 충족하므로 dept=X,total=160을 출력한다.",
+        "columns": [
+          "dept",
+          "total"
+        ],
+        "rows": [
+          [
+            "X",
+            160
+          ]
+        ],
+        "table_label": "최종 SQL 출력"
+      }
+    ]
+  },
+  {
+    "chapter": 7,
+    "title": "SAVEPOINT 전후 상태 변화",
+    "steps": [
+      {
+        "title": "UPDATE",
+        "note": "id=1의 잔액이 10에서 20으로 변경된다. 아직 COMMIT 전이다.",
+        "columns": [
+          "id",
+          "balance"
+        ],
+        "rows": [
+          [
+            1,
+            20
+          ]
+        ],
+        "table_label": "UPDATE 직후"
+      },
+      {
+        "title": "SAVEPOINT → INSERT",
+        "note": "s1 이후 id=2의 행이 추가되었다.",
+        "columns": [
+          "id",
+          "balance"
+        ],
+        "rows": [
+          [
+            1,
+            20
+          ],
+          [
+            2,
+            30
+          ]
+        ],
+        "table_label": "INSERT 이후 · 미확정"
+      },
+      {
+        "title": "ROLLBACK TO s1 → COMMIT",
+        "note": "s1 이후 INSERT만 취소되며 id=1 UPDATE는 유지·확정된다.",
+        "columns": [
+          "id",
+          "balance"
+        ],
+        "rows": [
+          [
+            1,
+            20
+          ]
+        ],
+        "table_label": "COMMIT 후 최종 상태"
+      }
+    ]
+  },
+  {
+    "chapter": 8,
+    "title": "1:N과 선택 참여를 실제 행으로 읽기",
+    "steps": [
+      {
+        "title": "고객과 주문 연결",
+        "note": "고객 1에 주문 3건, 고객 2에는 매칭되는 주문이 없다.",
+        "columns": [
+          "customer_id",
+          "order_id"
+        ],
+        "rows": [
+          [
+            1,
+            101
+          ],
+          [
+            1,
+            102
+          ],
+          [
+            1,
+            103
+          ],
+          [
+            2,
+            null
+          ]
+        ],
+        "table_label": "LEFT JOIN 중간 결과 · 4행"
+      },
+      {
+        "title": "COUNT(o.order_id)",
+        "note": "고객 2의 확장된 NULL은 COUNT(o.order_id)에 포함되지 않는다.",
+        "columns": [
+          "customer_id",
+          "주문 수"
+        ],
+        "rows": [
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            0
+          ]
+        ],
+        "table_label": "GROUP BY 집계"
+      },
+      {
+        "title": "관계 해석",
+        "note": "고객 2도 남으므로 고객의 주문 참여는 선택적이다.",
+        "columns": [
+          "고객",
+          "연결 주문",
+          "참여"
+        ],
+        "rows": [
+          [
+            1,
+            3,
+            "0~N 가능"
+          ],
+          [
+            2,
+            0,
+            "선택 참여"
+          ]
+        ],
+        "table_label": "관계 해석표"
+      }
+    ]
+  },
+  {
+    "chapter": 9,
+    "title": "식별관계: 자식 PK 구성 여부",
+    "steps": [
+      {
+        "title": "ORDERS의 키",
+        "note": "ORDERS의 기본키는 order_id이며 customer_id는 FK지만 PK가 아니다.",
+        "columns": [
+          "order_id (PK)",
+          "customer_id (FK)"
+        ],
+        "rows": [
+          [
+            101,
+            1
+          ]
+        ],
+        "table_label": "부모-주문 비식별 구조"
+      },
+      {
+        "title": "ORDER_ITEM의 키",
+        "note": "ORDER_ITEM은 (order_id,item_no)가 복합 PK이며 order_id가 FK이기도 하다.",
+        "columns": [
+          "order_id (PK·FK)",
+          "item_no (PK)",
+          "qty"
+        ],
+        "rows": [
+          [
+            101,
+            1,
+            2
+          ],
+          [
+            101,
+            2,
+            1
+          ]
+        ],
+        "table_label": "주문-주문항목 식별 구조"
+      },
+      {
+        "title": "관계 판정",
+        "note": "부모 키가 자식 PK 안에 포함되어야 식별관계다.",
+        "columns": [
+          "관계",
+          "FK가 자식 PK에 포함?",
+          "판정"
+        ],
+        "rows": [
+          [
+            "CUSTOMER→ORDERS",
+            "아니오",
+            "비식별"
+          ],
+          [
+            "ORDERS→ORDER_ITEM",
+            "예",
+            "식별"
+          ]
+        ],
+        "table_label": "관계 판정 요약"
+      }
+    ]
+  },
+  {
+    "chapter": 10,
+    "title": "부분 종속을 분리하는 2NF",
+    "steps": [
+      {
+        "title": "원본 테이블",
+        "note": "주문일자와 상품명은 여러 행에 반복 저장된다.",
+        "columns": [
+          "주문",
+          "상품",
+          "주문일자",
+          "상품명",
+          "수량"
+        ],
+        "rows": [
+          [
+            10,
+            "P1",
+            "11/01",
+            "컵",
+            2
+          ],
+          [
+            10,
+            "P2",
+            "11/01",
+            "책",
+            1
+          ],
+          [
+            11,
+            "P1",
+            "11/02",
+            "컵",
+            3
+          ]
+        ],
+        "table_label": "분해 전 구조"
+      },
+      {
+        "title": "부분 함수 종속",
+        "note": "주문일자는 order_no만으로, 상품명은 product_id만으로 결정된다.",
+        "columns": [
+          "결정자",
+          "결정되는 속성",
+          "복합키 전체 필요?"
+        ],
+        "rows": [
+          [
+            "order_no",
+            "order_date",
+            "아니오"
+          ],
+          [
+            "product_id",
+            "product_name",
+            "아니오"
+          ],
+          [
+            "order_no+product_id",
+            "qty",
+            "예"
+          ]
+        ],
+        "table_label": "함수 종속 판단표"
+      },
+      {
+        "title": "테이블 분해",
+        "note": "속성을 각각 완전 종속되는 키 쪽에 나눠 저장한다.",
+        "columns": [
+          "테이블",
+          "PK",
+          "속성"
+        ],
+        "rows": [
+          [
+            "ORDERS",
+            "order_no",
+            "order_date"
+          ],
+          [
+            "PRODUCT",
+            "product_id",
+            "product_name"
+          ],
+          [
+            "ORDER_ITEM",
+            "order_no + product_id",
+            "qty"
+          ]
+        ],
+        "table_label": "2NF 분해 설계"
+      }
+    ]
+  },
+  {
+    "chapter": 11,
+    "title": "ROLLUP: 상세 → 소계 → 총계",
+    "steps": [
+      {
+        "title": "상세 집계",
+        "note": "(region,product)별로 3개 상세 그룹이 만들어진다.",
+        "columns": [
+          "region",
+          "product",
+          "합계"
+        ],
+        "rows": [
+          [
+            "A",
+            "X",
+            10
+          ],
+          [
+            "A",
+            "Y",
+            20
+          ],
+          [
+            "B",
+            "X",
+            30
+          ]
+        ],
+        "table_label": "상세 집계 · 3행"
+      },
+      {
+        "title": "지역 소계",
+        "note": "A 지역 30, B 지역 30인 소계 2개가 추가된다.",
+        "columns": [
+          "region",
+          "product",
+          "합계"
+        ],
+        "rows": [
+          [
+            "A",
+            null,
+            30
+          ],
+          [
+            "B",
+            null,
+            30
+          ]
+        ],
+        "table_label": "추가 소계 · 2행"
+      },
+      {
+        "title": "전체 총계",
+        "note": "전체 60이 추가된다. 상세 3+소계 2+총계 1=6행이다.",
+        "columns": [
+          "region",
+          "product",
+          "합계"
+        ],
+        "rows": [
+          [
+            null,
+            null,
+            60
+          ]
+        ],
+        "table_label": "추가 총계 · 1행"
+      }
+    ]
+  },
+  {
+    "chapter": 12,
+    "title": "계층형 질의: LEVEL별 확장",
+    "steps": [
+      {
+        "title": "START WITH",
+        "note": "parent_id IS NULL인 id=1이 루트다.",
+        "columns": [
+          "id",
+          "parent_id",
+          "LEVEL"
+        ],
+        "rows": [
+          [
+            1,
+            null,
+            1
+          ]
+        ],
+        "table_label": "LEVEL 1"
+      },
+      {
+        "title": "CONNECT BY",
+        "note": "부모 id=1인 자식 id=2,3이 LEVEL 2에 추가된다.",
+        "columns": [
+          "id",
+          "parent_id",
+          "LEVEL"
+        ],
+        "rows": [
+          [
+            1,
+            null,
+            1
+          ],
+          [
+            2,
+            1,
+            2
+          ],
+          [
+            3,
+            1,
+            2
+          ]
+        ],
+        "table_label": "LEVEL 2까지"
+      },
+      {
+        "title": "하위 노드 확장",
+        "note": "id=2의 자식 id=4는 LEVEL 3이다. 형제 정렬 시 2의 하위 4가 3보다 먼저 표시된다.",
+        "columns": [
+          "id",
+          "parent_id",
+          "LEVEL"
+        ],
+        "rows": [
+          [
+            1,
+            null,
+            1
+          ],
+          [
+            2,
+            1,
+            2
+          ],
+          [
+            4,
+            2,
+            3
+          ],
+          [
+            3,
+            1,
+            2
+          ]
+        ],
+        "table_label": "최종 계층 출력"
+      }
+    ]
+  },
+  {
+    "chapter": 13,
+    "title": "NULL 함수: 식과 결과를 나란히",
+    "steps": [
+      {
+        "title": "NVL",
+        "note": "NVL(NULL,0)은 NULL을 0으로 바꾼다.",
+        "columns": [
+          "표현식",
+          "결과"
+        ],
+        "rows": [
+          [
+            "NVL(NULL,0)",
+            0
+          ]
+        ],
+        "table_label": "첫 번째 식"
+      },
+      {
+        "title": "NVL2 / COALESCE",
+        "note": "NVL2는 첫 인자가 NULL이면 셋째 인자 N, COALESCE는 첫 NULL 아닌 7을 반환한다.",
+        "columns": [
+          "표현식",
+          "결과"
+        ],
+        "rows": [
+          [
+            "NVL2(NULL,Y,N)",
+            "N"
+          ],
+          [
+            "COALESCE(NULL,NULL,7)",
+            7
+          ]
+        ],
+        "table_label": "함수 비교"
+      },
+      {
+        "title": "NULLIF까지 결합",
+        "note": "NULLIF(3,3)은 두 값이 같아 NULL을 반환한다.",
+        "columns": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "rows": [
+          [
+            0,
+            "N",
+            7,
+            null
+          ]
+        ],
+        "table_label": "최종 SQL 출력"
+      }
+    ]
+  },
+  {
+    "chapter": 14,
+    "title": "WITH TIES: 정렬 경계까지 포함",
+    "steps": [
+      {
+        "title": "ORDER BY",
+        "note": "100,90,90,70 순서로 정렬한다. 90점 두 행은 동점이다.",
+        "columns": [
+          "name",
+          "score"
+        ],
+        "rows": [
+          [
+            "A",
+            100
+          ],
+          [
+            "B",
+            90
+          ],
+          [
+            "C",
+            90
+          ],
+          [
+            "D",
+            70
+          ]
+        ],
+        "table_label": "정렬된 입력 · 4행"
+      },
+      {
+        "title": "상위 두 번째의 경계",
+        "note": "FETCH FIRST 2의 두 번째 점수는 90이다.",
+        "columns": [
+          "name",
+          "score"
+        ],
+        "rows": [
+          [
+            "A",
+            100
+          ],
+          [
+            "B",
+            90
+          ]
+        ],
+        "table_label": "경계 2행"
+      },
+      {
+        "title": "동점 C 추가",
+        "note": "WITH TIES가 같은 점수 90인 C까지 포함하므로 총 3행이다.",
+        "columns": [
+          "name",
+          "score"
+        ],
+        "rows": [
+          [
+            "A",
+            100
+          ],
+          [
+            "B",
+            90
+          ],
+          [
+            "C",
+            90
+          ]
+        ],
+        "table_label": "최종 SQL 출력 · 3행"
+      }
+    ]
+  },
+  {
+    "chapter": 15,
+    "title": "3단계 스키마와 독립성 대응",
+    "steps": [
+      {
+        "title": "외부 스키마",
+        "note": "사용자 관점에는 필요한 열을 보여주는 뷰가 나타난다.",
+        "columns": [
+          "수준",
+          "예시"
+        ],
+        "rows": [
+          [
+            "외부",
+            "고객 이름·도시 조회 뷰"
+          ]
+        ],
+        "table_label": "사용자 관점"
+      },
+      {
+        "title": "개념 스키마",
+        "note": "전체 DB의 논리 테이블·관계·제약을 다룬다.",
+        "columns": [
+          "수준",
+          "예시"
+        ],
+        "rows": [
+          [
+            "외부",
+            "고객별 조회 뷰"
+          ],
+          [
+            "개념",
+            "CUSTOMER(id,name,city)"
+          ]
+        ],
+        "table_label": "논리 구조"
+      },
+      {
+        "title": "내부 스키마",
+        "note": "인덱스·파일을 변경해도 개념 구조가 유지되면 물리적 독립성이다.",
+        "columns": [
+          "변화",
+          "보호할 구조",
+          "독립성"
+        ],
+        "rows": [
+          [
+            "개념 스키마 변경",
+            "외부 스키마",
+            "논리적"
+          ],
+          [
+            "내부 파일·인덱스 변경",
+            "개념 스키마",
+            "물리적"
+          ]
+        ],
+        "table_label": "개념 비교표"
+      }
+    ]
+  }
+]
