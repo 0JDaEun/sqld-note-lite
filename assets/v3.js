@@ -7,12 +7,14 @@ const escapeHtml = v => String(v ?? '').replace(/[&<>"']/g,c=>({'&':'&amp;','<':
 const LABEL={unseen:'새 문제',wrong:'오답',unknown:'모름',mastered:'정복'};
 const K_GUEST='sqld_v3_guest_v1', K_USER=id=>'sqld_v3_cache_'+id, K_PENDING=id=>'sqld_v3_pending_'+id;
 const sourceUrl='/questions/bank.json';
+const PAGE_VERSION='3.3';
 let questions=[], questionMap=new Map(), supplements=[], states={}, profile=null, client=null;
 let selected=null, revealed=false, lastOutcome=null, currentQuestion=null, currentMode='mixed', currentTopic='all';
 let sessionSeen=new Set(), sessionStep=0, busy=false, lastAsked=new Map(), pending=[], flushing=false, bankFetchError='';
 let supplementId='';
 let executionTraces=[];
 let requestedQuestion=null;
+let authVersion=0,cloudReadFailed=false;
 const LESSON_NAMES={1:'JOIN과 결과 행 수',2:'NULL과 3값 논리',3:'GROUP BY와 HAVING',4:'윈도우 함수',5:'서브쿼리와 EXISTS',6:'SQL 논리적 처리 순서',7:'DML·TCL·트랜잭션',8:'ERD·관계·차수',9:'식별자·PK/FK',10:'정규화와 함수 종속',11:'ROLLUP·CUBE·GROUPING',12:'계층형 질의',13:'NULL 처리·일반 함수',14:'TOP-N과 정렬',15:'3단계 스키마·데이터 독립성'};
 function topicMatches(q,filter=currentTopic){return filter==='all'||(filter.startsWith('lesson:')?(q.linked_chapters||[]).includes(Number(filter.split(':')[1])):q.topic===filter);}
 function linkedLesson(q){return (q.linked_chapters||[])[0]||null;}
@@ -21,7 +23,10 @@ const read=(key,def)=>{try{let v=JSON.parse(localStorage.getItem(key));return v?
 const write=(key,value)=>{try{localStorage.setItem(key,JSON.stringify(value));}catch(e){console.warn('Local save failed',e);}};
 const stateKey=()=>profile?.id?K_USER(profile.id):K_GUEST;
 const loadLocal=()=>read(stateKey(),{});
-const setNotice=(label,error=false)=>{for(const el of $$('[data-bank-status]')){el.textContent=label;el.classList.toggle('is-error',error);}};
+const setNotice=(label,error=false)=>{
+ for(const el of $$('[data-bank-status]')){el.textContent=label;el.classList.toggle('is-error',error);}
+ for(const btn of $$('[data-bank-sync-retry]'))btn.hidden=!(error&&profile);
+};
 const currentRoute=()=>location.hash.replace('#','');
 const inBank=()=>['practice','review'].includes(currentRoute());
 const inSupplement=()=>currentRoute().startsWith('supplement');
@@ -64,7 +69,7 @@ function navQuestion(){if(!questions.length){renderLoadError();return;}
 function renderLoadError(){const root=$('#practice-app');if(!root)return;
  root.innerHTML=`<div class="v3-page-heading"><span class="v3-eyebrow">QUESTION BANK</span><h1>문제은행을 불러올 수 없어요.</h1><p>${escapeHtml(bankFetchError||'네트워크 연결을 확인해 주세요.')}</p><button type="button" class="v3-btn-primary" data-bank-reload>다시 불러오기</button></div>`;}
 function renderQuestion(obj){const root=$('#practice-app');if(!root)return;
- const c=counts();const heading=`<div class="v3-bank-head"><div><span class="v3-eyebrow">PRACTICE / 문제은행</span><h1>계속 문제 풀기<span class="v3-period">.</span></h1><p>정복한 문제는 다시 나오지 않고, 오답과 모름은 복습 큐에 남아요.</p></div><div class="v3-sync"><span class="v3-dot"></span><span data-bank-status>${profile?'클라우드 기록 확인 중':'이 기기에 저장'}</span></div></div>
+ const c=counts();const heading=`<div class="v3-bank-head"><div><span class="v3-eyebrow">PRACTICE / 문제은행</span><h1>계속 문제 풀기<span class="v3-period">.</span></h1><p>정복한 문제는 다시 나오지 않고, 오답과 모름은 복습 큐에 남아요.</p></div><div class="v3-sync"><span class="v3-dot"></span><span data-bank-status>${profile?'클라우드 기록 확인 중':'이 기기에 저장'}</span><button type="button" class="v33-sync-retry" data-bank-sync-retry hidden>다시 연결</button></div></div>
  <div class="v3-stat-line"><span>남은 새 문제 <b>${c.unseen}</b></span><span>오답 <b>${c.wrong}</b></span><span>모름 <b>${c.unknown}</b></span><span>정복 <b>${c.mastered}</b></span></div>
  <div class="v3-bank-filters"><div class="v3-segment" role="group" aria-label="문제 풀이 모드"><button data-bank-mode="mixed" class="${currentMode==='mixed'?'active':''}">계속 풀기</button><button data-bank-mode="new" class="${currentMode==='new'?'active':''}">새 문제만</button><button data-bank-mode="review" class="${currentMode==='review'?'active':''}">오답·모름</button></div><label class="v3-topic-filter">유형 <select id="v3-topic-select"><option value="all">전체 유형</option>${Object.entries(LESSON_NAMES).map(([n,label])=>`<option value="lesson:${n}" ${currentTopic==='lesson:'+n?'selected':''}>개념 ${String(n).padStart(2,'0')} · ${escapeHtml(label)}</option>`).join('')}${[...new Set(questions.map(q=>q.topic))].map(t=>`<option value="${escapeHtml(t)}" ${currentTopic===t?'selected':''}>${escapeHtml(questions.find(q=>q.topic===t).topic_label)}</option>`).join('')}</select></label></div>`;
  if(obj.type==='empty'){
@@ -86,7 +91,11 @@ function updateStatusDisplays(){let label=profile?(pending.length?'동기화 대
 function renderFeedback(q,assessment){const fb=$('#v3-feedback');if(!fb)return;
  const label=assessment==='mastered'?'정답 · 정복 완료':assessment==='unknown'?'모름으로 저장됨':'오답 · 복습 대상으로 저장됨';
  const cls=assessment==='mastered'?'success':assessment==='unknown'?'neutral':'error';
- fb.innerHTML=`<div class="v3-feedback-header ${cls}"><strong>${label}</strong><span>${assessment==='mastered'?'이 문제는 다시 출제하지 않아요.':'나중에 다시 출제돼요.'}</span></div><div class="v3-answer-key">정답 · <strong>${'ABCD'[q.answer]}</strong> ${escapeHtml(q.choices[q.answer])}</div><div class="v3-explanation"><span class="v3-mini-heading">WHY · 왜 이 답일까요?</span><p>${escapeHtml(q.explanation)}</p>${q.steps?.length?`<ol class="v3-explain-steps">${q.steps.map(s=>`<li>${escapeHtml(s)}</li>`).join('')}</ol>`:''}${q.execution_output?`<div class="v3-mini-heading">SQL RESULT · 실제 쿼리 실행 결과</div>${renderTable({...q.execution_output,name:'실제 SQL 출력'})}`:q.result_table?`<div class="v3-mini-heading">RESULT · 최종 결과</div>${renderTable({...q.result_table,name:'실행 결과'})}`:''}${q.execution_output&&q.result_table?.rows?.[0]?`<p class="v31-result-answer"><b>문제에서 요구한 계산값</b> ${escapeHtml(q.result_table.rows[0][0])}</p>`:''}${Array.isArray(q.option_explanations)&&q.option_explanations.some(Boolean)?`<div class="v31-option-notes"><strong>보기별 판단 근거</strong>${q.option_explanations.map((reason,i)=>reason?`<p><b>${'ABCD'[i]}.</b> ${escapeHtml(reason)}</p>`:'').join('')}</div>`:''}</div><div class="v3-feedback-actions"><button class="v3-btn-secondary" type="button" data-bank-related="${escapeHtml(q.topic)}">${linkedLesson(q)?`개념 ${String(linkedLesson(q)).padStart(2,'0')} 복습하기`:'관련 보충 개념 보기'}</button><button type="button" class="v3-btn-primary" data-bank-next>다음 문제 →</button></div>`;
+ const optionReview=['individual_editorial_review','hand_authored'].includes(q.option_note_method)
+  ?'보기별 해설: 개별 편집 검수':'보기별 해설: 규칙 기반 초안 · 개별 검수 진행 중';
+ const evidence=q.verification_method==='sql_executed'
+  ?'SQL 실행 데이터 검증':'개념·DBMS 기준 편집 검토 (해당 DBMS 실제 실행 미검증)';
+ fb.innerHTML=`<div class="v3-feedback-header ${cls}"><strong>${label}</strong><span>${assessment==='mastered'?'이 문제는 다시 출제하지 않아요.':'나중에 다시 출제돼요.'}</span></div><div class="v3-answer-key">정답 · <strong>${'ABCD'[q.answer]}</strong> ${escapeHtml(q.choices[q.answer])}</div><div class="v3-explanation"><span class="v3-mini-heading">WHY · 왜 이 답일까요?</span><p>${escapeHtml(q.explanation)}</p>${q.steps?.length?`<ol class="v3-explain-steps">${q.steps.map(s=>`<li>${escapeHtml(s)}</li>`).join('')}</ol>`:''}${q.execution_output?`<div class="v3-mini-heading">${q.verification_method==='sql_executed'?'SQL RESULT · 실행 검증 결과':'EXPECTED RESULT · 개념 기준 예상 결과'}</div>${renderTable({...q.execution_output,name:q.verification_method==='sql_executed'?'검증된 SQL 출력':'예상 출력 · 편집 검토'})}`:q.result_table?`<div class="v3-mini-heading">RESULT · 최종 결과</div>${renderTable({...q.result_table,name:'실행 결과'})}`:''}${q.execution_output&&q.result_table?.rows?.[0]?`<p class="v31-result-answer"><b>문제에서 요구한 계산값</b> ${escapeHtml(q.result_table.rows[0][0])}</p>`:''}${Array.isArray(q.option_explanations)&&q.option_explanations.some(Boolean)?`<div class="v31-option-notes"><strong>보기별 판단 근거</strong>${q.option_explanations.map((reason,i)=>reason?`<p><b>${'ABCD'[i]}.</b> ${escapeHtml(reason)}</p>`:'').join('')}</div>`:''}<p class="v33-audit-note">${escapeHtml(evidence)} · ${escapeHtml(optionReview)}</p></div><div class="v3-feedback-actions"><button class="v3-btn-secondary" type="button" data-bank-related="${escapeHtml(q.topic)}">${linkedLesson(q)?`개념 ${String(linkedLesson(q)).padStart(2,'0')} 복습하기`:'관련 보충 개념 보기'}</button><button type="button" class="v3-btn-primary" data-bank-next>다음 문제 →</button></div>`;
  fb.hidden=false;
  $$('.v3-choice').forEach((el,i)=>{el.classList.toggle('correct',i===q.answer);el.classList.toggle('incorrect',i===selected&&i!==q.answer);el.querySelector('input').disabled=true;});
  const actions=$('.v3-question-actions');if(actions)actions.hidden=true;
@@ -116,37 +125,57 @@ async function flushPending(){if(!profile||!client||flushing||!navigator.onLine|
   }
   if(profile?.id===uid)setNotice('클라우드에 저장됨');
  }catch(e){console.warn('SQLD practice cloud sync',e);setNotice('동기화 실패 · 다시 시도',true)}
- finally{flushing=false;}
+ finally{flushing=false;if(profile?.id!==uid&&profile&&pending.length)queueMicrotask(flushPending);}
 }
-function mergeRemote(remote,local){const combined={...remote};
- for(const [id,value] of Object.entries(local||{})){
-    if(!questionMap.has(id))continue;
-    if(!combined[id])combined[id]=value;
-    else if(combined[id].status!=='mastered'&&value.status==='mastered')combined[id]=value;
+function mergeRemote(remote,cache,queued,guest){
+ // Server wins unless a local attempt is explicitly queued and has not yet reached the server.
+ const combined={...remote};
+ for(const event of queued){
+  const id=event.id;if(!questionMap.has(id)||remote[id]?.status==='mastered')continue;
+  const local=(cache||{})[id]||(guest||{})[id];
+  if(local)combined[id]={...local};
  }
  return combined;
 }
-async function onAuth(event){const user=event?.detail?.user||null;
+async function onAuth(event,force=false){
+ const user=event?.detail?.user||null;
  client=event?.detail?.client||window.sqldCloudClient||client;
- if((profile?.id||null)===(user?.id||null))return;
+ if(!force&&(profile?.id||null)===(user?.id||null))return;
+ const version=++authVersion;
  profile=user;
- if(!user){pending=[];states=read(K_GUEST,{});refreshDashboard();updateStatusDisplays();if(inBank())navQuestion();return;}
- const uid=user.id;setNotice('기록 불러오는 중…');pending=read(K_PENDING(uid),[]);let cache=read(K_USER(uid),{});
- if(!client){states=cache;saveState();setNotice('계정 인증 모듈 연결 오류',true);return;}
- const {data,error}=await client.from('sqld_question_states').select('question_id,status,attempt_count,wrong_count,unknown_count,last_selected,mastered_at,updated_at').limit(3000);
- if(profile?.id!==uid)return;
- if(error){states=cache;saveState();setNotice('클라우드 불러오기 실패 · 다시 시도',true);return;}
+ if(!user){pending=[];cloudReadFailed=false;states=read(K_GUEST,{});refreshDashboard();updateStatusDisplays();if(inBank())navQuestion();return;}
+ const uid=user.id;cloudReadFailed=false;setNotice('기록 불러오는 중…');
+ pending=read(K_PENDING(uid),[]);
+ let cache=read(K_USER(uid),{});
+ // An existing account cache stays available while the read is pending.
+ states=cache;refreshDashboard();
+ if(!client){cloudReadFailed=true;setNotice('계정 인증 모듈 연결 오류',true);return;}
+ let data,error;
+ try{({data,error}=await client.from('sqld_question_states').select('question_id,status,attempt_count,wrong_count,unknown_count,last_selected,mastered_at,updated_at').limit(3000));}
+ catch(e){error=e;}
+ if(profile?.id!==uid||version!==authVersion)return;
+ if(error){cloudReadFailed=true;setNotice('클라우드 불러오기 실패 · 다시 연결',true);return;}
  const remote=Object.fromEntries((data||[]).filter(x=>questionMap.has(x.question_id)).map(x=>[x.question_id,x]));
- // If the account already has progress, never silently transfer another account's local work.
  const guest=read(K_GUEST,{});let importGuest=false;
  if(Object.keys(guest).length)importGuest=window.confirm('이 기기에서 로그인 없이 푼 문제 기록을 현재 Google 계정으로 가져올까요?');
+ if(profile?.id!==uid||version!==authVersion)return;
  if(importGuest){for(const [id,v] of Object.entries(guest)){
   if(questionMap.has(id)&&remote[id]?.status!=='mastered')pending.push({id,result:v.status,selected:v.last_selected??null});
  }write(K_PENDING(uid),pending);write(K_GUEST,{});}
- states=mergeRemote(remote,cache);
- // An unsynced cached attempt may have mastered a question: keep it until pending flush.
- for(const e of pending){let v=cache[e.id]||guest[e.id];if(v&&questionMap.has(e.id)&&remote[e.id]?.status!=='mastered')states[e.id]=v;}
- write(K_USER(uid),states);refreshDashboard();updateStatusDisplays();if(inBank())navQuestion();await flushPending();
+ // Read current cache *after* network awaits: responses cannot discard answers entered meanwhile.
+ cache=read(K_USER(uid),{});
+ const queuedIds=new Set(pending.map(e=>e.id));
+ for(const [id,v] of Object.entries(cache)){
+  if(!questionMap.has(id)||queuedIds.has(id)||remote[id]?.status==='mastered')continue;
+  // Backward-compatible recovery for older local-only progress and locally mastered answers.
+  if(!remote[id]||v.status==='mastered'&&remote[id]?.status!=='mastered'){
+   pending.push({id,result:v.status,selected:v.last_selected??null});queuedIds.add(id);
+  }
+ }
+ if(pending.length)write(K_PENDING(uid),pending);
+ states=mergeRemote(remote,cache,pending,guest);
+ write(K_USER(uid),states);refreshDashboard();updateStatusDisplays();if(inBank())navQuestion();
+ await flushPending();
 }
 function navigateBank(mode='mixed',topic='all',questionId=null){currentMode=mode;currentTopic=topic;resetSession();requestedQuestion=questionId;const target=mode==='review'?'#review':'#practice';if(location.hash!==target)location.hash=target;else navQuestion();}
 function route(){const hash=currentRoute();const root=$('#practice-app'),sup=$('#supplement-app');if(!root||!sup)return;
@@ -163,17 +192,18 @@ function renderSupplements(){const root=$('#supplement-app');if(!root)return;con
  if(linked.length){const preview=document.createElement('section');preview.className='v31-supp-practice';preview.innerHTML=`<div class="v3-mini-heading">05 · 학습 내용 적용하기</div><p>아래 실전 문제는 이 보충 단원과 직접 연결돼 있어요.</p><div class="v31-bank-preview">${linked.slice(0,3).map(q=>`<button type="button" class="v31-preview-item" data-bank-exact="${escapeHtml(q.id)}" data-bank-filter="${escapeHtml(q.topic)}" ${status(q.id)==='mastered'?'disabled':''}><span class="v31-preview-tag">${escapeHtml(LABEL[status(q.id)])}</span><strong>${escapeHtml(q.stem)}</strong><span class="v31-preview-end">${status(q.id)==='mastered'?'정복 완료':'풀어보기 →'}</span></button>`).join('')}</div>`;root.querySelector('.v3-supp-detail')?.append(preview);}
 }
 function supplementQuestions(id){return questions.filter(q=>{
+ if(q.supplement_id===id)return true;
  const st=q.stem||'';switch(id){
   case 'case':return q.topic==='sql_function'&&(st.includes('CASE')||q.sql?.includes('CASE'));
   case 'string':return q.topic==='sql_function'&&/SUBSTR|문자/.test(st);
-  case 'datetime':return q.topic==='sql_function'&&/날짜|일자|TO_DATE|SYSDATE/.test(st);
+  case 'datetime':return q.topic==='sql_datetime'||q.topic==='sql_function'&&/날짜|일자|TO_DATE|SYSDATE/.test(st);
   case 'set':return q.topic==='sql_set';
   case 'pivot':return q.topic==='sql_pivot'&&/PIVOT|UNPIVOT/.test(st);
-  case 'regex':return q.topic==='sql_pivot'&&/정규표현식/.test(st);
+  case 'regex':return q.topic==='sql_regex';
   case 'ddl':return q.topic==='sql_dml';
   case 'groupings':return q.topic==='sql_rollup';
  }return false;});}
-function relatedTopic(id){return ({case:'sql_function',set:'sql_set',pivot:'sql_pivot',regex:'sql_pivot',string:'sql_function',datetime:'sql_function',ddl:'sql_dml',groupings:'sql_rollup'})[id]||'all';}
+function relatedTopic(id){return ({case:'sql_function',set:'sql_set',pivot:'sql_pivot',regex:'sql_regex',string:'sql_function',datetime:'sql_datetime',ddl:'sql_dml',groupings:'sql_rollup'})[id]||'all';}
 function addDeepdives(data){for(const x of data){const lesson=$(`#c${String(x.chapter).padStart(2,'0')}`);if(!lesson)continue;
  const stage=lesson.querySelector('[data-stage="0"]');if(stage){const div=document.createElement('aside');div.className='v3-deepnote';div.innerHTML=`<div class="v3-deep-kicker">WHY IT WORKS · 원리 해설</div><p>${escapeHtml(x.why)}</p><details><summary>문제 푸는 순서와 실수 방지 팁 <span>펼치기 ↓</span></summary><div class="v3-deep-extra"><strong>판별 순서</strong><p>${escapeHtml(x.reading_order)}</p><strong>주의할 함정</strong><p>${escapeHtml(x.pitfall)}</p></div></details>`;const list=stage.querySelector('.principle-list');if(list)list.after(div);else stage.appendChild(div);}
 
@@ -262,7 +292,7 @@ async function init(){
   const [bankRes,suppRes,deepRes,visualRes,traceRes]=await Promise.all([fetch(sourceUrl),fetch('/content/supplements.json'),fetch('/content/deepdives.json'),fetch('/content/visuals.json'),fetch('/content/execution_traces.json')]);
   if(!bankRes.ok)throw Error('문제 파일 HTTP '+bankRes.status);
   questions=await bankRes.json();questionMap=new Map(questions.map(q=>[q.id,q]));
-  if(questionMap.size!==questions.length||questions.some(q=>!q.verified||q.choices?.length!==4||!Number.isInteger(q.answer)||q.answer<0||q.answer>3))throw Error('문제 데이터 검증 오류');
+  if(!Array.isArray(questions)||questionMap.size!==questions.length||questions.some(q=>!q.verified||!/^qv3_[a-z0-9_]{1,64}$/.test(q.id)||q.choices?.length!==4||!Number.isInteger(q.answer)||q.answer<0||q.answer>3||!Array.isArray(q.option_explanations)||q.option_explanations.length!==4))throw Error('문제 데이터 검증 오류');
   supplements=suppRes.ok?await suppRes.json():[];if(deepRes.ok)addDeepdives(await deepRes.json());if(visualRes.ok)addLessonVisuals(await visualRes.json());if(traceRes.ok)addExecutionTraces(await traceRes.json());addLessonBridges();mountWeaknessPanel();
   states=loadLocal();refreshDashboard();setNotice('이 기기에 저장');
   if(inBank())navQuestion();if(inSupplement())renderSupplements();
@@ -291,11 +321,11 @@ function onClick(e){const t=e.target.closest('button,a');if(!t)return;
  else if(t.hasAttribute('data-bank-submit'))saveAnswer(selected===currentQuestion?.answer?'mastered':'wrong');
  else if(t.hasAttribute('data-bank-unknown'))saveAnswer('unknown');
  else if(t.hasAttribute('data-bank-reload')){location.reload();}
- else if(t.hasAttribute('data-bank-related')){const chapter=linkedLesson(currentQuestion||{});if(chapter){location.hash='#c'+String(chapter).padStart(2,'0');}else{const topic=currentQuestion?.topic;location.hash=topic==='sql_set'?'#supplement/set':topic==='sql_pivot'?'#supplement/pivot':topic==='sql_function'?'#supplement/case':'#supplement';}}
+ else if(t.hasAttribute('data-bank-related')){const chapter=linkedLesson(currentQuestion||{});if(chapter){location.hash='#c'+String(chapter).padStart(2,'0');}else{const q=currentQuestion||{},topic=q.topic;location.hash='#supplement/'+(q.supplement_id||(topic==='sql_set'?'set':topic==='sql_regex'?'regex':topic==='sql_datetime'?'datetime':topic==='sql_pivot'?'pivot':topic==='sql_function'?'case':topic==='sql_dml'?'ddl':'case'));}}
  else if(t.hasAttribute('data-bank-topic'))navigateBank('mixed',t.dataset.bankTopic);
  else if(t.hasAttribute('data-bank-weak-topic'))navigateBank('review',t.dataset.bankWeakTopic);
  else if(t.hasAttribute('data-supp-back'))location.hash='#supplement';
- else if(t.hasAttribute('data-bank-sync-retry')){if(profile)flushPending();else setNotice('Google 로그인 후 동기화 가능');}
+ else if(t.hasAttribute('data-bank-sync-retry')){if(profile){if(cloudReadFailed)void onAuth({detail:{user:profile,client}},true);else void flushPending();}else setNotice('Google 로그인 후 동기화 가능');}
 }
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
 })();

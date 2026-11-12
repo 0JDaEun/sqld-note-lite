@@ -1,10 +1,10 @@
 {
-  "version": "3.2",
+  "version": "3.3",
   "updated_at": "2026-11-12",
-  "count": 146,
-  "manual_count": 71,
-  "sql_verified_count": 75,
-  "source_policy": "직접 제작 학습 문제 · SQL 75문항 SQLite 결과 검증 · 원문 무단 복제 금지",
+  "count": 176,
+  "manual_count": 91,
+  "sql_verified_count": 85,
+  "source_policy": "독자 제작 학습 문제 · SQLite SQL 실행 대조 · Oracle 고유 문법은 편집 검수(실행 DB 검증 아님) · 저작권 원문 무단 복제 금지",
   "subjects": [
     "데이터 모델링",
     "SQL 기본 및 활용"
@@ -12,12 +12,19 @@
   "files": [
     "questions/bank.json"
   ],
-  "total_questions": 146,
+  "total_questions": 176,
   "question_types": {
-    "sql_executed": 75,
-    "concept_reviewed": 71
+    "sql_executed": 85,
+    "concept_or_oracle_editorial": 91
   },
   "difficulty_policy": "콘텐츠 조건 기반 예상 난이도(하·중·상); 실제 수험자 정답률을 통한 교정 전까지 참고용",
-  "options_explained_count": 146,
-  "trace_viewer_chapters": 15
+  "options_explained_count": 176,
+  "trace_viewer_chapters": 15,
+  "individual_reviewed_new_count": 30,
+  "regular_expression_count": 9,
+  "date_function_count": 7,
+  "existing_concept_count": 71,
+  "editorial_new_count": 20,
+  "new_sql_executed_count": 10,
+  "new_questions_count": 30
 }
