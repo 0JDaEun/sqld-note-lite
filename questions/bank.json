@@ -11132,5 +11132,4274 @@
     "verification_method": "editorial_review",
     "question_type": "개념 판단",
     "option_note_method": "individual_editorial_review"
+  },
+  {
+    "id": "qv3_0177",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_join",
+    "topic_label": "JOIN 조건 위치",
+    "difficulty": "중 · 예상",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 실행 검증",
+    "stem": "오른쪽 조건을 ON에 둔 LEFT JOIN 결과는 총 몇 행인가?",
+    "choices": [
+      "4",
+      "2",
+      "5",
+      "3"
+    ],
+    "answer": 0,
+    "explanation": "id=1과 id=3은 매칭되지 않아 각각 NULL 한 행으로 남고, A의 id=2 두 행은 B의 'Y' 한 행에 각각 매칭된다.",
+    "option_explanations": [
+      "정답: 실제 SQL을 실행한 결과는 4이다. id=1과 id=3은 매칭되지 않아 각각 NULL 한 행으로 남고, A의 id=2 두 행은 B의 'Y' 한 행에 각각 매칭된다.",
+      "2은(는) 올바른 실행 결과 4와 다르다. 매칭되지 않은 id=1, id=3도 LEFT JOIN 때문에 보존한다.",
+      "5은(는) 올바른 실행 결과 4와 다르다. 따라서 2+1+1=4행이다.",
+      "3은(는) 올바른 실행 결과 4와 다르다. 따라서 2+1+1=4행이다."
+    ],
+    "sql": "SELECT COUNT(*) AS result FROM A LEFT JOIN B ON A.id=B.id AND B.flag='Y'",
+    "input_tables": [
+      {
+        "name": "A",
+        "columns": [
+          "id"
+        ],
+        "rows": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ]
+      },
+      {
+        "name": "B",
+        "columns": [
+          "id",
+          "flag"
+        ],
+        "rows": [
+          [
+            2,
+            "Y"
+          ],
+          [
+            2,
+            "N"
+          ],
+          [
+            3,
+            "N"
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          4
+        ]
+      ]
+    },
+    "steps": [
+      "A의 id=2 두 행은 각각 'Y' 1행과 결합한다.",
+      "매칭되지 않은 id=1, id=3도 LEFT JOIN 때문에 보존한다.",
+      "따라서 2+1+1=4행이다."
+    ],
+    "verified": true,
+    "linked_chapters": [
+      1
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "복합 SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "result"
+      ],
+      "rows": [
+        [
+          4
+        ]
+      ]
+    },
+    "option_note_method": "sql_result_derived",
+    "frequency": "미집계",
+    "exam_focus": "복합 조건·실행 순서",
+    "difficulty_basis": "출제 조건 복잡도 기반 편집 추정 (수험자 정답률 아님)"
+  },
+  {
+    "id": "qv3_0178",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_join",
+    "topic_label": "JOIN 조건 위치",
+    "difficulty": "상 · 예상",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 실행 검증",
+    "stem": "같은 조건을 WHERE로 옮긴 LEFT JOIN의 결과 행 수는?",
+    "choices": [
+      "3",
+      "0",
+      "4",
+      "2"
+    ],
+    "answer": 3,
+    "explanation": "LEFT JOIN이 우선 모든 id=2 매칭 조합과 미매칭 행을 만든 뒤 WHERE가 'Y' 이외 행과 NULL 확장 행을 제거한다.",
+    "option_explanations": [
+      "3은(는) 올바른 실행 결과 2와 다르다. id=2에서 각 A 행이 Y, N 두 행에 모두 매칭한다.",
+      "0은(는) 올바른 실행 결과 2와 다르다. WHERE B.flag='Y'에서 Y행 2개만 생존한다.",
+      "4은(는) 올바른 실행 결과 2와 다르다. NULL 확장 행도 WHERE 조건을 통과하지 못한다.",
+      "정답: 실제 SQL을 실행한 결과는 2이다. LEFT JOIN이 우선 모든 id=2 매칭 조합과 미매칭 행을 만든 뒤 WHERE가 'Y' 이외 행과 NULL 확장 행을 제거한다."
+    ],
+    "sql": "SELECT COUNT(*) AS result FROM A LEFT JOIN B ON A.id=B.id WHERE B.flag='Y'",
+    "input_tables": [
+      {
+        "name": "A",
+        "columns": [
+          "id"
+        ],
+        "rows": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ]
+      },
+      {
+        "name": "B",
+        "columns": [
+          "id",
+          "flag"
+        ],
+        "rows": [
+          [
+            2,
+            "Y"
+          ],
+          [
+            2,
+            "N"
+          ],
+          [
+            3,
+            "N"
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          2
+        ]
+      ]
+    },
+    "steps": [
+      "id=2에서 각 A 행이 Y, N 두 행에 모두 매칭한다.",
+      "WHERE B.flag='Y'에서 Y행 2개만 생존한다.",
+      "NULL 확장 행도 WHERE 조건을 통과하지 못한다."
+    ],
+    "verified": true,
+    "linked_chapters": [
+      1
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "복합 SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "result"
+      ],
+      "rows": [
+        [
+          2
+        ]
+      ]
+    },
+    "option_note_method": "sql_result_derived",
+    "frequency": "미집계",
+    "exam_focus": "복합 조건·실행 순서",
+    "difficulty_basis": "출제 조건 복잡도 기반 편집 추정 (수험자 정답률 아님)"
+  },
+  {
+    "id": "qv3_0179",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_join",
+    "topic_label": "LEFT JOIN COUNT",
+    "difficulty": "중 · 예상",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 실행 검증",
+    "stem": "LEFT JOIN 후 COUNT(*)의 결과값은?",
+    "choices": [
+      "5",
+      "3",
+      "4",
+      "2"
+    ],
+    "answer": 2,
+    "explanation": "부모 1은 자식 2행, 부모 2는 1행, 부모 3은 자식이 없어 NULL 확장 1행으로 유지된다.",
+    "option_explanations": [
+      "5은(는) 올바른 실행 결과 4와 다르다. P.pid=1은 2행, 2는 1행, 3은 1행으로 확장한다.",
+      "3은(는) 올바른 실행 결과 4와 다르다. COUNT(*)는 NULL 확장 행을 포함한 모든 행을 센다.",
+      "정답: 실제 SQL을 실행한 결과는 4이다. 부모 1은 자식 2행, 부모 2는 1행, 부모 3은 자식이 없어 NULL 확장 1행으로 유지된다.",
+      "2은(는) 올바른 실행 결과 4와 다르다. COUNT(*)는 NULL 확장 행을 포함한 모든 행을 센다."
+    ],
+    "sql": "SELECT COUNT(*) AS result FROM P LEFT JOIN C ON P.pid=C.pid",
+    "input_tables": [
+      {
+        "name": "P",
+        "columns": [
+          "pid"
+        ],
+        "rows": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ]
+      },
+      {
+        "name": "C",
+        "columns": [
+          "pid",
+          "cid"
+        ],
+        "rows": [
+          [
+            1,
+            10
+          ],
+          [
+            1,
+            11
+          ],
+          [
+            2,
+            20
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          4
+        ]
+      ]
+    },
+    "steps": [
+      "P.pid=1은 2행, 2는 1행, 3은 1행으로 확장한다.",
+      "COUNT(*)는 NULL 확장 행을 포함한 모든 행을 센다."
+    ],
+    "verified": true,
+    "linked_chapters": [
+      1
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "복합 SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "result"
+      ],
+      "rows": [
+        [
+          4
+        ]
+      ]
+    },
+    "option_note_method": "sql_result_derived",
+    "frequency": "미집계",
+    "exam_focus": "복합 조건·실행 순서",
+    "difficulty_basis": "출제 조건 복잡도 기반 편집 추정 (수험자 정답률 아님)"
+  },
+  {
+    "id": "qv3_0180",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_group",
+    "topic_label": "COUNT NULL 제외",
+    "difficulty": "중 · 예상",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 실행 검증",
+    "stem": "같은 JOIN에서 COUNT(C.cid) 결과값은?",
+    "choices": [
+      "3",
+      "4",
+      "2",
+      "5"
+    ],
+    "answer": 0,
+    "explanation": "자식 컬럼 C.cid는 실제 자식이 없는 부모 3의 NULL 확장 행에서 NULL이므로 COUNT에서 빠진다.",
+    "option_explanations": [
+      "정답: 실제 SQL을 실행한 결과는 3이다. 자식 컬럼 C.cid는 실제 자식이 없는 부모 3의 NULL 확장 행에서 NULL이므로 COUNT에서 빠진다.",
+      "4은(는) 올바른 실행 결과 3와 다르다. C.cid가 NULL인 미매칭 행 1개를 제외한다.",
+      "2은(는) 올바른 실행 결과 3와 다르다. 따라서 COUNT(C.cid)=3이다.",
+      "5은(는) 올바른 실행 결과 3와 다르다. 따라서 COUNT(C.cid)=3이다."
+    ],
+    "sql": "SELECT COUNT(C.cid) AS result FROM P LEFT JOIN C ON P.pid=C.pid",
+    "input_tables": [
+      {
+        "name": "P",
+        "columns": [
+          "pid"
+        ],
+        "rows": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ]
+      },
+      {
+        "name": "C",
+        "columns": [
+          "pid",
+          "cid"
+        ],
+        "rows": [
+          [
+            1,
+            10
+          ],
+          [
+            1,
+            11
+          ],
+          [
+            2,
+            20
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          3
+        ]
+      ]
+    },
+    "steps": [
+      "LEFT JOIN 전체 행은 4행이다.",
+      "C.cid가 NULL인 미매칭 행 1개를 제외한다.",
+      "따라서 COUNT(C.cid)=3이다."
+    ],
+    "verified": true,
+    "linked_chapters": [
+      3
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "복합 SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "result"
+      ],
+      "rows": [
+        [
+          3
+        ]
+      ]
+    },
+    "option_note_method": "sql_result_derived",
+    "frequency": "미집계",
+    "exam_focus": "복합 조건·실행 순서",
+    "difficulty_basis": "출제 조건 복잡도 기반 편집 추정 (수험자 정답률 아님)"
+  },
+  {
+    "id": "qv3_0181",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_join",
+    "topic_label": "안티 조인",
+    "difficulty": "상 · 예상",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 실행 검증",
+    "stem": "LEFT JOIN 후 B.id IS NULL을 이용한 미매칭 행 수는?",
+    "choices": [
+      "3",
+      "1",
+      "0",
+      "2"
+    ],
+    "answer": 1,
+    "explanation": "B.id는 매칭 시 2 또는 3으로 채워지고, A.id=1만 매칭되지 않는다.",
+    "option_explanations": [
+      "3은(는) 올바른 실행 결과 1와 다르다. A.id=1만 B와 연결되지 않아 B.id=NULL이 된다.",
+      "정답: 실제 SQL을 실행한 결과는 1이다. B.id는 매칭 시 2 또는 3으로 채워지고, A.id=1만 매칭되지 않는다.",
+      "0은(는) 올바른 실행 결과 1와 다르다. B.flag가 NULL인 id=2는 B.id가 2이므로 미매칭이 아니다.",
+      "2은(는) 올바른 실행 결과 1와 다르다. B.flag가 NULL인 id=2는 B.id가 2이므로 미매칭이 아니다."
+    ],
+    "sql": "SELECT COUNT(*) AS result FROM A LEFT JOIN B ON A.id=B.id WHERE B.id IS NULL",
+    "input_tables": [
+      {
+        "name": "A",
+        "columns": [
+          "id"
+        ],
+        "rows": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ]
+      },
+      {
+        "name": "B",
+        "columns": [
+          "id",
+          "flag"
+        ],
+        "rows": [
+          [
+            2,
+            null
+          ],
+          [
+            3,
+            "Y"
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          1
+        ]
+      ]
+    },
+    "steps": [
+      "A.id=1만 B와 연결되지 않아 B.id=NULL이 된다.",
+      "B.flag가 NULL인 id=2는 B.id가 2이므로 미매칭이 아니다."
+    ],
+    "verified": true,
+    "linked_chapters": [
+      1
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "복합 SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "result"
+      ],
+      "rows": [
+        [
+          1
+        ]
+      ]
+    },
+    "option_note_method": "sql_result_derived",
+    "frequency": "미집계",
+    "exam_focus": "복합 조건·실행 순서",
+    "difficulty_basis": "출제 조건 복잡도 기반 편집 추정 (수험자 정답률 아님)"
+  },
+  {
+    "id": "qv3_0182",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_null",
+    "topic_label": "NULL 가능한 컬럼",
+    "difficulty": "상 · 예상",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 실행 검증",
+    "stem": "미매칭 검사를 B.flag IS NULL로 바꾸면 몇 행인가?",
+    "choices": [
+      "3",
+      "0",
+      "1",
+      "2"
+    ],
+    "answer": 3,
+    "explanation": "NULL이 가능한 B.flag로 검사하면 미매칭 A.id=1뿐 아니라 B.flag 자체가 NULL인 A.id=2까지 포함된다.",
+    "option_explanations": [
+      "3은(는) 올바른 실행 결과 2와 다르다. id=1은 미매칭으로 NULL이다.",
+      "0은(는) 올바른 실행 결과 2와 다르다. id=2는 매칭되지만 flag가 NULL이다.",
+      "1은(는) 올바른 실행 결과 2와 다르다. 따라서 총 2행이다.",
+      "정답: 실제 SQL을 실행한 결과는 2이다. NULL이 가능한 B.flag로 검사하면 미매칭 A.id=1뿐 아니라 B.flag 자체가 NULL인 A.id=2까지 포함된다."
+    ],
+    "sql": "SELECT COUNT(*) AS result FROM A LEFT JOIN B ON A.id=B.id WHERE B.flag IS NULL",
+    "input_tables": [
+      {
+        "name": "A",
+        "columns": [
+          "id"
+        ],
+        "rows": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ]
+      },
+      {
+        "name": "B",
+        "columns": [
+          "id",
+          "flag"
+        ],
+        "rows": [
+          [
+            2,
+            null
+          ],
+          [
+            3,
+            "Y"
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          2
+        ]
+      ]
+    },
+    "steps": [
+      "id=1은 미매칭으로 NULL이다.",
+      "id=2는 매칭되지만 flag가 NULL이다.",
+      "따라서 총 2행이다."
+    ],
+    "verified": true,
+    "linked_chapters": [
+      2
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "복합 SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "result"
+      ],
+      "rows": [
+        [
+          2
+        ]
+      ]
+    },
+    "option_note_method": "sql_result_derived",
+    "frequency": "미집계",
+    "exam_focus": "복합 조건·실행 순서",
+    "difficulty_basis": "출제 조건 복잡도 기반 편집 추정 (수험자 정답률 아님)"
+  },
+  {
+    "id": "qv3_0183",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_null",
+    "topic_label": "NOT IN NULL",
+    "difficulty": "상 · 예상",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 실행 검증",
+    "stem": "서브쿼리 결과에 NULL이 포함된 NOT IN의 반환 행 수는?",
+    "choices": [
+      "2",
+      "0",
+      "1",
+      "3"
+    ],
+    "answer": 1,
+    "explanation": "U에는 NULL이 있으므로 1,3,4 비교 결과가 UNKNOWN이고 2는 FALSE가 된다. TRUE인 행이 없다.",
+    "option_explanations": [
+      "2은(는) 올바른 실행 결과 0와 다르다. U={2,NULL}이다.",
+      "정답: 실제 SQL을 실행한 결과는 0이다. U에는 NULL이 있으므로 1,3,4 비교 결과가 UNKNOWN이고 2는 FALSE가 된다. TRUE인 행이 없다.",
+      "1은(는) 올바른 실행 결과 0와 다르다. WHERE는 TRUE만 남기므로 0행이다.",
+      "3은(는) 올바른 실행 결과 0와 다르다. WHERE는 TRUE만 남기므로 0행이다."
+    ],
+    "sql": "SELECT COUNT(*) AS result FROM T WHERE v NOT IN (SELECT v FROM U)",
+    "input_tables": [
+      {
+        "name": "T",
+        "columns": [
+          "v"
+        ],
+        "rows": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ]
+        ]
+      },
+      {
+        "name": "U",
+        "columns": [
+          "v"
+        ],
+        "rows": [
+          [
+            2
+          ],
+          [
+            null
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          0
+        ]
+      ]
+    },
+    "steps": [
+      "U={2,NULL}이다.",
+      "1,3,4에 대해서는 <> NULL 때문에 UNKNOWN이 남는다.",
+      "WHERE는 TRUE만 남기므로 0행이다."
+    ],
+    "verified": true,
+    "linked_chapters": [
+      2
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "복합 SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "result"
+      ],
+      "rows": [
+        [
+          0
+        ]
+      ]
+    },
+    "option_note_method": "sql_result_derived",
+    "frequency": "미집계",
+    "exam_focus": "복합 조건·실행 순서",
+    "difficulty_basis": "출제 조건 복잡도 기반 편집 추정 (수험자 정답률 아님)"
+  },
+  {
+    "id": "qv3_0184",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_subquery",
+    "topic_label": "NOT EXISTS",
+    "difficulty": "상 · 예상",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 실행 검증",
+    "stem": "같은 입력을 NOT EXISTS로 작성하면 반환 행 수는?",
+    "choices": [
+      "4",
+      "3",
+      "1",
+      "0"
+    ],
+    "answer": 1,
+    "explanation": "NULL은 상관 조건 u.v=t.v에 일치하지 않는다. U.v=2와 일치하지 않는 T의 1,3,4가 남는다.",
+    "option_explanations": [
+      "4은(는) 올바른 실행 결과 3와 다르다. T의 2는 U의 2와 일치한다.",
+      "정답: 실제 SQL을 실행한 결과는 3이다. NULL은 상관 조건 u.v=t.v에 일치하지 않는다. U.v=2와 일치하지 않는 T의 1,3,4가 남는다.",
+      "1은(는) 올바른 실행 결과 3와 다르다. 1,3,4 총 3행이다.",
+      "0은(는) 올바른 실행 결과 3와 다르다. 1,3,4 총 3행이다."
+    ],
+    "sql": "SELECT COUNT(*) AS result FROM T AS t WHERE NOT EXISTS (SELECT 1 FROM U AS u WHERE u.v=t.v)",
+    "input_tables": [
+      {
+        "name": "T",
+        "columns": [
+          "v"
+        ],
+        "rows": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ]
+        ]
+      },
+      {
+        "name": "U",
+        "columns": [
+          "v"
+        ],
+        "rows": [
+          [
+            2
+          ],
+          [
+            null
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          3
+        ]
+      ]
+    },
+    "steps": [
+      "T의 2는 U의 2와 일치한다.",
+      "NULL은 어떤 값과도 = TRUE가 아니므로 제외 집합에 영향을 주지 않는다.",
+      "1,3,4 총 3행이다."
+    ],
+    "verified": true,
+    "linked_chapters": [
+      5
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "복합 SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "result"
+      ],
+      "rows": [
+        [
+          3
+        ]
+      ]
+    },
+    "option_note_method": "sql_result_derived",
+    "frequency": "미집계",
+    "exam_focus": "복합 조건·실행 순서",
+    "difficulty_basis": "출제 조건 복잡도 기반 편집 추정 (수험자 정답률 아님)"
+  },
+  {
+    "id": "qv3_0185",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_group",
+    "topic_label": "HAVING NULL",
+    "difficulty": "중 · 예상",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 실행 검증",
+    "stem": "HAVING COUNT(amount)>=2를 만족하는 그룹은 몇 개인가?",
+    "choices": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": 0,
+    "explanation": "NULL이 아닌 amount가 2개인 B그룹만 통과한다. A는 1개, C는 0개다.",
+    "option_explanations": [
+      "정답: 실제 SQL을 실행한 결과는 1이다. NULL이 아닌 amount가 2개인 B그룹만 통과한다. A는 1개, C는 0개다.",
+      "2은(는) 올바른 실행 결과 1와 다르다. B의 COUNT(amount)=2다.",
+      "3은(는) 올바른 실행 결과 1와 다르다. C의 COUNT(amount)=0이므로 B만 남는다.",
+      "0은(는) 올바른 실행 결과 1와 다르다. C의 COUNT(amount)=0이므로 B만 남는다."
+    ],
+    "sql": "SELECT COUNT(*) AS result FROM (SELECT region FROM SALES GROUP BY region HAVING COUNT(amount)>=2)",
+    "input_tables": [
+      {
+        "name": "SALES",
+        "columns": [
+          "region",
+          "amount"
+        ],
+        "rows": [
+          [
+            "A",
+            10
+          ],
+          [
+            "A",
+            null
+          ],
+          [
+            "B",
+            20
+          ],
+          [
+            "B",
+            30
+          ],
+          [
+            "C",
+            null
+          ],
+          [
+            "C",
+            null
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          1
+        ]
+      ]
+    },
+    "steps": [
+      "A의 COUNT(amount)=1이다.",
+      "B의 COUNT(amount)=2다.",
+      "C의 COUNT(amount)=0이므로 B만 남는다."
+    ],
+    "verified": true,
+    "linked_chapters": [
+      3
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "복합 SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "result"
+      ],
+      "rows": [
+        [
+          1
+        ]
+      ]
+    },
+    "option_note_method": "sql_result_derived",
+    "frequency": "미집계",
+    "exam_focus": "복합 조건·실행 순서",
+    "difficulty_basis": "출제 조건 복잡도 기반 편집 추정 (수험자 정답률 아님)"
+  },
+  {
+    "id": "qv3_0186",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_group",
+    "topic_label": "HAVING COUNT(*)",
+    "difficulty": "중 · 예상",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 실행 검증",
+    "stem": "동일한 HAVING에서 COUNT(*)로 바꾸면 몇 그룹인가?",
+    "choices": [
+      "1",
+      "4",
+      "3",
+      "2"
+    ],
+    "answer": 2,
+    "explanation": "A, B, C는 모두 원본 행을 2개씩 가지고 있으므로 NULL과 관계없이 COUNT(*)=2다.",
+    "option_explanations": [
+      "1은(는) 올바른 실행 결과 3와 다르다. A, B, C 모두 2행씩이다.",
+      "4은(는) 올바른 실행 결과 3와 다르다. COUNT(*)는 NULL행도 센다.",
+      "정답: 실제 SQL을 실행한 결과는 3이다. A, B, C는 모두 원본 행을 2개씩 가지고 있으므로 NULL과 관계없이 COUNT(*)=2다.",
+      "2은(는) 올바른 실행 결과 3와 다르다. 세 그룹 모두 HAVING을 통과한다."
+    ],
+    "sql": "SELECT COUNT(*) AS result FROM (SELECT region FROM SALES GROUP BY region HAVING COUNT(*)>=2)",
+    "input_tables": [
+      {
+        "name": "SALES",
+        "columns": [
+          "region",
+          "amount"
+        ],
+        "rows": [
+          [
+            "A",
+            10
+          ],
+          [
+            "A",
+            null
+          ],
+          [
+            "B",
+            20
+          ],
+          [
+            "B",
+            30
+          ],
+          [
+            "C",
+            null
+          ],
+          [
+            "C",
+            null
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          3
+        ]
+      ]
+    },
+    "steps": [
+      "A, B, C 모두 2행씩이다.",
+      "COUNT(*)는 NULL행도 센다.",
+      "세 그룹 모두 HAVING을 통과한다."
+    ],
+    "verified": true,
+    "linked_chapters": [
+      3
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "복합 SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "result"
+      ],
+      "rows": [
+        [
+          3
+        ]
+      ]
+    },
+    "option_note_method": "sql_result_derived",
+    "frequency": "미집계",
+    "exam_focus": "복합 조건·실행 순서",
+    "difficulty_basis": "출제 조건 복잡도 기반 편집 추정 (수험자 정답률 아님)"
+  },
+  {
+    "id": "qv3_0187",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_window",
+    "topic_label": "RANK 동점 건너뛰기",
+    "difficulty": "중 · 예상",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 실행 검증",
+    "stem": "동점 100점이 2명일 때 80점(id=4)의 RANK 값은?",
+    "choices": [
+      "3",
+      "4",
+      "2",
+      "5"
+    ],
+    "answer": 1,
+    "explanation": "100점 두 행이 1등을 공유하고, 90점이 3등, 80점이 4등이다.",
+    "option_explanations": [
+      "3은(는) 올바른 실행 결과 4와 다르다. RANK의 동점 순위는 1,1이다.",
+      "정답: 실제 SQL을 실행한 결과는 4이다. 100점 두 행이 1등을 공유하고, 90점이 3등, 80점이 4등이다.",
+      "2은(는) 올바른 실행 결과 4와 다르다. 이어서 90점은 3위, 80점은 4위이다.",
+      "5은(는) 올바른 실행 결과 4와 다르다. 이어서 90점은 3위, 80점은 4위이다."
+    ],
+    "sql": "SELECT rnk AS result FROM (SELECT id,RANK() OVER(ORDER BY points DESC) AS rnk FROM SCORE) WHERE id=4",
+    "input_tables": [
+      {
+        "name": "SCORE",
+        "columns": [
+          "id",
+          "points"
+        ],
+        "rows": [
+          [
+            1,
+            100
+          ],
+          [
+            2,
+            100
+          ],
+          [
+            3,
+            90
+          ],
+          [
+            4,
+            80
+          ],
+          [
+            5,
+            80
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          4
+        ]
+      ]
+    },
+    "steps": [
+      "RANK의 동점 순위는 1,1이다.",
+      "이어서 90점은 3위, 80점은 4위이다."
+    ],
+    "verified": true,
+    "linked_chapters": [
+      4
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "복합 SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "result"
+      ],
+      "rows": [
+        [
+          4
+        ]
+      ]
+    },
+    "option_note_method": "sql_result_derived",
+    "frequency": "미집계",
+    "exam_focus": "복합 조건·실행 순서",
+    "difficulty_basis": "출제 조건 복잡도 기반 편집 추정 (수험자 정답률 아님)"
+  },
+  {
+    "id": "qv3_0188",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_window",
+    "topic_label": "DENSE_RANK",
+    "difficulty": "중 · 예상",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 실행 검증",
+    "stem": "같은 자료에서 80점(id=4)의 DENSE_RANK 값은?",
+    "choices": [
+      "2",
+      "4",
+      "5",
+      "3"
+    ],
+    "answer": 3,
+    "explanation": "DENSE_RANK는 동점 후 순위를 건너뛰지 않아 100,90,80점 그룹이 각각 1,2,3위다.",
+    "option_explanations": [
+      "2은(는) 올바른 실행 결과 3와 다르다. 서로 다른 점수는 100,90,80 세 그룹이다.",
+      "4은(는) 올바른 실행 결과 3와 다르다. DENSE_RANK는 동점 뒤에도 연속 순위다.",
+      "5은(는) 올바른 실행 결과 3와 다르다. DENSE_RANK는 동점 뒤에도 연속 순위다.",
+      "정답: 실제 SQL을 실행한 결과는 3이다. DENSE_RANK는 동점 후 순위를 건너뛰지 않아 100,90,80점 그룹이 각각 1,2,3위다."
+    ],
+    "sql": "SELECT drnk AS result FROM (SELECT id,DENSE_RANK() OVER(ORDER BY points DESC) AS drnk FROM SCORE) WHERE id=4",
+    "input_tables": [
+      {
+        "name": "SCORE",
+        "columns": [
+          "id",
+          "points"
+        ],
+        "rows": [
+          [
+            1,
+            100
+          ],
+          [
+            2,
+            100
+          ],
+          [
+            3,
+            90
+          ],
+          [
+            4,
+            80
+          ],
+          [
+            5,
+            80
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          3
+        ]
+      ]
+    },
+    "steps": [
+      "서로 다른 점수는 100,90,80 세 그룹이다.",
+      "DENSE_RANK는 동점 뒤에도 연속 순위다."
+    ],
+    "verified": true,
+    "linked_chapters": [
+      4
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "복합 SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "result"
+      ],
+      "rows": [
+        [
+          3
+        ]
+      ]
+    },
+    "option_note_method": "sql_result_derived",
+    "frequency": "미집계",
+    "exam_focus": "복합 조건·실행 순서",
+    "difficulty_basis": "출제 조건 복잡도 기반 편집 추정 (수험자 정답률 아님)"
+  },
+  {
+    "id": "qv3_0189",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_window",
+    "topic_label": "ROWS 대 RANGE",
+    "difficulty": "상 · 예상",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 실행 검증",
+    "stem": "val=10 동점 2행 중 id=1의 RANGE 누적 합계는?",
+    "choices": [
+      "40",
+      "10",
+      "20",
+      "30"
+    ],
+    "answer": 2,
+    "explanation": "RANGE는 현재 행과 정렬값이 같은 동점 행까지 포함하므로 10+10=20이다.",
+    "option_explanations": [
+      "40은(는) 올바른 실행 결과 20와 다르다. val=10인 행은 id=1,2 두 개다.",
+      "10은(는) 올바른 실행 결과 20와 다르다. RANGE CURRENT ROW는 이 동점 모두 포함한다.",
+      "정답: 실제 SQL을 실행한 결과는 20이다. RANGE는 현재 행과 정렬값이 같은 동점 행까지 포함하므로 10+10=20이다.",
+      "30은(는) 올바른 실행 결과 20와 다르다. RANGE CURRENT ROW는 이 동점 모두 포함한다."
+    ],
+    "sql": "SELECT s AS result FROM (SELECT id,SUM(val) OVER(ORDER BY val RANGE BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) s FROM SCORE) WHERE id=1",
+    "input_tables": [
+      {
+        "name": "SCORE",
+        "columns": [
+          "id",
+          "val"
+        ],
+        "rows": [
+          [
+            1,
+            10
+          ],
+          [
+            2,
+            10
+          ],
+          [
+            3,
+            20
+          ],
+          [
+            4,
+            25
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          20
+        ]
+      ]
+    },
+    "steps": [
+      "val=10인 행은 id=1,2 두 개다.",
+      "RANGE CURRENT ROW는 이 동점 모두 포함한다."
+    ],
+    "verified": true,
+    "linked_chapters": [
+      4
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "복합 SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "result"
+      ],
+      "rows": [
+        [
+          20
+        ]
+      ]
+    },
+    "option_note_method": "sql_result_derived",
+    "frequency": "미집계",
+    "exam_focus": "복합 조건·실행 순서",
+    "difficulty_basis": "출제 조건 복잡도 기반 편집 추정 (수험자 정답률 아님)"
+  },
+  {
+    "id": "qv3_0190",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_window",
+    "topic_label": "ROWS 프레임",
+    "difficulty": "상 · 예상",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 실행 검증",
+    "stem": "ORDER BY val,id 와 ROWS를 사용한 id=1의 누적 합계는?",
+    "choices": [
+      "10",
+      "20",
+      "0",
+      "30"
+    ],
+    "answer": 0,
+    "explanation": "ROWS는 정렬 후 현재 행까지의 물리적 행을 세며 id=1이 첫 행이라 10만 포함된다.",
+    "option_explanations": [
+      "정답: 실제 SQL을 실행한 결과는 10이다. ROWS는 정렬 후 현재 행까지의 물리적 행을 세며 id=1이 첫 행이라 10만 포함된다.",
+      "20은(는) 올바른 실행 결과 10와 다르다. ROWS는 현재 행까지 한 행만 합산한다.",
+      "0은(는) 올바른 실행 결과 10와 다르다. ROWS는 현재 행까지 한 행만 합산한다.",
+      "30은(는) 올바른 실행 결과 10와 다르다. ROWS는 현재 행까지 한 행만 합산한다."
+    ],
+    "sql": "SELECT s AS result FROM (SELECT id,SUM(val) OVER(ORDER BY val,id ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) s FROM SCORE) WHERE id=1",
+    "input_tables": [
+      {
+        "name": "SCORE",
+        "columns": [
+          "id",
+          "val"
+        ],
+        "rows": [
+          [
+            1,
+            10
+          ],
+          [
+            2,
+            10
+          ],
+          [
+            3,
+            20
+          ],
+          [
+            4,
+            25
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          10
+        ]
+      ]
+    },
+    "steps": [
+      "ORDER BY val,id에서 id=1이 첫 행이다.",
+      "ROWS는 현재 행까지 한 행만 합산한다."
+    ],
+    "verified": true,
+    "linked_chapters": [
+      4
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "복합 SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "result"
+      ],
+      "rows": [
+        [
+          10
+        ]
+      ]
+    },
+    "option_note_method": "sql_result_derived",
+    "frequency": "미집계",
+    "exam_focus": "복합 조건·실행 순서",
+    "difficulty_basis": "출제 조건 복잡도 기반 편집 추정 (수험자 정답률 아님)"
+  },
+  {
+    "id": "qv3_0191",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_subquery",
+    "topic_label": "상관 서브쿼리 평균",
+    "difficulty": "상 · 예상",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 실행 검증",
+    "stem": "각 부서 평균보다 급여가 높은 직원은 몇 명인가?",
+    "choices": [
+      "1",
+      "3",
+      "2",
+      "4"
+    ],
+    "answer": 2,
+    "explanation": "A 평균 80에서 100만, B 평균 35에서 40만 통과한다.",
+    "option_explanations": [
+      "1은(는) 올바른 실행 결과 2와 다르다. A 평균=80, B 평균=35이다.",
+      "3은(는) 올바른 실행 결과 2와 다르다. A의 100과 B의 40만 > 평균이다.",
+      "정답: 실제 SQL을 실행한 결과는 2이다. A 평균 80에서 100만, B 평균 35에서 40만 통과한다.",
+      "4은(는) 올바른 실행 결과 2와 다르다. A의 100과 B의 40만 > 평균이다."
+    ],
+    "sql": "SELECT COUNT(*) AS result FROM EMP e WHERE salary>(SELECT AVG(salary) FROM EMP x WHERE x.dept=e.dept)",
+    "input_tables": [
+      {
+        "name": "EMP",
+        "columns": [
+          "id",
+          "dept",
+          "salary"
+        ],
+        "rows": [
+          [
+            1,
+            "A",
+            60
+          ],
+          [
+            2,
+            "A",
+            80
+          ],
+          [
+            3,
+            "A",
+            100
+          ],
+          [
+            4,
+            "B",
+            30
+          ],
+          [
+            5,
+            "B",
+            40
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          2
+        ]
+      ]
+    },
+    "steps": [
+      "A 평균=80, B 평균=35이다.",
+      "A의 100과 B의 40만 > 평균이다."
+    ],
+    "verified": true,
+    "linked_chapters": [
+      5
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "복합 SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "result"
+      ],
+      "rows": [
+        [
+          2
+        ]
+      ]
+    },
+    "option_note_method": "sql_result_derived",
+    "frequency": "미집계",
+    "exam_focus": "복합 조건·실행 순서",
+    "difficulty_basis": "출제 조건 복잡도 기반 편집 추정 (수험자 정답률 아님)"
+  },
+  {
+    "id": "qv3_0192",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_subquery",
+    "topic_label": "상관 서브쿼리 경계",
+    "difficulty": "상 · 예상",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 실행 검증",
+    "stem": "비교를 >=로 바꾸면 몇 명인가?",
+    "choices": [
+      "3",
+      "2",
+      "1",
+      "4"
+    ],
+    "answer": 0,
+    "explanation": "A에서 80과 100, B에서 40이 평균 이상이다.",
+    "option_explanations": [
+      "정답: 실제 SQL을 실행한 결과는 3이다. A에서 80과 100, B에서 40이 평균 이상이다.",
+      "2은(는) 올바른 실행 결과 3와 다르다. A 2명+B 1명=3명이다.",
+      "1은(는) 올바른 실행 결과 3와 다르다. A 2명+B 1명=3명이다.",
+      "4은(는) 올바른 실행 결과 3와 다르다. A 2명+B 1명=3명이다."
+    ],
+    "sql": "SELECT COUNT(*) AS result FROM EMP e WHERE salary>=(SELECT AVG(salary) FROM EMP x WHERE x.dept=e.dept)",
+    "input_tables": [
+      {
+        "name": "EMP",
+        "columns": [
+          "id",
+          "dept",
+          "salary"
+        ],
+        "rows": [
+          [
+            1,
+            "A",
+            60
+          ],
+          [
+            2,
+            "A",
+            80
+          ],
+          [
+            3,
+            "A",
+            100
+          ],
+          [
+            4,
+            "B",
+            30
+          ],
+          [
+            5,
+            "B",
+            40
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          3
+        ]
+      ]
+    },
+    "steps": [
+      "A의 80은 평균과 같아 포함된다.",
+      "A 2명+B 1명=3명이다."
+    ],
+    "verified": true,
+    "linked_chapters": [
+      5
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "복합 SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "result"
+      ],
+      "rows": [
+        [
+          3
+        ]
+      ]
+    },
+    "option_note_method": "sql_result_derived",
+    "frequency": "미집계",
+    "exam_focus": "복합 조건·실행 순서",
+    "difficulty_basis": "출제 조건 복잡도 기반 편집 추정 (수험자 정답률 아님)"
+  },
+  {
+    "id": "qv3_0193",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_group",
+    "topic_label": "그룹 결과 재필터",
+    "difficulty": "중 · 예상",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 실행 검증",
+    "stem": "집계된 지역별 합계가 20 이상인 지역 수는?",
+    "choices": [
+      "2",
+      "1",
+      "4",
+      "3"
+    ],
+    "answer": 0,
+    "explanation": "지역 A의 합계 30, B의 합계 20, C의 합계 10이므로 A와 B만 남는다.",
+    "option_explanations": [
+      "정답: 실제 SQL을 실행한 결과는 2이다. 지역 A의 합계 30, B의 합계 20, C의 합계 10이므로 A와 B만 남는다.",
+      "1은(는) 올바른 실행 결과 2와 다르다. >=20 조건에 A와 B가 포함된다.",
+      "4은(는) 올바른 실행 결과 2와 다르다. >=20 조건에 A와 B가 포함된다.",
+      "3은(는) 올바른 실행 결과 2와 다르다. >=20 조건에 A와 B가 포함된다."
+    ],
+    "sql": "WITH G AS (SELECT reg,SUM(amount) total FROM ORDERLINE GROUP BY reg) SELECT COUNT(*) AS result FROM G WHERE total>=20",
+    "input_tables": [
+      {
+        "name": "ORDERLINE",
+        "columns": [
+          "reg",
+          "amount"
+        ],
+        "rows": [
+          [
+            "A",
+            10
+          ],
+          [
+            "A",
+            20
+          ],
+          [
+            "B",
+            20
+          ],
+          [
+            "C",
+            5
+          ],
+          [
+            "C",
+            5
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          2
+        ]
+      ]
+    },
+    "steps": [
+      "그룹 합계는 A=30, B=20, C=10이다.",
+      ">=20 조건에 A와 B가 포함된다."
+    ],
+    "verified": true,
+    "linked_chapters": [
+      3
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "복합 SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "result"
+      ],
+      "rows": [
+        [
+          2
+        ]
+      ]
+    },
+    "option_note_method": "sql_result_derived",
+    "frequency": "미집계",
+    "exam_focus": "복합 조건·실행 순서",
+    "difficulty_basis": "출제 조건 복잡도 기반 편집 추정 (수험자 정답률 아님)"
+  },
+  {
+    "id": "qv3_0194",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_group",
+    "topic_label": "집계 후 재집계",
+    "difficulty": "상 · 예상",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 실행 검증",
+    "stem": "합계 20 이상인 지역의 합계만 다시 더하면 얼마인가?",
+    "choices": [
+      "40",
+      "60",
+      "50",
+      "30"
+    ],
+    "answer": 2,
+    "explanation": "그룹별 합계 A=30,B=20,C=10에서 A+B=50이다.",
+    "option_explanations": [
+      "40은(는) 올바른 실행 결과 50와 다르다. 지역 합계 30,20,10을 구한다.",
+      "60은(는) 올바른 실행 결과 50와 다르다. 필터 통과한 30과 20을 합한다.",
+      "정답: 실제 SQL을 실행한 결과는 50이다. 그룹별 합계 A=30,B=20,C=10에서 A+B=50이다.",
+      "30은(는) 올바른 실행 결과 50와 다르다. 필터 통과한 30과 20을 합한다."
+    ],
+    "sql": "WITH G AS (SELECT reg,SUM(amount) total FROM ORDERLINE GROUP BY reg) SELECT SUM(total) AS result FROM G WHERE total>=20",
+    "input_tables": [
+      {
+        "name": "ORDERLINE",
+        "columns": [
+          "reg",
+          "amount"
+        ],
+        "rows": [
+          [
+            "A",
+            10
+          ],
+          [
+            "A",
+            20
+          ],
+          [
+            "B",
+            20
+          ],
+          [
+            "C",
+            5
+          ],
+          [
+            "C",
+            5
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          50
+        ]
+      ]
+    },
+    "steps": [
+      "지역 합계 30,20,10을 구한다.",
+      "필터 통과한 30과 20을 합한다."
+    ],
+    "verified": true,
+    "linked_chapters": [
+      3
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "복합 SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "result"
+      ],
+      "rows": [
+        [
+          50
+        ]
+      ]
+    },
+    "option_note_method": "sql_result_derived",
+    "frequency": "미집계",
+    "exam_focus": "복합 조건·실행 순서",
+    "difficulty_basis": "출제 조건 복잡도 기반 편집 추정 (수험자 정답률 아님)"
+  },
+  {
+    "id": "qv3_0195",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_set",
+    "topic_label": "UNION 중복 제거",
+    "difficulty": "중 · 예상",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 실행 검증",
+    "stem": "UNION 결과의 전체 행 수는?",
+    "choices": [
+      "2",
+      "5",
+      "4",
+      "3"
+    ],
+    "answer": 3,
+    "explanation": "UNION은 중복을 제거하여 {1,2,3} 세 값만 남긴다.",
+    "option_explanations": [
+      "2은(는) 올바른 실행 결과 3와 다르다. A={1,1,2}, B={2,3}이다.",
+      "5은(는) 올바른 실행 결과 3와 다르다. 중복 제거 후 1,2,3 총 3행이다.",
+      "4은(는) 올바른 실행 결과 3와 다르다. 중복 제거 후 1,2,3 총 3행이다.",
+      "정답: 실제 SQL을 실행한 결과는 3이다. UNION은 중복을 제거하여 {1,2,3} 세 값만 남긴다."
+    ],
+    "sql": "SELECT COUNT(*) AS result FROM (SELECT v FROM A UNION SELECT v FROM B)",
+    "input_tables": [
+      {
+        "name": "A",
+        "columns": [
+          "v"
+        ],
+        "rows": [
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ]
+        ]
+      },
+      {
+        "name": "B",
+        "columns": [
+          "v"
+        ],
+        "rows": [
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          3
+        ]
+      ]
+    },
+    "steps": [
+      "A={1,1,2}, B={2,3}이다.",
+      "중복 제거 후 1,2,3 총 3행이다."
+    ],
+    "verified": true,
+    "linked_chapters": [],
+    "verification_method": "sql_executed",
+    "question_type": "복합 SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "result"
+      ],
+      "rows": [
+        [
+          3
+        ]
+      ]
+    },
+    "option_note_method": "sql_result_derived",
+    "frequency": "미집계",
+    "exam_focus": "복합 조건·실행 순서",
+    "difficulty_basis": "출제 조건 복잡도 기반 편집 추정 (수험자 정답률 아님)"
+  },
+  {
+    "id": "qv3_0196",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_set",
+    "topic_label": "UNION ALL",
+    "difficulty": "중 · 예상",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 실행 검증",
+    "stem": "UNION ALL로 바꾸면 전체 행 수는?",
+    "choices": [
+      "6",
+      "5",
+      "4",
+      "3"
+    ],
+    "answer": 1,
+    "explanation": "UNION ALL은 중복을 제거하지 않아 A 3행+B 2행=5행이다.",
+    "option_explanations": [
+      "6은(는) 올바른 실행 결과 5와 다르다. UNION ALL은 1,1,2,2,3 모두 유지한다.",
+      "정답: 실제 SQL을 실행한 결과는 5이다. UNION ALL은 중복을 제거하지 않아 A 3행+B 2행=5행이다.",
+      "4은(는) 올바른 실행 결과 5와 다르다. 따라서 5행이다.",
+      "3은(는) 올바른 실행 결과 5와 다르다. 따라서 5행이다."
+    ],
+    "sql": "SELECT COUNT(*) AS result FROM (SELECT v FROM A UNION ALL SELECT v FROM B)",
+    "input_tables": [
+      {
+        "name": "A",
+        "columns": [
+          "v"
+        ],
+        "rows": [
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ]
+        ]
+      },
+      {
+        "name": "B",
+        "columns": [
+          "v"
+        ],
+        "rows": [
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          5
+        ]
+      ]
+    },
+    "steps": [
+      "UNION ALL은 1,1,2,2,3 모두 유지한다.",
+      "따라서 5행이다."
+    ],
+    "verified": true,
+    "linked_chapters": [],
+    "verification_method": "sql_executed",
+    "question_type": "복합 SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "result"
+      ],
+      "rows": [
+        [
+          5
+        ]
+      ]
+    },
+    "option_note_method": "sql_result_derived",
+    "frequency": "미집계",
+    "exam_focus": "복합 조건·실행 순서",
+    "difficulty_basis": "출제 조건 복잡도 기반 편집 추정 (수험자 정답률 아님)"
+  },
+  {
+    "id": "qv3_0197",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_hierarchy",
+    "topic_label": "계층 탐색 깊이",
+    "difficulty": "상 · 예상",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 실행 검증",
+    "stem": "재귀 CTE로 루트 LEVEL=1을 적용했을 때 LEVEL>=3인 노드는 몇 개인가?",
+    "choices": [
+      "2",
+      "1",
+      "3",
+      "4"
+    ],
+    "answer": 2,
+    "explanation": "트리는 LEVEL1={1}, LEVEL2={2,3}, LEVEL3={4,6}, LEVEL4={5}이다.",
+    "option_explanations": [
+      "2은(는) 올바른 실행 결과 3와 다르다. LEVEL3인 노드는 4와 6이다.",
+      "1은(는) 올바른 실행 결과 3와 다르다. LEVEL4인 노드는 5이다.",
+      "정답: 실제 SQL을 실행한 결과는 3이다. 트리는 LEVEL1={1}, LEVEL2={2,3}, LEVEL3={4,6}, LEVEL4={5}이다.",
+      "4은(는) 올바른 실행 결과 3와 다르다. 따라서 3개다."
+    ],
+    "sql": "WITH RECURSIVE H(id,lvl) AS (SELECT id,1 FROM NODE WHERE parent IS NULL UNION ALL SELECT n.id,h.lvl+1 FROM NODE n JOIN H h ON n.parent=h.id) SELECT COUNT(*) AS result FROM H WHERE lvl>=3",
+    "input_tables": [
+      {
+        "name": "NODE",
+        "columns": [
+          "id",
+          "parent"
+        ],
+        "rows": [
+          [
+            1,
+            null
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            6,
+            3
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          3
+        ]
+      ]
+    },
+    "steps": [
+      "LEVEL3인 노드는 4와 6이다.",
+      "LEVEL4인 노드는 5이다.",
+      "따라서 3개다."
+    ],
+    "verified": true,
+    "linked_chapters": [
+      12
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "복합 SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "result"
+      ],
+      "rows": [
+        [
+          3
+        ]
+      ]
+    },
+    "option_note_method": "sql_result_derived",
+    "frequency": "미집계",
+    "exam_focus": "복합 조건·실행 순서",
+    "difficulty_basis": "출제 조건 복잡도 기반 편집 추정 (수험자 정답률 아님)"
+  },
+  {
+    "id": "qv3_0198",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_hierarchy",
+    "topic_label": "최대 LEVEL",
+    "difficulty": "상 · 예상",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 실행 검증",
+    "stem": "계층형 트리의 최대 LEVEL은?",
+    "choices": [
+      "5",
+      "4",
+      "3",
+      "2"
+    ],
+    "answer": 1,
+    "explanation": "가장 깊은 경로는 1→2→4→5로 루트부터 LEVEL 1,2,3,4를 가진다.",
+    "option_explanations": [
+      "5은(는) 올바른 실행 결과 4와 다르다. 가장 긴 경로는 루트 1에서 2,4,5로 내려간다.",
+      "정답: 실제 SQL을 실행한 결과는 4이다. 가장 깊은 경로는 1→2→4→5로 루트부터 LEVEL 1,2,3,4를 가진다.",
+      "3은(는) 올바른 실행 결과 4와 다르다. 루트 LEVEL=1이므로 최대 LEVEL=4다.",
+      "2은(는) 올바른 실행 결과 4와 다르다. 루트 LEVEL=1이므로 최대 LEVEL=4다."
+    ],
+    "sql": "WITH RECURSIVE H(id,lvl) AS (SELECT id,1 FROM NODE WHERE parent IS NULL UNION ALL SELECT n.id,h.lvl+1 FROM NODE n JOIN H h ON n.parent=h.id) SELECT MAX(lvl) AS result FROM H",
+    "input_tables": [
+      {
+        "name": "NODE",
+        "columns": [
+          "id",
+          "parent"
+        ],
+        "rows": [
+          [
+            1,
+            null
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            6,
+            3
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          4
+        ]
+      ]
+    },
+    "steps": [
+      "가장 긴 경로는 루트 1에서 2,4,5로 내려간다.",
+      "루트 LEVEL=1이므로 최대 LEVEL=4다."
+    ],
+    "verified": true,
+    "linked_chapters": [
+      12
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "복합 SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "result"
+      ],
+      "rows": [
+        [
+          4
+        ]
+      ]
+    },
+    "option_note_method": "sql_result_derived",
+    "frequency": "미집계",
+    "exam_focus": "복합 조건·실행 순서",
+    "difficulty_basis": "출제 조건 복잡도 기반 편집 추정 (수험자 정답률 아님)"
+  },
+  {
+    "id": "qv3_0199",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_function",
+    "topic_label": "CASE NULL 대체",
+    "difficulty": "중 · 예상",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 실행 검증",
+    "stem": "CASE와 COALESCE를 결합하여 A그룹 금액만 더한 값은?",
+    "choices": [
+      "30",
+      "70",
+      "0",
+      "10"
+    ],
+    "answer": 3,
+    "explanation": "A그룹의 10과 NULL→0만 반영되고 다른 그룹은 ELSE 0이므로 합은 10이다.",
+    "option_explanations": [
+      "30은(는) 올바른 실행 결과 10와 다르다. A의 NULL은 COALESCE로 0이 된다.",
+      "70은(는) 올바른 실행 결과 10와 다르다. B/C그룹은 ELSE 0이므로 합계에 반영되지 않는다.",
+      "0은(는) 올바른 실행 결과 10와 다르다. B/C그룹은 ELSE 0이므로 합계에 반영되지 않는다.",
+      "정답: 실제 SQL을 실행한 결과는 10이다. A그룹의 10과 NULL→0만 반영되고 다른 그룹은 ELSE 0이므로 합은 10이다."
+    ],
+    "sql": "SELECT SUM(CASE WHEN grp='A' THEN COALESCE(amount,0) ELSE 0 END) AS result FROM TXN",
+    "input_tables": [
+      {
+        "name": "TXN",
+        "columns": [
+          "grp",
+          "amount"
+        ],
+        "rows": [
+          [
+            "A",
+            10
+          ],
+          [
+            "A",
+            null
+          ],
+          [
+            "B",
+            20
+          ],
+          [
+            "B",
+            40
+          ],
+          [
+            "C",
+            null
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          10
+        ]
+      ]
+    },
+    "steps": [
+      "A의 NULL은 COALESCE로 0이 된다.",
+      "B/C그룹은 ELSE 0이므로 합계에 반영되지 않는다."
+    ],
+    "verified": true,
+    "linked_chapters": [
+      13
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "복합 SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "result"
+      ],
+      "rows": [
+        [
+          10
+        ]
+      ]
+    },
+    "option_note_method": "sql_result_derived",
+    "frequency": "미집계",
+    "exam_focus": "복합 조건·실행 순서",
+    "difficulty_basis": "출제 조건 복잡도 기반 편집 추정 (수험자 정답률 아님)"
+  },
+  {
+    "id": "qv3_0200",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_function",
+    "topic_label": "CASE 조건 COUNT",
+    "difficulty": "중 · 예상",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 실행 검증",
+    "stem": "COUNT(CASE WHEN amount>=20 THEN 1 END)의 반환값은?",
+    "choices": [
+      "3",
+      "1",
+      "5",
+      "2"
+    ],
+    "answer": 3,
+    "explanation": "금액이 20 이상인 B의 20,40만 1을 반환한다. 나머지 CASE는 NULL이므로 COUNT에서 제외된다.",
+    "option_explanations": [
+      "3은(는) 올바른 실행 결과 2와 다르다. 조건 만족 행은 20과 40 두 행이다.",
+      "1은(는) 올바른 실행 결과 2와 다르다. CASE의 ELSE 생략은 NULL이고 COUNT는 NULL을 세지 않는다.",
+      "5은(는) 올바른 실행 결과 2와 다르다. CASE의 ELSE 생략은 NULL이고 COUNT는 NULL을 세지 않는다.",
+      "정답: 실제 SQL을 실행한 결과는 2이다. 금액이 20 이상인 B의 20,40만 1을 반환한다. 나머지 CASE는 NULL이므로 COUNT에서 제외된다."
+    ],
+    "sql": "SELECT COUNT(CASE WHEN amount>=20 THEN 1 END) AS result FROM TXN",
+    "input_tables": [
+      {
+        "name": "TXN",
+        "columns": [
+          "grp",
+          "amount"
+        ],
+        "rows": [
+          [
+            "A",
+            10
+          ],
+          [
+            "A",
+            null
+          ],
+          [
+            "B",
+            20
+          ],
+          [
+            "B",
+            40
+          ],
+          [
+            "C",
+            null
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          2
+        ]
+      ]
+    },
+    "steps": [
+      "조건 만족 행은 20과 40 두 행이다.",
+      "CASE의 ELSE 생략은 NULL이고 COUNT는 NULL을 세지 않는다."
+    ],
+    "verified": true,
+    "linked_chapters": [
+      13
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "복합 SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "result"
+      ],
+      "rows": [
+        [
+          2
+        ]
+      ]
+    },
+    "option_note_method": "sql_result_derived",
+    "frequency": "미집계",
+    "exam_focus": "복합 조건·실행 순서",
+    "difficulty_basis": "출제 조건 복잡도 기반 편집 추정 (수험자 정답률 아님)"
+  },
+  {
+    "id": "qv3_0201",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_function",
+    "topic_label": "NULLIF COALESCE",
+    "difficulty": "상 · 예상",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 실행 검증",
+    "stem": "NULLIF와 COALESCE를 중첩한 합계는?",
+    "choices": [
+      "15",
+      "12",
+      "24",
+      "18"
+    ],
+    "answer": 0,
+    "explanation": "행마다 NULLIF(a,0)는 0을 NULL로 바꾸고 COALESCE가 b 또는 0으로 대체해 7,3,5,0을 만든다.",
+    "option_explanations": [
+      "정답: 실제 SQL을 실행한 결과는 15이다. 행마다 NULLIF(a,0)는 0을 NULL로 바꾸고 COALESCE가 b 또는 0으로 대체해 7,3,5,0을 만든다.",
+      "12은(는) 올바른 실행 결과 15와 다르다. 이들을 합하면 15다.",
+      "24은(는) 올바른 실행 결과 15와 다르다. 이들을 합하면 15다.",
+      "18은(는) 올바른 실행 결과 15와 다르다. 이들을 합하면 15다."
+    ],
+    "sql": "SELECT SUM(COALESCE(NULLIF(a,0),b,0)) AS result FROM T",
+    "input_tables": [
+      {
+        "name": "T",
+        "columns": [
+          "a",
+          "b"
+        ],
+        "rows": [
+          [
+            0,
+            7
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            null,
+            5
+          ],
+          [
+            0,
+            null
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          15
+        ]
+      ]
+    },
+    "steps": [
+      "변환된 값은 순서대로 7,3,5,0이다.",
+      "이들을 합하면 15다."
+    ],
+    "verified": true,
+    "linked_chapters": [
+      13
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "복합 SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "result"
+      ],
+      "rows": [
+        [
+          15
+        ]
+      ]
+    },
+    "option_note_method": "sql_result_derived",
+    "frequency": "미집계",
+    "exam_focus": "복합 조건·실행 순서",
+    "difficulty_basis": "출제 조건 복잡도 기반 편집 추정 (수험자 정답률 아님)"
+  },
+  {
+    "id": "qv3_0202",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_function",
+    "topic_label": "DISTINCT 조건",
+    "difficulty": "중 · 예상",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 실행 검증",
+    "stem": "동일한 변환식을 적용한 값들의 COUNT(DISTINCT)는?",
+    "choices": [
+      "3",
+      "4",
+      "5",
+      "2"
+    ],
+    "answer": 1,
+    "explanation": "변환된 행의 값은 {7,3,5,0}으로 모두 달라 DISTINCT 이후 4개가 남는다.",
+    "option_explanations": [
+      "3은(는) 올바른 실행 결과 4와 다르다. 변환값 7,3,5,0은 모두 비NULL이다.",
+      "정답: 실제 SQL을 실행한 결과는 4이다. 변환된 행의 값은 {7,3,5,0}으로 모두 달라 DISTINCT 이후 4개가 남는다.",
+      "5은(는) 올바른 실행 결과 4와 다르다. 네 값이 서로 달라 4개다.",
+      "2은(는) 올바른 실행 결과 4와 다르다. 네 값이 서로 달라 4개다."
+    ],
+    "sql": "SELECT COUNT(DISTINCT COALESCE(NULLIF(a,0),b,0)) AS result FROM T",
+    "input_tables": [
+      {
+        "name": "T",
+        "columns": [
+          "a",
+          "b"
+        ],
+        "rows": [
+          [
+            0,
+            7
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            null,
+            5
+          ],
+          [
+            0,
+            null
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          4
+        ]
+      ]
+    },
+    "steps": [
+      "변환값 7,3,5,0은 모두 비NULL이다.",
+      "네 값이 서로 달라 4개다."
+    ],
+    "verified": true,
+    "linked_chapters": [
+      13
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "복합 SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "result"
+      ],
+      "rows": [
+        [
+          4
+        ]
+      ]
+    },
+    "option_note_method": "sql_result_derived",
+    "frequency": "미집계",
+    "exam_focus": "복합 조건·실행 순서",
+    "difficulty_basis": "출제 조건 복잡도 기반 편집 추정 (수험자 정답률 아님)"
+  },
+  {
+    "id": "qv3_0203",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_window",
+    "topic_label": "그룹별 TOP-N",
+    "difficulty": "상 · 예상",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 실행 검증",
+    "stem": "카테고리마다 ROW_NUMBER<=2를 선택하면 총 몇 행인가?",
+    "choices": [
+      "5",
+      "3",
+      "4",
+      "2"
+    ],
+    "answer": 2,
+    "explanation": "ROW_NUMBER는 동점에도 서로 다른 번호를 부여하므로 A 두 행+B 두 행=4행이다.",
+    "option_explanations": [
+      "5은(는) 올바른 실행 결과 4와 다르다. A에서 상위 2행, B에서 상위 2행을 남긴다.",
+      "3은(는) 올바른 실행 결과 4와 다르다. ROW_NUMBER는 각 그룹에서 1,2를 유일하게 부여한다.",
+      "정답: 실제 SQL을 실행한 결과는 4이다. ROW_NUMBER는 동점에도 서로 다른 번호를 부여하므로 A 두 행+B 두 행=4행이다.",
+      "2은(는) 올바른 실행 결과 4와 다르다. ROW_NUMBER는 각 그룹에서 1,2를 유일하게 부여한다."
+    ],
+    "sql": "WITH X AS (SELECT id,ROW_NUMBER() OVER(PARTITION BY category ORDER BY score DESC,id) rn FROM PLAY) SELECT COUNT(*) AS result FROM X WHERE rn<=2",
+    "input_tables": [
+      {
+        "name": "PLAY",
+        "columns": [
+          "id",
+          "category",
+          "score"
+        ],
+        "rows": [
+          [
+            1,
+            "A",
+            80
+          ],
+          [
+            2,
+            "A",
+            80
+          ],
+          [
+            3,
+            "A",
+            60
+          ],
+          [
+            4,
+            "B",
+            90
+          ],
+          [
+            5,
+            "B",
+            85
+          ],
+          [
+            6,
+            "B",
+            85
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          4
+        ]
+      ]
+    },
+    "steps": [
+      "A에서 상위 2행, B에서 상위 2행을 남긴다.",
+      "ROW_NUMBER는 각 그룹에서 1,2를 유일하게 부여한다."
+    ],
+    "verified": true,
+    "linked_chapters": [
+      4
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "복합 SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "result"
+      ],
+      "rows": [
+        [
+          4
+        ]
+      ]
+    },
+    "option_note_method": "sql_result_derived",
+    "frequency": "미집계",
+    "exam_focus": "복합 조건·실행 순서",
+    "difficulty_basis": "출제 조건 복잡도 기반 편집 추정 (수험자 정답률 아님)"
+  },
+  {
+    "id": "qv3_0204",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_window",
+    "topic_label": "동점 포함 TOP-N",
+    "difficulty": "상 · 예상",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 실행 검증",
+    "stem": "ROW_NUMBER 대신 RANK<=2를 적용하면 몇 행인가?",
+    "choices": [
+      "2",
+      "5",
+      "3",
+      "4"
+    ],
+    "answer": 1,
+    "explanation": "A의 80점 두 행이 공동 1위이며 다음은 3위라 A에서 2행. B의 90점만 1위이며 85점 둘은 공동 2위라 B에서 3행이므로 합계는 5다.",
+    "option_explanations": [
+      "2은(는) 올바른 실행 결과 5와 다르다. A에서는 80점 2행이 1위로 포함된다.",
+      "정답: 실제 SQL을 실행한 결과는 5이다. A의 80점 두 행이 공동 1위이며 다음은 3위라 A에서 2행. B의 90점만 1위이며 85점 둘은 공동 2위라 B에서 3행이므로 합계는 5다.",
+      "3은(는) 올바른 실행 결과 5와 다르다. 총 5행이다.",
+      "4은(는) 올바른 실행 결과 5와 다르다. 총 5행이다."
+    ],
+    "sql": "WITH X AS (SELECT id,RANK() OVER(PARTITION BY category ORDER BY score DESC) rnk FROM PLAY) SELECT COUNT(*) AS result FROM X WHERE rnk<=2",
+    "input_tables": [
+      {
+        "name": "PLAY",
+        "columns": [
+          "id",
+          "category",
+          "score"
+        ],
+        "rows": [
+          [
+            1,
+            "A",
+            80
+          ],
+          [
+            2,
+            "A",
+            80
+          ],
+          [
+            3,
+            "A",
+            60
+          ],
+          [
+            4,
+            "B",
+            90
+          ],
+          [
+            5,
+            "B",
+            85
+          ],
+          [
+            6,
+            "B",
+            85
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          5
+        ]
+      ]
+    },
+    "steps": [
+      "A에서는 80점 2행이 1위로 포함된다.",
+      "B에서는 90점 1행(1위), 85점 2행(공동 2위)이 포함된다.",
+      "총 5행이다."
+    ],
+    "verified": true,
+    "linked_chapters": [
+      4
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "복합 SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "result"
+      ],
+      "rows": [
+        [
+          5
+        ]
+      ]
+    },
+    "option_note_method": "sql_result_derived",
+    "frequency": "미집계",
+    "exam_focus": "복합 조건·실행 순서",
+    "difficulty_basis": "출제 조건 복잡도 기반 편집 추정 (수험자 정답률 아님)"
+  },
+  {
+    "id": "qv3_0205",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_window",
+    "topic_label": "LAG 이전 행",
+    "difficulty": "중 · 예상",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 실행 검증",
+    "stem": "이전 행보다 값이 커진 행의 수는?",
+    "choices": [
+      "4",
+      "1",
+      "2",
+      "3"
+    ],
+    "answer": 2,
+    "explanation": "id2(20>10)와 id5(25>15)만 증가했다. 첫 행의 LAG는 NULL이라 제외된다.",
+    "option_explanations": [
+      "4은(는) 올바른 실행 결과 2와 다르다. id=2,5에서만 값이 증가한다.",
+      "1은(는) 올바른 실행 결과 2와 다르다. 첫 행은 이전 값이 NULL이어서 비교가 TRUE가 아니다.",
+      "정답: 실제 SQL을 실행한 결과는 2이다. id2(20>10)와 id5(25>15)만 증가했다. 첫 행의 LAG는 NULL이라 제외된다.",
+      "3은(는) 올바른 실행 결과 2와 다르다. 첫 행은 이전 값이 NULL이어서 비교가 TRUE가 아니다."
+    ],
+    "sql": "WITH X AS (SELECT id,v,LAG(v) OVER(ORDER BY id) AS prev FROM T) SELECT COUNT(*) AS result FROM X WHERE v>prev",
+    "input_tables": [
+      {
+        "name": "T",
+        "columns": [
+          "id",
+          "v"
+        ],
+        "rows": [
+          [
+            1,
+            10
+          ],
+          [
+            2,
+            20
+          ],
+          [
+            3,
+            20
+          ],
+          [
+            4,
+            15
+          ],
+          [
+            5,
+            25
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          2
+        ]
+      ]
+    },
+    "steps": [
+      "id=2,5에서만 값이 증가한다.",
+      "첫 행은 이전 값이 NULL이어서 비교가 TRUE가 아니다."
+    ],
+    "verified": true,
+    "linked_chapters": [
+      4
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "복합 SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "result"
+      ],
+      "rows": [
+        [
+          2
+        ]
+      ]
+    },
+    "option_note_method": "sql_result_derived",
+    "frequency": "미집계",
+    "exam_focus": "복합 조건·실행 순서",
+    "difficulty_basis": "출제 조건 복잡도 기반 편집 추정 (수험자 정답률 아님)"
+  },
+  {
+    "id": "qv3_0206",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_window",
+    "topic_label": "LAG 동점",
+    "difficulty": "중 · 예상",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 실행 검증",
+    "stem": "바로 이전 행과 값이 같은 행은 몇 개인가?",
+    "choices": [
+      "2",
+      "3",
+      "0",
+      "1"
+    ],
+    "answer": 3,
+    "explanation": "id3에서만 20=20이다. 첫 행의 NULL 비교는 TRUE가 아니다.",
+    "option_explanations": [
+      "2은(는) 올바른 실행 결과 1와 다르다. 인접 값 쌍은 (10,20),(20,20),(20,15),(15,25)이다.",
+      "3은(는) 올바른 실행 결과 1와 다르다. 값이 같은 쌍은 1개다.",
+      "0은(는) 올바른 실행 결과 1와 다르다. 값이 같은 쌍은 1개다.",
+      "정답: 실제 SQL을 실행한 결과는 1이다. id3에서만 20=20이다. 첫 행의 NULL 비교는 TRUE가 아니다."
+    ],
+    "sql": "WITH X AS (SELECT id,v,LAG(v) OVER(ORDER BY id) AS prev FROM T) SELECT COUNT(*) AS result FROM X WHERE v=prev",
+    "input_tables": [
+      {
+        "name": "T",
+        "columns": [
+          "id",
+          "v"
+        ],
+        "rows": [
+          [
+            1,
+            10
+          ],
+          [
+            2,
+            20
+          ],
+          [
+            3,
+            20
+          ],
+          [
+            4,
+            15
+          ],
+          [
+            5,
+            25
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          1
+        ]
+      ]
+    },
+    "steps": [
+      "인접 값 쌍은 (10,20),(20,20),(20,15),(15,25)이다.",
+      "값이 같은 쌍은 1개다."
+    ],
+    "verified": true,
+    "linked_chapters": [
+      4
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "복합 SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "result"
+      ],
+      "rows": [
+        [
+          1
+        ]
+      ]
+    },
+    "option_note_method": "sql_result_derived",
+    "frequency": "미집계",
+    "exam_focus": "복합 조건·실행 순서",
+    "difficulty_basis": "출제 조건 복잡도 기반 편집 추정 (수험자 정답률 아님)"
+  },
+  {
+    "id": "qv3_0207",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_order",
+    "topic_label": "동점 결정 정렬",
+    "difficulty": "중 · 예상",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 실행 검증",
+    "stem": "동점 정렬 기준까지 지정했을 때 두 번째로 조회되는 id는?",
+    "choices": [
+      "3",
+      "4",
+      "1",
+      "2"
+    ],
+    "answer": 2,
+    "explanation": "score=100인 id2, id1 순서가 첫 두 행이다. OFFSET 1이면 id1이 선택된다.",
+    "option_explanations": [
+      "3은(는) 올바른 실행 결과 1와 다르다. score DESC 다음 id DESC이므로 100점은 id2→id1이다.",
+      "4은(는) 올바른 실행 결과 1와 다르다. OFFSET 1은 첫 행을 건너뛰어 id1을 반환한다.",
+      "정답: 실제 SQL을 실행한 결과는 1이다. score=100인 id2, id1 순서가 첫 두 행이다. OFFSET 1이면 id1이 선택된다.",
+      "2은(는) 올바른 실행 결과 1와 다르다. OFFSET 1은 첫 행을 건너뛰어 id1을 반환한다."
+    ],
+    "sql": "SELECT id AS result FROM SCORE ORDER BY score DESC,id DESC LIMIT 1 OFFSET 1",
+    "input_tables": [
+      {
+        "name": "SCORE",
+        "columns": [
+          "id",
+          "score"
+        ],
+        "rows": [
+          [
+            1,
+            100
+          ],
+          [
+            2,
+            100
+          ],
+          [
+            3,
+            90
+          ],
+          [
+            4,
+            80
+          ],
+          [
+            5,
+            80
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          1
+        ]
+      ]
+    },
+    "steps": [
+      "score DESC 다음 id DESC이므로 100점은 id2→id1이다.",
+      "OFFSET 1은 첫 행을 건너뛰어 id1을 반환한다."
+    ],
+    "verified": true,
+    "linked_chapters": [
+      14
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "복합 SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "result"
+      ],
+      "rows": [
+        [
+          1
+        ]
+      ]
+    },
+    "option_note_method": "sql_result_derived",
+    "frequency": "미집계",
+    "exam_focus": "복합 조건·실행 순서",
+    "difficulty_basis": "출제 조건 복잡도 기반 편집 추정 (수험자 정답률 아님)"
+  },
+  {
+    "id": "qv3_0208",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_order",
+    "topic_label": "정렬 후 집계",
+    "difficulty": "중 · 예상",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 실행 검증",
+    "stem": "정렬 후 상위 3행을 선택해 점수를 합하면?",
+    "choices": [
+      "280",
+      "290",
+      "300",
+      "270"
+    ],
+    "answer": 1,
+    "explanation": "정렬 상위 세 행은 100,100,90으로 합계가 290이다.",
+    "option_explanations": [
+      "280은(는) 올바른 실행 결과 290와 다르다. 상위 3행 점수는 100,100,90이다.",
+      "정답: 실제 SQL을 실행한 결과는 290이다. 정렬 상위 세 행은 100,100,90으로 합계가 290이다.",
+      "300은(는) 올바른 실행 결과 290와 다르다. 그 합은 290이다.",
+      "270은(는) 올바른 실행 결과 290와 다르다. 그 합은 290이다."
+    ],
+    "sql": "SELECT SUM(score) AS result FROM (SELECT score FROM SCORE ORDER BY score DESC,id ASC LIMIT 3)",
+    "input_tables": [
+      {
+        "name": "SCORE",
+        "columns": [
+          "id",
+          "score"
+        ],
+        "rows": [
+          [
+            1,
+            100
+          ],
+          [
+            2,
+            100
+          ],
+          [
+            3,
+            90
+          ],
+          [
+            4,
+            80
+          ],
+          [
+            5,
+            80
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          290
+        ]
+      ]
+    },
+    "steps": [
+      "상위 3행 점수는 100,100,90이다.",
+      "그 합은 290이다."
+    ],
+    "verified": true,
+    "linked_chapters": [
+      14
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "복합 SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "result"
+      ],
+      "rows": [
+        [
+          290
+        ]
+      ]
+    },
+    "option_note_method": "sql_result_derived",
+    "frequency": "미집계",
+    "exam_focus": "복합 조건·실행 순서",
+    "difficulty_basis": "출제 조건 복잡도 기반 편집 추정 (수험자 정답률 아님)"
+  },
+  {
+    "id": "qv3_0209",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_rollup",
+    "topic_label": "ROLLUP 집계 수준",
+    "difficulty": "상 · 예상",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 실행 검증",
+    "stem": "ROLLUP(reg,prod)와 같은 집계 수준을 UNION ALL로 표현했을 때 결과 행 수는?",
+    "choices": [
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "answer": 1,
+    "explanation": "세부 그룹 3개와 reg 소계 2개, 전체 총계 1개를 합해 6행이다.",
+    "option_explanations": [
+      "5은(는) 올바른 실행 결과 6와 다르다. (reg,prod) 세부 그룹 3개다.",
+      "정답: 실제 SQL을 실행한 결과는 6이다. 세부 그룹 3개와 reg 소계 2개, 전체 총계 1개를 합해 6행이다.",
+      "7은(는) 올바른 실행 결과 6와 다르다. 전체 총계 1개를 더해 6행이다.",
+      "8은(는) 올바른 실행 결과 6와 다르다. 전체 총계 1개를 더해 6행이다."
+    ],
+    "sql": "SELECT COUNT(*) AS result FROM (SELECT reg,prod,SUM(amt) total FROM SALES GROUP BY reg,prod UNION ALL SELECT reg,'subtotal',SUM(amt) FROM SALES GROUP BY reg UNION ALL SELECT 'total','total',SUM(amt) FROM SALES)",
+    "input_tables": [
+      {
+        "name": "SALES",
+        "columns": [
+          "reg",
+          "prod",
+          "amt"
+        ],
+        "rows": [
+          [
+            "A",
+            "X",
+            10
+          ],
+          [
+            "A",
+            "Y",
+            20
+          ],
+          [
+            "B",
+            "X",
+            30
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          6
+        ]
+      ]
+    },
+    "steps": [
+      "(reg,prod) 세부 그룹 3개다.",
+      "reg 그룹 소계는 2개다.",
+      "전체 총계 1개를 더해 6행이다."
+    ],
+    "verified": true,
+    "linked_chapters": [
+      11
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "복합 SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "result"
+      ],
+      "rows": [
+        [
+          6
+        ]
+      ]
+    },
+    "option_note_method": "sql_result_derived",
+    "frequency": "미집계",
+    "exam_focus": "복합 조건·실행 순서",
+    "difficulty_basis": "출제 조건 복잡도 기반 편집 추정 (수험자 정답률 아님)"
+  },
+  {
+    "id": "qv3_0210",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_rollup",
+    "topic_label": "CUBE 집계 수준",
+    "difficulty": "상 · 예상",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 실행 검증",
+    "stem": "CUBE(reg,prod)와 같은 집계 수준을 UNION ALL로 표현하면 총 몇 행인가?",
+    "choices": [
+      "7",
+      "8",
+      "9",
+      "6"
+    ],
+    "answer": 1,
+    "explanation": "(reg,prod) 상세 3, reg 소계 2, prod 소계 2, 전체 총계 1이므로 8행이다.",
+    "option_explanations": [
+      "7은(는) 올바른 실행 결과 8와 다르다. 세부 3개 + reg 소계 2개다.",
+      "정답: 실제 SQL을 실행한 결과는 8이다. (reg,prod) 상세 3, reg 소계 2, prod 소계 2, 전체 총계 1이므로 8행이다.",
+      "9은(는) 올바른 실행 결과 8와 다르다. 총 8행이다.",
+      "6은(는) 올바른 실행 결과 8와 다르다. 총 8행이다."
+    ],
+    "sql": "SELECT COUNT(*) AS result FROM (SELECT reg,prod,SUM(amt) FROM SALES GROUP BY reg,prod UNION ALL SELECT reg,'subtotal',SUM(amt) FROM SALES GROUP BY reg UNION ALL SELECT 'subtotal',prod,SUM(amt) FROM SALES GROUP BY prod UNION ALL SELECT 'total','total',SUM(amt) FROM SALES)",
+    "input_tables": [
+      {
+        "name": "SALES",
+        "columns": [
+          "reg",
+          "prod",
+          "amt"
+        ],
+        "rows": [
+          [
+            "A",
+            "X",
+            10
+          ],
+          [
+            "A",
+            "Y",
+            20
+          ],
+          [
+            "B",
+            "X",
+            30
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          8
+        ]
+      ]
+    },
+    "steps": [
+      "세부 3개 + reg 소계 2개다.",
+      "prod 소계 2개 + 총계 1개를 더한다.",
+      "총 8행이다."
+    ],
+    "verified": true,
+    "linked_chapters": [
+      11
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "복합 SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "result"
+      ],
+      "rows": [
+        [
+          8
+        ]
+      ]
+    },
+    "option_note_method": "sql_result_derived",
+    "frequency": "미집계",
+    "exam_focus": "복합 조건·실행 순서",
+    "difficulty_basis": "출제 조건 복잡도 기반 편집 추정 (수험자 정답률 아님)"
+  },
+  {
+    "id": "qv3_0211",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_pivot",
+    "topic_label": "조건부 PIVOT",
+    "difficulty": "중 · 예상",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 실행 검증",
+    "stem": "PIVOT의 조건부 SUM과 동등한 계산에서 A지역 X제품 합계는?",
+    "choices": [
+      "20",
+      "35",
+      "10",
+      "15"
+    ],
+    "answer": 3,
+    "explanation": "A지역에서 X에 해당하는 10과 5만 합산해 15이다.",
+    "option_explanations": [
+      "20은(는) 올바른 실행 결과 15와 다르다. A지역 X제품 10,5를 선택한다.",
+      "35은(는) 올바른 실행 결과 15와 다르다. Y제품 20은 ELSE 0으로 제외한다.",
+      "10은(는) 올바른 실행 결과 15와 다르다. Y제품 20은 ELSE 0으로 제외한다.",
+      "정답: 실제 SQL을 실행한 결과는 15이다. A지역에서 X에 해당하는 10과 5만 합산해 15이다."
+    ],
+    "sql": "SELECT SUM(CASE WHEN prod='X' THEN amt ELSE 0 END) AS result FROM SALES WHERE reg='A'",
+    "input_tables": [
+      {
+        "name": "SALES",
+        "columns": [
+          "reg",
+          "prod",
+          "amt"
+        ],
+        "rows": [
+          [
+            "A",
+            "X",
+            10
+          ],
+          [
+            "A",
+            "X",
+            5
+          ],
+          [
+            "A",
+            "Y",
+            20
+          ],
+          [
+            "B",
+            "X",
+            40
+          ],
+          [
+            "B",
+            "Y",
+            3
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          15
+        ]
+      ]
+    },
+    "steps": [
+      "A지역 X제품 10,5를 선택한다.",
+      "Y제품 20은 ELSE 0으로 제외한다."
+    ],
+    "verified": true,
+    "linked_chapters": [],
+    "verification_method": "sql_executed",
+    "question_type": "복합 SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "result"
+      ],
+      "rows": [
+        [
+          15
+        ]
+      ]
+    },
+    "option_note_method": "sql_result_derived",
+    "frequency": "미집계",
+    "exam_focus": "복합 조건·실행 순서",
+    "difficulty_basis": "출제 조건 복잡도 기반 편집 추정 (수험자 정답률 아님)"
+  },
+  {
+    "id": "qv3_0212",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_pivot",
+    "topic_label": "피벗 후 비교",
+    "difficulty": "상 · 예상",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 실행 검증",
+    "stem": "지역별 X합계가 Y합계보다 큰 지역은 몇 개인가?",
+    "choices": [
+      "0",
+      "3",
+      "1",
+      "2"
+    ],
+    "answer": 2,
+    "explanation": "A는 X15<Y20이며, B는 X40>Y3이라 B 한 지역만 통과한다.",
+    "option_explanations": [
+      "0은(는) 올바른 실행 결과 1와 다르다. A: X=15, Y=20이라 제외한다.",
+      "3은(는) 올바른 실행 결과 1와 다르다. B: X=40, Y=3이라 포함한다.",
+      "정답: 실제 SQL을 실행한 결과는 1이다. A는 X15<Y20이며, B는 X40>Y3이라 B 한 지역만 통과한다.",
+      "2은(는) 올바른 실행 결과 1와 다르다. 따라서 1지역이다."
+    ],
+    "sql": "SELECT COUNT(*) AS result FROM (SELECT reg,SUM(CASE WHEN prod='X' THEN amt ELSE 0 END) sx,SUM(CASE WHEN prod='Y' THEN amt ELSE 0 END) sy FROM SALES GROUP BY reg) WHERE sx>sy",
+    "input_tables": [
+      {
+        "name": "SALES",
+        "columns": [
+          "reg",
+          "prod",
+          "amt"
+        ],
+        "rows": [
+          [
+            "A",
+            "X",
+            10
+          ],
+          [
+            "A",
+            "X",
+            5
+          ],
+          [
+            "A",
+            "Y",
+            20
+          ],
+          [
+            "B",
+            "X",
+            40
+          ],
+          [
+            "B",
+            "Y",
+            3
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          1
+        ]
+      ]
+    },
+    "steps": [
+      "A: X=15, Y=20이라 제외한다.",
+      "B: X=40, Y=3이라 포함한다.",
+      "따라서 1지역이다."
+    ],
+    "verified": true,
+    "linked_chapters": [],
+    "verification_method": "sql_executed",
+    "question_type": "복합 SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "result"
+      ],
+      "rows": [
+        [
+          1
+        ]
+      ]
+    },
+    "option_note_method": "sql_result_derived",
+    "frequency": "미집계",
+    "exam_focus": "복합 조건·실행 순서",
+    "difficulty_basis": "출제 조건 복잡도 기반 편집 추정 (수험자 정답률 아님)"
+  },
+  {
+    "id": "qv3_0213",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_subquery",
+    "topic_label": "EXISTS HAVING",
+    "difficulty": "상 · 예상",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 실행 검증",
+    "stem": "주문 2건 이상이면서 주문합계 50 초과인 고객은 몇 명인가?",
+    "choices": [
+      "0",
+      "2",
+      "1",
+      "3"
+    ],
+    "answer": 2,
+    "explanation": "고객1은 2건/60, 고객2는 1건/50, 고객3은 2건/30이다.",
+    "option_explanations": [
+      "0은(는) 올바른 실행 결과 1와 다르다. 고객1만 2건 이상이면서 합계 50 초과다.",
+      "2은(는) 올바른 실행 결과 1와 다르다. 고객2는 건수 부족, 고객3은 합계 부족이다.",
+      "정답: 실제 SQL을 실행한 결과는 1이다. 고객1은 2건/60, 고객2는 1건/50, 고객3은 2건/30이다.",
+      "3은(는) 올바른 실행 결과 1와 다르다. 고객2는 건수 부족, 고객3은 합계 부족이다."
+    ],
+    "sql": "SELECT COUNT(*) AS result FROM CUSTOMER c WHERE EXISTS (SELECT 1 FROM ORDERS o WHERE o.cid=c.id GROUP BY o.cid HAVING COUNT(*)>=2 AND SUM(o.amt)>50)",
+    "input_tables": [
+      {
+        "name": "CUSTOMER",
+        "columns": [
+          "id"
+        ],
+        "rows": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ]
+      },
+      {
+        "name": "ORDERS",
+        "columns": [
+          "id",
+          "cid",
+          "amt"
+        ],
+        "rows": [
+          [
+            11,
+            1,
+            30
+          ],
+          [
+            12,
+            1,
+            30
+          ],
+          [
+            21,
+            2,
+            50
+          ],
+          [
+            31,
+            3,
+            10
+          ],
+          [
+            32,
+            3,
+            20
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          1
+        ]
+      ]
+    },
+    "steps": [
+      "고객1만 2건 이상이면서 합계 50 초과다.",
+      "고객2는 건수 부족, 고객3은 합계 부족이다."
+    ],
+    "verified": true,
+    "linked_chapters": [
+      5
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "복합 SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "result"
+      ],
+      "rows": [
+        [
+          1
+        ]
+      ]
+    },
+    "option_note_method": "sql_result_derived",
+    "frequency": "미집계",
+    "exam_focus": "복합 조건·실행 순서",
+    "difficulty_basis": "출제 조건 복잡도 기반 편집 추정 (수험자 정답률 아님)"
+  },
+  {
+    "id": "qv3_0214",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_subquery",
+    "topic_label": "EXISTS HAVING 경계",
+    "difficulty": "상 · 예상",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 실행 검증",
+    "stem": "합계 조건을 30 이상으로 낮추면 몇 명인가?",
+    "choices": [
+      "1",
+      "3",
+      "2",
+      "0"
+    ],
+    "answer": 2,
+    "explanation": "고객1은 2건/60, 고객3은 2건/30으로 통과하고 고객2는 한 건뿐이다.",
+    "option_explanations": [
+      "1은(는) 올바른 실행 결과 2와 다르다. 고객1과 3이 모두 2건 이상이다.",
+      "3은(는) 올바른 실행 결과 2와 다르다. 두 고객 모두 합계가 30 이상이다.",
+      "정답: 실제 SQL을 실행한 결과는 2이다. 고객1은 2건/60, 고객3은 2건/30으로 통과하고 고객2는 한 건뿐이다.",
+      "0은(는) 올바른 실행 결과 2와 다르다. 두 고객 모두 합계가 30 이상이다."
+    ],
+    "sql": "SELECT COUNT(*) AS result FROM CUSTOMER c WHERE EXISTS (SELECT 1 FROM ORDERS o WHERE o.cid=c.id GROUP BY o.cid HAVING COUNT(*)>=2 AND SUM(o.amt)>=30)",
+    "input_tables": [
+      {
+        "name": "CUSTOMER",
+        "columns": [
+          "id"
+        ],
+        "rows": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ]
+      },
+      {
+        "name": "ORDERS",
+        "columns": [
+          "id",
+          "cid",
+          "amt"
+        ],
+        "rows": [
+          [
+            11,
+            1,
+            30
+          ],
+          [
+            12,
+            1,
+            30
+          ],
+          [
+            21,
+            2,
+            50
+          ],
+          [
+            31,
+            3,
+            10
+          ],
+          [
+            32,
+            3,
+            20
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          2
+        ]
+      ]
+    },
+    "steps": [
+      "고객1과 3이 모두 2건 이상이다.",
+      "두 고객 모두 합계가 30 이상이다."
+    ],
+    "verified": true,
+    "linked_chapters": [
+      5
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "복합 SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "result"
+      ],
+      "rows": [
+        [
+          2
+        ]
+      ]
+    },
+    "option_note_method": "sql_result_derived",
+    "frequency": "미집계",
+    "exam_focus": "복합 조건·실행 순서",
+    "difficulty_basis": "출제 조건 복잡도 기반 편집 추정 (수험자 정답률 아님)"
+  },
+  {
+    "id": "qv3_0215",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_subquery",
+    "topic_label": "관계 나눗셈",
+    "difficulty": "상 · 예상",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 실행 검증",
+    "stem": "필수 상품 A,B를 모두 구매한 고객은 몇 명인가? (중첩 NOT EXISTS)",
+    "choices": [
+      "0",
+      "2",
+      "1",
+      "3"
+    ],
+    "answer": 1,
+    "explanation": "고객1과 3은 A와 B를 모두 구매했으나 고객2는 B가 없다.",
+    "option_explanations": [
+      "0은(는) 올바른 실행 결과 2와 다르다. 요구 상품(core)은 A와 B이다.",
+      "정답: 실제 SQL을 실행한 결과는 2이다. 고객1과 3은 A와 B를 모두 구매했으나 고객2는 B가 없다.",
+      "1은(는) 올바른 실행 결과 2와 다르다. 둘 다 가진 고객은 1,3 두 명이다.",
+      "3은(는) 올바른 실행 결과 2와 다르다. 둘 다 가진 고객은 1,3 두 명이다."
+    ],
+    "sql": "SELECT COUNT(*) AS result FROM CUSTOMER c WHERE NOT EXISTS (SELECT 1 FROM REQ r WHERE r.grp='core' AND NOT EXISTS (SELECT 1 FROM PURCHASE p WHERE p.cid=c.cid AND p.product=r.product))",
+    "input_tables": [
+      {
+        "name": "CUSTOMER",
+        "columns": [
+          "cid"
+        ],
+        "rows": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ]
+      },
+      {
+        "name": "PURCHASE",
+        "columns": [
+          "cid",
+          "product"
+        ],
+        "rows": [
+          [
+            1,
+            "A"
+          ],
+          [
+            1,
+            "B"
+          ],
+          [
+            2,
+            "A"
+          ],
+          [
+            3,
+            "A"
+          ],
+          [
+            3,
+            "B"
+          ],
+          [
+            3,
+            "C"
+          ]
+        ]
+      },
+      {
+        "name": "REQ",
+        "columns": [
+          "grp",
+          "product"
+        ],
+        "rows": [
+          [
+            "core",
+            "A"
+          ],
+          [
+            "core",
+            "B"
+          ],
+          [
+            "all",
+            "A"
+          ],
+          [
+            "all",
+            "B"
+          ],
+          [
+            "all",
+            "C"
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          2
+        ]
+      ]
+    },
+    "steps": [
+      "요구 상품(core)은 A와 B이다.",
+      "둘 다 가진 고객은 1,3 두 명이다."
+    ],
+    "verified": true,
+    "linked_chapters": [
+      5
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "복합 SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "result"
+      ],
+      "rows": [
+        [
+          2
+        ]
+      ]
+    },
+    "option_note_method": "sql_result_derived",
+    "frequency": "미집계",
+    "exam_focus": "복합 조건·실행 순서",
+    "difficulty_basis": "출제 조건 복잡도 기반 편집 추정 (수험자 정답률 아님)"
+  },
+  {
+    "id": "qv3_0216",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_subquery",
+    "topic_label": "관계 나눗셈 심화",
+    "difficulty": "상 · 예상",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL · SQLite에서 실행 검증",
+    "stem": "필수 상품을 A,B,C 모두로 늘리면 대상 고객은 몇 명인가?",
+    "choices": [
+      "2",
+      "0",
+      "1",
+      "3"
+    ],
+    "answer": 2,
+    "explanation": "고객3만 A,B,C를 모두 구매했으며 고객1은 C가, 고객2는 B,C가 없다.",
+    "option_explanations": [
+      "2은(는) 올바른 실행 결과 1와 다르다. 요구 상품(all)은 A,B,C이다.",
+      "0은(는) 올바른 실행 결과 1와 다르다. 세 상품을 모두 구매한 것은 고객3뿐이다.",
+      "정답: 실제 SQL을 실행한 결과는 1이다. 고객3만 A,B,C를 모두 구매했으며 고객1은 C가, 고객2는 B,C가 없다.",
+      "3은(는) 올바른 실행 결과 1와 다르다. 세 상품을 모두 구매한 것은 고객3뿐이다."
+    ],
+    "sql": "SELECT COUNT(*) AS result FROM CUSTOMER c WHERE NOT EXISTS (SELECT 1 FROM REQ r WHERE r.grp='all' AND NOT EXISTS (SELECT 1 FROM PURCHASE p WHERE p.cid=c.cid AND p.product=r.product))",
+    "input_tables": [
+      {
+        "name": "CUSTOMER",
+        "columns": [
+          "cid"
+        ],
+        "rows": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ]
+      },
+      {
+        "name": "PURCHASE",
+        "columns": [
+          "cid",
+          "product"
+        ],
+        "rows": [
+          [
+            1,
+            "A"
+          ],
+          [
+            1,
+            "B"
+          ],
+          [
+            2,
+            "A"
+          ],
+          [
+            3,
+            "A"
+          ],
+          [
+            3,
+            "B"
+          ],
+          [
+            3,
+            "C"
+          ]
+        ]
+      },
+      {
+        "name": "REQ",
+        "columns": [
+          "grp",
+          "product"
+        ],
+        "rows": [
+          [
+            "core",
+            "A"
+          ],
+          [
+            "core",
+            "B"
+          ],
+          [
+            "all",
+            "A"
+          ],
+          [
+            "all",
+            "B"
+          ],
+          [
+            "all",
+            "C"
+          ]
+        ]
+      }
+    ],
+    "result_table": {
+      "columns": [
+        "결과"
+      ],
+      "rows": [
+        [
+          1
+        ]
+      ]
+    },
+    "steps": [
+      "요구 상품(all)은 A,B,C이다.",
+      "세 상품을 모두 구매한 것은 고객3뿐이다."
+    ],
+    "verified": true,
+    "linked_chapters": [
+      5
+    ],
+    "verification_method": "sql_executed",
+    "question_type": "복합 SQL 결과 예측",
+    "execution_output": {
+      "columns": [
+        "result"
+      ],
+      "rows": [
+        [
+          1
+        ]
+      ]
+    },
+    "option_note_method": "sql_result_derived",
+    "frequency": "미집계",
+    "exam_focus": "복합 조건·실행 순서",
+    "difficulty_basis": "출제 조건 복잡도 기반 편집 추정 (수험자 정답률 아님)"
+  },
+  {
+    "id": "qv3_0217",
+    "subject": "데이터 모델링",
+    "topic": "model_normal",
+    "topic_label": "정규화·함수 종속",
+    "difficulty": "상 · 예상",
+    "source_type": "자체 제작",
+    "dbms": "관계형 데이터 모델링",
+    "stem": "R(A,B,C,D)에 후보키 (A,B)가 있고 A→C, C→D, (A,B)→D가 성립한다. 2NF를 최초로 만족시키려면 직접 제거해야 할 종속은?",
+    "choices": [
+      "C→D만 제거하면 충분하다",
+      "A→C에 따른 부분 종속을 제거해야 한다",
+      "(A,B)→D만 제거해야 한다",
+      "기본키를 D로 바꾸면 된다"
+    ],
+    "answer": 1,
+    "explanation": "비주요 속성 C가 복합 후보키 (A,B)의 진부분집합인 A에 종속되므로 2NF를 위반한다. 2NF는 부분 함수 종속을 제거하는 것이 우선이다.",
+    "option_explanations": [
+      "C→D는 이행 종속 문제로 2NF의 직접 위반 요인이 아니다.",
+      "A→C가 후보키 일부에 대한 종속이므로 정답이다.",
+      "전체 후보키에 대한 종속은 정상적인 식별 구조다.",
+      "D는 후보키임이 보장되지 않는다."
+    ],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [
+      "기본키 일부 A가 C를 결정하므로 부분 종속이다.",
+      "C→D는 3NF 등 후속 단계의 이행 종속 검토 대상이다."
+    ],
+    "verified": true,
+    "linked_chapters": [
+      10
+    ],
+    "verification_method": "editorial_review",
+    "question_type": "복합 개념 판단",
+    "option_note_method": "individual_editorial_review",
+    "frequency": "미집계",
+    "exam_focus": "관계·정규화·식별자 심화",
+    "difficulty_basis": "출제 조건 복잡도 기반 편집 추정 (수험자 정답률 아님)"
+  },
+  {
+    "id": "qv3_0218",
+    "subject": "데이터 모델링",
+    "topic": "model_normal",
+    "topic_label": "정규화·함수 종속",
+    "difficulty": "상 · 예상",
+    "source_type": "자체 제작",
+    "dbms": "관계형 데이터 모델링",
+    "stem": "R(A,B,C)가 A→B, B→A, B→C를 만족하고 후보키가 A와 B라고 하자. BCNF 위반 여부를 가장 적절하게 판단한 것은?",
+    "choices": [
+      "A→B가 위반이다",
+      "B→A만 위반이다",
+      "B→C는 위반이다",
+      "제시된 종속만으로는 BCNF 위반이 없다"
+    ],
+    "answer": 3,
+    "explanation": "A,B는 둘 다 후보키이므로 제시된 모든 비자명 함수 종속의 결정자가 슈퍼키다. BCNF를 위반하지 않는다.",
+    "option_explanations": [
+      "A는 후보키이므로 위반이 아니다.",
+      "B 역시 후보키이다.",
+      "B가 후보키이므로 B→C도 위반이 아니다.",
+      "BCNF 조건을 모두 만족한다."
+    ],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [
+      "A→B,B→A로 A와 B 각각 모든 속성을 결정할 수 있다.",
+      "따라서 결정자가 후보키인 종속만 제시됐다."
+    ],
+    "verified": true,
+    "linked_chapters": [
+      10
+    ],
+    "verification_method": "editorial_review",
+    "question_type": "복합 개념 판단",
+    "option_note_method": "individual_editorial_review",
+    "frequency": "미집계",
+    "exam_focus": "관계·정규화·식별자 심화",
+    "difficulty_basis": "출제 조건 복잡도 기반 편집 추정 (수험자 정답률 아님)"
+  },
+  {
+    "id": "qv3_0219",
+    "subject": "데이터 모델링",
+    "topic": "model_key",
+    "topic_label": "후보키와 속성 폐포",
+    "difficulty": "상 · 예상",
+    "source_type": "자체 제작",
+    "dbms": "관계형 데이터 모델링",
+    "stem": "R(A,B,C,D,E)의 함수 종속이 A→B, BC→D, D→E라고 하자. {A,C}의 속성 폐포는?",
+    "choices": [
+      "{A,B,C}",
+      "{A,B,C,D}",
+      "{A,B,C,D,E}",
+      "{A,C,D,E}"
+    ],
+    "answer": 2,
+    "explanation": "AC에서 A→B를 적용해 B를 얻고, BC→D로 D, D→E로 E까지 얻어 전체 속성이 도출된다.",
+    "option_explanations": [
+      "BC→D를 놓쳤다.",
+      "D→E를 놓쳤다.",
+      "모든 속성을 포함한다.",
+      "A→B로 추가되는 B를 빠뜨렸다."
+    ],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [
+      "AC⁺에서 A→B 적용: A,B,C.",
+      "BC→D 적용 후 D→E를 적용한다.",
+      "폐포가 A,B,C,D,E이다."
+    ],
+    "verified": true,
+    "linked_chapters": [
+      9
+    ],
+    "verification_method": "editorial_review",
+    "question_type": "복합 개념 판단",
+    "option_note_method": "individual_editorial_review",
+    "frequency": "미집계",
+    "exam_focus": "관계·정규화·식별자 심화",
+    "difficulty_basis": "출제 조건 복잡도 기반 편집 추정 (수험자 정답률 아님)"
+  },
+  {
+    "id": "qv3_0220",
+    "subject": "데이터 모델링",
+    "topic": "model_key",
+    "topic_label": "후보키와 속성 폐포",
+    "difficulty": "상 · 예상",
+    "source_type": "자체 제작",
+    "dbms": "관계형 데이터 모델링",
+    "stem": "R(A,B,C,D)의 함수 종속이 A→B, B→C, C→A이고 D를 결정하는 종속은 없다고 하자. 후보키의 집합은?",
+    "choices": [
+      "{A},{B},{C}",
+      "{A,D},{B,D},{C,D}",
+      "{A,B,D}",
+      "{D}"
+    ],
+    "answer": 1,
+    "explanation": "D는 다른 속성에서 도출되지 않으므로 모든 후보키에 반드시 포함돼야 한다. A,B,C는 서로를 결정하므로 각 하나와 D를 조합하면 최소키다.",
+    "option_explanations": [
+      "D를 빠뜨렸으므로 전체 속성을 결정할 수 없다.",
+      "세 후보키 모두 최소성을 만족한다.",
+      "ABD는 AD를 포함해 최소성이 없다.",
+      "D만으로 A,B,C를 결정하지 못한다."
+    ],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [
+      "D는 우변에 없어 필수로 포함한다.",
+      "A,B,C는 서로 도달 가능한 결정자 집합이다.",
+      "AD, BD, CD가 모두 최소 슈퍼키이다."
+    ],
+    "verified": true,
+    "linked_chapters": [
+      9
+    ],
+    "verification_method": "editorial_review",
+    "question_type": "복합 개념 판단",
+    "option_note_method": "individual_editorial_review",
+    "frequency": "미집계",
+    "exam_focus": "관계·정규화·식별자 심화",
+    "difficulty_basis": "출제 조건 복잡도 기반 편집 추정 (수험자 정답률 아님)"
+  },
+  {
+    "id": "qv3_0221",
+    "subject": "데이터 모델링",
+    "topic": "model_relation",
+    "topic_label": "선택 참여와 카디널리티",
+    "difficulty": "상 · 예상",
+    "source_type": "자체 제작",
+    "dbms": "관계형 데이터 모델링",
+    "stem": "고객은 주문을 0개 이상 가질 수 있고 주문은 반드시 고객 1명에 소속된다. CUSTOMER와 ORDER의 관계 구현으로 가장 일관적인 것은?",
+    "choices": [
+      "CUSTOMER에 주문번호 NOT NULL FK",
+      "ORDER에 고객번호 NOT NULL FK",
+      "ORDER에 고객번호 nullable FK, CUSTOMER에 NOT NULL 주문번호",
+      "두 테이블에 서로를 참조하는 NOT NULL FK"
+    ],
+    "answer": 1,
+    "explanation": "고객 1:N 주문이고 주문마다 고객이 필수이므로 ORDER.customer_id에 NOT NULL FK를 두는 것이 자연스럽다.",
+    "option_explanations": [
+      "고객 0건 주문을 허용하는 구조와 맞지 않는다.",
+      "자식 ORDER에 필수 FK가 있어야 한다.",
+      "nullable FK는 주문의 고객 필수성을 깨뜨린다.",
+      "양방향 필수 FK는 1:N 규칙의 자연스러운 구현이 아니다."
+    ],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [
+      "부모 CUSTOMER의 참여는 선택적(주문 0건 가능)이다.",
+      "자식 ORDER는 고객 필수 참여다.",
+      "자식에 NOT NULL FK를 둔다."
+    ],
+    "verified": true,
+    "linked_chapters": [
+      8
+    ],
+    "verification_method": "editorial_review",
+    "question_type": "복합 개념 판단",
+    "option_note_method": "individual_editorial_review",
+    "frequency": "미집계",
+    "exam_focus": "관계·정규화·식별자 심화",
+    "difficulty_basis": "출제 조건 복잡도 기반 편집 추정 (수험자 정답률 아님)"
+  },
+  {
+    "id": "qv3_0222",
+    "subject": "데이터 모델링",
+    "topic": "model_relation",
+    "topic_label": "자기참조 계층 관계",
+    "difficulty": "상 · 예상",
+    "source_type": "자체 제작",
+    "dbms": "관계형 데이터 모델링",
+    "stem": "직원 EMP(emp_id PK, manager_id FK→EMP.emp_id)에서 최상위 관리자만 manager_id가 NULL이고 나머지는 반드시 상사를 갖는다. 적절한 설계 검증 방법은?",
+    "choices": [
+      "manager_id를 무조건 NOT NULL로 둔다",
+      "manager_id에 UNIQUE를 설정해 상사 한 명만 부하를 갖게 한다",
+      "NULL 허용 FK와 추가 업무 규칙 검증을 병행한다",
+      "FK 제약을 없애고 문자열 관리자 이름만 저장한다"
+    ],
+    "answer": 2,
+    "explanation": "최상위 행은 manager_id=NULL을 허용해야 하며 나머지 직원의 필수 상사 및 순환 여부는 FK 하나만으로 완전히 보장하기 어려워 추가 검증이 필요하다.",
+    "option_explanations": [
+      "최상위 관리자 행의 삽입을 막는다.",
+      "한 관리자가 여러 부하를 가질 수 있다.",
+      "NULL 허용 FK와 추가 업무 검증이 맞다.",
+      "FK는 참조 무결성을 위해 유지해야 한다."
+    ],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [
+      "최상위 관리자에게만 manager_id=NULL을 허용한다.",
+      "FK는 존재하는 관리자를 참조하게 하지만 최상위/순환 비즈니스 규칙 전체를 대신하지 못한다."
+    ],
+    "verified": true,
+    "linked_chapters": [
+      8
+    ],
+    "verification_method": "editorial_review",
+    "question_type": "복합 개념 판단",
+    "option_note_method": "individual_editorial_review",
+    "frequency": "미집계",
+    "exam_focus": "관계·정규화·식별자 심화",
+    "difficulty_basis": "출제 조건 복잡도 기반 편집 추정 (수험자 정답률 아님)"
+  },
+  {
+    "id": "qv3_0223",
+    "subject": "데이터 모델링",
+    "topic": "model_entity",
+    "topic_label": "엔터티 속성 설계",
+    "difficulty": "중 · 예상",
+    "source_type": "자체 제작",
+    "dbms": "관계형 데이터 모델링",
+    "stem": "고객 이름·주소와 주문일자·주문상품을 한 행에 반복 저장한 주문 테이블이 있다. 이름이 변경되었을 때 여러 행을 모두 수정해야 하는 현상을 가장 직접적으로 설명하는 것은?",
+    "choices": [
+      "삽입 이상",
+      "갱신 이상",
+      "삭제 이상",
+      "참조 무결성 예외"
+    ],
+    "answer": 1,
+    "explanation": "반복 저장한 고객 이름을 일부 행만 수정하면 동일 고객의 이름이 달라지는 갱신 이상이 발생한다.",
+    "option_explanations": [
+      "새 행 삽입이 막히는 문제가 아니다.",
+      "기존 반복 값 변경에 따른 불일치이므로 갱신 이상이다.",
+      "특정 행 삭제로 정보가 소실되는 문제가 아니다.",
+      "FK 부재가 직접적인 정의는 아니다."
+    ],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [
+      "하나의 고객 정보가 여러 주문 행에 중복 저장된다.",
+      "한 번의 고객 변경이 여러 행 업데이트를 요구하는 갱신 이상이다."
+    ],
+    "verified": true,
+    "linked_chapters": [
+      8
+    ],
+    "verification_method": "editorial_review",
+    "question_type": "복합 개념 판단",
+    "option_note_method": "individual_editorial_review",
+    "frequency": "미집계",
+    "exam_focus": "관계·정규화·식별자 심화",
+    "difficulty_basis": "출제 조건 복잡도 기반 편집 추정 (수험자 정답률 아님)"
+  },
+  {
+    "id": "qv3_0224",
+    "subject": "데이터 모델링",
+    "topic": "model_entity",
+    "topic_label": "엔터티 속성 설계",
+    "difficulty": "상 · 예상",
+    "source_type": "자체 제작",
+    "dbms": "관계형 데이터 모델링",
+    "stem": "한 과목을 여러 교수가 담당하고 교수도 여러 과목을 담당하며 각 담당 조합에는 시작일과 종료일이 있다. 가장 적절한 논리 모델은?",
+    "choices": [
+      "교수 엔터티에 과목명 1개 속성",
+      "과목 엔터티에 교수명 문자열 여러 개",
+      "교수-과목 N:M을 연결하는 담당 엔터티에 시작일·종료일 배치",
+      "시작일·종료일을 교수 엔터티에 한 번만 저장"
+    ],
+    "answer": 2,
+    "explanation": "N:M 관계의 개별 조합에 종속되는 시작·종료일은 교차/관계 엔터티의 속성으로 보관해야 조합별 이력을 표현할 수 있다.",
+    "option_explanations": [
+      "교수가 여러 과목을 담당하는 조건을 표현하지 못한다.",
+      "관계별 시작일과 종료일을 구조화하기 어렵다.",
+      "관계 엔터티로 조합별 속성을 표현한다.",
+      "교수 한 명의 담당 여러 건별 날짜를 구분하지 못한다."
+    ],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [
+      "N:M 관계를 담당 엔터티로 분리한다.",
+      "시작일·종료일은 해당 교수·과목 연결의 속성이다."
+    ],
+    "verified": true,
+    "linked_chapters": [
+      8
+    ],
+    "verification_method": "editorial_review",
+    "question_type": "복합 개념 판단",
+    "option_note_method": "individual_editorial_review",
+    "frequency": "미집계",
+    "exam_focus": "관계·정규화·식별자 심화",
+    "difficulty_basis": "출제 조건 복잡도 기반 편집 추정 (수험자 정답률 아님)"
+  },
+  {
+    "id": "qv3_0225",
+    "subject": "데이터 모델링",
+    "topic": "model_schema",
+    "topic_label": "데이터 독립성",
+    "difficulty": "중 · 예상",
+    "source_type": "자체 제작",
+    "dbms": "관계형 데이터 모델링",
+    "stem": "내부 스키마에서 인덱스 구조를 변경했지만 개념 스키마와 응용 프로그램 뷰가 수정되지 않았다. 직접적으로 설명하는 개념은?",
+    "choices": [
+      "논리적 데이터 독립성",
+      "물리적 데이터 독립성",
+      "정규화",
+      "식별 관계"
+    ],
+    "answer": 1,
+    "explanation": "물리 저장 구조인 내부 스키마가 바뀌어도 논리적 구조인 개념 스키마가 영향을 받지 않는 성질이 물리적 데이터 독립성이다.",
+    "option_explanations": [
+      "논리적 독립성은 주로 개념 스키마 변경에 대한 외부 스키마 독립성이다.",
+      "저장 구조 변경의 영향을 논리 구조에서 격리하는 물리적 독립성이다.",
+      "정규화는 테이블 구조의 함수 종속/이상 현상 제거다.",
+      "식별 관계는 FK가 자식 PK에 포함되는 관계다."
+    ],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [
+      "인덱스는 내부 스키마의 물리 저장 구조다.",
+      "개념 스키마가 변경 없이 유지되므로 물리적 독립성이다."
+    ],
+    "verified": true,
+    "linked_chapters": [
+      15
+    ],
+    "verification_method": "editorial_review",
+    "question_type": "복합 개념 판단",
+    "option_note_method": "individual_editorial_review",
+    "frequency": "미집계",
+    "exam_focus": "관계·정규화·식별자 심화",
+    "difficulty_basis": "출제 조건 복잡도 기반 편집 추정 (수험자 정답률 아님)"
+  },
+  {
+    "id": "qv3_0226",
+    "subject": "데이터 모델링",
+    "topic": "model_normal",
+    "topic_label": "정규화 분해와 무손실 조인",
+    "difficulty": "상 · 예상",
+    "source_type": "자체 제작",
+    "dbms": "관계형 데이터 모델링",
+    "stem": "R(A,B,C)에서 A→B가 성립한다. R1(A,B), R2(A,C)로 분해했을 때, 두 릴레이션의 자연 조인이 무손실임을 보이기 위한 충분한 조건은?",
+    "choices": [
+      "공통 속성 A가 R1의 모든 속성을 결정한다",
+      "B가 C를 결정한다",
+      "두 테이블의 행 수가 같다",
+      "A의 값이 서로 다른 임의 행끼리 조인된다"
+    ],
+    "answer": 0,
+    "explanation": "공통 속성 A는 R1(A,B)를 결정(A→B)하므로 이분해의 무손실 조인 판정에 필요한 공통속성→한쪽 릴레이션 조건을 만족한다.",
+    "option_explanations": [
+      "공통 A→AB이면 무손실 분해의 충분조건이다.",
+      "B→C 여부는 이 분해에서 필요한 판정 기준이 아니다.",
+      "행 수가 같다고 무손실인 것은 아니다.",
+      "자연 조인은 공통 속성값이 같은 행끼리 결합한다."
+    ],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [
+      "교집합 R1∩R2={A}이다.",
+      "A→B로 A→AB가 되어 공통 속성이 R1 전체를 결정한다.",
+      "따라서 무손실 조인 분해이다."
+    ],
+    "verified": true,
+    "linked_chapters": [
+      10
+    ],
+    "verification_method": "editorial_review",
+    "question_type": "복합 개념 판단",
+    "option_note_method": "individual_editorial_review",
+    "frequency": "미집계",
+    "exam_focus": "관계·정규화·식별자 심화",
+    "difficulty_basis": "출제 조건 복잡도 기반 편집 추정 (수험자 정답률 아님)"
   }
 ]

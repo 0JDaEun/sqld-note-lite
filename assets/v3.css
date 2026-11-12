@@ -232,3 +232,8 @@
 .v33-sync-retry[hidden]{display:none!important}
 .v33-audit-note{font-size:11px!important;line-height:1.65!important;margin:13px 0 0!important;color:#6d7a8c!important;border-top:1px solid #e5eaf1;padding:11px 0 0}
 @media(max-width:480px){.v3-sync{flex-wrap:wrap;white-space:normal;gap:5px}.v33-sync-retry{font-size:11px}}
+
+/* v3.4: responsive topic and difficulty filtering */
+.v3-bank-filters{justify-content:flex-start;align-items:center}.v3-bank-filters .v3-topic-filter{min-width:0}.v3-bank-filters select{max-width:min(190px,50vw)}
+.v3-source-note a{color:#315f9f;text-decoration:underline;text-underline-offset:2px;font-weight:700}
+@media(max-width:540px){.v3-bank-filters .v3-topic-filter{width:100%;justify-content:space-between}.v3-bank-filters select{max-width:70%;min-width:0}}
