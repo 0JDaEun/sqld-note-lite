@@ -7,7 +7,7 @@ const escapeHtml = v => String(v ?? '').replace(/[&<>"']/g,c=>({'&':'&amp;','<':
 const LABEL={unseen:'새 문제',wrong:'오답',unknown:'모름',mastered:'정복'};
 const K_GUEST='sqld_v3_guest_v1', K_USER=id=>'sqld_v3_cache_'+id, K_PENDING=id=>'sqld_v3_pending_'+id;
 const sourceUrl='/questions/bank.json';
-const PAGE_VERSION='3.5';
+const PAGE_VERSION='3.6';
 let questions=[], questionMap=new Map(), supplements=[], states={}, profile=null, client=null;
 let selected=null, revealed=false, lastOutcome=null, currentQuestion=null, currentMode='mixed', currentTopic='all', currentDifficulty='all';
 let sessionSeen=new Set(), sessionStep=0, busy=false, lastAsked=new Map(), pending=[], flushing=false, bankFetchError='';
@@ -183,11 +183,11 @@ async function onAuth(event,force=false){
 }
 function navigateBank(mode='mixed',topic='all',questionId=null,difficulty='all'){currentMode=mode;currentTopic=topic;currentDifficulty=difficulty;resetSession();requestedQuestion=questionId;const target=mode==='review'?'#review':'#practice';if(location.hash!==target)location.hash=target;else navQuestion();}
 function route(){const hash=currentRoute();const root=$('#practice-app'),sup=$('#supplement-app'),quickRoot=$('#quick-reference');if(!root||!sup||!quickRoot)return;
- const bank=inBank(),extras=inSupplement(),quick=inQuickReference();root.hidden=!bank;sup.hidden=!extras;quickRoot.hidden=!quick;document.body.classList.toggle('v35-quick-open',quick);
+ const bank=inBank(),extras=inSupplement(),quick=inQuickReference();root.hidden=!bank;sup.hidden=!extras;quickRoot.hidden=!quick;const mock=currentRoute()==='mock';const mockRoot=$('#mock-app');if(mockRoot)mockRoot.hidden=!mock;document.body.classList.toggle('v35-quick-open',quick);
  if(quick){renderQuickReference();document.title='전체 개념 한 페이지 | SQLD NOTE v3.5';}
  if(bank){const mode=hash==='review'?'review':currentMode;if(mode!==currentMode){currentMode=mode;resetSession();} if(!currentQuestion)navQuestion();else {renderQuestion({type:'question',question:currentQuestion});if(revealed&&lastOutcome)renderFeedback(currentQuestion,lastOutcome);}document.title='SQLD 문제은행 | SQLD NOTE';}
  if(extras){renderSupplements();document.title='보충 개념 | SQLD NOTE';}
- $$('.v3-bottom-nav a,.v3-side-top a').forEach(a=>a.classList.toggle('active',(a.getAttribute('href')==='#practice'&&bank)||(a.getAttribute('href')==='#supplement'&&extras)||(a.getAttribute('href')==='#quick-reference'&&quick)||(a.getAttribute('href')==='#home'&&hash==='home')||(a.getAttribute('href')==='#c01'&&/^c\d+/.test(hash))));
+ $$('.v3-bottom-nav a,.v3-side-top a').forEach(a=>a.classList.toggle('active',(a.getAttribute('href')==='#practice'&&bank)||(a.getAttribute('href')==='#supplement'&&extras)||(a.getAttribute('href')==='#quick-reference'&&quick)||(a.getAttribute('href')==='#mock'&&mock)||(a.getAttribute('href')==='#home'&&hash==='home')||(a.getAttribute('href')==='#c01'&&/^c\d+/.test(hash))));
  $$('.v3-side-top a').forEach(a=>a.classList.toggle('v3-active',a.classList.contains('active')));
 }
 function renderSupplements(){const root=$('#supplement-app');if(!root)return;const hash=currentRoute(),id=hash.includes('/')?hash.split('/')[1]:null;
@@ -246,6 +246,13 @@ function addExecutionTraces(items){
  }
 }
 /* Topic weakness summary is calculated solely from saved answer states. */
+function addAdvancedCases(items){
+ for(const v of items){const stage=document.querySelector(`#c${String(v.chapter).padStart(2,'0')} [data-stage="1"]`);if(!stage)continue;
+  const el=document.createElement('details');el.className='v36-advanced';el.open=true;
+  el.innerHTML=`<summary><span class="v36-advanced-icon">↔</span><span><small>고난도 변형 학습 · 조건 비교</small><strong>${escapeHtml(v.title)}</strong></span><span class="v36-advanced-arrow">⌄</span></summary><div class="v36-advanced-body"><p>${escapeHtml(v.scenario)}</p>${renderTable({...v.comparison,name:'조건 변경에 따른 결과 비교'})}<div class="v36-advanced-takeaway"><b>핵심 판별 규칙</b><p>${escapeHtml(v.takeaway)}</p></div><button type="button" class="v3-btn-secondary" data-bank-lesson="${v.chapter}">이 개념의 실전 문제 풀기 →</button></div>`;
+  stage.appendChild(el);
+ }
+}
 function mountWeaknessPanel(){
  const host=$('.v3-entry-grid');if(!host||$('#v32-weak-topics'))return;
  const panel=document.createElement('section');panel.id='v32-weak-topics';panel.className='v32-weak-panel';
@@ -305,7 +312,7 @@ function renderQuickReference(){
  const questionStatus=part=>{
   const ids=new Set(part.practice_topics||[]);const selected=questions.filter(q=>ids.has(q.topic));const c={total:selected.length,mastered:0,wrong:0,unknown:0};selected.forEach(q=>{const t=status(q.id);if(t in c)c[t]++;});return c;
  };
- host.innerHTML=`<div class="v35-quick-lead"><div><span class="v3-eyebrow">QUICK REFERENCE · SQLD v3.5</span><h1>전체 개념, 한 페이지로.</h1><p>2024년 개편 범위를 30개 학습 항목으로 재구성했어요. 핵심 규칙을 읽고, 헷갈리는 조건은 미니 예제로 확인한 뒤 해당 문제를 풀어 보세요.</p></div><div class="v35-quick-stats"><strong>30<span>개</span></strong><small>1과목 10 · SQL 기본 8<br>SQL 활용 8 · 관리 4</small></div></div>
+ host.innerHTML=`<div class="v35-quick-lead"><div><span class="v3-eyebrow">QUICK REFERENCE · SQLD v3.6</span><h1>전체 개념, 한 페이지로.</h1><p>2024년 개편 범위를 30개 학습 항목으로 재구성했어요. 핵심 규칙을 읽고, 헷갈리는 조건은 미니 예제로 확인한 뒤 해당 문제를 풀어 보세요.</p></div><div class="v35-quick-stats"><strong>30<span>개</span></strong><small>1과목 10 · SQL 기본 8<br>SQL 활용 8 · 관리 4</small></div></div>
  <div class="v35-quick-method"><div><strong>범위 포함</strong><span>시험 범위에 속하는 개념</span></div><div><strong>우선 보강</strong><span>내부 감사에서 미흡했던 영역</span></div><div><strong>빈출 미집계</strong><span>실제 복원 회차별 근거 미확보</span></div><div><strong>나의 취약</strong><span>내 오답·모름 기록 기반</span></div></div>
  <div class="v35-quick-controls"><nav class="v35-part-tabs" aria-label="과목별 바로 이동">${partInfo.map(([id,label,n])=>`<button type="button" data-v35-scroll="${id}">${escapeHtml(label)}<small>${n}</small></button>`).join('')}</nav><label class="v35-search-wrap"><span class="v35-search-icon" aria-hidden="true">⌕</span><input type="search" id="v35-quick-search" autocomplete="off" placeholder="개념·문법·함정 검색" aria-label="개념·문법·함정 검색"><span id="v35-ref-count" aria-live="polite">30 / 30</span></label><button type="button" class="v35-expand-all" data-v35-expand-all="open">예제 모두 펼치기</button></div>
  <div class="v35-parts">${partInfo.map(([part,label,num])=>`<section class="v35-part" id="v35-part-${part}" data-v35-part="${part}"><header class="v35-part-head"><div><span class="v3-eyebrow">${part==='model'?'PART 01':part==='basic'?'PART 02':part==='usage'?'PART 03':'PART 04'}</span><h2>${escapeHtml(label)}</h2></div><small>${num} · 공식 범위 기반 학습 묶음</small></header><div class="v35-card-grid">${syllabusItems.filter(z=>z.part===part).map(z=>{
@@ -330,14 +337,14 @@ window.addEventListener('afterprint',()=>{if(v35PrintState)$$('#quick-reference 
 
 async function init(){
  try{
-  const [bankRes,suppRes,deepRes,visualRes,traceRes,syllabusRes,quickRes]=await Promise.all([fetch(sourceUrl),fetch('/content/supplements.json'),fetch('/content/deepdives.json'),fetch('/content/visuals.json'),fetch('/content/execution_traces.json'),fetch('/content/syllabus.json'),fetch('/content/quick_reference.json')]);
+  const [bankRes,suppRes,deepRes,visualRes,traceRes,syllabusRes,quickRes,advancedRes]=await Promise.all([fetch(sourceUrl),fetch('/content/supplements.json'),fetch('/content/deepdives.json'),fetch('/content/visuals.json'),fetch('/content/execution_traces.json'),fetch('/content/syllabus.json'),fetch('/content/quick_reference.json'),fetch('/content/advanced_cases.json')]);
   if(!bankRes.ok)throw Error('문제 파일 HTTP '+bankRes.status);
   questions=await bankRes.json();questionMap=new Map(questions.map(q=>[q.id,q]));
   if(!Array.isArray(questions)||questionMap.size!==questions.length||questions.some(q=>!q.verified||!/^qv3_[a-z0-9_]{1,64}$/.test(q.id)||q.choices?.length!==4||!Number.isInteger(q.answer)||q.answer<0||q.answer>3||!Array.isArray(q.option_explanations)||q.option_explanations.length!==4))throw Error('문제 데이터 검증 오류');
   supplements=suppRes.ok?await suppRes.json():[];
   try{if(!syllabusRes.ok||!quickRes.ok)throw Error('요약 데이터 요청 실패');const sc=await syllabusRes.json(),qc=await quickRes.json();if(sc.items?.length!==30||qc.cards?.length!==30)throw Error('요약 항목 수 오류');const ids=new Set(sc.items.map(x=>x.id));if(ids.size!==30||qc.cards.some(x=>!ids.has(x.id)))throw Error('요약 ID 정합성 오류');syllabusItems=sc.items;quickCards=qc.cards;quickMap=new Map(qc.cards.map(x=>[x.id,x]));}catch(e){quickRefError=e.message;console.warn('Quick reference data:',e);}
-  if(deepRes.ok)addDeepdives(await deepRes.json());if(visualRes.ok)addLessonVisuals(await visualRes.json());if(traceRes.ok)addExecutionTraces(await traceRes.json());addLessonBridges();mountWeaknessPanel();
-  states=loadLocal();refreshDashboard();setNotice('이 기기에 저장');
+  if(deepRes.ok)addDeepdives(await deepRes.json());if(visualRes.ok)addLessonVisuals(await visualRes.json());if(traceRes.ok)addExecutionTraces(await traceRes.json());if(advancedRes.ok)addAdvancedCases(await advancedRes.json());addLessonBridges();mountWeaknessPanel();
+  states=loadLocal();refreshDashboard();setNotice('이 기기에 저장');window.dispatchEvent(new Event('sqld:bankready'));
   if(inBank())navQuestion();if(inSupplement())renderSupplements();if(inQuickReference())renderQuickReference();
  }catch(e){bankFetchError=e.message;console.warn('Question bank fetch',e);renderLoadError();}
  window.addEventListener('hashchange',route);
@@ -377,5 +384,6 @@ function onClick(e){const t=e.target.closest('button,a');if(!t)return;
  else if(t.hasAttribute('data-supp-back'))location.hash='#supplement';
  else if(t.hasAttribute('data-bank-sync-retry')){if(profile){if(cloudReadFailed)void onAuth({detail:{user:profile,client}},true);else void flushPending();}else setNotice('Google 로그인 후 동기화 가능');}
 }
+window.sqldBankForMock=()=>questions;
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
 })();

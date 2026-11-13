@@ -1,0 +1,397 @@
+[
+  {
+    "chapter": 1,
+    "title": "LEFT JOIN의 필터 위치",
+    "scenario": "LEFT JOIN 완료 전후에 오른쪽 조건을 배치한다.",
+    "comparison": {
+      "columns": [
+        "조건·구문",
+        "판별 결과",
+        "근거"
+      ],
+      "rows": [
+        [
+          "ON B.tag='X'",
+          "3행",
+          "왼쪽 id=1의 NULL 확장 1행 + id=2의 X 매칭 2행"
+        ],
+        [
+          "WHERE B.tag='X'",
+          "2행",
+          "NULL 확장행이 WHERE에서 탈락하고 id=2의 X 매칭 2행만 남음"
+        ]
+      ]
+    },
+    "takeaway": "OUTER JOIN의 ON에서 필터링한 경우 미매칭 왼쪽 행은 보존되지만, WHERE에서 오른쪽 열을 필터링하면 사라질 수 있다.",
+    "practice_lesson": 1
+  },
+  {
+    "chapter": 2,
+    "title": "NOT IN과 NOT EXISTS의 NULL 차이",
+    "scenario": "T.id=[1,2,3], U.id=[2,NULL]을 비교한다.",
+    "comparison": {
+      "columns": [
+        "조건·구문",
+        "판별 결과",
+        "근거"
+      ],
+      "rows": [
+        [
+          "id NOT IN (SELECT id FROM U)",
+          "0행",
+          "NULL이 포함돼 1,3에 대한 NOT IN이 UNKNOWN"
+        ],
+        [
+          "NOT EXISTS (SELECT 1 FROM U WHERE U.id=T.id)",
+          "2행",
+          "상관 일치가 없는 T.id=1,3을 반환"
+        ]
+      ]
+    },
+    "takeaway": "NOT IN의 NULL은 결과에 직접 영향을 주지만 NOT EXISTS는 상관 행의 존재만 확인한다.",
+    "practice_lesson": 2
+  },
+  {
+    "chapter": 3,
+    "title": "COUNT(*)와 COUNT(열)의 차이",
+    "scenario": "T.x=[NULL,2,NULL,3]을 집계한다.",
+    "comparison": {
+      "columns": [
+        "조건·구문",
+        "판별 결과",
+        "근거"
+      ],
+      "rows": [
+        [
+          "COUNT(*)",
+          "4",
+          "입력 행 수를 모두 센다"
+        ],
+        [
+          "COUNT(x)",
+          "2",
+          "NULL이 아닌 x=2와 x=3만 센다"
+        ]
+      ]
+    },
+    "takeaway": "집계 함수마다 NULL을 제외하는 방식이 다르다. COUNT(*)는 모든 행, COUNT(열)은 비NULL만 센다.",
+    "practice_lesson": 3
+  },
+  {
+    "chapter": 4,
+    "title": "윈도우 순위 함수의 동점",
+    "scenario": "score=[90,90,80]를 내림차순으로 정렬한다.",
+    "comparison": {
+      "columns": [
+        "조건·구문",
+        "판별 결과",
+        "근거"
+      ],
+      "rows": [
+        [
+          "ROW_NUMBER",
+          "1,2,3",
+          "동점 두 행에도 서로 다른 순번"
+        ],
+        [
+          "RANK",
+          "1,1,3",
+          "동점의 뒤 순위를 건너뜀"
+        ],
+        [
+          "DENSE_RANK",
+          "1,1,2",
+          "동점을 같은 순위로 두되 다음 순위를 건너뛰지 않음"
+        ]
+      ]
+    },
+    "takeaway": "동점 처리 규칙을 분리해 기억하고 PARTITION BY가 있으면 파티션마다 다시 계산한다.",
+    "practice_lesson": 4
+  },
+  {
+    "chapter": 5,
+    "title": "상관 서브쿼리 범위 판정",
+    "scenario": "A의 각 행을 기준으로 B에서 조건에 맞는 행을 찾는다.",
+    "comparison": {
+      "columns": [
+        "조건·구문",
+        "판별 결과",
+        "근거"
+      ],
+      "rows": [
+        [
+          "EXISTS",
+          "행 존재 여부만 확인",
+          "B에 중복이 있어도 A 행을 복제하지 않음"
+        ],
+        [
+          "JOIN",
+          "매칭 조합 수만큼 증가",
+          "A 2행 × B 3행이면 조건 만족시 6행 가능"
+        ]
+      ]
+    },
+    "takeaway": "EXISTS와 JOIN은 모두 연관 데이터를 찾지만 행 중복도는 달라진다.",
+    "practice_lesson": 5
+  },
+  {
+    "chapter": 6,
+    "title": "논리적 처리 순서",
+    "scenario": "T의 active=1 데이터를 부서별 집계한다.",
+    "comparison": {
+      "columns": [
+        "조건·구문",
+        "판별 결과",
+        "근거"
+      ],
+      "rows": [
+        [
+          "WHERE active=1",
+          "행 단위 필터",
+          "GROUP BY 전에 active=0 행 제거"
+        ],
+        [
+          "HAVING COUNT(*)>=2",
+          "그룹 단위 필터",
+          "집계 이후 인원 2명 미만의 부서 제거"
+        ]
+      ]
+    },
+    "takeaway": "각 필터가 작동하는 위치를 구분해야 결과 그룹 수를 정확하게 계산한다.",
+    "practice_lesson": 6
+  },
+  {
+    "chapter": 7,
+    "title": "DML과 Oracle DDL 트랜잭션",
+    "scenario": "UPDATE 이후 SAVEPOINT를 만들고 DDL을 실행하는 상황이다.",
+    "comparison": {
+      "columns": [
+        "조건·구문",
+        "판별 결과",
+        "근거"
+      ],
+      "rows": [
+        [
+          "UPDATE / ROLLBACK",
+          "트랜잭션에 따라 복원 가능",
+          "DML은 명시적 트랜잭션 경계에 따라 취소"
+        ],
+        [
+          "Oracle CREATE TABLE",
+          "암묵적 COMMIT 관련",
+          "Oracle DDL은 전후 암묵적 COMMIT 동작에 유의"
+        ]
+      ]
+    },
+    "takeaway": "DDL의 트랜잭션 처리는 DBMS마다 다르므로 Oracle의 동작을 일반 SQL·SQLite에 그대로 적용하면 안 된다.",
+    "practice_lesson": 7
+  },
+  {
+    "chapter": 8,
+    "title": "관계의 최소·최대 참여",
+    "scenario": "고객 1명은 주문 0~N건, 주문 1건에는 고객 1명이 필수다.",
+    "comparison": {
+      "columns": [
+        "조건·구문",
+        "판별 결과",
+        "근거"
+      ],
+      "rows": [
+        [
+          "고객 → 주문",
+          "0..N",
+          "주문이 없는 고객도 존재"
+        ],
+        [
+          "주문 → 고객",
+          "1..1",
+          "주문은 정확히 한 명의 고객과 연결"
+        ]
+      ]
+    },
+    "takeaway": "1:N 관계만 보고 필수 참여 여부를 추측하지 말고 최소 참여 수를 별도로 확인한다.",
+    "practice_lesson": 8
+  },
+  {
+    "chapter": 9,
+    "title": "업무키와 인조키",
+    "scenario": "이메일은 유일하지만 변경 가능하고 주문과 연결된다.",
+    "comparison": {
+      "columns": [
+        "조건·구문",
+        "판별 결과",
+        "근거"
+      ],
+      "rows": [
+        [
+          "email을 PK로 사용",
+          "변경 전파 우려",
+          "업무 값 변경이 FK 연관 데이터에 영향을 줄 수 있음"
+        ],
+        [
+          "customer_id 인조키",
+          "식별 안정성 향상",
+          "업무 속성인 email의 변경과 식별을 분리"
+        ]
+      ]
+    },
+    "takeaway": "인조키가 항상 정답이라는 뜻은 아니다. 업무 요건에 따라 유일성·안정성·참조의 복잡도를 평가한다.",
+    "practice_lesson": 9
+  },
+  {
+    "chapter": 10,
+    "title": "복합키에서 정규화",
+    "scenario": "(student_id,course_id) 복합키와 student_name 속성을 갖는다.",
+    "comparison": {
+      "columns": [
+        "조건·구문",
+        "판별 결과",
+        "근거"
+      ],
+      "rows": [
+        [
+          "student_id → student_name",
+          "2NF 부분 종속 대상",
+          "복합키 일부에만 종속됨"
+        ],
+        [
+          "dept_id → dept_name",
+          "3NF 이행 종속 단서",
+          "키가 아닌 속성을 거쳐 다른 비주요 속성이 결정될 수 있음"
+        ]
+      ]
+    },
+    "takeaway": "먼저 후보키와 함수 종속을 명시한 뒤 부분·이행 종속을 판별한다.",
+    "practice_lesson": 10
+  },
+  {
+    "chapter": 11,
+    "title": "ROLLUP과 CUBE의 집계 수준",
+    "scenario": "GROUP BY 대상이 A,B 두 열인 경우다.",
+    "comparison": {
+      "columns": [
+        "조건·구문",
+        "판별 결과",
+        "근거"
+      ],
+      "rows": [
+        [
+          "ROLLUP(A,B)",
+          "3개 집계 수준",
+          "(A,B), (A), ()"
+        ],
+        [
+          "CUBE(A,B)",
+          "4개 집계 수준",
+          "(A,B),(A),(B),()"
+        ]
+      ]
+    },
+    "takeaway": "집계 수준 수와 실제 결과 행 수는 다르다. 각 수준에서 발생하는 그룹 수를 따로 합산한다.",
+    "practice_lesson": 11
+  },
+  {
+    "chapter": 12,
+    "title": "계층형 쿼리 방향",
+    "scenario": "id=1이 루트, id=2와 3이 하위 노드인 트리를 가정한다.",
+    "comparison": {
+      "columns": [
+        "조건·구문",
+        "판별 결과",
+        "근거"
+      ],
+      "rows": [
+        [
+          "CONNECT BY PRIOR id = parent_id",
+          "부모 → 자식",
+          "PRIOR가 이전 단계 id를 참조"
+        ],
+        [
+          "CONNECT BY id = PRIOR parent_id",
+          "자식 → 부모",
+          "PRIOR가 이전 단계 parent_id를 참조"
+        ]
+      ]
+    },
+    "takeaway": "PRIOR의 위치에 따라 현재 행과 이전 단계 행을 연결하는 방향이 바뀐다.",
+    "practice_lesson": 12
+  },
+  {
+    "chapter": 13,
+    "title": "NULL 관련 함수의 출력",
+    "scenario": "NULL, 0, 200을 인자로 비교한다.",
+    "comparison": {
+      "columns": [
+        "조건·구문",
+        "판별 결과",
+        "근거"
+      ],
+      "rows": [
+        [
+          "NVL2(NULL, 100, 200)",
+          "200",
+          "첫 인자가 NULL이므로 세 번째 인자"
+        ],
+        [
+          "COALESCE(NULL,0,200)",
+          "0",
+          "첫 번째 비NULL 값을 반환"
+        ]
+      ]
+    },
+    "takeaway": "0은 NULL이 아니며 함수의 인자 수와 반환 규칙을 혼동하지 않는다.",
+    "practice_lesson": 13
+  },
+  {
+    "chapter": 14,
+    "title": "TOP-N의 동점 포함",
+    "scenario": "점수 내림차순이 90,80,80,70인 경우다.",
+    "comparison": {
+      "columns": [
+        "조건·구문",
+        "판별 결과",
+        "근거"
+      ],
+      "rows": [
+        [
+          "처음 2행",
+          "2행",
+          "행 제한은 정확히 두 행"
+        ],
+        [
+          "2행 + WITH TIES",
+          "3행",
+          "경계 점수 80의 동점 행까지 포함"
+        ]
+      ]
+    },
+    "takeaway": "순위 기반 동점 포함은 고정 N행을 자르는 것과 결과 행 수가 다를 수 있다.",
+    "practice_lesson": 14
+  },
+  {
+    "chapter": 15,
+    "title": "데이터 독립성의 종류",
+    "scenario": "3단계 스키마의 변경 위치를 구분한다.",
+    "comparison": {
+      "columns": [
+        "조건·구문",
+        "판별 결과",
+        "근거"
+      ],
+      "rows": [
+        [
+          "내부 스키마 저장 방식 변경",
+          "물리적 독립성",
+          "개념 스키마를 바꾸지 않고 인덱스/파일 구조 변경"
+        ],
+        [
+          "개념 스키마 수정 후 외부 뷰 유지",
+          "논리적 독립성",
+          "사용자별 외부 스키마 영향 최소화"
+        ]
+      ]
+    },
+    "takeaway": "변경되는 계층과 영향을 받지 않아야 할 계층을 먼저 구별한다.",
+    "practice_lesson": 15
+  }
+]
