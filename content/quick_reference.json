@@ -1,0 +1,967 @@
+{
+  "version": "3.5",
+  "purpose": "한 페이지 전체 개념 복습",
+  "cards": [
+    {
+      "id": "model_basics",
+      "key_rule": "개념 모델은 업무 의미, 논리 모델은 엔터티·관계·속성, 물리 모델은 DB 구현을 다룬다.",
+      "decision_check": "모델링의 개념·논리·물리 단계와 외부·개념·내부 스키마를 혼동하지 않는가?",
+      "trap": "3단계 데이터 모델링과 ANSI/SPARC 3단계 스키마는 다른 구분이다.",
+      "mini_example": {
+        "context": "학생 수강 정보를 설계",
+        "expression": "업무 개념 → STUDENT/ENROLL → 테이블·인덱스",
+        "result": "모델별 질문과 산출물이 달라진다.",
+        "reason": "DB 구현의 인덱스 결정은 일반적으로 물리 모델링의 관심사다.",
+        "table": {
+          "columns": [
+            "단계",
+            "핵심 관심사"
+          ],
+          "rows": [
+            [
+              "개념",
+              "업무 대상·규칙"
+            ],
+            [
+              "논리",
+              "엔터티·속성·관계"
+            ],
+            [
+              "물리",
+              "테이블·인덱스"
+            ]
+          ]
+        }
+      },
+      "reviewed_at": "2026-11-13",
+      "review_level": "편집·논리 검토; DBMS 실행은 개별 명시한 경우에 한함"
+    },
+    {
+      "id": "model_entity",
+      "key_rule": "엔터티는 관리해야 하는 업무 대상을 정의하며 각 인스턴스는 구분할 수 있어야 한다.",
+      "decision_check": "화면이나 메뉴가 아니라 지속 관리할 업무 대상인가?",
+      "trap": "하나의 화면이 반드시 엔터티 하나에 대응하는 것은 아니다.",
+      "mini_example": {
+        "context": "주문 관리 서비스",
+        "expression": "주문 101·102 = 주문 엔터티의 인스턴스",
+        "result": "주문은 엔터티, 주문 101은 인스턴스.",
+        "reason": "고객별 주문 이력은 주문 엔터티로 별도 관리할 수 있다.",
+        "table": {
+          "columns": [
+            "분류",
+            "예시"
+          ],
+          "rows": [
+            [
+              "엔터티",
+              "주문"
+            ],
+            [
+              "인스턴스",
+              "주문 101"
+            ],
+            [
+              "속성",
+              "주문일시"
+            ]
+          ]
+        }
+      },
+      "reviewed_at": "2026-11-13",
+      "review_level": "편집·논리 검토; DBMS 실행은 개별 명시한 경우에 한함"
+    },
+    {
+      "id": "model_attribute",
+      "key_rule": "속성은 엔터티의 정보를 나타내며 기본·설계·파생 여부와 값의 도메인을 구분한다.",
+      "decision_check": "원천에서 받은 값인가, 시스템이 만든 값인가, 계산한 값인가?",
+      "trap": "총금액처럼 계산 가능한 파생 속성을 무조건 원천 데이터처럼 저장하지 않는다.",
+      "mini_example": {
+        "context": "주문 항목 수량과 단가",
+        "expression": "qty=3, unit_price=2000 → amount=6000",
+        "result": "amount는 계산된 파생값.",
+        "reason": "수량은 기본 속성, 내부 발급 주문번호는 설계 속성의 사례다.",
+        "table": {
+          "columns": [
+            "quantity",
+            "unit_price",
+            "amount"
+          ],
+          "rows": [
+            [
+              2,
+              3000,
+              6000
+            ],
+            [
+              3,
+              1000,
+              3000
+            ]
+          ]
+        }
+      },
+      "reviewed_at": "2026-11-13",
+      "review_level": "편집·논리 검토; DBMS 실행은 개별 명시한 경우에 한함"
+    },
+    {
+      "id": "model_relation",
+      "key_rule": "관계는 엔터티 인스턴스 사이의 업무 연결이며 1:N·선택/필수 참여를 구분한다.",
+      "decision_check": "최대 연결 수와 최소 참여 수를 각각 판정했는가?",
+      "trap": "1:N이라고 해서 모든 부모에 반드시 자식이 존재하는 것은 아니다.",
+      "mini_example": {
+        "context": "부서와 직원",
+        "expression": "부서 1곳 ↔ 직원 0명 이상 가능(선택적 1:N)",
+        "result": "최대 N, 최소 0은 동시에 성립 가능.",
+        "reason": "카디널리티와 참여 선택성은 다른 판단이다.",
+        "table": {
+          "columns": [
+            "부서",
+            "직원 수",
+            "가능 여부"
+          ],
+          "rows": [
+            [
+              "A",
+              0,
+              "선택 관계라면 가능"
+            ],
+            [
+              "B",
+              3,
+              "가능"
+            ]
+          ]
+        }
+      },
+      "reviewed_at": "2026-11-13",
+      "review_level": "편집·논리 검토; DBMS 실행은 개별 명시한 경우에 한함"
+    },
+    {
+      "id": "model_key",
+      "key_rule": "후보키는 유일성과 최소성을 만족하며 선택된 후보키가 주식별자다.",
+      "decision_check": "유일한가? 식별 속성을 하나 제거해도 유일한가?",
+      "trap": "유일하다고 모두 후보키는 아니다. 불필요한 속성이 있으면 최소성이 깨진다.",
+      "mini_example": {
+        "context": "STUDENT(student_no, email, name)",
+        "expression": "student_no·email 둘 다 유일하고 최소이면 후보키",
+        "result": "둘 중 하나를 PK로 선택하고 나머지는 대체키.",
+        "reason": "복합 후보키는 일부 속성을 제거하면 유일성이 사라져야 한다.",
+        "table": {
+          "columns": [
+            "후보키",
+            "유일성",
+            "최소성"
+          ],
+          "rows": [
+            [
+              "student_no",
+              "충족",
+              "충족"
+            ],
+            [
+              "student_no+name",
+              "충족",
+              "불충족"
+            ]
+          ]
+        }
+      },
+      "reviewed_at": "2026-11-13",
+      "review_level": "편집·논리 검토; DBMS 실행은 개별 명시한 경우에 한함"
+    },
+    {
+      "id": "model_normal",
+      "key_rule": "정규화는 함수 종속을 기준으로 데이터 중복과 갱신 이상을 줄인다.",
+      "decision_check": "비주요 속성이 전체 키가 아닌 일부에만 종속되지는 않는가?",
+      "trap": "3NF만 암기하고 복합키의 부분 함수 종속을 놓치기 쉽다.",
+      "mini_example": {
+        "context": "ENROLL(student_id, course_id, student_name)",
+        "expression": "(student_id,course_id) → student_name, student_id → student_name",
+        "result": "student_name을 STUDENT로 분리하면 부분 종속 해소.",
+        "reason": "이는 복합키인 테이블의 2NF 위반 가능성을 보여 준다.",
+        "table": {
+          "columns": [
+            "열",
+            "함수 종속"
+          ],
+          "rows": [
+            [
+              "(학생,과목)",
+              "수강 결과"
+            ],
+            [
+              "학생",
+              "학생 이름"
+            ]
+          ]
+        }
+      },
+      "reviewed_at": "2026-11-13",
+      "review_level": "편집·논리 검토; DBMS 실행은 개별 명시한 경우에 한함"
+    },
+    {
+      "id": "model_join",
+      "key_rule": "ERD의 관계는 JOIN 조건의 근거가 되지만 결과 행 수는 실제 데이터의 중복에 따라 달라진다.",
+      "decision_check": "양쪽 조인 키별 일치 행 개수를 곱했는가?",
+      "trap": "1:N 관계와 JOIN 결과가 무조건 1행이라는 뜻은 아니다.",
+      "mini_example": {
+        "context": "주문 1건과 주문상품 3건",
+        "expression": "ORDER LEFT JOIN ORDER_ITEM ON order_id",
+        "result": "주문 1건이 JOIN 결과 3행으로 늘어날 수 있다.",
+        "reason": "조인 키가 여러 행에 나타나면 그만큼 결합 행이 생긴다.",
+        "table": {
+          "columns": [
+            "주문 ID",
+            "주문 상품 행 수"
+          ],
+          "rows": [
+            [
+              101,
+              3
+            ],
+            [
+              102,
+              1
+            ]
+          ]
+        }
+      },
+      "reviewed_at": "2026-11-13",
+      "review_level": "편집·논리 검토; DBMS 실행은 개별 명시한 경우에 한함"
+    },
+    {
+      "id": "model_transaction",
+      "key_rule": "모델의 관계는 하나의 업무 거래가 함께 생성·변경하는 데이터 묶음을 드러낼 수 있다.",
+      "decision_check": "어떤 데이터가 같은 업무 거래의 단위로 처리되는가?",
+      "trap": "업무 트랜잭션 모델링과 COMMIT/ROLLBACK 명령 자체를 혼동하지 않는다.",
+      "mini_example": {
+        "context": "주문 101과 주문상품 2건",
+        "expression": "주문 생성 시 ORDER와 ORDER_ITEM을 동일 업무 거래로 처리",
+        "result": "주문 헤더 1개와 상세 2개가 한 업무 단위를 이룬다.",
+        "reason": "트랜잭션 경계는 업무 규칙으로 정의하며 JOIN 행 수와 같지 않다.",
+        "table": {
+          "columns": [
+            "주문",
+            "헤더",
+            "상세",
+            "업무 트랜잭션"
+          ],
+          "rows": [
+            [
+              "101",
+              "1행",
+              "2행",
+              "1개 주문 생성"
+            ]
+          ]
+        }
+      },
+      "reviewed_at": "2026-11-13",
+      "review_level": "편집·논리 검토; DBMS 실행은 개별 명시한 경우에 한함"
+    },
+    {
+      "id": "model_null",
+      "key_rule": "NULL이 허용되는 속성인지 여부는 업무 규칙과 값의 의미를 바탕으로 모델링한다.",
+      "decision_check": "아직 모르는 값인가, 해당되지 않는 값인가, 필수 입력인가?",
+      "trap": "NULL을 0이나 빈 문자열과 똑같은 값으로 취급하지 않는다.",
+      "mini_example": {
+        "context": "배송지 메모의 미기재와 포인트 0",
+        "expression": "NULL(미기재) / 포인트 0(알려진 수치값) / 공백 문자",
+        "result": "결측 여부·실제 수치·문자값을 구별",
+        "reason": "Oracle에서 문자형 빈 문자열은 NULL 취급이므로 DBMS별 특성도 확인한다.",
+        "table": {
+          "columns": [
+            "회원",
+            "memo",
+            "의미"
+          ],
+          "rows": [
+            [
+              1,
+              null,
+              "값 미기재"
+            ],
+            [
+              2,
+              "문 앞",
+              "값 기재"
+            ]
+          ]
+        }
+      },
+      "reviewed_at": "2026-11-13",
+      "review_level": "편집·논리 검토; DBMS 실행은 개별 명시한 경우에 한함"
+    },
+    {
+      "id": "model_origin",
+      "key_rule": "본질식별자는 업무 속성에, 인조식별자는 시스템이 만든 별도 식별값에 기반한다.",
+      "decision_check": "업무상 의미 있는 키인가, 시스템이 발급한 대리 식별자인가?",
+      "trap": "인조식별자를 PK로 만들었다고 업무상 유일성 규칙이 없어지는 것은 아니다.",
+      "mini_example": {
+        "context": "상품(PRODUCT)",
+        "expression": "product_id=1001(인조), sku=SKU-A(업무 식별)",
+        "result": "product_id는 대리키; sku 유일성도 별도 보호.",
+        "reason": "상품 SKU가 바뀔 수 있다면 대리키가 FK 안정성에 도움이 된다.",
+        "table": {
+          "columns": [
+            "product_id",
+            "sku",
+            "키 구분"
+          ],
+          "rows": [
+            [
+              1001,
+              "SKU-A",
+              "인조키 / 업무키"
+            ],
+            [
+              1002,
+              "SKU-B",
+              "인조키 / 업무키"
+            ]
+          ]
+        }
+      },
+      "reviewed_at": "2026-11-13",
+      "review_level": "편집·논리 검토; DBMS 실행은 개별 명시한 경우에 한함"
+    },
+    {
+      "id": "sql_rdb",
+      "key_rule": "릴레이션의 행은 튜플, 열은 속성에 대응하며 PK·FK 제약은 데이터 무결성을 돕는다.",
+      "decision_check": "PK의 유일성·NULL 불허와 FK 참조무결성을 구별했는가?",
+      "trap": "SQL 결과는 DISTINCT가 없으면 같은 값이 중복 출력될 수 있다.",
+      "mini_example": {
+        "context": "EMP(emp_id, dept_id)",
+        "expression": "emp_id=PK, dept_id=FK(DEPT)",
+        "result": "PK는 행 식별, FK는 참조 관계 검증.",
+        "reason": "외래키 값은 참조대상에 존재하거나(허용 시) NULL일 수 있다.",
+        "table": {
+          "columns": [
+            "제약",
+            "목적"
+          ],
+          "rows": [
+            [
+              "PK",
+              "행 식별·NULL 불허"
+            ],
+            [
+              "FK",
+              "참조 관계 검증"
+            ]
+          ]
+        }
+      },
+      "reviewed_at": "2026-11-13",
+      "review_level": "편집·논리 검토; DBMS 실행은 개별 명시한 경우에 한함"
+    },
+    {
+      "id": "sql_select",
+      "key_rule": "SELECT는 반환 열·표현식을 정의하고 DISTINCT는 중복 결과 행을 제거한다.",
+      "decision_check": "ALL 기본값과 DISTINCT가 최종 몇 행을 반환하는가?",
+      "trap": "열이 하나일 때와 여러 열일 때 DISTINCT 비교 대상이 다르다.",
+      "mini_example": {
+        "context": "T(a,b)=(1,X),(1,Y),(1,X)",
+        "expression": "SELECT DISTINCT a,b FROM T",
+        "result": "(1,X),(1,Y) 두 행",
+        "reason": "DISTINCT는 나열한 열들의 튜플 전체 중복을 제거한다.",
+        "table": {
+          "columns": [
+            "a",
+            "b"
+          ],
+          "rows": [
+            [
+              1,
+              "X"
+            ],
+            [
+              1,
+              "Y"
+            ]
+          ]
+        }
+      },
+      "reviewed_at": "2026-11-13",
+      "review_level": "편집·논리 검토; DBMS 실행은 개별 명시한 경우에 한함"
+    },
+    {
+      "id": "sql_function",
+      "key_rule": "함수는 입력마다 값을 변환한다. NULL 처리와 암묵적 형 변환은 DBMS별로 검토한다.",
+      "decision_check": "NULL 입력과 타입 변환·반올림 조건을 확인했는가?",
+      "trap": "Oracle NVL·DECODE를 모든 DBMS 공통 함수로 일반화하지 않는다.",
+      "mini_example": {
+        "context": "T(x)=(NULL),(2)",
+        "expression": "COALESCE(x,0)",
+        "result": "0, 2",
+        "reason": "COALESCE는 처음 만나는 NULL이 아닌 표현식을 반환한다.",
+        "table": {
+          "columns": [
+            "원본",
+            "COALESCE(x,0)"
+          ],
+          "rows": [
+            [
+              null,
+              0
+            ],
+            [
+              2,
+              2
+            ]
+          ]
+        }
+      },
+      "reviewed_at": "2026-11-13",
+      "review_level": "편집·논리 검토; DBMS 실행은 개별 명시한 경우에 한함"
+    },
+    {
+      "id": "sql_where",
+      "key_rule": "WHERE는 TRUE인 행만 통과시키며 FALSE와 UNKNOWN은 제외한다.",
+      "decision_check": "AND·OR·NOT 우선순위와 NULL 비교 결과를 추적했는가?",
+      "trap": "NOT IN 집합에 NULL이 있으면 예상과 달리 행이 모두 제거될 수 있다.",
+      "mini_example": {
+        "context": "T.id=(1,2,3); U.id=(2,NULL)",
+        "expression": "WHERE id NOT IN (SELECT id FROM U)",
+        "result": "0행",
+        "reason": "NULL이 있는 NOT IN을 NOT EXISTS와 단순 동일시하지 않는다.",
+        "table": {
+          "columns": [
+            "T.id",
+            "NOT IN(2,NULL)"
+          ],
+          "rows": [
+            [
+              1,
+              "UNKNOWN"
+            ],
+            [
+              2,
+              "FALSE"
+            ],
+            [
+              3,
+              "UNKNOWN"
+            ]
+          ]
+        }
+      },
+      "reviewed_at": "2026-11-13",
+      "review_level": "편집·논리 검토; DBMS 실행은 개별 명시한 경우에 한함"
+    },
+    {
+      "id": "sql_group",
+      "key_rule": "WHERE는 그룹 전 행을 거르고 HAVING은 집계된 그룹을 거른다.",
+      "decision_check": "COUNT(*)와 COUNT(col)의 NULL 차이를 계산했는가?",
+      "trap": "집계값에 대한 WHERE 조건과 HAVING 조건을 혼동하지 않는다.",
+      "mini_example": {
+        "context": "T(v)=(1),(NULL),(1)",
+        "expression": "SELECT COUNT(*),COUNT(v) FROM T",
+        "result": "3, 2",
+        "reason": "COUNT(*)는 모든 행, COUNT(v)는 NULL 아닌 값만 센다.",
+        "table": {
+          "columns": [
+            "COUNT(*)",
+            "COUNT(v)"
+          ],
+          "rows": [
+            [
+              3,
+              2
+            ]
+          ]
+        }
+      },
+      "reviewed_at": "2026-11-13",
+      "review_level": "편집·논리 검토; DBMS 실행은 개별 명시한 경우에 한함"
+    },
+    {
+      "id": "sql_order",
+      "key_rule": "명시적인 ORDER BY가 반환 순서를 보장하며, 동점이 있으면 고유 정렬 키를 추가하는 것이 안전하다.",
+      "decision_check": "LIMIT/FETCH 전 정렬이 결정적인가?",
+      "trap": "ORDER BY 점수가 같으면 그 안의 행 순서가 자동 결정되지는 않는다.",
+      "mini_example": {
+        "context": "score 90: id=1,2",
+        "expression": "ORDER BY score DESC, id ASC",
+        "result": "동점 순서: id 1 → 2",
+        "reason": "정렬키가 유일하지 않으면 페이징에서 누락·중복 위험이 있다.",
+        "table": {
+          "columns": [
+            "id",
+            "score",
+            "정렬 순번"
+          ],
+          "rows": [
+            [
+              1,
+              90,
+              1
+            ],
+            [
+              2,
+              90,
+              2
+            ]
+          ]
+        }
+      },
+      "reviewed_at": "2026-11-13",
+      "review_level": "편집·논리 검토; DBMS 실행은 개별 명시한 경우에 한함"
+    },
+    {
+      "id": "sql_join",
+      "key_rule": "JOIN은 일치 조건에 따라 행의 조합을 만들며 외부 JOIN은 매칭 없는 행을 NULL 확장한다.",
+      "decision_check": "각 키별 m×n 조합과 조건 적용 순서를 계산했는가?",
+      "trap": "LEFT JOIN 뒤 WHERE에서 오른쪽 컬럼을 필터하면 매칭 없는 행이 제거될 수 있다.",
+      "mini_example": {
+        "context": "A.id=(1,2,2); B.id=(2,2)",
+        "expression": "A LEFT JOIN B ON A.id=B.id",
+        "result": "1행(NULL 확장)+4행(매칭)=5행",
+        "reason": "ON과 WHERE에서 같은 조건을 검사해도 외부 조인 결과가 다를 수 있다.",
+        "table": {
+          "columns": [
+            "키",
+            "A행",
+            "B행",
+            "결합 결과"
+          ],
+          "rows": [
+            [
+              1,
+              1,
+              0,
+              1
+            ],
+            [
+              2,
+              2,
+              2,
+              4
+            ]
+          ]
+        }
+      },
+      "reviewed_at": "2026-11-13",
+      "review_level": "편집·논리 검토; DBMS 실행은 개별 명시한 경우에 한함"
+    },
+    {
+      "id": "sql_standard_join",
+      "key_rule": "JOIN ... USING은 지정한 동명 열로 결합하고 NATURAL JOIN은 공통 이름의 모든 열을 결합 조건으로 삼는다.",
+      "decision_check": "공통 열이 여러 개일 때 NATURAL JOIN의 조건을 모두 고려했는가?",
+      "trap": "NATURAL JOIN은 예기치 않은 동명 열 때문에 결과가 달라질 수 있다.",
+      "mini_example": {
+        "context": "EMP(dept_id,emp_id); DEPT(dept_id,name)",
+        "expression": "JOIN DEPT USING (dept_id)",
+        "result": "매칭된 dept_id는 결과에서 한 열로 통합",
+        "reason": "CROSS JOIN에는 조인 조건이 없어 양쪽 행 수의 곱이 나온다.",
+        "table": {
+          "columns": [
+            "emp_id",
+            "dept_id",
+            "dept_name"
+          ],
+          "rows": [
+            [
+              1,
+              10,
+              "개발"
+            ],
+            [
+              2,
+              20,
+              "기획"
+            ]
+          ]
+        }
+      },
+      "reviewed_at": "2026-11-13",
+      "review_level": "편집·논리 검토; DBMS 실행은 개별 명시한 경우에 한함"
+    },
+    {
+      "id": "sql_subquery",
+      "key_rule": "서브쿼리는 위치와 반환 행 수에 따라 단일행·다중행·상관 서브쿼리로 나뉜다.",
+      "decision_check": "= 연산에 다중행 반환을 적용하고 있지 않은가?",
+      "trap": "다중행 결과에 단일행 연산자를 사용하면 DBMS에서 오류가 날 수 있다.",
+      "mini_example": {
+        "context": "U.x=(2,3)",
+        "expression": "WHERE x IN (SELECT x FROM U)",
+        "result": "x=2 또는 3만 통과",
+        "reason": "EXISTS는 서브쿼리가 1행이라도 반환하는지 판정한다.",
+        "table": {
+          "columns": [
+            "U.x",
+            "IN 판별"
+          ],
+          "rows": [
+            [
+              2,
+              "참"
+            ],
+            [
+              3,
+              "참"
+            ]
+          ]
+        }
+      },
+      "reviewed_at": "2026-11-13",
+      "review_level": "편집·논리 검토; DBMS 실행은 개별 명시한 경우에 한함"
+    },
+    {
+      "id": "sql_set",
+      "key_rule": "UNION은 중복 행을 제거하고 UNION ALL은 중복 행을 유지한다.",
+      "decision_check": "두 SELECT의 열 개수와 대응 자료형이 호환되는가?",
+      "trap": "중복 제거된 결과의 순서도 ORDER BY 없이 보장되지 않는다.",
+      "mini_example": {
+        "context": "A=(1,2,2); B=(2,3)",
+        "expression": "A UNION B vs UNION ALL",
+        "result": "UNION=3행; UNION ALL=5행",
+        "reason": "서로 다른 SELECT 결과를 수직으로 결합한다.",
+        "table": {
+          "columns": [
+            "연산",
+            "행 수"
+          ],
+          "rows": [
+            [
+              "UNION",
+              3
+            ],
+            [
+              "UNION ALL",
+              5
+            ]
+          ]
+        }
+      },
+      "reviewed_at": "2026-11-13",
+      "review_level": "편집·논리 검토; DBMS 실행은 개별 명시한 경우에 한함"
+    },
+    {
+      "id": "sql_groupfn",
+      "key_rule": "ROLLUP은 계층형 소계를, CUBE는 가능한 조합의 소계를 만든다.",
+      "decision_check": "GROUPING 함수로 실제 NULL과 집계 소계 표시 NULL을 구별했는가?",
+      "trap": "소계 때문에 생긴 NULL을 실제 데이터 NULL과 혼동하지 않는다.",
+      "mini_example": {
+        "context": "GROUP BY ROLLUP(region,product)",
+        "expression": "(region,product)·(region)·()",
+        "result": "상세+지역 소계+전체 합계",
+        "reason": "GROUPING(col)=1이면 해당 열은 집계 수준에서 통합된 값이다.",
+        "table": {
+          "columns": [
+            "grouping level",
+            "의미"
+          ],
+          "rows": [
+            [
+              "region,product",
+              "상세"
+            ],
+            [
+              "region",
+              "지역 소계"
+            ],
+            [
+              "()",
+              "전체 합계"
+            ]
+          ]
+        }
+      },
+      "reviewed_at": "2026-11-13",
+      "review_level": "편집·논리 검토; DBMS 실행은 개별 명시한 경우에 한함"
+    },
+    {
+      "id": "sql_window",
+      "key_rule": "윈도우 함수는 행을 줄이지 않고 파티션별 순위·누적값을 계산한다.",
+      "decision_check": "동점 처리와 ROWS/RANGE 프레임 기준을 확인했는가?",
+      "trap": "RANK와 DENSE_RANK는 동점 뒤 순위가 다르다.",
+      "mini_example": {
+        "context": "점수 90,90,80",
+        "expression": "RANK vs DENSE_RANK",
+        "result": "1,1,3 vs 1,1,2",
+        "reason": "ROWS와 RANGE는 동점(peer)을 다루는 방식도 다를 수 있다.",
+        "table": {
+          "columns": [
+            "score",
+            "RANK",
+            "DENSE_RANK"
+          ],
+          "rows": [
+            [
+              90,
+              1,
+              1
+            ],
+            [
+              90,
+              1,
+              1
+            ],
+            [
+              80,
+              3,
+              2
+            ]
+          ]
+        }
+      },
+      "reviewed_at": "2026-11-13",
+      "review_level": "편집·논리 검토; DBMS 실행은 개별 명시한 경우에 한함"
+    },
+    {
+      "id": "sql_topn",
+      "key_rule": "상위 N개를 안정적으로 얻으려면 원하는 순서대로 정렬한 결과에 행 제한을 적용해야 한다.",
+      "decision_check": "Oracle ROWNUM으로 정렬 전 행을 잘라낸 것은 아닌가?",
+      "trap": "WHERE ROWNUM <= N 다음 ORDER BY만 붙이면 정렬 후 TOP-N이 아닐 수 있다.",
+      "mini_example": {
+        "context": "T(score)=(5,9,7)",
+        "expression": "ORDER BY score DESC FETCH FIRST 2 ROWS ONLY",
+        "result": "9, 7",
+        "reason": "동점 처리와 명시적 정렬을 별도 확인한다.",
+        "table": {
+          "columns": [
+            "정렬 전",
+            "정렬 후"
+          ],
+          "rows": [
+            [
+              5,
+              9
+            ],
+            [
+              9,
+              7
+            ],
+            [
+              7,
+              5
+            ]
+          ]
+        }
+      },
+      "reviewed_at": "2026-11-13",
+      "review_level": "편집·논리 검토; DBMS 실행은 개별 명시한 경우에 한함"
+    },
+    {
+      "id": "sql_hierarchy",
+      "key_rule": "계층형 질의는 시작 노드와 부모·자식 연결 방향을 정의해 트리로 탐색한다.",
+      "decision_check": "PRIOR가 부모 쪽 열인지 자식 쪽 열인지 확인했는가?",
+      "trap": "PRIOR 위치를 반대로 바꾸면 탐색 방향이 달라진다.",
+      "mini_example": {
+        "context": "id,parent=(1,NULL),(2,1),(3,2)",
+        "expression": "START WITH parent IS NULL CONNECT BY PRIOR id=parent",
+        "result": "LEVEL 1→2→3",
+        "reason": "셀프 JOIN도 같은 테이블을 두 별칭으로 연결하는 방식이다.",
+        "table": {
+          "columns": [
+            "id",
+            "parent_id",
+            "LEVEL"
+          ],
+          "rows": [
+            [
+              1,
+              null,
+              1
+            ],
+            [
+              2,
+              1,
+              2
+            ],
+            [
+              3,
+              2,
+              3
+            ]
+          ]
+        }
+      },
+      "reviewed_at": "2026-11-13",
+      "review_level": "편집·논리 검토; DBMS 실행은 개별 명시한 경우에 한함"
+    },
+    {
+      "id": "sql_pivot",
+      "key_rule": "PIVOT은 범주를 열로 펼치며 남은 열이 집계 기준이 될 수 있다.",
+      "decision_check": "PIVOT 이후 그룹 기준으로 남은 열이 무엇인가?",
+      "trap": "UNPIVOT은 DBMS/옵션에 따라 NULL 열을 결과에서 제외한다.",
+      "mini_example": {
+        "context": "(region,quarter,sales)=(A,Q1,10),(A,Q2,20)",
+        "expression": "PIVOT(SUM(sales) FOR quarter IN(...))",
+        "result": "A지역 Q1=10, Q2=20",
+        "reason": "Oracle 구문과 SQLite 조건부 집계 대체 예시를 구분한다.",
+        "table": {
+          "columns": [
+            "region",
+            "Q1",
+            "Q2"
+          ],
+          "rows": [
+            [
+              "A",
+              10,
+              20
+            ]
+          ]
+        }
+      },
+      "reviewed_at": "2026-11-13",
+      "review_level": "편집·논리 검토; DBMS 실행은 개별 명시한 경우에 한함"
+    },
+    {
+      "id": "sql_regex",
+      "key_rule": "^는 시작, $는 끝, +는 1회 이상, *는 0회 이상 반복을 뜻한다.",
+      "decision_check": "패턴이 문자열 어디에 매칭되는지, 앵커가 있는지 확인했는가?",
+      "trap": "`^A`와 `A`는 다른 조건이며 `+`와 `*`는 최소 반복 횟수가 다르다.",
+      "mini_example": {
+        "context": "값: AB, BA, AAB",
+        "expression": "REGEXP_LIKE(code, '^A')",
+        "result": "AB와 AAB가 매칭",
+        "reason": "Oracle REGEXP_LIKE 기준; DBMS별 함수는 다를 수 있다.",
+        "table": {
+          "columns": [
+            "문자열",
+            "^A 매칭"
+          ],
+          "rows": [
+            [
+              "AB",
+              "YES"
+            ],
+            [
+              "BA",
+              "NO"
+            ],
+            [
+              "AAB",
+              "YES"
+            ]
+          ]
+        }
+      },
+      "reviewed_at": "2026-11-13",
+      "review_level": "편집·논리 검토; DBMS 실행은 개별 명시한 경우에 한함"
+    },
+    {
+      "id": "sql_dml",
+      "key_rule": "DML은 행을 추가·변경·삭제하며 조건 누락은 변경 대상 범위를 확대한다.",
+      "decision_check": "UPDATE/DELETE의 WHERE가 실제로 몇 행을 선택하는가?",
+      "trap": "DELETE는 행을 삭제하지만 테이블 정의를 제거하지 않는다.",
+      "mini_example": {
+        "context": "T(id,status)=(1,A),(2,A)",
+        "expression": "UPDATE T SET status='B' WHERE id=1",
+        "result": "id=1만 B로 변경",
+        "reason": "JOIN 조건이 있는 UPDATE는 DBMS별 문법 차이에 주의한다.",
+        "table": {
+          "columns": [
+            "id",
+            "UPDATE 후 status"
+          ],
+          "rows": [
+            [
+              1,
+              "B"
+            ],
+            [
+              2,
+              "A"
+            ]
+          ]
+        }
+      },
+      "reviewed_at": "2026-11-13",
+      "review_level": "편집·논리 검토; DBMS 실행은 개별 명시한 경우에 한함"
+    },
+    {
+      "id": "sql_tcl",
+      "key_rule": "COMMIT은 변경을 확정하고 ROLLBACK은 확정되지 않은 변경을 되돌린다.",
+      "decision_check": "SAVEPOINT가 COMMIT 전의 어느 지점에 있는가?",
+      "trap": "Oracle의 DDL은 암묵적 COMMIT과 연결되므로 DML과 섞어 판단하지 않는다.",
+      "mini_example": {
+        "context": "INSERT A → SAVEPOINT S → INSERT B",
+        "expression": "ROLLBACK TO S",
+        "result": "A는 남고 B는 취소(커밋 전 상태)",
+        "reason": "이후 COMMIT 여부에 따라 영속 상태가 확정된다.",
+        "table": {
+          "columns": [
+            "작업",
+            "ROLLBACK TO S 이후"
+          ],
+          "rows": [
+            [
+              "INSERT A",
+              "유지"
+            ],
+            [
+              "INSERT B",
+              "취소"
+            ]
+          ]
+        }
+      },
+      "reviewed_at": "2026-11-13",
+      "review_level": "편집·논리 검토; DBMS 실행은 개별 명시한 경우에 한함"
+    },
+    {
+      "id": "sql_ddl",
+      "key_rule": "DDL은 테이블 구조를 정의·변경하며 TRUNCATE는 DELETE와 다른 트랜잭션 성격을 가진다.",
+      "decision_check": "명령이 행만 바꾸는가, 구조를 바꾸는가?",
+      "trap": "Oracle에서 TRUNCATE는 DDL이고 일반적인 ROLLBACK으로 복구되지 않는다.",
+      "mini_example": {
+        "context": "T에 3행 존재",
+        "expression": "TRUNCATE TABLE T",
+        "result": "정의는 남고 데이터 행은 제거",
+        "reason": "Oracle의 암묵적 COMMIT을 다른 DBMS에 일괄 적용하지 않는다.",
+        "table": {
+          "columns": [
+            "명령",
+            "분류"
+          ],
+          "rows": [
+            [
+              "TRUNCATE",
+              "DDL"
+            ],
+            [
+              "DELETE",
+              "DML"
+            ]
+          ]
+        }
+      },
+      "reviewed_at": "2026-11-13",
+      "review_level": "편집·논리 검토; DBMS 실행은 개별 명시한 경우에 한함"
+    },
+    {
+      "id": "sql_dcl",
+      "key_rule": "GRANT는 권한을 부여하고 REVOKE는 기존 권한을 회수한다.",
+      "decision_check": "권한의 대상이 테이블인지 사용자/역할인지 확인했는가?",
+      "trap": "REVOKE는 데이터 행을 삭제하거나 트랜잭션을 되돌리지 않는다.",
+      "mini_example": {
+        "context": "USER_A에게 ORDERS 조회 권한 부여",
+        "expression": "GRANT SELECT ON ORDERS TO USER_A",
+        "result": "USER_A가 ORDERS를 읽을 수 있는 권한 부여",
+        "reason": "실제 사용 가능성은 접속·역할·추가 권한에도 좌우된다.",
+        "table": {
+          "columns": [
+            "명령",
+            "효과"
+          ],
+          "rows": [
+            [
+              "GRANT",
+              "권한 부여"
+            ],
+            [
+              "REVOKE",
+              "권한 회수"
+            ]
+          ]
+        }
+      },
+      "reviewed_at": "2026-11-13",
+      "review_level": "편집·논리 검토; DBMS 실행은 개별 명시한 경우에 한함"
+    }
+  ]
+}

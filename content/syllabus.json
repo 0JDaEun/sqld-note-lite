@@ -1,0 +1,911 @@
+{
+  "version": "3.5",
+  "scope_source": "https://m.hrd.wowpass.com/Wanaeca/HelpDesk/Notice/View?Bid=3431164",
+  "official_site": "https://www.dataq.or.kr/",
+  "scope_note": "2024 제52회 개편 비교 공지를 기반으로 제작한 30개 학습 묶음. 최신 공식 원문 직접 대조는 별도 필요.",
+  "parts": [
+    {
+      "id": "model",
+      "name": "1과목 · 데이터 모델링",
+      "count": 10
+    },
+    {
+      "id": "basic",
+      "name": "2과목 · SQL 기본",
+      "count": 8
+    },
+    {
+      "id": "usage",
+      "name": "2과목 · SQL 활용",
+      "count": 8
+    },
+    {
+      "id": "manage",
+      "name": "2과목 · 관리 구문",
+      "count": 4
+    }
+  ],
+  "items": [
+    {
+      "id": "model_basics",
+      "order": 1,
+      "part": "model",
+      "part_name": "1과목 · 데이터 모델링",
+      "title": "데이터 모델의 이해",
+      "official_scope": true,
+      "scope_basis": "2024 개편 세부항목에 기초한 학습용 구분",
+      "lesson_ref": "c15",
+      "supplement_ref": null,
+      "practice_topics": [
+        "model_schema"
+      ],
+      "priority": "normal",
+      "priority_basis": "내부 콘텐츠 충분성 감사(출제빈도 통계와 무관)",
+      "keywords": [
+        "개념",
+        "논리",
+        "물리",
+        "3단계",
+        "스키마"
+      ],
+      "frequency": {
+        "status": "unmeasured",
+        "rounds_seen": null,
+        "rounds_checked": null,
+        "source_refs": []
+      }
+    },
+    {
+      "id": "model_entity",
+      "order": 2,
+      "part": "model",
+      "part_name": "1과목 · 데이터 모델링",
+      "title": "엔터티",
+      "official_scope": true,
+      "scope_basis": "2024 개편 세부항목에 기초한 학습용 구분",
+      "lesson_ref": "c08",
+      "supplement_ref": null,
+      "practice_topics": [
+        "model_entity"
+      ],
+      "priority": "normal",
+      "priority_basis": "내부 콘텐츠 충분성 감사(출제빈도 통계와 무관)",
+      "keywords": [
+        "엔터티",
+        "인스턴스",
+        "업무",
+        "독립"
+      ],
+      "frequency": {
+        "status": "unmeasured",
+        "rounds_seen": null,
+        "rounds_checked": null,
+        "source_refs": []
+      }
+    },
+    {
+      "id": "model_attribute",
+      "order": 3,
+      "part": "model",
+      "part_name": "1과목 · 데이터 모델링",
+      "title": "속성",
+      "official_scope": true,
+      "scope_basis": "2024 개편 세부항목에 기초한 학습용 구분",
+      "lesson_ref": "c08",
+      "supplement_ref": "model-attribute",
+      "practice_topics": [
+        "model_attribute",
+        "model_entity"
+      ],
+      "priority": "high",
+      "priority_basis": "내부 콘텐츠 충분성 감사(출제빈도 통계와 무관)",
+      "keywords": [
+        "기본",
+        "설계",
+        "파생",
+        "도메인",
+        "원자성"
+      ],
+      "frequency": {
+        "status": "unmeasured",
+        "rounds_seen": null,
+        "rounds_checked": null,
+        "source_refs": []
+      }
+    },
+    {
+      "id": "model_relation",
+      "order": 4,
+      "part": "model",
+      "part_name": "1과목 · 데이터 모델링",
+      "title": "관계",
+      "official_scope": true,
+      "scope_basis": "2024 개편 세부항목에 기초한 학습용 구분",
+      "lesson_ref": "c08",
+      "supplement_ref": null,
+      "practice_topics": [
+        "model_relation"
+      ],
+      "priority": "normal",
+      "priority_basis": "내부 콘텐츠 충분성 감사(출제빈도 통계와 무관)",
+      "keywords": [
+        "관계",
+        "최소참여",
+        "최대참여",
+        "1:N"
+      ],
+      "frequency": {
+        "status": "unmeasured",
+        "rounds_seen": null,
+        "rounds_checked": null,
+        "source_refs": []
+      }
+    },
+    {
+      "id": "model_key",
+      "order": 5,
+      "part": "model",
+      "part_name": "1과목 · 데이터 모델링",
+      "title": "식별자",
+      "official_scope": true,
+      "scope_basis": "2024 개편 세부항목에 기초한 학습용 구분",
+      "lesson_ref": "c09",
+      "supplement_ref": null,
+      "practice_topics": [
+        "model_key"
+      ],
+      "priority": "high",
+      "priority_basis": "내부 콘텐츠 충분성 감사(출제빈도 통계와 무관)",
+      "keywords": [
+        "후보키",
+        "주식별자",
+        "최소성",
+        "유일성"
+      ],
+      "frequency": {
+        "status": "unmeasured",
+        "rounds_seen": null,
+        "rounds_checked": null,
+        "source_refs": []
+      }
+    },
+    {
+      "id": "model_normal",
+      "order": 6,
+      "part": "model",
+      "part_name": "1과목 · 데이터 모델링",
+      "title": "정규화",
+      "official_scope": true,
+      "scope_basis": "2024 개편 세부항목에 기초한 학습용 구분",
+      "lesson_ref": "c10",
+      "supplement_ref": null,
+      "practice_topics": [
+        "model_normal"
+      ],
+      "priority": "high",
+      "priority_basis": "내부 콘텐츠 충분성 감사(출제빈도 통계와 무관)",
+      "keywords": [
+        "함수",
+        "종속",
+        "부분",
+        "종속",
+        "이행",
+        "종속"
+      ],
+      "frequency": {
+        "status": "unmeasured",
+        "rounds_seen": null,
+        "rounds_checked": null,
+        "source_refs": []
+      }
+    },
+    {
+      "id": "model_join",
+      "order": 7,
+      "part": "model",
+      "part_name": "1과목 · 데이터 모델링",
+      "title": "관계와 JOIN의 이해",
+      "official_scope": true,
+      "scope_basis": "2024 개편 세부항목에 기초한 학습용 구분",
+      "lesson_ref": "c08",
+      "supplement_ref": null,
+      "practice_topics": [
+        "sql_join",
+        "model_relation"
+      ],
+      "priority": "normal",
+      "priority_basis": "내부 콘텐츠 충분성 감사(출제빈도 통계와 무관)",
+      "keywords": [
+        "ERD",
+        "PK",
+        "FK",
+        "JOIN",
+        "중복"
+      ],
+      "frequency": {
+        "status": "unmeasured",
+        "rounds_seen": null,
+        "rounds_checked": null,
+        "source_refs": []
+      }
+    },
+    {
+      "id": "model_transaction",
+      "order": 8,
+      "part": "model",
+      "part_name": "1과목 · 데이터 모델링",
+      "title": "모델이 표현하는 트랜잭션",
+      "official_scope": true,
+      "scope_basis": "2024 개편 세부항목에 기초한 학습용 구분",
+      "lesson_ref": "c08",
+      "supplement_ref": "model-transaction",
+      "practice_topics": [
+        "model_transaction"
+      ],
+      "priority": "high",
+      "priority_basis": "내부 콘텐츠 충분성 감사(출제빈도 통계와 무관)",
+      "keywords": [
+        "업무",
+        "거래",
+        "단위",
+        "주문",
+        "주문항목",
+        "원자성"
+      ],
+      "frequency": {
+        "status": "unmeasured",
+        "rounds_seen": null,
+        "rounds_checked": null,
+        "source_refs": []
+      }
+    },
+    {
+      "id": "model_null",
+      "order": 9,
+      "part": "model",
+      "part_name": "1과목 · 데이터 모델링",
+      "title": "NULL 속성의 이해",
+      "official_scope": true,
+      "scope_basis": "2024 개편 세부항목에 기초한 학습용 구분",
+      "lesson_ref": "c08",
+      "supplement_ref": "model-null-attribute",
+      "practice_topics": [
+        "model_null_attribute"
+      ],
+      "priority": "high",
+      "priority_basis": "내부 콘텐츠 충분성 감사(출제빈도 통계와 무관)",
+      "keywords": [
+        "필수",
+        "속성",
+        "선택",
+        "속성",
+        "미정",
+        "해당",
+        "없음"
+      ],
+      "frequency": {
+        "status": "unmeasured",
+        "rounds_seen": null,
+        "rounds_checked": null,
+        "source_refs": []
+      }
+    },
+    {
+      "id": "model_origin",
+      "order": 10,
+      "part": "model",
+      "part_name": "1과목 · 데이터 모델링",
+      "title": "본질식별자 vs 인조식별자",
+      "official_scope": true,
+      "scope_basis": "2024 개편 세부항목에 기초한 학습용 구분",
+      "lesson_ref": "c09",
+      "supplement_ref": "model-key-origin",
+      "practice_topics": [
+        "model_key_origin"
+      ],
+      "priority": "high",
+      "priority_basis": "내부 콘텐츠 충분성 감사(출제빈도 통계와 무관)",
+      "keywords": [
+        "본질키",
+        "대리키",
+        "자연키",
+        "업무키"
+      ],
+      "frequency": {
+        "status": "unmeasured",
+        "rounds_seen": null,
+        "rounds_checked": null,
+        "source_refs": []
+      }
+    },
+    {
+      "id": "sql_rdb",
+      "order": 11,
+      "part": "basic",
+      "part_name": "2과목 · SQL 기본",
+      "title": "관계형 데이터베이스 개요",
+      "official_scope": true,
+      "scope_basis": "2024 개편 세부항목에 기초한 학습용 구분",
+      "lesson_ref": "c15",
+      "supplement_ref": null,
+      "practice_topics": [
+        "model_schema",
+        "model_key"
+      ],
+      "priority": "normal",
+      "priority_basis": "내부 콘텐츠 충분성 감사(출제빈도 통계와 무관)",
+      "keywords": [
+        "테이블",
+        "행",
+        "컬럼",
+        "PK",
+        "FK",
+        "무결성"
+      ],
+      "frequency": {
+        "status": "unmeasured",
+        "rounds_seen": null,
+        "rounds_checked": null,
+        "source_refs": []
+      }
+    },
+    {
+      "id": "sql_select",
+      "order": 12,
+      "part": "basic",
+      "part_name": "2과목 · SQL 기본",
+      "title": "SELECT 문",
+      "official_scope": true,
+      "scope_basis": "2024 개편 세부항목에 기초한 학습용 구분",
+      "lesson_ref": "c06",
+      "supplement_ref": null,
+      "practice_topics": [
+        "sql_select",
+        "sql_order"
+      ],
+      "priority": "normal",
+      "priority_basis": "내부 콘텐츠 충분성 감사(출제빈도 통계와 무관)",
+      "keywords": [
+        "SELECT",
+        "DISTINCT",
+        "alias",
+        "중복"
+      ],
+      "frequency": {
+        "status": "unmeasured",
+        "rounds_seen": null,
+        "rounds_checked": null,
+        "source_refs": []
+      }
+    },
+    {
+      "id": "sql_function",
+      "order": 13,
+      "part": "basic",
+      "part_name": "2과목 · SQL 기본",
+      "title": "함수",
+      "official_scope": true,
+      "scope_basis": "2024 개편 세부항목에 기초한 학습용 구분",
+      "lesson_ref": "c13",
+      "supplement_ref": "string",
+      "practice_topics": [
+        "sql_function",
+        "sql_datetime"
+      ],
+      "priority": "high",
+      "priority_basis": "내부 콘텐츠 충분성 감사(출제빈도 통계와 무관)",
+      "keywords": [
+        "NVL",
+        "COALESCE",
+        "CASE",
+        "변환",
+        "문자",
+        "숫자",
+        "날짜"
+      ],
+      "frequency": {
+        "status": "unmeasured",
+        "rounds_seen": null,
+        "rounds_checked": null,
+        "source_refs": []
+      }
+    },
+    {
+      "id": "sql_where",
+      "order": 14,
+      "part": "basic",
+      "part_name": "2과목 · SQL 기본",
+      "title": "WHERE 절",
+      "official_scope": true,
+      "scope_basis": "2024 개편 세부항목에 기초한 학습용 구분",
+      "lesson_ref": "c02",
+      "supplement_ref": null,
+      "practice_topics": [
+        "sql_null",
+        "sql_subquery"
+      ],
+      "priority": "high",
+      "priority_basis": "내부 콘텐츠 충분성 감사(출제빈도 통계와 무관)",
+      "keywords": [
+        "AND",
+        "OR",
+        "NOT",
+        "LIKE",
+        "BETWEEN",
+        "3값논리"
+      ],
+      "frequency": {
+        "status": "unmeasured",
+        "rounds_seen": null,
+        "rounds_checked": null,
+        "source_refs": []
+      }
+    },
+    {
+      "id": "sql_group",
+      "order": 15,
+      "part": "basic",
+      "part_name": "2과목 · SQL 기본",
+      "title": "GROUP BY·HAVING 절",
+      "official_scope": true,
+      "scope_basis": "2024 개편 세부항목에 기초한 학습용 구분",
+      "lesson_ref": "c03",
+      "supplement_ref": null,
+      "practice_topics": [
+        "sql_group"
+      ],
+      "priority": "normal",
+      "priority_basis": "내부 콘텐츠 충분성 감사(출제빈도 통계와 무관)",
+      "keywords": [
+        "WHERE",
+        "HAVING",
+        "COUNT",
+        "NULL"
+      ],
+      "frequency": {
+        "status": "unmeasured",
+        "rounds_seen": null,
+        "rounds_checked": null,
+        "source_refs": []
+      }
+    },
+    {
+      "id": "sql_order",
+      "order": 16,
+      "part": "basic",
+      "part_name": "2과목 · SQL 기본",
+      "title": "ORDER BY 절",
+      "official_scope": true,
+      "scope_basis": "2024 개편 세부항목에 기초한 학습용 구분",
+      "lesson_ref": "c14",
+      "supplement_ref": null,
+      "practice_topics": [
+        "sql_order"
+      ],
+      "priority": "normal",
+      "priority_basis": "내부 콘텐츠 충분성 감사(출제빈도 통계와 무관)",
+      "keywords": [
+        "정렬",
+        "동점",
+        "ORDER",
+        "BY",
+        "PK",
+        "안정성"
+      ],
+      "frequency": {
+        "status": "unmeasured",
+        "rounds_seen": null,
+        "rounds_checked": null,
+        "source_refs": []
+      }
+    },
+    {
+      "id": "sql_join",
+      "order": 17,
+      "part": "basic",
+      "part_name": "2과목 · SQL 기본",
+      "title": "JOIN",
+      "official_scope": true,
+      "scope_basis": "2024 개편 세부항목에 기초한 학습용 구분",
+      "lesson_ref": "c01",
+      "supplement_ref": null,
+      "practice_topics": [
+        "sql_join"
+      ],
+      "priority": "normal",
+      "priority_basis": "내부 콘텐츠 충분성 감사(출제빈도 통계와 무관)",
+      "keywords": [
+        "INNER",
+        "LEFT",
+        "RIGHT",
+        "FULL",
+        "ON",
+        "WHERE"
+      ],
+      "frequency": {
+        "status": "unmeasured",
+        "rounds_seen": null,
+        "rounds_checked": null,
+        "source_refs": []
+      }
+    },
+    {
+      "id": "sql_standard_join",
+      "order": 18,
+      "part": "basic",
+      "part_name": "2과목 · SQL 기본",
+      "title": "표준 JOIN",
+      "official_scope": true,
+      "scope_basis": "2024 개편 세부항목에 기초한 학습용 구분",
+      "lesson_ref": "c01",
+      "supplement_ref": "sql-standard-join",
+      "practice_topics": [
+        "sql_standard_join",
+        "sql_join"
+      ],
+      "priority": "high",
+      "priority_basis": "내부 콘텐츠 충분성 감사(출제빈도 통계와 무관)",
+      "keywords": [
+        "NATURAL",
+        "USING",
+        "ON",
+        "CROSS",
+        "공통",
+        "컬럼"
+      ],
+      "frequency": {
+        "status": "unmeasured",
+        "rounds_seen": null,
+        "rounds_checked": null,
+        "source_refs": []
+      }
+    },
+    {
+      "id": "sql_subquery",
+      "order": 19,
+      "part": "usage",
+      "part_name": "2과목 · SQL 활용",
+      "title": "서브쿼리",
+      "official_scope": true,
+      "scope_basis": "2024 개편 세부항목에 기초한 학습용 구분",
+      "lesson_ref": "c05",
+      "supplement_ref": null,
+      "practice_topics": [
+        "sql_subquery"
+      ],
+      "priority": "high",
+      "priority_basis": "내부 콘텐츠 충분성 감사(출제빈도 통계와 무관)",
+      "keywords": [
+        "상관",
+        "서브쿼리",
+        "EXISTS",
+        "ANY",
+        "ALL",
+        "IN"
+      ],
+      "frequency": {
+        "status": "unmeasured",
+        "rounds_seen": null,
+        "rounds_checked": null,
+        "source_refs": []
+      }
+    },
+    {
+      "id": "sql_set",
+      "order": 20,
+      "part": "usage",
+      "part_name": "2과목 · SQL 활용",
+      "title": "집합 연산자",
+      "official_scope": true,
+      "scope_basis": "2024 개편 세부항목에 기초한 학습용 구분",
+      "lesson_ref": null,
+      "supplement_ref": "set",
+      "practice_topics": [
+        "sql_set"
+      ],
+      "priority": "normal",
+      "priority_basis": "내부 콘텐츠 충분성 감사(출제빈도 통계와 무관)",
+      "keywords": [
+        "UNION",
+        "ALL",
+        "INTERSECT",
+        "MINUS",
+        "EXCEPT"
+      ],
+      "frequency": {
+        "status": "unmeasured",
+        "rounds_seen": null,
+        "rounds_checked": null,
+        "source_refs": []
+      }
+    },
+    {
+      "id": "sql_groupfn",
+      "order": 21,
+      "part": "usage",
+      "part_name": "2과목 · SQL 활용",
+      "title": "그룹 함수",
+      "official_scope": true,
+      "scope_basis": "2024 개편 세부항목에 기초한 학습용 구분",
+      "lesson_ref": "c11",
+      "supplement_ref": "groupings",
+      "practice_topics": [
+        "sql_rollup"
+      ],
+      "priority": "high",
+      "priority_basis": "내부 콘텐츠 충분성 감사(출제빈도 통계와 무관)",
+      "keywords": [
+        "ROLLUP",
+        "CUBE",
+        "GROUPING",
+        "GROUPING",
+        "SETS"
+      ],
+      "frequency": {
+        "status": "unmeasured",
+        "rounds_seen": null,
+        "rounds_checked": null,
+        "source_refs": []
+      }
+    },
+    {
+      "id": "sql_window",
+      "order": 22,
+      "part": "usage",
+      "part_name": "2과목 · SQL 활용",
+      "title": "윈도우 함수",
+      "official_scope": true,
+      "scope_basis": "2024 개편 세부항목에 기초한 학습용 구분",
+      "lesson_ref": "c04",
+      "supplement_ref": null,
+      "practice_topics": [
+        "sql_window"
+      ],
+      "priority": "high",
+      "priority_basis": "내부 콘텐츠 충분성 감사(출제빈도 통계와 무관)",
+      "keywords": [
+        "PARTITION",
+        "ORDER",
+        "RANK",
+        "DENSE",
+        "ROWS",
+        "RANGE"
+      ],
+      "frequency": {
+        "status": "unmeasured",
+        "rounds_seen": null,
+        "rounds_checked": null,
+        "source_refs": []
+      }
+    },
+    {
+      "id": "sql_topn",
+      "order": 23,
+      "part": "usage",
+      "part_name": "2과목 · SQL 활용",
+      "title": "TOP-N 쿼리",
+      "official_scope": true,
+      "scope_basis": "2024 개편 세부항목에 기초한 학습용 구분",
+      "lesson_ref": "c14",
+      "supplement_ref": null,
+      "practice_topics": [
+        "sql_order"
+      ],
+      "priority": "normal",
+      "priority_basis": "내부 콘텐츠 충분성 감사(출제빈도 통계와 무관)",
+      "keywords": [
+        "ROWNUM",
+        "FETCH",
+        "LIMIT",
+        "ORDER"
+      ],
+      "frequency": {
+        "status": "unmeasured",
+        "rounds_seen": null,
+        "rounds_checked": null,
+        "source_refs": []
+      }
+    },
+    {
+      "id": "sql_hierarchy",
+      "order": 24,
+      "part": "usage",
+      "part_name": "2과목 · SQL 활용",
+      "title": "계층형 질의·셀프 JOIN",
+      "official_scope": true,
+      "scope_basis": "2024 개편 세부항목에 기초한 학습용 구분",
+      "lesson_ref": "c12",
+      "supplement_ref": null,
+      "practice_topics": [
+        "sql_hierarchy"
+      ],
+      "priority": "high",
+      "priority_basis": "내부 콘텐츠 충분성 감사(출제빈도 통계와 무관)",
+      "keywords": [
+        "START",
+        "WITH",
+        "CONNECT",
+        "BY",
+        "PRIOR",
+        "LEVEL"
+      ],
+      "frequency": {
+        "status": "unmeasured",
+        "rounds_seen": null,
+        "rounds_checked": null,
+        "source_refs": []
+      }
+    },
+    {
+      "id": "sql_pivot",
+      "order": 25,
+      "part": "usage",
+      "part_name": "2과목 · SQL 활용",
+      "title": "PIVOT·UNPIVOT",
+      "official_scope": true,
+      "scope_basis": "2024 개편 세부항목에 기초한 학습용 구분",
+      "lesson_ref": null,
+      "supplement_ref": "pivot",
+      "practice_topics": [
+        "sql_pivot"
+      ],
+      "priority": "high",
+      "priority_basis": "내부 콘텐츠 충분성 감사(출제빈도 통계와 무관)",
+      "keywords": [
+        "PIVOT",
+        "UNPIVOT",
+        "집계",
+        "암묵그룹"
+      ],
+      "frequency": {
+        "status": "unmeasured",
+        "rounds_seen": null,
+        "rounds_checked": null,
+        "source_refs": []
+      }
+    },
+    {
+      "id": "sql_regex",
+      "order": 26,
+      "part": "usage",
+      "part_name": "2과목 · SQL 활용",
+      "title": "정규표현식",
+      "official_scope": true,
+      "scope_basis": "2024 개편 세부항목에 기초한 학습용 구분",
+      "lesson_ref": null,
+      "supplement_ref": "regex",
+      "practice_topics": [
+        "sql_regex"
+      ],
+      "priority": "high",
+      "priority_basis": "내부 콘텐츠 충분성 감사(출제빈도 통계와 무관)",
+      "keywords": [
+        "REGEXP_LIKE",
+        "^",
+        "$",
+        "+",
+        "*",
+        "패턴"
+      ],
+      "frequency": {
+        "status": "unmeasured",
+        "rounds_seen": null,
+        "rounds_checked": null,
+        "source_refs": []
+      }
+    },
+    {
+      "id": "sql_dml",
+      "order": 27,
+      "part": "manage",
+      "part_name": "2과목 · 관리 구문",
+      "title": "DML",
+      "official_scope": true,
+      "scope_basis": "2024 개편 세부항목에 기초한 학습용 구분",
+      "lesson_ref": "c07",
+      "supplement_ref": null,
+      "practice_topics": [
+        "sql_dml"
+      ],
+      "priority": "normal",
+      "priority_basis": "내부 콘텐츠 충분성 감사(출제빈도 통계와 무관)",
+      "keywords": [
+        "INSERT",
+        "UPDATE",
+        "DELETE",
+        "MERGE",
+        "WHERE"
+      ],
+      "frequency": {
+        "status": "unmeasured",
+        "rounds_seen": null,
+        "rounds_checked": null,
+        "source_refs": []
+      }
+    },
+    {
+      "id": "sql_tcl",
+      "order": 28,
+      "part": "manage",
+      "part_name": "2과목 · 관리 구문",
+      "title": "TCL",
+      "official_scope": true,
+      "scope_basis": "2024 개편 세부항목에 기초한 학습용 구분",
+      "lesson_ref": "c07",
+      "supplement_ref": null,
+      "practice_topics": [
+        "sql_dml"
+      ],
+      "priority": "high",
+      "priority_basis": "내부 콘텐츠 충분성 감사(출제빈도 통계와 무관)",
+      "keywords": [
+        "COMMIT",
+        "ROLLBACK",
+        "SAVEPOINT"
+      ],
+      "frequency": {
+        "status": "unmeasured",
+        "rounds_seen": null,
+        "rounds_checked": null,
+        "source_refs": []
+      }
+    },
+    {
+      "id": "sql_ddl",
+      "order": 29,
+      "part": "manage",
+      "part_name": "2과목 · 관리 구문",
+      "title": "DDL",
+      "official_scope": true,
+      "scope_basis": "2024 개편 세부항목에 기초한 학습용 구분",
+      "lesson_ref": "c07",
+      "supplement_ref": "ddl",
+      "practice_topics": [
+        "sql_ddl",
+        "sql_dml"
+      ],
+      "priority": "high",
+      "priority_basis": "내부 콘텐츠 충분성 감사(출제빈도 통계와 무관)",
+      "keywords": [
+        "CREATE",
+        "ALTER",
+        "DROP",
+        "TRUNCATE"
+      ],
+      "frequency": {
+        "status": "unmeasured",
+        "rounds_seen": null,
+        "rounds_checked": null,
+        "source_refs": []
+      }
+    },
+    {
+      "id": "sql_dcl",
+      "order": 30,
+      "part": "manage",
+      "part_name": "2과목 · 관리 구문",
+      "title": "DCL",
+      "official_scope": true,
+      "scope_basis": "2024 개편 세부항목에 기초한 학습용 구분",
+      "lesson_ref": "c07",
+      "supplement_ref": "ddl",
+      "practice_topics": [
+        "sql_dcl"
+      ],
+      "priority": "high",
+      "priority_basis": "내부 콘텐츠 충분성 감사(출제빈도 통계와 무관)",
+      "keywords": [
+        "GRANT",
+        "REVOKE",
+        "SELECT",
+        "권한"
+      ],
+      "frequency": {
+        "status": "unmeasured",
+        "rounds_seen": null,
+        "rounds_checked": null,
+        "source_refs": []
+      }
+    }
+  ]
+}

@@ -414,5 +414,323 @@
       ]
     },
     "trap": "(region,kind) 조합별 집계는 요청하지 않았다. 결과 정렬은 ORDER BY가 없으면 보장되지 않는다."
+  },
+  {
+    "id": "model-transaction",
+    "chapter": "데이터 모델링과 SQL",
+    "title": "모델이 표현하는 업무 트랜잭션",
+    "intro": "하나의 업무 사건(주문·결제·예약)이 어떤 엔터티의 인스턴스를 함께 생성하거나 변경하는지 모델에서 읽는다. 업무 거래의 단위를 파악하는 일과 SQL의 COMMIT 문법 자체를 암기하는 일은 다르다.",
+    "steps": [
+      "주문 생성이라는 하나의 업무 이벤트와 필요한 데이터 세트(주문 헤더·상품 상세)를 식별한다.",
+      "ORDER 1건과 ORDER_ITEM 여러 건 사이의 1:N 연결을 PK·FK로 나타낸다.",
+      "업무 규칙상 전체가 함께 성공해야 한다면 저장 프로그램의 트랜잭션 경계를 함께 설정한다. 트랜잭션 단위는 개별 엔터티 수와 동일하지 않다."
+    ],
+    "tables": [
+      {
+        "name": "ORDER_HEADER",
+        "columns": [
+          "order_id",
+          "customer_id"
+        ],
+        "rows": [
+          [
+            101,
+            7
+          ],
+          [
+            102,
+            8
+          ]
+        ]
+      },
+      {
+        "name": "ORDER_ITEM",
+        "columns": [
+          "order_id",
+          "line_no",
+          "qty"
+        ],
+        "rows": [
+          [
+            101,
+            1,
+            2
+          ],
+          [
+            101,
+            2,
+            1
+          ],
+          [
+            102,
+            1,
+            3
+          ]
+        ]
+      }
+    ],
+    "sql": "SELECT h.order_id, COUNT(i.line_no) AS line_count FROM ORDER_HEADER h LEFT JOIN ORDER_ITEM i ON h.order_id=i.order_id GROUP BY h.order_id ORDER BY h.order_id;",
+    "output": {
+      "columns": [
+        "order_id",
+        "line_count"
+      ],
+      "rows": [
+        [
+          101,
+          2
+        ],
+        [
+          102,
+          1
+        ]
+      ]
+    },
+    "trap": "한 업무 트랜잭션에 여러 테이블의 여러 행이 포함될 수 있다. JOIN으로 2행이 되었다고 DB 트랜잭션도 2개인 것은 아니다.",
+    "key_comparison": "업무 거래 단위(무엇이 함께 처리되는가) ≠ JOIN 결과 행 수(얼마나 결합되는가) ≠ COMMIT 명령(언제 확정되는가).",
+    "verification_note": "예제 SELECT의 결과는 SQLite 실행으로 교차 확인, 실제 트랜잭션 경계는 업무 요구사항에 따라 다름."
+  },
+  {
+    "id": "model-null-attribute",
+    "chapter": "데이터 모델링과 SQL",
+    "title": "NULL 속성: 필수·선택·미정 구분",
+    "intro": "모델링에서는 속성의 선택성, 값의 미확정, 적용되지 않는 값의 의미부터 결정한다. NULL은 0이나 공백 한 칸과 다른 상태이며 DBMS별로 빈 문자열 처리도 달라진다.",
+    "steps": [
+      "값이 반드시 필요한 필수 속성인지, 생성 시 비어 있을 수 있는 선택 속성인지 업무 규칙으로 판단한다.",
+      "NULL이 의미하는 것이 미확정·해당 없음·미입력 중 무엇인지 데이터 사전에 기록한다.",
+      "필수 속성에는 NOT NULL 등의 제약을 고려하고, SELECT에서는 IS NULL을 사용해 값 부재를 확인한다."
+    ],
+    "tables": [
+      {
+        "name": "MEMBER",
+        "columns": [
+          "member_id",
+          "memo",
+          "points"
+        ],
+        "rows": [
+          [
+            1,
+            null,
+            0
+          ],
+          [
+            2,
+            "문 앞",
+            100
+          ],
+          [
+            3,
+            null,
+            30
+          ]
+        ]
+      }
+    ],
+    "sql": "SELECT member_id, CASE WHEN memo IS NULL THEN '미기재' ELSE '기재' END AS memo_state FROM MEMBER ORDER BY member_id;",
+    "output": {
+      "columns": [
+        "member_id",
+        "memo_state"
+      ],
+      "rows": [
+        [
+          1,
+          "미기재"
+        ],
+        [
+          2,
+          "기재"
+        ],
+        [
+          3,
+          "미기재"
+        ]
+      ]
+    },
+    "trap": "NULL과 숫자 0은 다르다. Oracle은 문자형 빈 문자열('')을 NULL로 취급하는 특성이 있으므로 일반 DBMS의 빈 문자열과 같은 방식으로 설명하지 않는다.",
+    "key_comparison": "NULL = 모름/해당 없음/미입력 등 값 부재 · 0 = 알려진 수치값 · 공백 문자 = 실제 문자 값",
+    "verification_note": "예제 SELECT는 SQLite 결과로 검증. Oracle 빈 문자열 주의는 DBMS 고유 규칙."
+  },
+  {
+    "id": "model-key-origin",
+    "chapter": "데이터 모델링과 SQL",
+    "title": "본질식별자 vs 인조식별자",
+    "intro": "업무에서 본래 존재하는 식별 속성을 본질식별자라고 하고, 시스템이 식별을 위해 별도 부여한 속성을 인조식별자(대리 식별자)라고 한다. 둘 중 하나가 언제나 정답인 것은 아니다.",
+    "steps": [
+      "업무적으로 유일하고 의미가 있는 후보 식별자(예: SKU)를 먼저 파악한다.",
+      "업무 키 변경·복합성·외부 참조 안정성을 고려해 시스템 발급 대리키(예: product_id) 여부를 결정한다.",
+      "대리키를 PK로 채택하더라도 SKU의 업무상 유일성 조건은 UNIQUE 등으로 별도 유지한다."
+    ],
+    "tables": [
+      {
+        "name": "PRODUCT",
+        "columns": [
+          "product_id(PK)",
+          "sku(UNIQUE)",
+          "name"
+        ],
+        "rows": [
+          [
+            1001,
+            "SKU-A",
+            "볼펜"
+          ],
+          [
+            1002,
+            "SKU-B",
+            "연필"
+          ]
+        ]
+      }
+    ],
+    "sql": "SELECT product_id, sku FROM PRODUCT ORDER BY product_id;",
+    "output": {
+      "columns": [
+        "product_id",
+        "sku"
+      ],
+      "rows": [
+        [
+          1001,
+          "SKU-A"
+        ],
+        [
+          1002,
+          "SKU-B"
+        ]
+      ]
+    },
+    "trap": "대리키를 사용하면 자연키가 더 이상 유일할 필요가 없다는 주장은 틀릴 수 있다. 본질식별자가 항상 영구불변이라는 보장도 없다.",
+    "key_comparison": "SKU = 업무상 식별 후보 · product_id = 시스템 생성 대리키 · 업무 고유성 제약 = PK 선택과 별개로 검토",
+    "verification_note": "SELECT 결과는 SQLite 검증, 식별자 분류는 업무 모델링 판단."
+  },
+  {
+    "id": "model-attribute",
+    "chapter": "데이터 모델링의 이해",
+    "title": "속성 분류·도메인·파생값",
+    "intro": "속성은 업무에서 직접 얻는 기본 속성, 시스템 설계상 추가한 설계 속성, 기존 값에서 계산되는 파생 속성으로 나뉜다. 또한 허용 값 범위인 도메인을 정의해야 한다.",
+    "steps": [
+      "한 주문 항목의 수량(quantity)과 단가(unit_price)는 업무 원천 값이다.",
+      "total_amount=quantity×unit_price는 계산되는 파생값으로 별도 저장 여부를 설계한다.",
+      "도메인·NULL 여부·수량 음수 허용 여부 등을 명시해 데이터 품질을 확보한다."
+    ],
+    "tables": [
+      {
+        "name": "ORDER_LINE",
+        "columns": [
+          "line_id",
+          "quantity",
+          "unit_price"
+        ],
+        "rows": [
+          [
+            11,
+            2,
+            3000
+          ],
+          [
+            12,
+            3,
+            1000
+          ]
+        ]
+      }
+    ],
+    "sql": "SELECT line_id, quantity * unit_price AS total_amount FROM ORDER_LINE ORDER BY line_id;",
+    "output": {
+      "columns": [
+        "line_id",
+        "total_amount"
+      ],
+      "rows": [
+        [
+          11,
+          6000
+        ],
+        [
+          12,
+          3000
+        ]
+      ]
+    },
+    "trap": "파생 속성은 반드시 저장하거나 반드시 저장하지 않아야 하는 것이 아니다. 중복·성능·정합성의 절충을 고려한다.",
+    "key_comparison": "기본: 수량·단가 / 설계: 시스템 발급 내부 ID / 파생: 수량×단가",
+    "verification_note": "SQL 출력은 SQLite에서 재실행해 확인."
+  },
+  {
+    "id": "sql-standard-join",
+    "chapter": "SQL 기본 및 활용",
+    "title": "표준 JOIN: ON·USING·NATURAL·CROSS",
+    "intro": "표준 JOIN 문법의 ON은 조인 조건을 직접 지정하고, USING은 양쪽의 같은 이름 열을 지정한다. NATURAL은 모든 동명 열을 자동 조건으로 사용하므로 조심해야 한다.",
+    "steps": [
+      "ON은 원하는 비교식을 명시하며 양쪽 열명을 서로 다르게 쓸 수도 있다.",
+      "USING(dept_id)은 양쪽의 dept_id를 비교하고 SELECT *에서 공통 조인열을 하나로 표시한다.",
+      "NATURAL은 공통 이름의 모든 열을 사용한다. CROSS JOIN은 양쪽 행의 데카르트 곱을 반환한다."
+    ],
+    "tables": [
+      {
+        "name": "EMP",
+        "columns": [
+          "emp_id",
+          "dept_id"
+        ],
+        "rows": [
+          [
+            1,
+            10
+          ],
+          [
+            2,
+            20
+          ],
+          [
+            3,
+            10
+          ]
+        ]
+      },
+      {
+        "name": "DEPT",
+        "columns": [
+          "dept_id",
+          "dept_name"
+        ],
+        "rows": [
+          [
+            10,
+            "개발"
+          ],
+          [
+            20,
+            "기획"
+          ]
+        ]
+      }
+    ],
+    "sql": "SELECT emp_id, dept_name FROM EMP JOIN DEPT USING (dept_id) ORDER BY emp_id;",
+    "output": {
+      "columns": [
+        "emp_id",
+        "dept_name"
+      ],
+      "rows": [
+        [
+          1,
+          "개발"
+        ],
+        [
+          2,
+          "기획"
+        ],
+        [
+          3,
+          "개발"
+        ]
+      ]
+    },
+    "trap": "NATURAL JOIN의 동명 열이 dept_id뿐이라고 가정하고 풀면 안 된다. 두 테이블에 같은 이름의 status까지 생기면 그것도 조건으로 사용된다.",
+    "key_comparison": "ON: 직접 명시 / USING: 지정한 동명 열 / NATURAL: 모든 동명 열 / CROSS: 조건 없는 모든 조합",
+    "verification_note": "SQL 예제는 SQLite에서 실행 검증; 사용 가능한 JOIN 변종은 DBMS별 차이 존재."
   }
 ]

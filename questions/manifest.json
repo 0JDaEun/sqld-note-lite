@@ -1,41 +1,68 @@
 {
-  "version": "3.4",
-  "updated_at": "2026-11-12",
-  "count": 226,
-  "manual_count": 101,
-  "sql_verified_count": 125,
-  "source_policy": "모든 신규 문항 독자 제작; SQLD양파 원문·보기·해설 수집/복제하지 않음; SQLite 실행 검증 40문항",
+  "version": "3.5",
+  "updated_at": "2026-11-13",
+  "count": 247,
+  "total_questions": 247,
+  "baseline_question_count": 226,
+  "added_question_count": 21,
   "subjects": [
     "데이터 모델링",
     "SQL 기본 및 활용"
   ],
-  "files": [
-    "questions/bank.json"
-  ],
-  "total_questions": 226,
-  "question_types": {
-    "sql_executed": 85,
-    "concept_or_oracle_editorial": 91
+  "by_subject": {
+    "데이터 모델링": 44,
+    "SQL 기본 및 활용": 203
   },
-  "difficulty_policy": "콘텐츠 복잡도 기준 추정 난이도(하/중/상), 실측 정답률 아님",
-  "options_explained_count": 226,
-  "trace_viewer_chapters": 15,
-  "individual_reviewed_new_count": 30,
-  "regular_expression_count": 9,
-  "date_function_count": 7,
-  "existing_concept_count": 71,
-  "editorial_new_count": 20,
-  "new_sql_executed_count": 40,
-  "new_questions_count": 50,
-  "new_editorial_count": 10,
-  "frequency_policy": "복원 회차별 출제 빈도 증거 미확보, 미집계 표시",
+  "by_topic": {
+    "model_entity": 6,
+    "model_relation": 6,
+    "model_key": 7,
+    "model_normal": 8,
+    "model_schema": 5,
+    "sql_join": 16,
+    "sql_null": 23,
+    "sql_group": 20,
+    "sql_subquery": 22,
+    "sql_order": 17,
+    "sql_dml": 6,
+    "sql_window": 21,
+    "sql_rollup": 6,
+    "sql_hierarchy": 6,
+    "sql_function": 19,
+    "sql_set": 14,
+    "sql_pivot": 8,
+    "sql_regex": 9,
+    "sql_datetime": 7,
+    "model_transaction": 3,
+    "model_null_attribute": 3,
+    "model_key_origin": 3,
+    "model_attribute": 3,
+    "sql_standard_join": 3,
+    "sql_select": 2,
+    "sql_ddl": 2,
+    "sql_dcl": 2
+  },
   "difficulty_distribution": {
     "하 · 예상": 27,
-    "중 · 예상": 136,
-    "상 · 예상": 63
+    "중 · 예상": 148,
+    "상 · 예상": 72
   },
-  "difficulty_new_50": {
-    "중 · 예상": 20,
-    "상 · 예상": 30
-  }
+  "verification_methods": {
+    "concept_reviewed": 71,
+    "sql_executed": 125,
+    "editorial_review": 51
+  },
+  "sql_verified_count": 125,
+  "editorial_review_count": 51,
+  "concept_reviewed_count": 71,
+  "options_explained_count": 247,
+  "quick_reference_count": 30,
+  "core_lessons_count": 15,
+  "supplement_count": 13,
+  "source_policy": "기존 226문항의 ID 유지, 신규 21문항 독자 제작. 복원 기출 원문 미수록.",
+  "frequency_policy": "독립 회차 근거 미확보: 빈출도 미집계",
+  "difficulty_policy": "예상 난이도 (정답률 실측 아님)",
+  "files": [
+    "questions/bank.json"
+  ]
 }

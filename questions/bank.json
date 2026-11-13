@@ -15401,5 +15401,824 @@
     "frequency": "미집계",
     "exam_focus": "관계·정규화·식별자 심화",
     "difficulty_basis": "출제 조건 복잡도 기반 편집 추정 (수험자 정답률 아님)"
+  },
+  {
+    "id": "qv3_0227",
+    "subject": "데이터 모델링",
+    "topic": "model_transaction",
+    "topic_label": "모델링·업무 트랜잭션",
+    "difficulty": "상 · 예상",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL·업무 모델링",
+    "stem": "주문을 생성할 때 ORDER_HEADER 1행과 ORDER_ITEM 3행이 함께 생성된다. 업무적으로 모두 성공하거나 모두 취소해야 한다면 가장 타당한 해석은?",
+    "choices": [
+      "업무 트랜잭션은 반드시 4개여야 한다",
+      "ORDER_HEADER만 한 트랜잭션으로 묶는다",
+      "헤더와 상세 행을 하나의 업무 트랜잭션으로 처리할 수 있다",
+      "JOIN 결과가 3행이므로 COMMIT도 3번 필요하다"
+    ],
+    "answer": 2,
+    "explanation": "업무 거래가 함께 일관되게 성공해야 한다면 여러 엔터티의 변경을 한 트랜잭션 경계에 묶을 수 있다.",
+    "option_explanations": [
+      "수정 행 수와 트랜잭션 수는 동일하지 않다.",
+      "상세가 실패하면 헤더만 남아 업무 불일치가 생길 수 있다.",
+      "업무 일관성을 보장하는 적절한 설계다.",
+      "JOIN 행 수는 SQL 출력 속성이지 COMMIT 횟수가 아니다."
+    ],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [
+      "업무 거래가 함께 일관되게 성공해야 한다면 여러 엔터티의 변경을 한 트랜잭션 경계에 묶을 수 있다."
+    ],
+    "verified": true,
+    "linked_chapters": [],
+    "supplement_id": "model-transaction",
+    "verification_method": "editorial_review",
+    "question_type": "조건 판단·개념 적용",
+    "option_note_method": "individual_editorial_review",
+    "frequency": "미집계",
+    "exam_focus": "2024 개편 범위 P0 보강",
+    "difficulty_basis": "편집 검토에 따른 예상 난이도(실측 정답률 아님)"
+  },
+  {
+    "id": "qv3_0228",
+    "subject": "데이터 모델링",
+    "topic": "model_transaction",
+    "topic_label": "모델링·업무 트랜잭션",
+    "difficulty": "상 · 예상",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL·업무 모델링",
+    "stem": "다음 중 데이터 모델이 표현하는 트랜잭션의 이해에 대한 설명으로 가장 적절한 것은?",
+    "choices": [
+      "모든 트랜잭션은 한 테이블 한 행만 수정해야 한다",
+      "관계 모델에서 연결된 모든 엔터티는 항상 하나의 물리 트랜잭션으로 묶인다",
+      "트랜잭션의 업무적 단위는 무조건 JOIN의 반환 행 수다",
+      "업무 사건이 함께 생성하거나 변경하는 데이터 범위를 분석해야 한다"
+    ],
+    "answer": 3,
+    "explanation": "업무 트랜잭션 모델링은 어떤 엔터티와 인스턴스가 한 업무 사건의 처리 범위에 함께 포함되는지 파악하는 것이다.",
+    "option_explanations": [
+      "한 업무 사건은 여러 테이블과 행에 영향을 줄 수 있다.",
+      "관계선만으로 트랜잭션 경계가 결정되지는 않는다.",
+      "JOIN 출력 행 수와 트랜잭션 범위는 독립적이다.",
+      "업무 사건 단위를 분석하는 핵심 원칙이다."
+    ],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [
+      "업무 트랜잭션 모델링은 어떤 엔터티와 인스턴스가 한 업무 사건의 처리 범위에 함께 포함되는지 파악하는 것이다."
+    ],
+    "verified": true,
+    "linked_chapters": [],
+    "supplement_id": "model-transaction",
+    "verification_method": "editorial_review",
+    "question_type": "조건 판단·개념 적용",
+    "option_note_method": "individual_editorial_review",
+    "frequency": "미집계",
+    "exam_focus": "2024 개편 범위 P0 보강",
+    "difficulty_basis": "편집 검토에 따른 예상 난이도(실측 정답률 아님)"
+  },
+  {
+    "id": "qv3_0229",
+    "subject": "데이터 모델링",
+    "topic": "model_transaction",
+    "topic_label": "모델링·업무 트랜잭션",
+    "difficulty": "중 · 예상",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL·업무 모델링",
+    "stem": "주문 헤더는 저장됐지만 주문 상세 저장에 실패했다. 두 작업이 반드시 함께 성공해야 하는 업무 규칙에서 권장되는 방식은?",
+    "choices": [
+      "상세 저장 실패를 무시하고 COMMIT한다",
+      "둘을 동일 트랜잭션으로 처리해 실패 시 ROLLBACK한다",
+      "매번 상세 하나가 생성될 때마다 커밋한다",
+      "관계선을 비식별로 만들면 문제가 자동 해결된다"
+    ],
+    "answer": 1,
+    "explanation": "업무 규칙상 전체 원자성이 필요하면 주문 헤더와 상세를 한 트랜잭션으로 수행하고 일부 실패 시 롤백한다.",
+    "option_explanations": [
+      "헤더만 남아 불완전한 주문이 될 수 있다.",
+      "전체 성공 또는 전체 취소라는 요구에 부합한다.",
+      "중간 커밋은 전체 롤백을 어렵게 한다.",
+      "식별·비식별 관계 선택은 트랜잭션 실패를 자동 복구하지 않는다."
+    ],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [
+      "업무 규칙상 전체 원자성이 필요하면 주문 헤더와 상세를 한 트랜잭션으로 수행하고 일부 실패 시 롤백한다."
+    ],
+    "verified": true,
+    "linked_chapters": [],
+    "supplement_id": "model-transaction",
+    "verification_method": "editorial_review",
+    "question_type": "조건 판단·개념 적용",
+    "option_note_method": "individual_editorial_review",
+    "frequency": "미집계",
+    "exam_focus": "2024 개편 범위 P0 보강",
+    "difficulty_basis": "편집 검토에 따른 예상 난이도(실측 정답률 아님)"
+  },
+  {
+    "id": "qv3_0230",
+    "subject": "데이터 모델링",
+    "topic": "model_null_attribute",
+    "topic_label": "모델링·NULL 속성",
+    "difficulty": "중 · 예상",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL·업무 모델링",
+    "stem": "회원이 아직 배송지 메모를 입력하지 않았을 때 값을 NULL로 저장했다. 가장 적절한 해석은?",
+    "choices": [
+      "메모 길이가 정확히 0이라는 정수값이다",
+      "메모에 숫자 0을 입력한 것과 같다",
+      "값이 현재 없거나 미정이라는 상태를 표현한다",
+      "NULL은 모든 DBMS에서 빈 문자열과 완전히 같다"
+    ],
+    "answer": 2,
+    "explanation": "NULL은 값이 존재하지 않거나 미확정·적용되지 않는 등 값 부재의 상태이며, 0이나 공백 문자와 구분한다.",
+    "option_explanations": [
+      "문자열 길이 계산 결과와 NULL은 다르다.",
+      "값 0은 명시적인 값이다.",
+      "모델링에서 필요한 구분이다.",
+      "Oracle의 빈 문자열 처리가 다른 DBMS에도 똑같이 적용되지는 않는다."
+    ],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [
+      "NULL은 값이 존재하지 않거나 미확정·적용되지 않는 등 값 부재의 상태이며, 0이나 공백 문자와 구분한다."
+    ],
+    "verified": true,
+    "linked_chapters": [],
+    "supplement_id": "model-null-attribute",
+    "verification_method": "editorial_review",
+    "question_type": "조건 판단·개념 적용",
+    "option_note_method": "individual_editorial_review",
+    "frequency": "미집계",
+    "exam_focus": "2024 개편 범위 P0 보강",
+    "difficulty_basis": "편집 검토에 따른 예상 난이도(실측 정답률 아님)"
+  },
+  {
+    "id": "qv3_0231",
+    "subject": "데이터 모델링",
+    "topic": "model_null_attribute",
+    "topic_label": "모델링·NULL 속성",
+    "difficulty": "중 · 예상",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL·업무 모델링",
+    "stem": "아래 속성 중 업무상 모든 주문에 반드시 존재해야 하므로 일반적으로 NOT NULL을 검토할 항목은?",
+    "choices": [
+      "고객이 남긴 선택 메모",
+      "해당 주문이 생성된 시점",
+      "후기 작성 후 입력되는 별점",
+      "선택적 배송 요청사항"
+    ],
+    "answer": 1,
+    "explanation": "주문 생성 시점은 업무 이력 관리에 필수인 경우가 많아 NOT NULL 후보이며, 선택 메모·후기는 업무상 미기재 가능성이 있다. 실제 필수 여부는 요구사항에 따른다.",
+    "option_explanations": [
+      "선택 입력이면 NULL을 허용할 수 있다.",
+      "업무 필수 속성의 대표 사례다.",
+      "후기 미작성 상태가 가능하다.",
+      "미기재를 허용하는 선택 항목의 예다."
+    ],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [
+      "주문 생성 시점은 업무 이력 관리에 필수인 경우가 많아 NOT NULL 후보이며, 선택 메모·후기는 업무상 미기재 가능성이 있다. 실제 필수 여부는 요구사항에 따른다."
+    ],
+    "verified": true,
+    "linked_chapters": [],
+    "supplement_id": "model-null-attribute",
+    "verification_method": "editorial_review",
+    "question_type": "조건 판단·개념 적용",
+    "option_note_method": "individual_editorial_review",
+    "frequency": "미집계",
+    "exam_focus": "2024 개편 범위 P0 보강",
+    "difficulty_basis": "편집 검토에 따른 예상 난이도(실측 정답률 아님)"
+  },
+  {
+    "id": "qv3_0232",
+    "subject": "데이터 모델링",
+    "topic": "model_null_attribute",
+    "topic_label": "모델링·NULL 속성",
+    "difficulty": "상 · 예상",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL·업무 모델링",
+    "stem": "수량(quantity)에 값이 없을 때 NULL 대신 0을 저장하면 발생할 수 있는 문제는?",
+    "choices": [
+      "NULL과 0이 항상 같은 의미라 문제없다",
+      "알 수 없는 수량과 실제로 0개인 수량을 구분하지 못한다",
+      "0은 반드시 제약조건 오류를 유발한다",
+      "0을 저장하면 PK가 자동 삭제된다"
+    ],
+    "answer": 1,
+    "explanation": "수량을 모르는 상태와 수량이 0개로 확인된 상태는 업무 의미가 다르므로 임의 치환은 정보 손실을 일으킬 수 있다.",
+    "option_explanations": [
+      "NULL과 0의 의미는 다르다.",
+      "미정 값이 실제 수치로 오염될 수 있다.",
+      "수량 0의 유효성은 도메인과 제약에 달려 있다.",
+      "일반 수량 속성과 PK 삭제는 무관하다."
+    ],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [
+      "수량을 모르는 상태와 수량이 0개로 확인된 상태는 업무 의미가 다르므로 임의 치환은 정보 손실을 일으킬 수 있다."
+    ],
+    "verified": true,
+    "linked_chapters": [],
+    "supplement_id": "model-null-attribute",
+    "verification_method": "editorial_review",
+    "question_type": "조건 판단·개념 적용",
+    "option_note_method": "individual_editorial_review",
+    "frequency": "미집계",
+    "exam_focus": "2024 개편 범위 P0 보강",
+    "difficulty_basis": "편집 검토에 따른 예상 난이도(실측 정답률 아님)"
+  },
+  {
+    "id": "qv3_0233",
+    "subject": "데이터 모델링",
+    "topic": "model_key_origin",
+    "topic_label": "본질·인조식별자",
+    "difficulty": "중 · 예상",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL·업무 모델링",
+    "stem": "PRODUCT의 product_id는 시스템이 순번으로 생성하고 sku는 업무에서 유일한 상품 코드다. 가장 적절한 설명은?",
+    "choices": [
+      "product_id는 인조식별자, sku는 본질식별자 후보이다",
+      "sku는 무조건 PK이고 product_id는 PK가 될 수 없다",
+      "product_id가 있다면 sku 중복은 항상 허용해야 한다",
+      "인조식별자는 외래키가 될 수 없다"
+    ],
+    "answer": 0,
+    "explanation": "시스템이 생성한 순번은 인조식별자이며, 업무상 의미가 있는 고유 SKU는 본질식별자 후보에 해당한다.",
+    "option_explanations": [
+      "식별자 성격을 정확하게 구분한다.",
+      "PK 선택은 업무와 설계 판단에 달려 있다.",
+      "업무상 유일성 제약은 대리키 채택과 별개로 유지할 수 있다.",
+      "인조식별자를 다른 테이블의 FK가 참조할 수 있다."
+    ],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [
+      "시스템이 생성한 순번은 인조식별자이며, 업무상 의미가 있는 고유 SKU는 본질식별자 후보에 해당한다."
+    ],
+    "verified": true,
+    "linked_chapters": [],
+    "supplement_id": "model-key-origin",
+    "verification_method": "editorial_review",
+    "question_type": "조건 판단·개념 적용",
+    "option_note_method": "individual_editorial_review",
+    "frequency": "미집계",
+    "exam_focus": "2024 개편 범위 P0 보강",
+    "difficulty_basis": "편집 검토에 따른 예상 난이도(실측 정답률 아님)"
+  },
+  {
+    "id": "qv3_0234",
+    "subject": "데이터 모델링",
+    "topic": "model_key_origin",
+    "topic_label": "본질·인조식별자",
+    "difficulty": "상 · 예상",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL·업무 모델링",
+    "stem": "상품 테이블에서 product_id를 대리 PK로 채택했다. SKU 중복을 금지해야 하는 업무 규칙은 어떻게 관리해야 하는가?",
+    "choices": [
+      "대리키 사용 시 SKU의 유일성 검사는 하지 않는다",
+      "SKU를 테이블에서 반드시 제거한다",
+      "product_id를 NULL 가능으로 바꾼다",
+      "SKU에 별도 UNIQUE 제약 등을 고려한다"
+    ],
+    "answer": 3,
+    "explanation": "대리키 PK와 업무 속성의 유일성 제약은 다른 역할이다. SKU 고유성 요구가 있으면 별도로 보호해야 한다.",
+    "option_explanations": [
+      "업무 규칙 위반을 허용할 수 있다.",
+      "SKU는 여전히 비즈니스에서 유용한 속성이다.",
+      "PK는 NULL을 허용하지 않는다.",
+      "대리키와 자연키 제약을 함께 사용할 수 있다."
+    ],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [
+      "대리키 PK와 업무 속성의 유일성 제약은 다른 역할이다. SKU 고유성 요구가 있으면 별도로 보호해야 한다."
+    ],
+    "verified": true,
+    "linked_chapters": [],
+    "supplement_id": "model-key-origin",
+    "verification_method": "editorial_review",
+    "question_type": "조건 판단·개념 적용",
+    "option_note_method": "individual_editorial_review",
+    "frequency": "미집계",
+    "exam_focus": "2024 개편 범위 P0 보강",
+    "difficulty_basis": "편집 검토에 따른 예상 난이도(실측 정답률 아님)"
+  },
+  {
+    "id": "qv3_0235",
+    "subject": "데이터 모델링",
+    "topic": "model_key_origin",
+    "topic_label": "본질·인조식별자",
+    "difficulty": "상 · 예상",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL·업무 모델링",
+    "stem": "변경 가능한 업무 코드가 여러 자식 테이블의 FK로 사용된다. 인조식별자 도입을 검토할 합리적 이유는?",
+    "choices": [
+      "FK를 더 이상 사용하지 않기 위해",
+      "모든 테이블의 컬럼 수를 무조건 줄이기 위해",
+      "변경될 수 있는 업무 코드 대신 안정적인 참조키를 두기 위해",
+      "모든 중복 검사를 제거하기 위해"
+    ],
+    "answer": 2,
+    "explanation": "업무 코드 변경이 잦고 많은 FK가 참조하면 안정적인 대리키가 갱신 부담을 줄일 수 있다. 대신 업무 코드 자체의 고유성은 검토한다.",
+    "option_explanations": [
+      "인조키도 참조 FK로 널리 쓰인다.",
+      "항상 컬럼 수가 줄어드는 것은 아니다.",
+      "도입 근거로 타당하다.",
+      "업무상 중복 검사는 남을 수 있다."
+    ],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [
+      "업무 코드 변경이 잦고 많은 FK가 참조하면 안정적인 대리키가 갱신 부담을 줄일 수 있다. 대신 업무 코드 자체의 고유성은 검토한다."
+    ],
+    "verified": true,
+    "linked_chapters": [],
+    "supplement_id": "model-key-origin",
+    "verification_method": "editorial_review",
+    "question_type": "조건 판단·개념 적용",
+    "option_note_method": "individual_editorial_review",
+    "frequency": "미집계",
+    "exam_focus": "2024 개편 범위 P0 보강",
+    "difficulty_basis": "편집 검토에 따른 예상 난이도(실측 정답률 아님)"
+  },
+  {
+    "id": "qv3_0236",
+    "subject": "데이터 모델링",
+    "topic": "model_attribute",
+    "topic_label": "속성·도메인",
+    "difficulty": "중 · 예상",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL·업무 모델링",
+    "stem": "주문항목(quantity=3, unit_price=2,000)에서 total_amount=6,000을 계산했다. total_amount의 성격으로 가장 알맞은 것은?",
+    "choices": [
+      "항상 기본 속성",
+      "파생 속성",
+      "무조건 복합식별자",
+      "엔터티 인스턴스"
+    ],
+    "answer": 1,
+    "explanation": "총금액은 수량과 단가라는 다른 속성으로 계산 가능한 파생 속성이다. 저장 여부는 일관성과 조회 성능 요구에 따라 결정한다.",
+    "option_explanations": [
+      "원천 제공값이 아니라 계산 결과다.",
+      "계산에서 얻은 전형적인 파생 속성이다.",
+      "식별자와 계산 결과는 다른 개념이다.",
+      "엔터티 인스턴스는 주문 항목의 실제 행이다."
+    ],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [
+      "총금액은 수량과 단가라는 다른 속성으로 계산 가능한 파생 속성이다. 저장 여부는 일관성과 조회 성능 요구에 따라 결정한다."
+    ],
+    "verified": true,
+    "linked_chapters": [],
+    "supplement_id": "model-attribute",
+    "verification_method": "editorial_review",
+    "question_type": "조건 판단·개념 적용",
+    "option_note_method": "individual_editorial_review",
+    "frequency": "미집계",
+    "exam_focus": "2024 개편 범위 P0 보강",
+    "difficulty_basis": "편집 검토에 따른 예상 난이도(실측 정답률 아님)"
+  },
+  {
+    "id": "qv3_0237",
+    "subject": "데이터 모델링",
+    "topic": "model_attribute",
+    "topic_label": "속성·도메인",
+    "difficulty": "중 · 예상",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL·업무 모델링",
+    "stem": "수량(quantity)에 허용 값이 양의 정수라고 정의했다. 이는 무엇을 지정한 것인가?",
+    "choices": [
+      "속성 도메인",
+      "엔터티의 개수",
+      "관계의 최대차수",
+      "외래키의 참조 대상"
+    ],
+    "answer": 0,
+    "explanation": "도메인은 속성에 허용되는 값의 범위 및 형식 등을 나타내며 양의 정수 제약은 도메인 제한의 사례다.",
+    "option_explanations": [
+      "허용 값 범위를 설명한다.",
+      "행/인스턴스 수와 무관하다.",
+      "관계 참여 수와는 다른 개념이다.",
+      "FK가 가리키는 테이블을 뜻하지 않는다."
+    ],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [
+      "도메인은 속성에 허용되는 값의 범위 및 형식 등을 나타내며 양의 정수 제약은 도메인 제한의 사례다."
+    ],
+    "verified": true,
+    "linked_chapters": [],
+    "supplement_id": "model-attribute",
+    "verification_method": "editorial_review",
+    "question_type": "조건 판단·개념 적용",
+    "option_note_method": "individual_editorial_review",
+    "frequency": "미집계",
+    "exam_focus": "2024 개편 범위 P0 보강",
+    "difficulty_basis": "편집 검토에 따른 예상 난이도(실측 정답률 아님)"
+  },
+  {
+    "id": "qv3_0238",
+    "subject": "데이터 모델링",
+    "topic": "model_attribute",
+    "topic_label": "속성·도메인",
+    "difficulty": "중 · 예상",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL·업무 모델링",
+    "stem": "사용자 ID를 업무 원천에서 받은 것이 아니라 시스템이 내부적으로 발급했다. 속성 분류로 적절한 것은?",
+    "choices": [
+      "파생 속성",
+      "기본 속성",
+      "설계 속성",
+      "다중값 속성"
+    ],
+    "answer": 2,
+    "explanation": "원래 업무 원천에 없지만 시스템 설계 목적상 만들어진 속성은 설계 속성의 대표 사례다.",
+    "option_explanations": [
+      "기존 속성의 계산 결과라면 파생 속성이다.",
+      "업무에서 원래 발생한 값과 다르다.",
+      "시스템 설계 목적으로 생성된 값에 해당한다.",
+      "여러 값을 가지는 속성 여부와 무관하다."
+    ],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [
+      "원래 업무 원천에 없지만 시스템 설계 목적상 만들어진 속성은 설계 속성의 대표 사례다."
+    ],
+    "verified": true,
+    "linked_chapters": [],
+    "supplement_id": "model-attribute",
+    "verification_method": "editorial_review",
+    "question_type": "조건 판단·개념 적용",
+    "option_note_method": "individual_editorial_review",
+    "frequency": "미집계",
+    "exam_focus": "2024 개편 범위 P0 보강",
+    "difficulty_basis": "편집 검토에 따른 예상 난이도(실측 정답률 아님)"
+  },
+  {
+    "id": "qv3_0239",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_standard_join",
+    "topic_label": "표준 JOIN",
+    "difficulty": "상 · 예상",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL·업무 모델링",
+    "stem": "A(a_id, status), B(a_id, status)에서 NATURAL JOIN을 쓰면 어떤 열을 조인 조건으로 사용하는가?",
+    "choices": [
+      "a_id만",
+      "status만",
+      "a_id와 status 둘 다",
+      "두 테이블의 모든 열을 무조건 사용"
+    ],
+    "answer": 2,
+    "explanation": "NATURAL JOIN은 같은 이름의 모든 공통 열을 조인 조건에 포함한다. 이 경우 a_id와 status 두 열이 모두 해당한다.",
+    "option_explanations": [
+      "status도 동명 열이므로 빠졌다.",
+      "a_id도 동명 열이므로 빠졌다.",
+      "모든 동명 열을 사용한다.",
+      "서로 이름이 다른 열은 자동으로 조인하지 않는다."
+    ],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [
+      "NATURAL JOIN은 같은 이름의 모든 공통 열을 조인 조건에 포함한다. 이 경우 a_id와 status 두 열이 모두 해당한다."
+    ],
+    "verified": true,
+    "linked_chapters": [],
+    "supplement_id": "sql-standard-join",
+    "verification_method": "editorial_review",
+    "question_type": "조건 판단·개념 적용",
+    "option_note_method": "individual_editorial_review",
+    "frequency": "미집계",
+    "exam_focus": "2024 개편 범위 P0 보강",
+    "difficulty_basis": "편집 검토에 따른 예상 난이도(실측 정답률 아님)"
+  },
+  {
+    "id": "qv3_0240",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_standard_join",
+    "topic_label": "표준 JOIN",
+    "difficulty": "중 · 예상",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL·업무 모델링",
+    "stem": "A에 3행, B에 4행이 있고 조건 없는 CROSS JOIN을 실행했다. 결과 행 수는?",
+    "choices": [
+      "7행",
+      "12행",
+      "3행",
+      "4행"
+    ],
+    "answer": 1,
+    "explanation": "CROSS JOIN은 양쪽 전체 조합을 만들므로 3×4=12행이다.",
+    "option_explanations": [
+      "합계가 아니라 곱이다.",
+      "데카르트 곱의 행 수다.",
+      "왼쪽 행만 유지하는 것이 아니다.",
+      "오른쪽 행만 유지하는 것이 아니다."
+    ],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [
+      "CROSS JOIN은 양쪽 전체 조합을 만들므로 3×4=12행이다."
+    ],
+    "verified": true,
+    "linked_chapters": [],
+    "supplement_id": "sql-standard-join",
+    "verification_method": "editorial_review",
+    "question_type": "조건 판단·개념 적용",
+    "option_note_method": "individual_editorial_review",
+    "frequency": "미집계",
+    "exam_focus": "2024 개편 범위 P0 보강",
+    "difficulty_basis": "편집 검토에 따른 예상 난이도(실측 정답률 아님)"
+  },
+  {
+    "id": "qv3_0241",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_standard_join",
+    "topic_label": "표준 JOIN",
+    "difficulty": "중 · 예상",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL·업무 모델링",
+    "stem": "A와 B가 dept_id 열을 공통으로 갖는다. SQL 표준 JOIN ... USING(dept_id)의 설명으로 맞는 것은?",
+    "choices": [
+      "dept_id가 반드시 서로 다른 이름이어야 한다",
+      "USING은 언제나 CROSS JOIN과 같다",
+      "WHERE 절을 사용할 수 없게 만든다",
+      "동일한 이름의 지정 열을 비교해 결합하고 SELECT *에서 하나의 공통 조인열로 나타낸다"
+    ],
+    "answer": 3,
+    "explanation": "USING은 양쪽에 같은 이름으로 있는 지정 열에 대한 동등 비교를 하며 조인열은 결합된 열로 표시된다.",
+    "option_explanations": [
+      "USING 지정 열은 양쪽에서 같은 이름이어야 한다.",
+      "USING은 조인 조건을 부여한다.",
+      "JOIN 뒤 WHERE 조건을 추가할 수 있다.",
+      "지정한 공통 열을 사용하고 결과의 중복 열 표시는 통합된다."
+    ],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [
+      "USING은 양쪽에 같은 이름으로 있는 지정 열에 대한 동등 비교를 하며 조인열은 결합된 열로 표시된다."
+    ],
+    "verified": true,
+    "linked_chapters": [],
+    "supplement_id": "sql-standard-join",
+    "verification_method": "editorial_review",
+    "question_type": "조건 판단·개념 적용",
+    "option_note_method": "individual_editorial_review",
+    "frequency": "미집계",
+    "exam_focus": "2024 개편 범위 P0 보강",
+    "difficulty_basis": "편집 검토에 따른 예상 난이도(실측 정답률 아님)"
+  },
+  {
+    "id": "qv3_0242",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_select",
+    "topic_label": "SELECT·DISTINCT",
+    "difficulty": "중 · 예상",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL·업무 모델링",
+    "stem": "T(a,b)에 (1,X), (1,Y), (1,X)가 있다. SELECT DISTINCT a,b FROM T의 결과 행 수는?",
+    "choices": [
+      "1행",
+      "2행",
+      "3행",
+      "0행"
+    ],
+    "answer": 1,
+    "explanation": "DISTINCT는 선택한 열의 조합이 같은 행을 제거하므로 (1,X), (1,Y) 두 행이 남는다.",
+    "option_explanations": [
+      "a만 고려한 중복 제거가 아니다.",
+      "a,b의 서로 다른 두 조합이 남는다.",
+      "(1,X) 한 행이 중복되어 제거된다.",
+      "NULL 조건이나 행 필터가 없으므로 0행이 아니다."
+    ],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [
+      "DISTINCT는 선택한 열의 조합이 같은 행을 제거하므로 (1,X), (1,Y) 두 행이 남는다."
+    ],
+    "verified": true,
+    "linked_chapters": [],
+    "supplement_id": null,
+    "verification_method": "editorial_review",
+    "question_type": "조건 판단·개념 적용",
+    "option_note_method": "individual_editorial_review",
+    "frequency": "미집계",
+    "exam_focus": "2024 개편 범위 P0 보강",
+    "difficulty_basis": "편집 검토에 따른 예상 난이도(실측 정답률 아님)"
+  },
+  {
+    "id": "qv3_0243",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_select",
+    "topic_label": "SELECT·DISTINCT",
+    "difficulty": "상 · 예상",
+    "source_type": "자체 제작",
+    "dbms": "표준 SQL·업무 모델링",
+    "stem": "표준 SQL에서 SELECT salary AS pay FROM EMP WHERE pay > 1000;을 일반적으로 올바르지 않게 만드는 이유는?",
+    "choices": [
+      "SELECT의 출력 별칭 pay는 WHERE에서 직접 참조할 수 없기 때문이다",
+      "SELECT는 별칭을 절대 지원하지 않기 때문이다",
+      "WHERE에는 숫자 비교를 쓸 수 없기 때문이다",
+      "salary 열은 GROUP BY에 반드시 포함돼야 하기 때문이다"
+    ],
+    "answer": 0,
+    "explanation": "동일 SELECT 수준에서 정의한 출력 별칭은 일반적으로 WHERE에서 참조할 수 없다. 대신 WHERE salary > 1000을 사용한다.",
+    "option_explanations": [
+      "별칭의 평가·가시성 범위 문제다.",
+      "SELECT 절은 AS 별칭을 지원한다.",
+      "WHERE의 숫자 비교는 정상이다.",
+      "집계 없는 일반 SELECT에서는 GROUP BY가 필요하지 않다."
+    ],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [
+      "동일 SELECT 수준에서 정의한 출력 별칭은 일반적으로 WHERE에서 참조할 수 없다. 대신 WHERE salary > 1000을 사용한다."
+    ],
+    "verified": true,
+    "linked_chapters": [],
+    "supplement_id": null,
+    "verification_method": "editorial_review",
+    "question_type": "조건 판단·개념 적용",
+    "option_note_method": "individual_editorial_review",
+    "frequency": "미집계",
+    "exam_focus": "2024 개편 범위 P0 보강",
+    "difficulty_basis": "편집 검토에 따른 예상 난이도(실측 정답률 아님)"
+  },
+  {
+    "id": "qv3_0244",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_ddl",
+    "topic_label": "DDL·TRUNCATE",
+    "difficulty": "상 · 예상",
+    "source_type": "자체 제작",
+    "dbms": "Oracle SQL / 관계형 모델링",
+    "stem": "Oracle에서 TRUNCATE TABLE T;를 실행한 뒤 일반적인 ROLLBACK으로 되돌릴 수 있는가?",
+    "choices": [
+      "항상 가능하다",
+      "테이블에 PK가 있으면 가능하다",
+      "일반적으로 불가능하며 TRUNCATE는 DDL로 처리된다",
+      "TRUNCATE는 SELECT의 별칭이다"
+    ],
+    "answer": 2,
+    "explanation": "Oracle의 TRUNCATE는 DDL이며 암묵적 COMMIT 성격을 갖는다. 일반적인 ROLLBACK으로 삭제된 행을 복구할 수 없다.",
+    "option_explanations": [
+      "Oracle DDL의 트랜잭션 경계를 고려해야 한다.",
+      "PK 여부가 DDL의 롤백 가능성을 바꾸지 않는다.",
+      "Oracle 문법 기준 옳다.",
+      "TRUNCATE는 구조가 아닌 데이터를 비우는 DDL 명령이다."
+    ],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [
+      "Oracle의 TRUNCATE는 DDL이며 암묵적 COMMIT 성격을 갖는다. 일반적인 ROLLBACK으로 삭제된 행을 복구할 수 없다."
+    ],
+    "verified": true,
+    "linked_chapters": [],
+    "supplement_id": "ddl",
+    "verification_method": "editorial_review",
+    "question_type": "조건 판단·개념 적용",
+    "option_note_method": "individual_editorial_review",
+    "frequency": "미집계",
+    "exam_focus": "2024 개편 범위 P0 보강",
+    "difficulty_basis": "편집 검토에 따른 예상 난이도(실측 정답률 아님)"
+  },
+  {
+    "id": "qv3_0245",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_ddl",
+    "topic_label": "DDL·TRUNCATE",
+    "difficulty": "중 · 예상",
+    "source_type": "자체 제작",
+    "dbms": "Oracle SQL / 관계형 모델링",
+    "stem": "기존 TABLE T에 컬럼 memo를 추가하려면 어떤 분류의 명령을 사용해야 하는가?",
+    "choices": [
+      "DCL·GRANT",
+      "TCL·SAVEPOINT",
+      "DML·DELETE",
+      "DDL·ALTER TABLE"
+    ],
+    "answer": 3,
+    "explanation": "ALTER TABLE은 테이블 정의를 변경하는 DDL이다.",
+    "option_explanations": [
+      "GRANT는 권한 부여다.",
+      "SAVEPOINT는 트랜잭션 구분점이다.",
+      "DELETE는 행 데이터를 삭제한다.",
+      "컬럼 추가는 구조 변경에 해당한다."
+    ],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [
+      "ALTER TABLE은 테이블 정의를 변경하는 DDL이다."
+    ],
+    "verified": true,
+    "linked_chapters": [],
+    "supplement_id": "ddl",
+    "verification_method": "editorial_review",
+    "question_type": "조건 판단·개념 적용",
+    "option_note_method": "individual_editorial_review",
+    "frequency": "미집계",
+    "exam_focus": "2024 개편 범위 P0 보강",
+    "difficulty_basis": "편집 검토에 따른 예상 난이도(실측 정답률 아님)"
+  },
+  {
+    "id": "qv3_0246",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_dcl",
+    "topic_label": "DCL·권한",
+    "difficulty": "중 · 예상",
+    "source_type": "자체 제작",
+    "dbms": "Oracle SQL / 관계형 모델링",
+    "stem": "USER_A에게 ORDERS 테이블의 SELECT 권한을 주는 Oracle 문장으로 알맞은 것은?",
+    "choices": [
+      "REVOKE SELECT ON ORDERS TO USER_A",
+      "GRANT SELECT ON ORDERS TO USER_A",
+      "COMMIT SELECT ON ORDERS TO USER_A",
+      "UPDATE SELECT ON ORDERS TO USER_A"
+    ],
+    "answer": 1,
+    "explanation": "객체 조회 권한 부여는 GRANT SELECT ON 객체 TO 사용자 구문을 사용한다.",
+    "option_explanations": [
+      "REVOKE는 권한 회수이고 FROM을 쓴다.",
+      "조회 권한 부여의 올바른 구문이다.",
+      "COMMIT은 트랜잭션 확정이다.",
+      "UPDATE는 행 변경 DML 명령이다."
+    ],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [
+      "객체 조회 권한 부여는 GRANT SELECT ON 객체 TO 사용자 구문을 사용한다."
+    ],
+    "verified": true,
+    "linked_chapters": [],
+    "supplement_id": "ddl",
+    "verification_method": "editorial_review",
+    "question_type": "조건 판단·개념 적용",
+    "option_note_method": "individual_editorial_review",
+    "frequency": "미집계",
+    "exam_focus": "2024 개편 범위 P0 보강",
+    "difficulty_basis": "편집 검토에 따른 예상 난이도(실측 정답률 아님)"
+  },
+  {
+    "id": "qv3_0247",
+    "subject": "SQL 기본 및 활용",
+    "topic": "sql_dcl",
+    "topic_label": "DCL·권한",
+    "difficulty": "상 · 예상",
+    "source_type": "자체 제작",
+    "dbms": "Oracle SQL / 관계형 모델링",
+    "stem": "GRANT SELECT ON T TO USER_A; 이후 REVOKE SELECT ON T FROM USER_A; 실행의 직접적인 효과는?",
+    "choices": [
+      "테이블 T의 행을 삭제한다",
+      "T의 기본키를 삭제한다",
+      "USER_A에게 부여했던 해당 객체 SELECT 권한을 회수한다",
+      "이전 UPDATE 구문을 ROLLBACK한다"
+    ],
+    "answer": 2,
+    "explanation": "REVOKE는 부여한 권한을 회수하는 DCL 명령이며 데이터와 이전 트랜잭션을 직접 변경하지 않는다.",
+    "option_explanations": [
+      "행 삭제는 DML DELETE다.",
+      "키 삭제는 DDL과 관련된다.",
+      "DCL이 수행하는 권한 회수다.",
+      "ROLLBACK과 다른 역할이다."
+    ],
+    "sql": "",
+    "input_tables": [],
+    "result_table": null,
+    "steps": [
+      "REVOKE는 부여한 권한을 회수하는 DCL 명령이며 데이터와 이전 트랜잭션을 직접 변경하지 않는다."
+    ],
+    "verified": true,
+    "linked_chapters": [],
+    "supplement_id": "ddl",
+    "verification_method": "editorial_review",
+    "question_type": "조건 판단·개념 적용",
+    "option_note_method": "individual_editorial_review",
+    "frequency": "미집계",
+    "exam_focus": "2024 개편 범위 P0 보강",
+    "difficulty_basis": "편집 검토에 따른 예상 난이도(실측 정답률 아님)"
   }
 ]
